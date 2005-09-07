@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Classes</key>
+	<dict>
+		<key>IconSetDocument</key>
+		<dict>
+			<key>Description</key>
+			<string>BSIconSetComposer IconSet Document.</string>
+			<key>Name</key>
+			<string>document</string>
+			<key>PluralName</key>
+			<string>documents</string>
+		</dict>
+	</dict>
+	<key>Commands</key>
+	<dict>
+		<key>Apply</key>
+		<dict>
+			<key>Description</key>
+			<string>Apply IconSet to BathyScaphe.</string>
+			<key>Name</key>
+			<string>apply</string>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Common classes and commands for BSIconSetComposer.</string>
+	<key>Name</key>
+	<string>BSIconSetComposer Suite</string>
+</dict>
+</plist>

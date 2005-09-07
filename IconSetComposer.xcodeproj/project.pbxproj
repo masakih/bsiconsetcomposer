@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D15AC310486D014006FF6A4 /* IconSetDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* IconSetDocument.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		F461E46408ADCDB400384957 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = F461E46308ADCDB400384957 /* MainMenu.nib */; };
+		F461E46708ADCDCA00384957 /* IconSetDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = F461E46608ADCDCA00384957 /* IconSetDocument.nib */; };
+		F4626F2E08ADD94A00B71ADA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4626F2D08ADD94A00B71ADA /* InfoPlist.strings */; };
+		F4626F3108ADD96400B71ADA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F4626F3008ADD96400B71ADA /* Credits.rtf */; };
+		F464CDA408CD9F25008B434A /* BSIconSetComposer.sdef in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF7408CAC033009741BF /* BSIconSetComposer.sdef */; };
+		F4D3EF7208CABC52009741BF /* BSIconSetComposerSuite.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */; };
+		F4D3EF7308CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */; };
+		F4E4477008AFABF200375AF1 /* TemporaryFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E4476F08AFABF200375AF1 /* TemporaryFolder.m */; };
+		F4F4AEA20880C62D00E44313 /* IconTray.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F4AEA10880C62D00E44313 /* IconTray.m */; };
+		F4F4AECF0880D28100E44313 /* IconSetComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F4AECE0880D28100E44313 /* IconSetComposer.m */; };
+		F4F4B05B088106FF00E44313 /* AbstractIconSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F4B05A088106FF00E44313 /* AbstractIconSet.m */; };
+		F4F4B2C608814EFF00E44313 /* ImageList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F4B2C508814EFF00E44313 /* ImageList.plist */; };
+		F4F4B4390881600B00E44313 /* restartBS.scpt in Resources */ = {isa = PBXBuildFile; fileRef = F4F4B3F408815F3D00E44313 /* restartBS.scpt */; };
+		F4FF6E7908C74AEF00C0214D /* ColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FF6E7808C74AEF00C0214D /* ColorSet.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		4A9504D0FFE6A4CB11CA0CBA /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		4A9504D1FFE6A4CB11CA0CBA /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PREBINDING = NO;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXFileReference section */
+		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.xml; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FBA07B3F13500E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		2A37F4ACFDCFA73011CA2CEA /* IconSetDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconSetDocument.m; sourceTree = "<group>"; };
+		2A37F4AEFDCFA73011CA2CEA /* IconSetDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconSetDocument.h; sourceTree = "<group>"; };
+		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A37F4B5FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/IconSetDocument.nib; sourceTree = "<group>"; };
+		2A37F4B7FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32DBCF750370BD2300C91783 /* IconSetComposer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconSetComposer_Prefix.pch; sourceTree = "<group>"; };
+		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D15AC370486D014006FF6A4 /* BSIconSetComposer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSIconSetComposer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F461E46508ADCDBD00384957 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		F461E46808ADCDD600384957 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/IconSetDocument.nib; sourceTree = "<group>"; };
+		F4626F2F08ADD95100B71ADA /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F4626F3208ADD96900B71ADA /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Japanese; path = Japanese.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BSIconSetComposerSuite.scriptSuite; sourceTree = "<group>"; };
+		F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BSIconSetComposerSuite.scriptTerminology; sourceTree = "<group>"; };
+		F4D3EF7408CAC033009741BF /* BSIconSetComposer.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; path = BSIconSetComposer.sdef; sourceTree = "<group>"; };
+		F4E4476E08AFABF200375AF1 /* TemporaryFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemporaryFolder.h; sourceTree = "<group>"; };
+		F4E4476F08AFABF200375AF1 /* TemporaryFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemporaryFolder.m; sourceTree = "<group>"; };
+		F4F4AEA00880C62D00E44313 /* IconTray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconTray.h; sourceTree = "<group>"; };
+		F4F4AEA10880C62D00E44313 /* IconTray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconTray.m; sourceTree = "<group>"; };
+		F4F4AECD0880D28100E44313 /* IconSetComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconSetComposer.h; sourceTree = "<group>"; };
+		F4F4AECE0880D28100E44313 /* IconSetComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconSetComposer.m; sourceTree = "<group>"; };
+		F4F4B059088106FF00E44313 /* AbstractIconSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractIconSet.h; sourceTree = "<group>"; };
+		F4F4B05A088106FF00E44313 /* AbstractIconSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractIconSet.m; sourceTree = "<group>"; };
+		F4F4B2C508814EFF00E44313 /* ImageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ImageList.plist; sourceTree = "<group>"; };
+		F4F4B3F408815F3D00E44313 /* restartBS.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; path = restartBS.scpt; sourceTree = "<group>"; };
+		F4F4B5FC08818D4400E44313 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F4FF6E7708C74AEF00C0214D /* ColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSet.h; sourceTree = "<group>"; };
+		F4FF6E7808C74AEF00C0214D /* ColorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSet.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D15AC330486D014006FF6A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
+				13E42FBA07B3F13500E4EEF1 /* CoreData.framework */,
+				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB0FE9D524F11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D15AC370486D014006FF6A4 /* BSIconSetComposer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A37F4AAFDCFA73011CA2CEA /* IconSetComposer */ = {
+			isa = PBXGroup;
+			children = (
+				F4558BE80889438100557B17 /* Test */,
+				2A37F4ABFDCFA73011CA2CEA /* Classes */,
+				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				2A37F4B8FDCFA73011CA2CEA /* Resources */,
+				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
+				19C28FB0FE9D524F11CA2CBB /* Products */,
+			);
+			name = IconSetComposer;
+			sourceTree = "<group>";
+		};
+		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F4E4476E08AFABF200375AF1 /* TemporaryFolder.h */,
+				F4E4476F08AFABF200375AF1 /* TemporaryFolder.m */,
+				F4F4B059088106FF00E44313 /* AbstractIconSet.h */,
+				F4F4B05A088106FF00E44313 /* AbstractIconSet.m */,
+				F4F4AEA00880C62D00E44313 /* IconTray.h */,
+				F4F4AEA10880C62D00E44313 /* IconTray.m */,
+				2A37F4AEFDCFA73011CA2CEA /* IconSetDocument.h */,
+				2A37F4ACFDCFA73011CA2CEA /* IconSetDocument.m */,
+				F4F4AECD0880D28100E44313 /* IconSetComposer.h */,
+				F4F4AECE0880D28100E44313 /* IconSetComposer.m */,
+				F4FF6E7708C74AEF00C0214D /* ColorSet.h */,
+				F4FF6E7808C74AEF00C0214D /* ColorSet.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF750370BD2300C91783 /* IconSetComposer_Prefix.pch */,
+				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F4D3EF7408CAC033009741BF /* BSIconSetComposer.sdef */,
+				F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */,
+				F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */,
+				F4626F3008ADD96400B71ADA /* Credits.rtf */,
+				F4F4B3F408815F3D00E44313 /* restartBS.scpt */,
+				F4F4B2C508814EFF00E44313 /* ImageList.plist */,
+				F461E46308ADCDB400384957 /* MainMenu.nib */,
+				F461E46608ADCDCA00384957 /* IconSetDocument.nib */,
+				8D15AC360486D014006FF6A4 /* Info.plist */,
+				F4626F2D08ADD94A00B71ADA /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
+				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4558BE80889438100557B17 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D15AC270486D014006FF6A4 /* IconSetComposer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4F4AE960880C61600E44313 /* Build configuration list for PBXNativeTarget "IconSetComposer" */;
+			buildPhases = (
+				F406E99E08CDC35C007CB106 /* ShellScript */,
+				8D15AC2B0486D014006FF6A4 /* Resources */,
+				8D15AC300486D014006FF6A4 /* Sources */,
+				8D15AC330486D014006FF6A4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = IconSetComposer_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = IconSetComposer;
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			name = IconSetComposer;
+			productInstallPath = "$(HOME)/Applications";
+			productName = IconSetComposer;
+			productReference = 8D15AC370486D014006FF6A4 /* BSIconSetComposer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = F4F4AE9A0880C61600E44313 /* Build configuration list for PBXProject "IconSetComposer" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				4A9504D0FFE6A4CB11CA0CBA /* Debug */,
+				4A9504D1FFE6A4CB11CA0CBA /* Release */,
+			);
+			hasScannedForEncodings = 1;
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* IconSetComposer */;
+			projectDirPath = "";
+			targets = (
+				8D15AC270486D014006FF6A4 /* IconSetComposer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D15AC2B0486D014006FF6A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4F4B4390881600B00E44313 /* restartBS.scpt in Resources */,
+				F461E46408ADCDB400384957 /* MainMenu.nib in Resources */,
+				F461E46708ADCDCA00384957 /* IconSetDocument.nib in Resources */,
+				F4626F2E08ADD94A00B71ADA /* InfoPlist.strings in Resources */,
+				F4F4B2C608814EFF00E44313 /* ImageList.plist in Resources */,
+				F4626F3108ADD96400B71ADA /* Credits.rtf in Resources */,
+				F4D3EF7208CABC52009741BF /* BSIconSetComposerSuite.scriptSuite in Resources */,
+				F4D3EF7308CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology in Resources */,
+				F464CDA408CD9F25008B434A /* BSIconSetComposer.sdef in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F406E99E08CDC35C007CB106 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/BSIconSetComposer.sdef",
+			);
+			outputPaths = (
+				"${SRCROOT}/BSIconSetComposerSuite.scriptSuite",
+				"${SRCROOT}/BSIconSetComposerSuite.scriptTerminology",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ${SRCROOT}\n/usr/bin/sdp -fst -o ${SRCROOT} ${SRCROOT}/BSIconSetComposer.sdef\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D15AC300486D014006FF6A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC310486D014006FF6A4 /* IconSetDocument.m in Sources */,
+				8D15AC320486D014006FF6A4 /* main.m in Sources */,
+				F4F4AEA20880C62D00E44313 /* IconTray.m in Sources */,
+				F4F4AECF0880D28100E44313 /* IconSetComposer.m in Sources */,
+				F4F4B05B088106FF00E44313 /* AbstractIconSet.m in Sources */,
+				F4E4477008AFABF200375AF1 /* TemporaryFolder.m in Sources */,
+				F4FF6E7908C74AEF00C0214D /* ColorSet.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F461E46308ADCDB400384957 /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A37F4B7FDCFA73011CA2CEA /* English */,
+				F461E46508ADCDBD00384957 /* Japanese */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		F461E46608ADCDCA00384957 /* IconSetDocument.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A37F4B5FDCFA73011CA2CEA /* English */,
+				F461E46808ADCDD600384957 /* Japanese */,
+			);
+			name = IconSetDocument.nib;
+			sourceTree = "<group>";
+		};
+		F4626F2D08ADD94A00B71ADA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1660FE840EACC02AAC07 /* English */,
+				F4626F2F08ADD95100B71ADA /* Japanese */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F4626F3008ADD96400B71ADA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4F4B5FC08818D4400E44313 /* English */,
+				F4626F3208ADD96900B71ADA /* Japanese */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4F4AE970880C61600E44313 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = IconSetComposer_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				PREBINDING = NO;
+				PRODUCT_NAME = BSIconSetComposer;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		F4F4AE980880C61600E44313 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = IconSetComposer_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				PREBINDING = NO;
+				PRODUCT_NAME = BSIconSetComposer;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		F4F4AE990880C61600E44313 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = IconSetComposer_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				PRODUCT_NAME = BSIconSetComposer;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
+		};
+		F4F4AE9B0880C61600E44313 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		F4F4AE9C0880C61600E44313 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		F4F4AE9D0880C61600E44313 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4F4AE960880C61600E44313 /* Build configuration list for PBXNativeTarget "IconSetComposer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4F4AE970880C61600E44313 /* Debug */,
+				F4F4AE980880C61600E44313 /* Release */,
+				F4F4AE990880C61600E44313 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		F4F4AE9A0880C61600E44313 /* Build configuration list for PBXProject "IconSetComposer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4F4AE9B0880C61600E44313 /* Debug */,
+				F4F4AE9C0880C61600E44313 /* Release */,
+				F4F4AE9D0880C61600E44313 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+}

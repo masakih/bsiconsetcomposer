@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="BSIconSetComposer Terminology">
+	<!-- -->
+	<suite name="BSIconSetComposer Suite" code="bSiS"
+		description="Common classes and commands for BSIconSetComposer.">
+		<!-- -->
+		<command name="apply" code="bSiSbSaP"
+			description="Apply IconSet to BathyScaphe.">
+			<cocoa class="NSScriptCommand" />
+		</command>
+
+		<class name="document" plural="documents" code="docu"
+			description="BSIconSetComposer IconSet Document."
+			inherits="NSCoreSuite.NSDocument">
+			<cocoa class="IconSetDocument" />
+			<type type="document" />
+			<responds-to name="apply">
+				<cocoa method="handleApplyCommand:"/>
+			</responds-to>
+		</class>
+	</suite>
+</dictionary>
