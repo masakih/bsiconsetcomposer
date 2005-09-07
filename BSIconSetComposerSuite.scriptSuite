@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppleEventCode</key>
+	<string>bSiS</string>
+	<key>Classes</key>
+	<dict>
+		<key>IconSetDocument</key>
+		<dict>
+			<key>AppleEventCode</key>
+			<string>docu</string>
+			<key>Superclass</key>
+			<string>NSCoreSuite.NSDocument</string>
+			<key>SupportedCommands</key>
+			<dict>
+				<key>BSIconSetComposerSuite.Apply</key>
+				<string>handleApplyCommand:</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>Commands</key>
+	<dict>
+		<key>Apply</key>
+		<dict>
+			<key>AppleEventClassCode</key>
+			<string>bSiS</string>
+			<key>AppleEventCode</key>
+			<string>bSaP</string>
+			<key>CommandClass</key>
+			<string>NSScriptCommand</string>
+		</dict>
+	</dict>
+	<key>Name</key>
+	<string>BSIconSetComposerSuite</string>
+	<key>UsedFeatures</key>
+	<array>
+		<string>UnnamedArguments</string>
+	</array>
+</dict>
+</plist>
