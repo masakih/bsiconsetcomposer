@@ -22,7 +22,6 @@
 		F4F4AECF0880D28100E44313 /* IconSetComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F4AECE0880D28100E44313 /* IconSetComposer.m */; };
 		F4F4B05B088106FF00E44313 /* AbstractIconSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F4B05A088106FF00E44313 /* AbstractIconSet.m */; };
 		F4F4B2C608814EFF00E44313 /* ImageList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F4B2C508814EFF00E44313 /* ImageList.plist */; };
-		F4F4B4390881600B00E44313 /* restartBS.scpt in Resources */ = {isa = PBXBuildFile; fileRef = F4F4B3F408815F3D00E44313 /* restartBS.scpt */; };
 		F4FF6E7908C74AEF00C0214D /* ColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FF6E7808C74AEF00C0214D /* ColorSet.m */; };
 /* End PBXBuildFile section */
 
@@ -83,7 +82,6 @@
 		F4F4B059088106FF00E44313 /* AbstractIconSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractIconSet.h; sourceTree = "<group>"; };
 		F4F4B05A088106FF00E44313 /* AbstractIconSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractIconSet.m; sourceTree = "<group>"; };
 		F4F4B2C508814EFF00E44313 /* ImageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ImageList.plist; sourceTree = "<group>"; };
-		F4F4B3F408815F3D00E44313 /* restartBS.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; path = restartBS.scpt; sourceTree = "<group>"; };
 		F4F4B5FC08818D4400E44313 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
 		F4FF6E7708C74AEF00C0214D /* ColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSet.h; sourceTree = "<group>"; };
 		F4FF6E7808C74AEF00C0214D /* ColorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSet.m; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */,
 				F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */,
 				F4626F3008ADD96400B71ADA /* Credits.rtf */,
-				F4F4B3F408815F3D00E44313 /* restartBS.scpt */,
 				F4F4B2C508814EFF00E44313 /* ImageList.plist */,
 				F461E46308ADCDB400384957 /* MainMenu.nib */,
 				F461E46608ADCDCA00384957 /* IconSetDocument.nib */,
@@ -260,7 +257,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4F4B4390881600B00E44313 /* restartBS.scpt in Resources */,
 				F461E46408ADCDB400384957 /* MainMenu.nib in Resources */,
 				F461E46708ADCDCA00384957 /* IconSetDocument.nib in Resources */,
 				F4626F2E08ADD94A00B71ADA /* InfoPlist.strings in Resources */,

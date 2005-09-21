@@ -15,6 +15,7 @@
 @private
 	id plist;
 @protected
+	id iconTrayDict;
 	id delegate;
 	
 	IBOutlet NSView *view;
@@ -24,12 +25,12 @@
 -(void)setImageFilePath:(NSString *)path forKey:(NSString *)key;
 -(NSString *)imageFilePathForKey:(NSString *)key;
 -(NSArray *)allKeys;
-
 -(void)setImage:(NSImage *)image forKey:(NSString *)key;
-
-// subclass MUST overwride.
 -(IconTray *)iconTrayForKey:(NSString *)key;
 -(NSString *)keyForIconTray:(IconTray *)iconTray;
+
+// subclass MUST overwride.
+-(void)buildIconTrayDict;
 
 -(id)plist;
 
@@ -60,6 +61,7 @@
 	IBOutlet id offline;
 	IBOutlet id online;
 	IBOutlet id stop;
+	IBOutlet id orderFrontBrowser;
 }
 
 @end

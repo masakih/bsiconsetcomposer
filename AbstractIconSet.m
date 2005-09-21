@@ -17,6 +17,7 @@
 {
 	if(self = [super init]) {
 		plist = [[NSMutableDictionary dictionary] retain];
+		iconTrayDict = [[NSMutableDictionary dictionary] retain];
 	}
 	
 	return self;
@@ -90,17 +91,25 @@
 	[iconTray setImage:image];
 }
 
-	// subclass MUST overwride.
 -(IconTray *)iconTrayForKey:(NSString *)key
 {
-	[self doesNotRecognizeSelector:_cmd];
-	return nil;
+	return [iconTrayDict objectForKey:key];;
 }
 
 -(NSString *)keyForIconTray:(IconTray *)iconTray
 {
-	[self doesNotRecognizeSelector:_cmd];
-	return nil;
+	return [[iconTrayDict allKeysForObject:iconTray] objectAtIndex:0];
+}
+
+-(void)awakeFromNib
+{
+	[self buildIconTrayDict];
+}
+
+// subclass MUST overwride.
+-(void)buildIconTrayDict
+{
+//	[self doesNotRecognizeSelector:_cmd];
 }
 
 -(id)plist
@@ -168,86 +177,28 @@ static NSString *const toolbarIconSetCmlf_icon = @"cmlf_icon";
 static NSString *const toolbarIconSetOffline = @"offline";
 static NSString *const toolbarIconSetOnline = @"online";
 static NSString *const toolbarIconSetStopSign = @"stopSign";
+static NSString *const toolbarIconSetOrderFrontBrowser = @"OrderFrontBrowser";
 
 @implementation ToolbarIconSet
--(IconTray *)iconTrayForKey:(NSString *)key
+-(void)buildIconTrayDict
 {
-	id result = nil;
-	
-	if( [key isEqualTo:toolbarIconSetBoardList] ) {
-		result = board;
-	} else if( [key isEqualTo:toolbarIconSetDelete] ) {
-		result = delete_;
-	} else if( [key isEqualTo:toolbarIconSetReloadList] ) {
-		result = reloadBoard;
-	} else if( [key isEqualTo:toolbarIconSetReloadThread] ) {
-		result = reloadThread;
-	} else if( [key isEqualTo:toolbarIconSetAddFavorites] ) {
-		result = addFav;
-	} else if( [key isEqualTo:toolbarIconSetRemoveFavorites] ) {
-		result = delFav;
-	} else if( [key isEqualTo:toolbarIconSetResToThread] ) {
-		result = res;
-	} else if( [key isEqualTo:toolbarIconSetSaveAsDraft] ) {
-		result = draft;
-	} else if( [key isEqualTo:toolbarIconSetSendMessage] ) {
-		result = send;
-	} else if( [key isEqualTo:toolbarIconSetBeDisabled] ) {
-		result = disableBe;
-	} else if( [key isEqualTo:toolbarIconSetBeEnabled] ) {
-		result = enableBe;
-	} else if( [key isEqualTo:toolbarIconSetCmlf_icon] ) {
-		result = logFinder;
-	} else if( [key isEqualTo:toolbarIconSetOffline] ) {
-		result = offline;
-	} else if( [key isEqualTo:toolbarIconSetOnline] ) {
-		result = online;
-	} else if( [key isEqualTo:toolbarIconSetStopSign] ) {
-		result = stop;
-	}
-	
-	return result;
+	[iconTrayDict setObject:board forKey:toolbarIconSetBoardList];
+	[iconTrayDict setObject:delete_ forKey:toolbarIconSetDelete];
+	[iconTrayDict setObject:reloadBoard forKey:toolbarIconSetReloadList];
+	[iconTrayDict setObject:reloadThread forKey:toolbarIconSetReloadThread];
+	[iconTrayDict setObject:addFav forKey:toolbarIconSetAddFavorites];
+	[iconTrayDict setObject:delFav forKey:toolbarIconSetRemoveFavorites];
+	[iconTrayDict setObject:res forKey:toolbarIconSetResToThread];
+	[iconTrayDict setObject:draft forKey:toolbarIconSetSaveAsDraft];
+	[iconTrayDict setObject:send forKey:toolbarIconSetSendMessage];
+	[iconTrayDict setObject:disableBe forKey:toolbarIconSetBeDisabled];
+	[iconTrayDict setObject:enableBe forKey:toolbarIconSetBeEnabled];
+	[iconTrayDict setObject:logFinder forKey:toolbarIconSetCmlf_icon];
+	[iconTrayDict setObject:offline forKey:toolbarIconSetOffline];
+	[iconTrayDict setObject:online forKey:toolbarIconSetOnline];
+	[iconTrayDict setObject:stop forKey:toolbarIconSetStopSign];
+	[iconTrayDict setObject:orderFrontBrowser forKey:toolbarIconSetOrderFrontBrowser];
 }
-
--(NSString *)keyForIconTray:(IconTray *)iconTray
-{
-	NSString *result = nil;
-	
-	if( [iconTray isEqualTo:board] ) {
-		result = toolbarIconSetBoardList;
-	} else if( [iconTray isEqualTo:delete_] ) {
-		result = toolbarIconSetDelete;
-	} else if( [iconTray isEqualTo:reloadBoard] ) {
-		result = toolbarIconSetReloadList;
-	} else if( [iconTray isEqualTo:reloadThread] ) {
-		result = toolbarIconSetReloadThread;
-	} else if( [iconTray isEqualTo:addFav] ) {
-		result = toolbarIconSetAddFavorites;
-	} else if( [iconTray isEqualTo:delFav] ) {
-		result = toolbarIconSetRemoveFavorites;
-	} else if( [iconTray isEqualTo:res] ) {
-		result = toolbarIconSetResToThread;
-	} else if( [iconTray isEqualTo:draft] ) {
-		result = toolbarIconSetSaveAsDraft;
-	} else if( [iconTray isEqualTo:send] ) {
-		result = toolbarIconSetSendMessage;
-	} else if( [iconTray isEqualTo:disableBe] ) {
-		result = toolbarIconSetBeDisabled;
-	} else if( [iconTray isEqualTo:enableBe] ) {
-		result = toolbarIconSetBeEnabled;
-	} else if( [iconTray isEqualTo:logFinder] ) {
-		result = toolbarIconSetCmlf_icon;
-	} else if( [iconTray isEqualTo:offline] ) {
-		result = toolbarIconSetOffline;
-	} else if( [iconTray isEqualTo:online] ) {
-		result = toolbarIconSetOnline;
-	} else if( [iconTray isEqualTo:stop] ) {
-		result = toolbarIconSetStopSign;
-	}
-	
-	return result;
-}
-
 @end
 #pragma mark -
 
@@ -256,34 +207,11 @@ static NSString *const boardListIconSetFavoritesItem = @"FavoritesItem";
 static NSString *const boardListIconSetFolder = @"Folder";
 
 @implementation BoardListIconSet
-
--(IconTray *)iconTrayForKey:(NSString *)key
+-(void)buildIconTrayDict
 {
-	id result = nil;
-	
-	if( [key isEqualTo:boardListIconSetBoard] ) {
-		result = board;
-	} else if( [key isEqualTo:boardListIconSetFavoritesItem] ) {
-		result = fav;
-	} else if( [key isEqualTo:boardListIconSetFolder] ) {
-		result = folder;
-	}
-	
-	return result;
-}
-
--(NSString *)keyForIconTray:(IconTray *)iconTray
-{
-	NSString *result = nil;
-	
-	if( [iconTray isEqualTo:board] ) {
-		result = boardListIconSetBoard;
-	} else if( [iconTray isEqualTo:fav] ) {
-		result = boardListIconSetFavoritesItem;
-	} else if( [iconTray isEqualTo:folder] ) {
-		result = boardListIconSetFolder;
-	}
-	return result;
+	[iconTrayDict setObject:board forKey:boardListIconSetBoard];
+	[iconTrayDict setObject:fav forKey:boardListIconSetFavoritesItem];
+	[iconTrayDict setObject:folder forKey:boardListIconSetFolder];
 }
 
 @end
@@ -294,37 +222,12 @@ static NSString *const threadListIconSetStatus_updated = @"Status_updated";
 static NSString *const threadListIconSetStatus_newThread = @"Status_newThread";
 
 @implementation ThreadListIconSet
-
--(IconTray *)iconTrayForKey:(NSString *)key
+-(void)buildIconTrayDict
 {
-	id result = nil;
-	
-	if( [key isEqualTo:threadListIconSetStatus_logcached] ) {
-		result = cache;
-	} else if( [key isEqualTo:threadListIconSetStatus_updated] ) {
-		result = update;
-	} else if( [key isEqualTo:threadListIconSetStatus_newThread] ) {
-		result = newThread;
-	}
-	
-	return result;
+	[iconTrayDict setObject:cache forKey:threadListIconSetStatus_logcached];
+	[iconTrayDict setObject:update forKey:threadListIconSetStatus_updated];
+	[iconTrayDict setObject:newThread forKey:threadListIconSetStatus_newThread];
 }
-
--(NSString *)keyForIconTray:(IconTray *)iconTray
-{
-	NSString *result = nil;
-	
-	if( [iconTray isEqualTo:cache] ) {
-		result = threadListIconSetStatus_logcached;
-	} else if( [iconTray isEqualTo:update] ) {
-		result = threadListIconSetStatus_updated;
-	} else if( [iconTray isEqualTo:newThread] ) {
-		result = threadListIconSetStatus_newThread;
-	}
-	
-	return result;
-}
-
 
 @end
 #pragma mark -
@@ -344,75 +247,21 @@ static NSString *const threadIconSetEllipsisDownMouseOver = @"EllipsisDownMouseO
 static NSString *const threadIconSetEllipsisDownMouseDown = @"EllipsisDownMouseDown";
 
 @implementation ThreadIconSet
--(IconTray *)iconTrayForKey:(NSString *)key
+-(void)buildIconTrayDict
 {
-	id result = nil;
-	
-	if( [key isEqualTo:threadIconSetAge] ) {
-		result = age;
-	} else if( [key isEqualTo:threadIconSetSage] ) {
-		result = sage;
-	} else if( [key isEqualTo:threadIconSetMailAttachment] ) {
-		result = mail;
-	} else if( [key isEqualTo:threadIconSetLastUpdatedHeader] ) {
-		result = newRes;
-	} else if( [key isEqualTo:threadIconSetEllipsisProxy] ) {
-		result = normalEllipsisProxy;
-	} else if( [key isEqualTo:threadIconSetEllipsisMouseOver] ) {
-		result = mouseOverEllipsisProxy;
-	} else if( [key isEqualTo:threadIconSetEllipsisMouseDown] ) {
-		result = mouseDownEllipsisProxy;
-	} else if( [key isEqualTo:threadIconSetEllipsisUpProxy] ) {
-		result = normalEllipsisUpProxy;
-	} else if( [key isEqualTo:threadIconSetEllipsisUpMouseOver] ) {
-		result = mouseOverEllipsisUpProxy;
-	} else if( [key isEqualTo:threadIconSetEllipsisUpMouseDown] ) {
-		result = mouseDownEllipsisUpProxy;
-	} else if( [key isEqualTo:threadIconSetEllipsisDownProxy] ) {
-		result = normalEllipsisDownProxy;
-	} else if( [key isEqualTo:threadIconSetEllipsisDownMouseOver] ) {
-		result = mouseOverEllipsisDownProxy;
-	} else if( [key isEqualTo:threadIconSetEllipsisDownMouseDown] ) {
-		result = mouseDownEllipsisDownProxy;
-	}
-	
-	return result;
+	[iconTrayDict setObject:age forKey:threadIconSetAge];
+	[iconTrayDict setObject:sage forKey:threadIconSetSage];
+	[iconTrayDict setObject:mail forKey:threadIconSetMailAttachment];
+	[iconTrayDict setObject:newRes forKey:threadIconSetLastUpdatedHeader];
+	[iconTrayDict setObject:normalEllipsisProxy forKey:threadIconSetEllipsisProxy];
+	[iconTrayDict setObject:mouseOverEllipsisProxy forKey:threadIconSetEllipsisMouseOver];
+	[iconTrayDict setObject:mouseDownEllipsisProxy forKey:threadIconSetEllipsisMouseDown];
+	[iconTrayDict setObject:normalEllipsisUpProxy forKey:threadIconSetEllipsisUpProxy];
+	[iconTrayDict setObject:mouseOverEllipsisUpProxy forKey:threadIconSetEllipsisUpMouseOver];
+	[iconTrayDict setObject:mouseDownEllipsisUpProxy forKey:threadIconSetEllipsisUpMouseDown];
+	[iconTrayDict setObject:normalEllipsisDownProxy forKey:threadIconSetEllipsisDownProxy];
+	[iconTrayDict setObject:mouseOverEllipsisDownProxy forKey:threadIconSetEllipsisDownMouseOver];
+	[iconTrayDict setObject:mouseDownEllipsisDownProxy forKey:threadIconSetEllipsisDownMouseDown];
 }
-
--(NSString *)keyForIconTray:(IconTray *)iconTray
-{
-	NSString *result = nil;
-	
-	if( [iconTray isEqualTo:age] ) {
-		result = threadIconSetAge;
-	} else if( [iconTray isEqualTo:sage] ) {
-		result = threadIconSetSage;
-	} else if( [iconTray isEqualTo:mail] ) {
-		result = threadIconSetMailAttachment;
-	} else if( [iconTray isEqualTo:newRes] ) {
-		result = threadIconSetLastUpdatedHeader;
-	} else if( [iconTray isEqualTo:normalEllipsisProxy] ) {
-		result = threadIconSetEllipsisProxy;
-	} else if( [iconTray isEqualTo:mouseOverEllipsisProxy] ) {
-		result = threadIconSetEllipsisMouseOver;
-	} else if( [iconTray isEqualTo:mouseDownEllipsisProxy] ) {
-		result = threadIconSetEllipsisMouseDown;
-	} else if( [iconTray isEqualTo:normalEllipsisUpProxy] ) {
-		result = threadIconSetEllipsisUpProxy;
-	} else if( [iconTray isEqualTo:mouseOverEllipsisUpProxy] ) {
-		result = threadIconSetEllipsisUpMouseOver;
-	} else if( [iconTray isEqualTo:mouseDownEllipsisUpProxy] ) {
-		result = threadIconSetEllipsisUpMouseDown;
-	} else if( [iconTray isEqualTo:normalEllipsisDownProxy] ) {
-		result = threadIconSetEllipsisDownProxy;
-	} else if( [iconTray isEqualTo:mouseOverEllipsisDownProxy] ) {
-		result = threadIconSetEllipsisDownMouseOver;
-	} else if( [iconTray isEqualTo:mouseDownEllipsisDownProxy] ) {
-		result = threadIconSetEllipsisDownMouseDown;
-	}
-	
-	return result;
-}
-
 @end
 

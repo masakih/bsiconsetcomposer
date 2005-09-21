@@ -103,6 +103,7 @@
                 logFinder = id; 
                 offline = id; 
                 online = id; 
+                orderFrontBrowser = id; 
                 reloadBoard = id; 
                 reloadThread = id; 
                 res = id; 
