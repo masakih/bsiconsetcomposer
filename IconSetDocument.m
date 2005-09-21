@@ -11,6 +11,9 @@
 #import "IconSetComposer.h"
 #import "TemporaryFolder.h"
 
+@interface BSISApplyCommand : NSScriptCommand
+@end
+
 @implementation IconSetDocument
 
 static NSArray *sToolbarIdentifiers;
@@ -317,8 +320,16 @@ static NSArray *sThreadIdentifiers;
 
 -(void)applyAndRestartBathyScaphe:(id)sender
 {
-	[self apply:sender];
-	[[IconSetComposer sharedInstance] restartBathyScaphe:sender];
+	NSScriptCommandDescription *desc;
+	NSScriptCommand *command;
+	
+	desc = [[NSScriptSuiteRegistry sharedScriptSuiteRegistry] commandDescriptionWithAppleEventClass:'bSiS'
+																				  andAppleEventCode:'bSaP'];
+	command = [desc createCommandInstance];
+	
+	[command setDirectParameter:[self objectSpecifier]];
+	
+	[command executeCommand];
 }
 
 -(void)iconSet:(AbstractIconSet *)iconSet didChangeImageFilePath:(NSString *)path forKey:(NSString *)identifier
@@ -364,12 +375,26 @@ static NSArray *sThreadIdentifiers;
 
 
 #pragma mark ## Scripting Support ##
+
 @implementation IconSetDocument (IconSetDocumentScriptingSupport)
 
--(void)handleApplyCommand:(NSScriptCommand*)command
+-(id)handleApplyCommand:(NSScriptCommand*)command
 {
+	
+	/*
 	[self applyAndRestartBathyScaphe:nil];
+	 */
+	[self apply:self];
+	[[IconSetComposer sharedInstance] restartBathyScaphe:self];
+	return nil;
 }
 
 @end
 
+@implementation BSISApplyCommand
+- (id)performDefaultImplementation
+{
+	return [self commandDescription];
+}
+
+@end
