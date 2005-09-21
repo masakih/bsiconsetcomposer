@@ -2,6 +2,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+enum {
+	kSupportedVersion,
+	kGreaterVersion,
+	kLeastVersion,
+};
+
 @interface IconSetComposer : NSObject
 {
 }
