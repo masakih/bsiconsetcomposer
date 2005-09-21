@@ -3,7 +3,7 @@
 static NSString *sSupportedBSLeastVersion = @"1.0.2";
 static NSString *sSupportedBSGreatestVersion = @"1.0.2";
 static float sSuppoeredBSLeastBundleVersion = 60;
-static float sSuppoeredBSGreatestBundleVersion = 63;
+static float sSuppoeredBSGreatestBundleVersion = 69;
 static NSString *sBSIdentifer = @"jp.tsawada2.BathyScaphe";
 
 static IconSetComposer *_instance = nil;

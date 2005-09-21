@@ -131,6 +131,12 @@
 	<array>
 		<dict>
 			<key>imageName</key>
+			<string>OrderFrontBrowser</string>
+			<key>name</key>
+			<string>ブラウザを最前面に</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
 			<string>BoardList</string>
 			<key>name</key>
 			<string>掲示板リスト</string>
