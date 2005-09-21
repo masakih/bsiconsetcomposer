@@ -177,7 +177,7 @@ typedef enum {
 	/* create typeObjectSpecifier Descriptor */
 	propDesc = [NSAppleEventDescriptor recordDescriptor];
 	
-	classDesc = [NSAppleEventDescriptor descriptorWithTypeCode:formPropertyID];
+	classDesc = [NSAppleEventDescriptor descriptorWithTypeCode:cProperty];
 	[propDesc setDescriptor:classDesc forKeyword:keyAEDesiredClass];
 	
 	formDesc = [NSAppleEventDescriptor descriptorWithTypeCode:formPropertyID];
