@@ -7,7 +7,7 @@
 		<!-- -->
 		<command name="apply" code="bSiSbSaP"
 			description="Apply IconSet to BathyScaphe.">
-			<cocoa class="NSScriptCommand" />
+			<cocoa class="BSISApplyCommand" />
 		</command>
 
 		<class name="document" plural="documents" code="docu"

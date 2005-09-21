@@ -28,7 +28,7 @@
 			<key>AppleEventCode</key>
 			<string>bSaP</string>
 			<key>CommandClass</key>
-			<string>NSScriptCommand</string>
+			<string>BSISApplyCommand</string>
 		</dict>
 	</dict>
 	<key>Name</key>
