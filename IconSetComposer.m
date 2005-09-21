@@ -1,6 +1,9 @@
 #import "IconSetComposer.h"
 
-static NSString *sSupportedBathyScapheVersion = @"1.0.2";
+static NSString *sSupportedBSLeastVersion = @"1.0.2";
+static NSString *sSupportedBSGreatestVersion = @"1.0.2";
+static float sSuppoeredBSLeastBundleVersion = 60;
+static float sSuppoeredBSGreatestBundleVersion = 63;
 static NSString *sBSIdentifer = @"jp.tsawada2.BathyScaphe";
 
 static IconSetComposer *_instance = nil;
@@ -67,12 +70,14 @@ static IconSetComposer *_instance = nil;
 	return result;
 }
 
--(BOOL)isSupportedBathyScaphe
+-(int)isSupportedBathyScaphe
 {
 	NSBundle *bsBundle;
-	NSString *bsVersionString;
+	NSString *bsVersionString, *bsBundleVersString;
 	int bsMajorVersion, bsMinorVersion, bsBuildNumber;
-	int supportedMajorVersion, supportedMinorVersion, supportedBuldNumber;
+	float bsBundleVers;
+	int greatestMajorVersion, greatestMinorVersion, greatestBuldNumber;
+	int leastMajorVersion, leastMinorVersion, leastBuldNumber;
 			
 	bsBundle = [[self class] bathyScapheBundle];
 	if( !bsBundle ) {
@@ -80,24 +85,46 @@ static IconSetComposer *_instance = nil;
 	}
 		
 	bsVersionString = [bsBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+	bsBundleVersString = [bsBundle objectForInfoDictionaryKey:@"CFBundleVersion"];
 	bsMajorVersion = [self majorVersionFromShortVersionString:bsVersionString];
 	bsMinorVersion = [self minorVersionFromShortVersionString:bsVersionString];
 	bsBuildNumber = [self buildNumberFromShortVersionString:bsVersionString];
+	bsBundleVers = [bsBundleVersString floatValue];
 	
-	supportedMajorVersion = [self majorVersionFromShortVersionString:sSupportedBathyScapheVersion];
-	supportedMinorVersion = [self minorVersionFromShortVersionString:sSupportedBathyScapheVersion];
-	supportedBuldNumber = [self buildNumberFromShortVersionString:sSupportedBathyScapheVersion];
+	greatestMajorVersion = [self majorVersionFromShortVersionString:sSupportedBSGreatestVersion];
+	greatestMinorVersion = [self minorVersionFromShortVersionString:sSupportedBSGreatestVersion];
+	greatestBuldNumber = [self buildNumberFromShortVersionString:sSupportedBSGreatestVersion];
 	
-	if( bsMajorVersion > supportedMajorVersion ) return NO;
+	leastMajorVersion = [self majorVersionFromShortVersionString:sSupportedBSLeastVersion];
+	leastMinorVersion = [self minorVersionFromShortVersionString:sSupportedBSLeastVersion];
+	leastBuldNumber = [self buildNumberFromShortVersionString:sSupportedBSLeastVersion];
 	
-	if( bsMajorVersion == supportedMajorVersion
-		&& bsMinorVersion > supportedMinorVersion ) return NO;
 	
-	if( bsMajorVersion = supportedMajorVersion
-		&& bsMinorVersion == supportedMinorVersion
-		&& bsBuildNumber > supportedBuldNumber ) return NO;
+	if( bsMajorVersion > greatestMajorVersion ) {
+		return kGreaterVersion;
+	} else if( bsMajorVersion < leastMajorVersion ) {
+		return kLeastVersion;
+	}
 	
-	return YES;
+	if( bsMinorVersion > greatestMinorVersion )  {
+		return kGreaterVersion;
+	} else if( bsMinorVersion < leastMinorVersion ) {
+		return kLeastVersion;
+	}
+
+	if( bsBuildNumber > greatestBuldNumber )  {
+		return kGreaterVersion;
+	} else if( bsBuildNumber < leastBuldNumber ) {
+		return kLeastVersion;
+	}
+	
+	if( bsBundleVers > sSuppoeredBSGreatestBundleVersion )  {
+		return kGreaterVersion;
+	} else if( bsBundleVers < sSuppoeredBSLeastBundleVersion ) {
+		return kLeastVersion;
+	}
+	
+	return kSupportedVersion;
 }
 
 +(NSBundle *)bathyScapheBundle
@@ -273,12 +300,34 @@ static IconSetComposer *_instance = nil;
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification
 {
-	if( ![self isSupportedBathyScaphe] ) {
+	int result;
+	
+	if( ![[self class] bathyScapheBundle] ) {
 		NSRunCriticalAlertPanel(@"Sorry!",
-								@"This version's IconSetComposer not support current version BathyScaphe.",
+								@"BSIconSetComposer can NOT find BathyScaphe.",
 								@"Quit", nil, nil,
 								nil);
 		[NSApp terminate:self];
+		return;
+	}
+	
+	result = [self isSupportedBathyScaphe];
+	if( result == kLeastVersion ) {
+		NSRunCriticalAlertPanel(@"Sorry!",
+								@"This version's BSIconSetComposer not support current version BathyScaphe.",
+								@"Quit", nil, nil,
+								nil);
+		[NSApp terminate:self];
+		return;
+	} else if( result == kGreaterVersion ) {
+		result = NSRunCriticalAlertPanel(@"Oops!",
+										 @"Current BathyScaphe version is greater than supported version.\nThe icons might have been deleted or appended.\nDo you continue?",
+										 @"Quit", @"Continue", nil,
+										 nil);
+		if( result != NSCancelButton ) {
+			[NSApp terminate:self];
+			return;
+		}
 	}
 }
 
