@@ -11,3 +11,7 @@ tagging:
 	echo Tagging the x.x.x release of BSIconSetComposer project.
 	ver=`grep -A1 'CFBundleVersion' Info.plist | tail -1 | tr -d '\t</string>'`;    \
 	svn copy $(HEAD) $(TAGS_DIR)/release-$${ver}
+
+Localizable: IconSetComposer.m
+	genstrings -o English.lproj $<
+

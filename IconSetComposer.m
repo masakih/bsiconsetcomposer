@@ -1,9 +1,9 @@
 #import "IconSetComposer.h"
 
 static NSString *sSupportedBSLeastVersion = @"1.0.2";
-static NSString *sSupportedBSGreatestVersion = @"1.0.2";
+static NSString *sSupportedBSGreatestVersion = @"1.0.3";
 static float sSuppoeredBSLeastBundleVersion = 60;
-static float sSuppoeredBSGreatestBundleVersion = 69;
+static float sSuppoeredBSGreatestBundleVersion = 74;
 static NSString *sBSIdentifer = @"jp.tsawada2.BathyScaphe";
 
 static IconSetComposer *_instance = nil;
@@ -303,26 +303,27 @@ static IconSetComposer *_instance = nil;
 	int result;
 	
 	if( ![[self class] bathyScapheBundle] ) {
-		NSRunCriticalAlertPanel(@"Sorry!",
-								@"BSIconSetComposer can NOT find BathyScaphe.",
-								@"Quit", nil, nil,
-								nil);
+		NSRunCriticalAlertPanel( NSLocalizedString( @"Sorry!", @"Sorry!" ), 
+								 NSLocalizedString( @"BSIconSetComposer can NOT find BathyScaphe.", @"Can not Find BathyScaphe") ,
+								 NSLocalizedString( @"Quit", @"Quit" ), nil, nil,
+								 nil);
 		[NSApp terminate:self];
 		return;
 	}
 	
 	result = [self isSupportedBathyScaphe];
 	if( result == kLeastVersion ) {
-		NSRunCriticalAlertPanel(@"Sorry!",
-								@"This version's BSIconSetComposer not support current version BathyScaphe.",
-								@"Quit", nil, nil,
-								nil);
+		NSRunCriticalAlertPanel( NSLocalizedString( @"Sorry!", @"Sorry!" ),
+								 NSLocalizedString( @"Older version", @"Older version"),
+								 NSLocalizedString( @"Quit", @"Quit" ), nil, nil,
+								 nil);
 		[NSApp terminate:self];
 		return;
 	} else if( result == kGreaterVersion ) {
-		result = NSRunCriticalAlertPanel(@"Oops!",
-										 @"Current BathyScaphe version is greater than supported version.\nThe icons might have been deleted or appended.\nDo you continue?",
-										 @"Quit", @"Continue", nil,
+		result = NSRunCriticalAlertPanel(NSLocalizedString( @"Oops!", @"Oops!" ),
+										 NSLocalizedString( @"Earlier version", @"Earlier version"),
+										 NSLocalizedString( @"Quit", @"Quit" ), 
+										 NSLocalizedString( @"Continue", @"Continue" ), nil,
 										 nil);
 		if( result != NSCancelButton ) {
 			[NSApp terminate:self];

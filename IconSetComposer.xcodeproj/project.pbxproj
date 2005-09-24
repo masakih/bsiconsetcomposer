@@ -15,6 +15,7 @@
 		F4626F2E08ADD94A00B71ADA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4626F2D08ADD94A00B71ADA /* InfoPlist.strings */; };
 		F4626F3108ADD96400B71ADA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F4626F3008ADD96400B71ADA /* Credits.rtf */; };
 		F464CDA408CD9F25008B434A /* BSIconSetComposer.sdef in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF7408CAC033009741BF /* BSIconSetComposer.sdef */; };
+		F471950108E302AE00710258 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F471950008E302AE00710258 /* Localizable.strings */; };
 		F4D3EF7208CABC52009741BF /* BSIconSetComposerSuite.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */; };
 		F4D3EF7308CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */; };
 		F4E4477008AFABF200375AF1 /* TemporaryFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E4476F08AFABF200375AF1 /* TemporaryFolder.m */; };
@@ -70,6 +71,8 @@
 		F461E46808ADCDD600384957 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/IconSetDocument.nib; sourceTree = "<group>"; };
 		F4626F2F08ADD95100B71ADA /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4626F3208ADD96900B71ADA /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Japanese; path = Japanese.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F47194FE08E302A600710258 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F471950208E302BC00710258 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BSIconSetComposerSuite.scriptSuite; sourceTree = "<group>"; };
 		F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BSIconSetComposerSuite.scriptTerminology; sourceTree = "<group>"; };
 		F4D3EF7408CAC033009741BF /* BSIconSetComposer.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; path = BSIconSetComposer.sdef; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F471950008E302AE00710258 /* Localizable.strings */,
 				F4D3EF7408CAC033009741BF /* BSIconSetComposer.sdef */,
 				F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */,
 				F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */,
@@ -265,6 +269,7 @@
 				F4D3EF7208CABC52009741BF /* BSIconSetComposerSuite.scriptSuite in Resources */,
 				F4D3EF7308CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology in Resources */,
 				F464CDA408CD9F25008B434A /* BSIconSetComposer.sdef in Resources */,
+				F471950108E302AE00710258 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,15 @@
 				F4626F3208ADD96900B71ADA /* Japanese */,
 			);
 			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		F471950008E302AE00710258 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F47194FE08E302A600710258 /* English */,
+				F471950208E302BC00710258 /* Japanese */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
