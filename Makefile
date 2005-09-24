@@ -1,5 +1,5 @@
 
-URL_BSIconSetComposer = svn+ssh://macosx/usr/local/svnrepos004
+URL_BSIconSetComposer = svn+ssh://macosx/usr/local/svnrepos005
 HEAD = $(URL_BSIconSetComposer)/BSIconSetComposer
 TAGS_DIR = $(URL_BSIconSetComposer)/tags
 
