@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BSIconSetComposer can NOT find BathyScaphe.</key>
+	<string>BathyScapheが見つかりません。</string>
+	<key>Continue</key>
+	<string>続ける</string>
+	<key>Earlier version</key>
+	<string>BathyScapheのバージョンがBSIconSetComposerがサポートするバージョンより新しいです。
+新しいアイコンが追加されていたり、削除されたアイコンがあるかもしれません。
+それでも続けますか？</string>
+	<key>Older version</key>
+	<string>BathyScapheのバージョンがBSIconSetComposerがサポートするバージョンより古いです。</string>
+	<key>Oops!</key>
+	<string>おっと！</string>
+	<key>Quit</key>
+	<string>終了</string>
+	<key>Sorry!</key>
+	<string>警告</string>
+</dict>
+</plist>
