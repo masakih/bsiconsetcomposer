@@ -26,6 +26,8 @@
 	NSFileWrapper *wrapper;
 }
 
++(NSArray *)managedImageNames;
+
 -(void)setPath:(NSString *)path forIdentifier:(NSString *)identifier;
 -(void)setPlist:(id)plist forIdentifier:(NSString *)identifier;
 

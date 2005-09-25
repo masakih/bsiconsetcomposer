@@ -45,6 +45,18 @@ static NSArray *sThreadIdentifiers;
 	sThreadListIdentifiers = [[self arrayForImageName:[imageList objectForKey:@"ThreadList"]] retain];
 }
 
++(NSArray *)managedImageNames
+{
+	NSMutableArray *result = [NSMutableArray array];
+	
+	[result addObjectsFromArray:sToolbarIdentifiers];
+	[result addObjectsFromArray:sBoardListIdentifiers];
+	[result addObjectsFromArray:sThreadIdentifiers];
+	[result addObjectsFromArray:sThreadListIdentifiers];
+	
+	return result;
+}
+
 -(void)dealloc
 {
 	[wrapper release];

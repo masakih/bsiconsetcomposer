@@ -1,5 +1,7 @@
 #import "IconSetComposer.h"
 
+#import "IconSetDocument.h"
+
 static NSString *sSupportedBSLeastVersion = @"1.0.2";
 static NSString *sSupportedBSGreatestVersion = @"1.0.3";
 static float sSuppoeredBSLeastBundleVersion = 60;
@@ -184,6 +186,8 @@ static IconSetComposer *_instance = nil;
 	NSString *file;
 	NSString *fullPath;
 	
+	NSArray *managed = [IconSetDocument managedImageNames];
+	
 	while( file = [filesEnum nextObject] ) {
 		NSString *filetype;
 		NSString *extention;
@@ -192,8 +196,9 @@ static IconSetComposer *_instance = nil;
 		filetype = NSHFSTypeOfFile( fullPath );
 		extention = [file pathExtension];
 		
-		if( [imageFileType containsObject:filetype]
-			|| [imageFileType containsObject:extention] ) {
+		if( [managed containsObject:[file stringByDeletingPathExtension]] &&
+			([imageFileType containsObject:filetype]
+			 || [imageFileType containsObject:extention]) ) {
 			[fm removeFileAtPath:fullPath handler:nil];
 		}
 	}
