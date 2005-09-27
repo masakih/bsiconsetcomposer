@@ -209,7 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4F4AE960880C61600E44313 /* Build configuration list for PBXNativeTarget "IconSetComposer" */;
 			buildPhases = (
-				F406E99E08CDC35C007CB106 /* ShellScript */,
+				F406E99E08CDC35C007CB106 /* Create sdef */,
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
@@ -276,7 +276,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F406E99E08CDC35C007CB106 /* ShellScript */ = {
+		F406E99E08CDC35C007CB106 /* Create sdef */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
@@ -284,6 +284,7 @@
 			inputPaths = (
 				"${SRCROOT}/BSIconSetComposer.sdef",
 			);
+			name = "Create sdef";
 			outputPaths = (
 				"${SRCROOT}/BSIconSetComposerSuite.scriptSuite",
 				"${SRCROOT}/BSIconSetComposerSuite.scriptTerminology",
@@ -374,6 +375,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
+				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				PREBINDING = NO;
@@ -394,6 +397,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
+				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				PREBINDING = NO;
@@ -412,6 +417,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
+				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				PRODUCT_NAME = BSIconSetComposer;
