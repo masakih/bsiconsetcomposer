@@ -8,10 +8,17 @@ all:
 	@echo use target tagging 
 
 tagging:
-	echo Tagging the x.x.x release of BSIconSetComposer project.
+	echo "Tagging the 1.0 (x) release of BSIconSetComposer project."
 	ver=`grep -A1 'CFBundleVersion' Info.plist | tail -1 | tr -d '\t</string>'`;    \
 	svn copy $(HEAD) $(TAGS_DIR)/release-$${ver}
 
 Localizable: IconSetComposer.m
 	genstrings -o English.lproj $<
+	(cd English.lproj; ${MAKE} $@;)
+	genstrings -o Japanese.lproj $<
+	(cd Japanese.lproj; ${MAKE} $@;)
+
+checkLocalizable:
+	(cd English.lproj; ${MAKE} $@;)
+	(cd Japanese.lproj; ${MAKE} $@;)
 

@@ -2,10 +2,6 @@
 
 #import "IconSetDocument.h"
 
-static NSString *sSupportedBSLeastVersion = @"1.0.2";
-static NSString *sSupportedBSGreatestVersion = @"1.0.3";
-static float sSuppoeredBSLeastBundleVersion = 60;
-static float sSuppoeredBSGreatestBundleVersion = 74;
 static NSString *sBSIdentifer = @"jp.tsawada2.BathyScaphe";
 
 static IconSetComposer *_instance = nil;
@@ -24,109 +20,106 @@ static IconSetComposer *_instance = nil;
 -(id)retain { return self; }
 -(unsigned)retainCount { return UINT_MAX; }
 
--(int)majorVersionFromShortVersionString:(NSString *)version
+-(BOOL)askContinuesWithStatus:(int)status
+			  andIncrementals:(NSArray *)incrementalImages
+			  andDecrementals:(NSArray *)decrementalImages
 {
-	NSArray *versions;
-	NSString *majorVersionString;
-	int result = 0;
-		
-	versions = [version componentsSeparatedByString:@"."];
+	int result;
+	//
+	NSString *title = NSLocalizedString( @"Caution!", @"Caution!" );
+	NSString *message;
+	NSString *defaultCaption = NSLocalizedString( @"Quit", @"Quit" );
+	NSString *alternateCaption = NSLocalizedString( @"Continue", @"Continue" );
+//	NSString *otherCaption;
 	
-	if( [versions count] > 0 ) {
-		majorVersionString = [versions objectAtIndex:0];
-		result = [majorVersionString intValue];
+	NSString *tmpString;
+	NSString *inc = nil;
+	NSString *dec = nil;
+	
+	if( status & kBSHaveUnknownImage ) {
+		tmpString = NSLocalizedString( @"Message001", @"images have incremented.");
+		inc = [NSString stringWithFormat:tmpString, incrementalImages];
+	}
+	if( status & kIconsHaveIncreased ) {
+		tmpString = NSLocalizedString( @"Message002", @"images have decremented.");
+		dec = [NSString stringWithFormat:tmpString, decrementalImages];
 	}
 	
-	return result;
-}
-
--(int)minorVersionFromShortVersionString:(NSString *)version
-{
-	NSArray *versions;
-	NSString *minorVersionString;
-	int result = 0;
-		
-	versions = [version componentsSeparatedByString:@"."];
-	
-	if( [versions count] > 1 ) {
-		minorVersionString = [versions objectAtIndex:1];
-		result = [minorVersionString intValue];
+	if( inc && dec ) {
+		tmpString = NSLocalizedString( @"%@ And %@", @"Both alert" );
+		message = [NSString stringWithFormat:tmpString, inc, dec];
+	} else if( inc ) {
+		message = [NSString stringWithFormat:inc, incrementalImages];
+	} else if( dec ) {
+		message = [NSString stringWithFormat:dec, decrementalImages];
+	} else {
+		return YES;
 	}
 	
-	return result;
+	tmpString = NSLocalizedString( @"Do you continue?", @"Do you continue?" );
+	message = [message stringByAppendingString:tmpString];
+	
+	result = NSRunCriticalAlertPanel( title, message, defaultCaption, alternateCaption, nil);
+	
+	return (result != NSOKButton);
 }
-
--(int)buildNumberFromShortVersionString:(NSString *)version
-{
-	NSArray *versions;
-	NSString *buildNumberString;
-	int result = 0;
-	
-	versions = [version componentsSeparatedByString:@"."];
-	
-	if( [versions count] > 2 ) {
-		buildNumberString = [versions objectAtIndex:2];
-		result = [buildNumberString intValue];
-	}
-	
-	return result;
-}
-
--(int)isSupportedBathyScaphe
+-(BOOL)isSupportedBathyScaphe
 {
 	NSBundle *bsBundle;
-	NSString *bsVersionString, *bsBundleVersString;
-	int bsMajorVersion, bsMinorVersion, bsBuildNumber;
-	float bsBundleVers;
-	int greatestMajorVersion, greatestMinorVersion, greatestBuldNumber;
-	int leastMajorVersion, leastMinorVersion, leastBuldNumber;
-			
+	NSString *bsResourcesPath;
+	NSArray *bsResources;
+	NSArray *knownBSSystemImages;
+	NSArray *managedImages;
+	unsigned managedImageNum;
+	unsigned i, count;
+	unsigned bsResourceImageNum = 0;
+	id fm;
+	int status = 0;
+	NSMutableArray *incrementalImages = [NSMutableArray array];
+	NSMutableArray *decrementalImages = [NSMutableArray array];
+	
 	bsBundle = [[self class] bathyScapheBundle];
 	if( !bsBundle ) {
 		return NO;
 	}
+	
+	fm = [NSFileManager defaultManager];
+	bsResourcesPath = [bsBundle resourcePath];
+	bsResources = [fm directoryContentsAtPath:bsResourcesPath];
+	
+	managedImages = [IconSetDocument managedImageNames];
+	managedImageNum = [managedImages count];
+	
+	knownBSSystemImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BathyScapheSystemImages"
+																						   ofType:@"plist"]];
+	
+	count = [bsResources count];
+	for( i = 0; i < count; i++ ) {
+		NSString *name = [bsResources objectAtIndex:i];
 		
-	bsVersionString = [bsBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-	bsBundleVersString = [bsBundle objectForInfoDictionaryKey:@"CFBundleVersion"];
-	bsMajorVersion = [self majorVersionFromShortVersionString:bsVersionString];
-	bsMinorVersion = [self minorVersionFromShortVersionString:bsVersionString];
-	bsBuildNumber = [self buildNumberFromShortVersionString:bsVersionString];
-	bsBundleVers = [bsBundleVersString floatValue];
-	
-	greatestMajorVersion = [self majorVersionFromShortVersionString:sSupportedBSGreatestVersion];
-	greatestMinorVersion = [self minorVersionFromShortVersionString:sSupportedBSGreatestVersion];
-	greatestBuldNumber = [self buildNumberFromShortVersionString:sSupportedBSGreatestVersion];
-	
-	leastMajorVersion = [self majorVersionFromShortVersionString:sSupportedBSLeastVersion];
-	leastMinorVersion = [self minorVersionFromShortVersionString:sSupportedBSLeastVersion];
-	leastBuldNumber = [self buildNumberFromShortVersionString:sSupportedBSLeastVersion];
-	
-	
-	if( bsMajorVersion > greatestMajorVersion ) {
-		return kGreaterVersion;
-	} else if( bsMajorVersion < leastMajorVersion ) {
-		return kLeastVersion;
+		if( [[self class] isAcceptImageExtension:[name pathExtension]] ) {
+			if( [knownBSSystemImages containsObject:[name stringByDeletingPathExtension]] ) {
+				continue;
+			}
+			if( ![managedImages containsObject:[name stringByDeletingPathExtension]] ) {
+				status |= kBSHaveUnknownImage;
+				[incrementalImages addObject:name];
+				continue;
+			}
+			bsResourceImageNum++;
+		}
+	}
+	if( managedImageNum > bsResourceImageNum ) {
+		status |= kIconsHaveIncreased;
 	}
 	
-	if( bsMinorVersion > greatestMinorVersion )  {
-		return kGreaterVersion;
-	} else if( bsMinorVersion < leastMinorVersion ) {
-		return kLeastVersion;
-	}
-
-	if( bsBuildNumber > greatestBuldNumber )  {
-		return kGreaterVersion;
-	} else if( bsBuildNumber < leastBuldNumber ) {
-		return kLeastVersion;
+	if( status ) {
+		return [self askContinuesWithStatus:status
+							andIncrementals:incrementalImages
+							andDecrementals:decrementalImages];
 	}
 	
-	if( bsBundleVers > sSuppoeredBSGreatestBundleVersion )  {
-		return kGreaterVersion;
-	} else if( bsBundleVers < sSuppoeredBSLeastBundleVersion ) {
-		return kLeastVersion;
-	}
-	
-	return kSupportedVersion;
+	return YES;
 }
 
 +(NSBundle *)bathyScapheBundle
@@ -303,10 +296,8 @@ static IconSetComposer *_instance = nil;
 	
 }
 
-- (void)applicationWillFinishLaunching:(NSNotification *)notification
-{
-	int result;
-	
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
+{	
 	if( ![[self class] bathyScapheBundle] ) {
 		NSRunCriticalAlertPanel( NSLocalizedString( @"Sorry!", @"Sorry!" ), 
 								 NSLocalizedString( @"BSIconSetComposer can NOT find BathyScaphe.", @"Can not Find BathyScaphe") ,
@@ -316,24 +307,9 @@ static IconSetComposer *_instance = nil;
 		return;
 	}
 	
-	result = [self isSupportedBathyScaphe];
-	if( result == kLeastVersion ) {
-		NSRunCriticalAlertPanel( NSLocalizedString( @"Sorry!", @"Sorry!" ),
-								 NSLocalizedString( @"Older version", @"Older version"),
-								 NSLocalizedString( @"Quit", @"Quit" ), nil, nil,
-								 nil);
+	if( ![self isSupportedBathyScaphe] ) {
 		[NSApp terminate:self];
 		return;
-	} else if( result == kGreaterVersion ) {
-		result = NSRunCriticalAlertPanel(NSLocalizedString( @"Oops!", @"Oops!" ),
-										 NSLocalizedString( @"Earlier version", @"Earlier version"),
-										 NSLocalizedString( @"Quit", @"Quit" ), 
-										 NSLocalizedString( @"Continue", @"Continue" ), nil,
-										 nil);
-		if( result != NSCancelButton ) {
-			[NSApp terminate:self];
-			return;
-		}
 	}
 }
 

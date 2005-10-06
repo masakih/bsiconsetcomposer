@@ -3,9 +3,8 @@
 #import <Cocoa/Cocoa.h>
 
 enum {
-	kSupportedVersion,
-	kGreaterVersion,
-	kLeastVersion,
+	kBSHaveUnknownImage = 1,
+	kIconsHaveIncreased = 1 << 1,
 };
 
 @interface IconSetComposer : NSObject
