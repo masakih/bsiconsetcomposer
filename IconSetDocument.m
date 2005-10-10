@@ -128,7 +128,6 @@ static NSArray *sThreadIdentifiers;
 		view = [threadIconSet view];
 	} else if( [[tabViewItem identifier] isEqualTo:@"Colors"] ) {
 		view = [colorSet view];
-		viewSize = [view frame].size;
 	}
 	
 	if( view ) {
@@ -203,7 +202,7 @@ static NSArray *sThreadIdentifiers;
 	} else if( !path ) { //　元からないものを削除
 		return;
 	}
-		
+	
 	if( path ) {
 		id lowerExt = [[path pathExtension] lowercaseString];
 		fileName = [identifier stringByAppendingPathExtension:lowerExt];
