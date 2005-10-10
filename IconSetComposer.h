@@ -22,7 +22,8 @@ enum {
 +(BOOL)isAcceptImageExtension:(NSString *)ext;
 +(NSArray *)acceptImageExtensions;
 
-
+-(IBAction)quitBathyScaphe:(id)sender;
+-(IBAction)launchBathyScaphe:(id)sender;
 -(IBAction)restartBathyScaphe:(id)sender;
 
 @end

@@ -293,7 +293,16 @@ static IconSetComposer *_instance = nil;
 	[self performSelector:@selector(restartBathyScaphe_real:)
 			   withObject:sender
 			   afterDelay:0.0];
-	
+}
+-(IBAction)quitBathyScaphe:(id)sender
+{
+	[self quitBS];
+}
+-(IBAction)launchBathyScaphe:(id)sender
+{
+	[self performSelector:@selector(waitTerminateAndLaunchBS)
+			   withObject:nil
+			   afterDelay:0.0];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
