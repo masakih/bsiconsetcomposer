@@ -3,13 +3,19 @@
         {
             CLASS = AbstractIconSet; 
             LANGUAGE = ObjC; 
-            OUTLETS = {delegate = id; plist = id; view = NSView; }; 
+            OUTLETS = {delegate = id; iconTrayDict = id; plist = id; view = NSView; }; 
             SUPERCLASS = NSObject; 
         }, 
         {
             CLASS = BoardListIconSet; 
             LANGUAGE = ObjC; 
-            OUTLETS = {board = id; fav = id; folder = id; }; 
+            OUTLETS = {
+                board = id; 
+                fav = id; 
+                folder = id; 
+                selectedItemActive = id; 
+                selectedItemDeactive = id; 
+            }; 
             SUPERCLASS = AbstractIconSet; 
         }, 
         {
@@ -68,6 +74,8 @@
             LANGUAGE = ObjC; 
             OUTLETS = {
                 age = id; 
+                contentHeaderAqua = id; 
+                contentHeaderGraphite = id; 
                 mail = id; 
                 mouseDownEllipsisDownProxy = id; 
                 mouseDownEllipsisProxy = id; 

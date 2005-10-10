@@ -205,6 +205,8 @@ static NSString *const toolbarIconSetOrderFrontBrowser = @"OrderFrontBrowser";
 static NSString *const boardListIconSetBoard = @"Board";
 static NSString *const boardListIconSetFavoritesItem = @"FavoritesItem";
 static NSString *const boardListIconSetFolder = @"Folder";
+static NSString *const boardListIconSetSelectedItemActive = @"boardListSelBgFocused";
+static NSString *const boardListIconSetSelectedItemDeactive = @"boardListSelBg";
 
 @implementation BoardListIconSet
 -(void)buildIconTrayDict
@@ -212,6 +214,8 @@ static NSString *const boardListIconSetFolder = @"Folder";
 	[iconTrayDict setObject:board forKey:boardListIconSetBoard];
 	[iconTrayDict setObject:fav forKey:boardListIconSetFavoritesItem];
 	[iconTrayDict setObject:folder forKey:boardListIconSetFolder];
+	[iconTrayDict setObject:selectedItemActive forKey:boardListIconSetSelectedItemActive];
+	[iconTrayDict setObject:selectedItemDeactive forKey:boardListIconSetSelectedItemDeactive];
 }
 
 @end
@@ -227,8 +231,15 @@ static NSString *const threadListIconSetStatus_newThread = @"Status_newThread";
 	[iconTrayDict setObject:cache forKey:threadListIconSetStatus_logcached];
 	[iconTrayDict setObject:update forKey:threadListIconSetStatus_updated];
 	[iconTrayDict setObject:newThread forKey:threadListIconSetStatus_newThread];
+	
+	[newThread setTarget:self];
+	[newThread setAction:@selector(test:)];
 }
 
+-(IBAction)test:(id)sender
+{
+	NSLog(@"Enter test:");
+}
 @end
 #pragma mark -
 
@@ -245,6 +256,8 @@ static NSString *const threadIconSetEllipsisUpMouseDown = @"EllipsisUpMouseDown"
 static NSString *const threadIconSetEllipsisDownProxy = @"EllipsisDownProxy";
 static NSString *const threadIconSetEllipsisDownMouseOver = @"EllipsisDownMouseOver";
 static NSString *const threadIconSetEllipsisDownMouseDown = @"EllipsisDownMouseDown";
+static NSString *const threadIconSetTitleRulerBgAquaBlue = @"titleRulerBgAquaBlue";
+static NSString *const threadIconSetTitleRulerBgAquaGraphite = @"titleRulerBgAquaGraphite";
 
 @implementation ThreadIconSet
 -(void)buildIconTrayDict
@@ -262,6 +275,8 @@ static NSString *const threadIconSetEllipsisDownMouseDown = @"EllipsisDownMouseD
 	[iconTrayDict setObject:normalEllipsisDownProxy forKey:threadIconSetEllipsisDownProxy];
 	[iconTrayDict setObject:mouseOverEllipsisDownProxy forKey:threadIconSetEllipsisDownMouseOver];
 	[iconTrayDict setObject:mouseDownEllipsisDownProxy forKey:threadIconSetEllipsisDownMouseDown];
+	[iconTrayDict setObject:contentHeaderAqua forKey:threadIconSetTitleRulerBgAquaBlue];
+	[iconTrayDict setObject:contentHeaderGraphite forKey:threadIconSetTitleRulerBgAquaGraphite];
 }
 @end
 

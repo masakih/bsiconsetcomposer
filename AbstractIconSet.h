@@ -71,6 +71,8 @@
 	IBOutlet id fav;
 	IBOutlet id folder;
 	IBOutlet id board;
+	IBOutlet id selectedItemActive;
+	IBOutlet id selectedItemDeactive;
 }
 
 @end
@@ -86,6 +88,8 @@
 
 @interface ThreadIconSet : AbstractIconSet
 {
+	IBOutlet id contentHeaderAqua;
+	IBOutlet id contentHeaderGraphite;
 	IBOutlet id normalEllipsisProxy;
 	IBOutlet id mouseOverEllipsisProxy;
 	IBOutlet id mouseDownEllipsisProxy;

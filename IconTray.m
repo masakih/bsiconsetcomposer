@@ -50,7 +50,7 @@
 	selected = flag;
 
 	// フォーカスリングのゴミを消すため大きめに再描画
-	updateRect = NSInsetRect([self frame],-2,-2);
+	updateRect = NSInsetRect([self frame],-3,-3);
 	[[self superview] setNeedsDisplayInRect:updateRect];
 }
 -(void)setHighlite:(BOOL)flag
