@@ -391,12 +391,9 @@ static NSArray *sThreadIdentifiers;
 
 -(id)handleApplyCommand:(NSScriptCommand*)command
 {
-	
-	/*
-	[self applyAndRestartBathyScaphe:nil];
-	 */
+	[[IconSetComposer sharedInstance] quitBathyScaphe:self];
 	[self apply:self];
-	[[IconSetComposer sharedInstance] restartBathyScaphe:self];
+	[[IconSetComposer sharedInstance] launchBathyScaphe:self];
 	return nil;
 }
 
