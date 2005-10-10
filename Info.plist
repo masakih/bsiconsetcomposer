@@ -42,7 +42,7 @@
 	<key>CFBundleSignature</key>
 	<string>bSiS</string>
 	<key>CFBundleVersion</key>
-	<string>16</string>
+	<string>20</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
 	<key>NSMainNibFile</key>
