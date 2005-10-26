@@ -30,9 +30,9 @@ checkLocalizable:
 	(cd English.lproj; ${MAKE} $@;)
 	(cd Japanese.lproj; ${MAKE} $@;)
 
-release:
-
-
+release: updateRevision
+	xcodebuild -configuration $(DEPLOYMENT)
+	$(MAKE) restorInfoPlist
 
 updateRevision: update_svn
 	if [ ! -f $(INFO_PLIST).bak ] ; then cp $(INFO_PLIST) $(INFO_PLIST).bak ; fi ;	\
@@ -40,8 +40,7 @@ updateRevision: update_svn
 	REV=`expr $${REV} + 1` ;	\
 	sed -e 's/%%%%REVISION%%%%/$${REV}/' $(INFO_PLIST) > $(INFO_PLIST).r ;	\
 	mv -f $(INFO_PLIST).r $(INFO_PLIST) ;	\
-	echo svn ci -m "change build number to $${REV}" $(INFO_PLIST)
-	$(MAKE) restorInfoPlist
+	svn ci -m "change build number to $${REV}" $(INFO_PLIST)
 
 restorInfoPlist:
 	if [ -f $(INFO_PLIST).bak ] ; then cp -f $(INFO_PLIST).bak $(INFO_PLIST) ; fi
