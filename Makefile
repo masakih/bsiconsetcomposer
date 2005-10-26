@@ -1,10 +1,12 @@
 
 PRODUCT_NAME=BSIconSetComposer
+VERSION=1.0
 PRODUCT_EXTENSION=app
-BUILD_PATH=./build/
+BUILD_PATH=./build
 DEPLOYMENT=Release
 APP_BUNDLE=$(PRODUCT_NAME).$(PRODUCT_EXTENSION)
-APP_BINARY=$(BUILD_PATH)/$(DEPLOYMENT)/$(APP_BUNDLE)/Contents/MacOS/$(PRODUCT_NAME)
+APP=$(BUILD_PATH)/$(DEPLOYMENT)/$(APP_BUNDLE)
+APP_NAME=$(BUILD_PATH)/$(DEPLOYMENT)/$(PRODUCT_NAME)
 INFO_PLIST=Info.plist
 
 URL_BSIconSetComposer = svn+ssh://macosx/usr/local/svnrepos005
@@ -33,14 +35,14 @@ checkLocalizable:
 release: updateRevision
 	xcodebuild -configuration $(DEPLOYMENT)
 	$(MAKE) restorInfoPlist
+	REV=`svn info | awk '/Revision/ {print $$2}'`;	\
+	ditto -ck -rsrc $(APP) $(APP_NAME)-$(VERSION)-$${REV}.zip
 
 updateRevision: update_svn
 	if [ ! -f $(INFO_PLIST).bak ] ; then cp $(INFO_PLIST) $(INFO_PLIST).bak ; fi ;	\
 	REV=`svn info | awk '/Revision/ {print $$2}'` ;	\
-	REV=`expr $${REV} + 1` ;	\
-	sed -e 's/%%%%REVISION%%%%/$${REV}/' $(INFO_PLIST) > $(INFO_PLIST).r ;	\
+	sed -e "s/%%%%REVISION%%%%/$${REV}/" $(INFO_PLIST) > $(INFO_PLIST).r ;	\
 	mv -f $(INFO_PLIST).r $(INFO_PLIST) ;	\
-	svn ci -m "change build number to $${REV}" $(INFO_PLIST)
 
 restorInfoPlist:
 	if [ -f $(INFO_PLIST).bak ] ; then cp -f $(INFO_PLIST).bak $(INFO_PLIST) ; fi
