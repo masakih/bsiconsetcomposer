@@ -1,4 +1,12 @@
 
+PRODUCT_NAME=BSIconSetComposer
+PRODUCT_EXTENSION=app
+BUILD_PATH=./build/
+DEPLOYMENT=Release
+APP_BUNDLE=$(PRODUCT_NAME).$(PRODUCT_EXTENSION)
+APP_BINARY=$(BUILD_PATH)/$(DEPLOYMENT)/$(APP_BUNDLE)/Contents/MacOS/$(PRODUCT_NAME)
+INFO_PLIST=Info.plist
+
 URL_BSIconSetComposer = svn+ssh://macosx/usr/local/svnrepos005
 HEAD = $(URL_BSIconSetComposer)/BSIconSetComposer
 TAGS_DIR = $(URL_BSIconSetComposer)/tags
@@ -21,4 +29,22 @@ Localizable: IconSetComposer.m
 checkLocalizable:
 	(cd English.lproj; ${MAKE} $@;)
 	(cd Japanese.lproj; ${MAKE} $@;)
+
+release:
+	
+
+changeRevision: update_svn
+	if [ ! -f $(INFO_PLIST).bak ] ; then cp $(INFO_PLIST) $(INFO_PLIST).bak ; fi ;	\
+	REV=(svn info | awk '/Revision/ {print $$2}') ;	\
+	REV=expr $$(REV) + 1 ;	\
+	sed -e 's/%%%%REVISION%%%%/$$(REV)/' $(INFO_PLIST) > $(INFO_PLIST).r ;	\
+	mv -f $(INFO_PLIST).r $(INFO_PLIST) ;	\
+	svn ci -m "change build number to $REV" $(INFO_PLIST) ;	\
+	$(MAKE) restorInfoPlist
+
+restorInfoPlist:
+	if [ -f $(INFO_PLIST).bak ] ; then cp -f $(INFO_PLIST).bak $(INFO_PLIST)
+
+update_svn:
+	svn up
 
