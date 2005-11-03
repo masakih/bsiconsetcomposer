@@ -35,11 +35,13 @@ checkLocalizable:
 release: updateRevision
 	xcodebuild -configuration $(DEPLOYMENT)
 	$(MAKE) restorInfoPlist
+	export LC_ALL=C;	\
 	REV=`svn info | awk '/Last Changed Rev/ {print $$4}'`;	\
 	ditto -ck -rsrc $(APP) $(APP_NAME)-$(VERSION)-$${REV}.zip
 
 updateRevision: update_svn
 	if [ ! -f $(INFO_PLIST).bak ] ; then cp $(INFO_PLIST) $(INFO_PLIST).bak ; fi ;	\
+	export LC_ALL=C;	\
 	REV=`svn info | awk '/Last Changed Rev/ {print $$4}'` ;	\
 	sed -e "s/%%%%REVISION%%%%/$${REV}/" $(INFO_PLIST) > $(INFO_PLIST).r ;	\
 	mv -f $(INFO_PLIST).r $(INFO_PLIST) ;	\
