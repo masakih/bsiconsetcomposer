@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = IconTray; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            CLASS = IconTrayPalette; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {editor = NSTextField; iconTray = IconTray; }; 
+            SUPERCLASS = IBPalette; 
+        }
+    ); 
+    IBVersion = 1; 
+}

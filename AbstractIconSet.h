@@ -44,48 +44,6 @@
 -(void)iconSet:(AbstractIconSet *)iconSet didChangeImageFilePath:(NSString *)path forKey:(NSString *)key;
 @end
 
-@interface ToolbarIconSet : AbstractIconSet
-{
-	IBOutlet id board;
-	IBOutlet id delete_;
-	IBOutlet id reloadThread;
-	IBOutlet id reloadBoard;
-	IBOutlet id addFav;
-	IBOutlet id delFav;
-	IBOutlet id res;
-	IBOutlet id draft;
-	IBOutlet id send;
-	IBOutlet id enableBe;
-	IBOutlet id disableBe;
-	IBOutlet id logFinder;
-	IBOutlet id offline;
-	IBOutlet id online;
-	IBOutlet id stop;
-	IBOutlet id orderFrontBrowser;
-}
-
-@end
-
-@interface BoardListIconSet : AbstractIconSet
-{
-	IBOutlet id fav;
-	IBOutlet id folder;
-	IBOutlet id board;
-	IBOutlet id selectedItemActive;
-	IBOutlet id selectedItemDeactive;
-}
-
-@end
-
-@interface ThreadListIconSet : AbstractIconSet
-{
-	IBOutlet id newThread;
-	IBOutlet id update;
-	IBOutlet id cache;
-}
-
-@end
-
 @interface ThreadIconSet : AbstractIconSet
 {
 	IBOutlet id contentHeaderAqua;

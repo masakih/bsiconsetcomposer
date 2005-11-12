@@ -235,13 +235,13 @@
 			<key>imageName</key>
 			<string>offline</string>
 			<key>name</key>
-			<string>オンライン</string>
+			<string>オフライン</string>
 		</dict>
 		<dict>
 			<key>imageName</key>
 			<string>online</string>
 			<key>name</key>
-			<string>オフライン</string>
+			<string>オンライン</string>
 		</dict>
 		<dict>
 			<key>imageName</key>
