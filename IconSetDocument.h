@@ -9,21 +9,26 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "AbstractIconSet.h"
+// #import "AbstractIconSet.h"
 #import "ColorSet.h"
 
 @interface IconSetDocument : NSDocument
 {
-	IBOutlet ToolbarIconSet* toolbarIconSet;
-	IBOutlet BoardListIconSet* boardListIconSet;
-	IBOutlet ThreadListIconSet* threadListIconSet;
-	IBOutlet ThreadIconSet* threadIconSet;
+	NSMutableDictionary *iconTrays;
+	
+	IBOutlet NSView* toolbarIconSetView;
+	IBOutlet NSView* boardListIconSetView;
+	IBOutlet NSView* threadListIconSetView;
+	IBOutlet NSView* threadIconSetView;
 	
 	IBOutlet id colorSet;
 	
 	IBOutlet NSTabView *tab;
 	
+	IBOutlet id arrayController;
+	
 	NSFileWrapper *wrapper;
+	
 }
 
 +(NSArray *)managedImageNames;
@@ -36,6 +41,6 @@
 
 -(void)updateAll;
 -(void)updateForKey:(NSString *)key;
--(void)setupDefault;
+// -(void)setupDefault;
 
 @end

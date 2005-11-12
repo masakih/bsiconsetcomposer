@@ -8,10 +8,15 @@
 
 #import "IconSetDocument.h"
 
+#import <IconTray/IconTray.h>
 #import "IconSetComposer.h"
 #import "TemporaryFolder.h"
 
 @interface BSISApplyCommand : NSScriptCommand
+@end
+
+@interface IconSetDocument(Private)
+-(void)setupIconTrays;
 @end
 
 @implementation IconSetDocument
@@ -76,17 +81,27 @@ static NSArray *sThreadIdentifiers;
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
 	
+	if( !wrapper ) {
+		wrapper = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:nil];
+	}
+	
 	[tab selectLastTabViewItem:self];
 	[tab selectFirstTabViewItem:self];
-	[self setupDefault];
+	[self setupIconTrays];
 	[self updateAll];
+	
+//	[self updateChangeCount:NSChangeCleared];
 }
 
 - (BOOL)readFromFileWrapper:(NSFileWrapper *)fileWrapper ofType:(NSString *)typeName error:(NSError **)outError
 {
+	id temp = wrapper;
 	wrapper = [fileWrapper retain];
+	[temp release];
 	
 	[self updateAll];
+	
+//	[self updateChangeCount:NSChangeCleared];
 	
 	return YES;
 }
@@ -119,13 +134,13 @@ static NSArray *sThreadIdentifiers;
 	NSRect windowRect;
 	
 	if( [[tabViewItem identifier] isEqualTo:@"Toolbar"] ) {
-		view = [toolbarIconSet view];
+		view = toolbarIconSetView;
 	} else if( [[tabViewItem identifier] isEqualTo:@"BoardList"] ) {
-		view = [boardListIconSet view];
+		view = boardListIconSetView;
 	} else if( [[tabViewItem identifier] isEqualTo:@"ThreadList"] ) {
-		view = [threadListIconSet view];
+		view = threadListIconSetView;
 	} else if( [[tabViewItem identifier] isEqualTo:@"Thread"] ) {
-		view = [threadIconSet view];
+		view = threadIconSetView;
 	} else if( [[tabViewItem identifier] isEqualTo:@"Colors"] ) {
 		view = [colorSet view];
 	}
@@ -239,13 +254,79 @@ static NSArray *sThreadIdentifiers;
 		}
 		
 		[wrapper addFileWithPath:path];
+		
+		[self updateChangeCount:NSChangeDone];
 	}
-	
-	[self updateChangeCount:NSChangeDone];
+}
+
+-(id)iconTrays
+{
+	return iconTrays;
+}
+
+-(void)setIconTrays:(id)newIconTrays
+{
+	id temp = iconTrays;
+	iconTrays = [newIconTrays retain];
+	[temp release];
 }
 
 #pragma mark-
 #pragma mark ## MVC - Controller ##
+
+-(void)setupIconTrays
+{
+	id newIconTrays;
+	NSEnumerator *enums;
+	id object;
+	
+	newIconTrays = [NSMutableDictionary dictionary];
+	
+	enums = [[[self class] managedImageNames] objectEnumerator];
+	while( object = [enums nextObject] ) {
+		id dict;
+		
+		dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+			NSLocalizedStringFromTable( object,  @"IconNames", @"Icon Title" ), @"title",
+			[IconSetComposer defaultImageForIdentifier:object], @"defaultImage",
+			[NSNull null], @"image",
+			[NSNull null], @"imgaeFileWrapper",
+			nil];
+		[newIconTrays setObject:dict forKey:object];
+/*		
+		[dict addObserver:self
+			   forKeyPath:@"image"
+				  options:NSKeyValueObservingOptionNew
+				  context:nil];
+		[self addObserver:dict
+			   forKeyPath:@"image"
+				  options:NSKeyValueObservingOptionNew
+				  context:nil];
+*/
+	}
+	
+	[self setIconTrays:newIconTrays];
+}
+/*
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key
+{
+	NSLog(@"Automatic observe --- key -> %@", key );
+	
+	return [super automaticallyNotifiesObserversForKey:key];
+}
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+						change:(NSDictionary *)change
+					   context:(void *)context
+{
+	NSLog(@"Chnage!! key -> %@", keyPath);
+	
+	[super observeValueForKeyPath:keyPath
+						 ofObject:object
+						   change:change
+						  context:context];
+}
+*/
 
 -(void)updateAll
 {
@@ -264,18 +345,7 @@ static NSArray *sThreadIdentifiers;
 	NSData *data;
 	NSString *filename;
 	
-	NSArray *array;
-	NSEnumerator *extEnum;
-	NSString *ext;
-	
-	array = [IconSetComposer acceptImageExtensions];
-	array = [array arrayByAddingObject:@"plist"];
-	extEnum = [array objectEnumerator];
-	while( ext = [extEnum nextObject] ) {
-		filename = [key stringByAppendingPathExtension:ext];
-		fw = [[wrapper fileWrappers] objectForKey:filename];
-		if( fw ) break;
-	}
+	fw = [self fileWrapperForIdentifier:key];
 	if( !fw ) {
 //		NSLog(@"can't load image for %@", key);
 		return;
@@ -284,22 +354,19 @@ static NSArray *sThreadIdentifiers;
 	data = [fw regularFileContents];
 	image = [[[NSImage alloc] initWithData:data] autorelease];
 	if( !image ) {
+		filename = [fw filename];
+		if( !filename ) return;
 		
 		NSString *path = [[self fileName] stringByAppendingPathComponent:filename];
 		[colorSet setPlistPath:path];
-		return;
-	}
-	
-	if( [sToolbarIdentifiers containsObject:key] ) {
-		[toolbarIconSet setImage:image forKey:key];
-	} else if( [sBoardListIdentifiers containsObject:key] ) {
-		[boardListIconSet setImage:image forKey:key];
-	} else if( [sThreadListIdentifiers containsObject:key] ) {
-		[threadListIconSet setImage:image forKey:key];
-	} else if( [sThreadIdentifiers containsObject:key] ) {
-		[threadIconSet setImage:image forKey:key];
 	} else {
-		return;
+		/*
+		id dict = [[self iconTrays] objectForKey:key];
+		if( dict ) {
+			[dict setObject:image forKey:@"image"];
+		}
+		 */
+		[[self iconTrays] setValue:fw forKeyPath:[NSString stringWithFormat:@"%@.%@", key, @"imageFileWrapper"]];
 	}
 }
 	
@@ -343,43 +410,32 @@ static NSArray *sThreadIdentifiers;
 	[command executeCommand];
 }
 
--(void)iconSet:(AbstractIconSet *)iconSet didChangeImageFilePath:(NSString *)path forKey:(NSString *)identifier
+-(void)iconTray:(IconTray *)iconTray didChangeFileOfImage:(NSFileWrapper *)imageFileWrapper
 {
-	[self setPath:path forIdentifier:identifier];
-	[self updateForKey:identifier];
-}
-
-#pragma mark-
-
--(void)setupDefault
-{
+	NSFileWrapper *fw;
 	NSString *identifier;
-	NSImage *image;
-	NSEnumerator *identifierEnum;
+	NSString *filename;
 	
-	identifierEnum = [sToolbarIdentifiers objectEnumerator];
-	while( identifier = [identifierEnum nextObject] ) {
-		image = [IconSetComposer defaultImageForIdentifier:identifier];
-		[toolbarIconSet setImage:image forKey:identifier];
+	identifier = [iconTray identifier];
+	filename = [iconTray imageName];
+	
+	if( ![[filename stringByDeletingPathExtension] isEqualTo:identifier] ) {
+		filename = [identifier stringByAppendingPathExtension:[filename pathExtension]];
+		[iconTray setImageName:filename];
 	}
 	
-	identifierEnum = [sBoardListIdentifiers objectEnumerator];
-	while( identifier = [identifierEnum nextObject] ) {
-		image = [IconSetComposer defaultImageForIdentifier:identifier];
-		[boardListIconSet setImage:image forKey:identifier];
+	fw = [self fileWrapperForIdentifier:identifier];
+	if( fw ) {
+		if( [fw isEqual:[iconTray imageFileWrapper]] ) {
+			return;
+		}
+		[wrapper removeFileWrapper:fw];
 	}
 	
-	identifierEnum = [sThreadListIdentifiers objectEnumerator];
-	while( identifier = [identifierEnum nextObject] ) {
-		image = [IconSetComposer defaultImageForIdentifier:identifier];
-		[threadListIconSet setImage:image forKey:identifier];
-	}
+	filename = [wrapper addFileWrapper:[iconTray imageFileWrapper]];
+	NSLog(@"##### filewrapper Key -> %@", filename );
 	
-	identifierEnum = [sThreadIdentifiers objectEnumerator];
-	while( identifier = [identifierEnum nextObject] ) {
-		image = [IconSetComposer defaultImageForIdentifier:identifier];
-		[threadIconSet setImage:image forKey:identifier];
-	}
+	[self updateChangeCount:NSChangeDone];
 }
 
 @end

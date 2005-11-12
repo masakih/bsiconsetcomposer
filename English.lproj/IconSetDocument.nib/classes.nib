@@ -1,24 +1,6 @@
 {
     IBClasses = (
         {
-            CLASS = AbstractIconSet; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {delegate = id; iconTrayDict = id; plist = id; view = NSView; }; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {
-            CLASS = BoardListIconSet; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                board = id; 
-                fav = id; 
-                folder = id; 
-                selectedItemActive = id; 
-                selectedItemDeactive = id; 
-            }; 
-            SUPERCLASS = AbstractIconSet; 
-        }, 
-        {
             ACTIONS = {
                 applyColors = id; 
                 changeColor = id; 
@@ -43,22 +25,17 @@
         }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            CLASS = IconBox; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {icon = NSView; title = NSView; }; 
-            SUPERCLASS = NSBox; 
-        }, 
-        {
-            ACTIONS = {apply = id; applyAndRestartBathyScaphe = id; restartBathyScaphe = id; }; 
+            ACTIONS = {apply = id; applyAndRestartBathyScaphe = id; }; 
             CLASS = IconSetDocument; 
             LANGUAGE = ObjC; 
             OUTLETS = {
-                boardListIconSet = BoardListIconSet; 
+                arrayController = id; 
+                boardListIconSetView = NSView; 
                 colorSet = id; 
                 tab = NSTabView; 
-                threadIconSet = ThreadIconSet; 
-                threadListIconSet = ThreadListIconSet; 
-                toolbarIconSet = ToolbarIconSet; 
+                threadIconSetView = NSView; 
+                threadListIconSetView = NSView; 
+                toolbarIconSetView = NSView; 
             }; 
             SUPERCLASS = NSDocument; 
         }, 
@@ -66,60 +43,9 @@
             CLASS = IconTray; 
             LANGUAGE = ObjC; 
             OUTLETS = {delegate = id; }; 
-            SUPERCLASS = NSImageView; 
+            SUPERCLASS = NSView; 
         }, 
-        {CLASS = NSObject; LANGUAGE = ObjC; }, 
-        {
-            CLASS = ThreadIconSet; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                age = id; 
-                contentHeaderAqua = id; 
-                contentHeaderGraphite = id; 
-                mail = id; 
-                mouseDownEllipsisDownProxy = id; 
-                mouseDownEllipsisProxy = id; 
-                mouseDownEllipsisUpProxy = id; 
-                mouseOverEllipsisDownProxy = id; 
-                mouseOverEllipsisProxy = id; 
-                mouseOverEllipsisUpProxy = id; 
-                newRes = id; 
-                normalEllipsisDownProxy = id; 
-                normalEllipsisProxy = id; 
-                normalEllipsisUpProxy = id; 
-                sage = id; 
-            }; 
-            SUPERCLASS = AbstractIconSet; 
-        }, 
-        {
-            CLASS = ThreadListIconSet; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {cache = id; newThread = id; update = id; }; 
-            SUPERCLASS = AbstractIconSet; 
-        }, 
-        {
-            CLASS = ToolbarIconSet; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                addFav = id; 
-                board = id; 
-                delFav = id; 
-                "delete_" = id; 
-                disableBe = id; 
-                draft = id; 
-                enableBe = id; 
-                logFinder = id; 
-                offline = id; 
-                online = id; 
-                orderFrontBrowser = id; 
-                reloadBoard = id; 
-                reloadThread = id; 
-                res = id; 
-                send = id; 
-                stop = id; 
-            }; 
-            SUPERCLASS = AbstractIconSet; 
-        }
+        {CLASS = NSObject; LANGUAGE = ObjC; }
     ); 
     IBVersion = 1; 
 }

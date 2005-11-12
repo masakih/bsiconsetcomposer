@@ -1,6 +1,6 @@
 
 PRODUCT_NAME=BSIconSetComposer
-VERSION=1.0
+VERSION=1.1b
 PRODUCT_EXTENSION=app
 BUILD_PATH=./build
 DEPLOYMENT=Release
@@ -18,7 +18,7 @@ all:
 	@echo use target tagging 
 
 tagging:
-	echo "Tagging the 1.0 (x) release of BSIconSetComposer project."
+	echo "Tagging the 1.1b (x) release of BSIconSetComposer project."
 	ver=`grep -A1 'CFBundleVersion' Info.plist | tail -1 | tr -d '\t</string>'`;    \
 	svn copy $(HEAD) $(TAGS_DIR)/release-$${ver}
 

@@ -53,7 +53,7 @@
 		return;
 	}
 	
-	[iconTray setImage:image];
+//	[iconTray setImage:image];
 	
 	if( path ) {
 		[plist setObject:path forKey:key];
@@ -88,7 +88,7 @@
 		return;
 	}
 	
-	[iconTray setImage:image];
+//	[iconTray setImage:image];
 }
 
 -(IconTray *)iconTrayForKey:(NSString *)key
@@ -160,87 +160,7 @@
 }
 
 @end
-#pragma mark -
 
-static NSString *const toolbarIconSetBoardList = @"BoardList";
-static NSString *const toolbarIconSetDelete = @"Delete";
-static NSString *const toolbarIconSetReloadList = @"ReloadList";
-static NSString *const toolbarIconSetReloadThread = @"ReloadThread";
-static NSString *const toolbarIconSetAddFavorites = @"AddFavorites";
-static NSString *const toolbarIconSetRemoveFavorites = @"RemoveFavorites";
-static NSString *const toolbarIconSetResToThread = @"ResToThread";
-static NSString *const toolbarIconSetSaveAsDraft = @"SaveAsDraft";
-static NSString *const toolbarIconSetSendMessage = @"SendMessage";
-static NSString *const toolbarIconSetBeDisabled = @"beDisabled";
-static NSString *const toolbarIconSetBeEnabled = @"beEnabled";
-static NSString *const toolbarIconSetCmlf_icon = @"cmlf_icon";
-static NSString *const toolbarIconSetOffline = @"offline";
-static NSString *const toolbarIconSetOnline = @"online";
-static NSString *const toolbarIconSetStopSign = @"stopSign";
-static NSString *const toolbarIconSetOrderFrontBrowser = @"OrderFrontBrowser";
-
-@implementation ToolbarIconSet
--(void)buildIconTrayDict
-{
-	[iconTrayDict setObject:board forKey:toolbarIconSetBoardList];
-	[iconTrayDict setObject:delete_ forKey:toolbarIconSetDelete];
-	[iconTrayDict setObject:reloadBoard forKey:toolbarIconSetReloadList];
-	[iconTrayDict setObject:reloadThread forKey:toolbarIconSetReloadThread];
-	[iconTrayDict setObject:addFav forKey:toolbarIconSetAddFavorites];
-	[iconTrayDict setObject:delFav forKey:toolbarIconSetRemoveFavorites];
-	[iconTrayDict setObject:res forKey:toolbarIconSetResToThread];
-	[iconTrayDict setObject:draft forKey:toolbarIconSetSaveAsDraft];
-	[iconTrayDict setObject:send forKey:toolbarIconSetSendMessage];
-	[iconTrayDict setObject:disableBe forKey:toolbarIconSetBeDisabled];
-	[iconTrayDict setObject:enableBe forKey:toolbarIconSetBeEnabled];
-	[iconTrayDict setObject:logFinder forKey:toolbarIconSetCmlf_icon];
-	[iconTrayDict setObject:offline forKey:toolbarIconSetOffline];
-	[iconTrayDict setObject:online forKey:toolbarIconSetOnline];
-	[iconTrayDict setObject:stop forKey:toolbarIconSetStopSign];
-	[iconTrayDict setObject:orderFrontBrowser forKey:toolbarIconSetOrderFrontBrowser];
-}
-@end
-#pragma mark -
-
-static NSString *const boardListIconSetBoard = @"Board";
-static NSString *const boardListIconSetFavoritesItem = @"FavoritesItem";
-static NSString *const boardListIconSetFolder = @"Folder";
-static NSString *const boardListIconSetSelectedItemActive = @"boardListSelBgFocused";
-static NSString *const boardListIconSetSelectedItemDeactive = @"boardListSelBg";
-
-@implementation BoardListIconSet
--(void)buildIconTrayDict
-{
-	[iconTrayDict setObject:board forKey:boardListIconSetBoard];
-	[iconTrayDict setObject:fav forKey:boardListIconSetFavoritesItem];
-	[iconTrayDict setObject:folder forKey:boardListIconSetFolder];
-	[iconTrayDict setObject:selectedItemActive forKey:boardListIconSetSelectedItemActive];
-	[iconTrayDict setObject:selectedItemDeactive forKey:boardListIconSetSelectedItemDeactive];
-}
-
-@end
-#pragma mark -
-
-static NSString *const threadListIconSetStatus_logcached = @"Status_logcached";
-static NSString *const threadListIconSetStatus_updated = @"Status_updated";
-static NSString *const threadListIconSetStatus_newThread = @"Status_newThread";
-
-@implementation ThreadListIconSet
--(void)buildIconTrayDict
-{
-	[iconTrayDict setObject:cache forKey:threadListIconSetStatus_logcached];
-	[iconTrayDict setObject:update forKey:threadListIconSetStatus_updated];
-	[iconTrayDict setObject:newThread forKey:threadListIconSetStatus_newThread];
-	
-	[newThread setTarget:self];
-	[newThread setAction:@selector(test:)];
-}
-
--(IBAction)test:(id)sender
-{
-	NSLog(@"Enter test:");
-}
-@end
 #pragma mark -
 
 static NSString *const threadIconSetAge = @"age";
@@ -262,21 +182,21 @@ static NSString *const threadIconSetTitleRulerBgAquaGraphite = @"titleRulerBgAqu
 @implementation ThreadIconSet
 -(void)buildIconTrayDict
 {
-	[iconTrayDict setObject:age forKey:threadIconSetAge];
-	[iconTrayDict setObject:sage forKey:threadIconSetSage];
-	[iconTrayDict setObject:mail forKey:threadIconSetMailAttachment];
-	[iconTrayDict setObject:newRes forKey:threadIconSetLastUpdatedHeader];
-	[iconTrayDict setObject:normalEllipsisProxy forKey:threadIconSetEllipsisProxy];
-	[iconTrayDict setObject:mouseOverEllipsisProxy forKey:threadIconSetEllipsisMouseOver];
-	[iconTrayDict setObject:mouseDownEllipsisProxy forKey:threadIconSetEllipsisMouseDown];
-	[iconTrayDict setObject:normalEllipsisUpProxy forKey:threadIconSetEllipsisUpProxy];
-	[iconTrayDict setObject:mouseOverEllipsisUpProxy forKey:threadIconSetEllipsisUpMouseOver];
-	[iconTrayDict setObject:mouseDownEllipsisUpProxy forKey:threadIconSetEllipsisUpMouseDown];
-	[iconTrayDict setObject:normalEllipsisDownProxy forKey:threadIconSetEllipsisDownProxy];
-	[iconTrayDict setObject:mouseOverEllipsisDownProxy forKey:threadIconSetEllipsisDownMouseOver];
-	[iconTrayDict setObject:mouseDownEllipsisDownProxy forKey:threadIconSetEllipsisDownMouseDown];
-	[iconTrayDict setObject:contentHeaderAqua forKey:threadIconSetTitleRulerBgAquaBlue];
-	[iconTrayDict setObject:contentHeaderGraphite forKey:threadIconSetTitleRulerBgAquaGraphite];
+//	[iconTrayDict setObject:age forKey:threadIconSetAge];
+//	[iconTrayDict setObject:sage forKey:threadIconSetSage];
+//	[iconTrayDict setObject:mail forKey:threadIconSetMailAttachment];
+//	[iconTrayDict setObject:newRes forKey:threadIconSetLastUpdatedHeader];
+//	[iconTrayDict setObject:normalEllipsisProxy forKey:threadIconSetEllipsisProxy];
+//	[iconTrayDict setObject:mouseOverEllipsisProxy forKey:threadIconSetEllipsisMouseOver];
+//	[iconTrayDict setObject:mouseDownEllipsisProxy forKey:threadIconSetEllipsisMouseDown];
+//	[iconTrayDict setObject:normalEllipsisUpProxy forKey:threadIconSetEllipsisUpProxy];
+//	[iconTrayDict setObject:mouseOverEllipsisUpProxy forKey:threadIconSetEllipsisUpMouseOver];
+//	[iconTrayDict setObject:mouseDownEllipsisUpProxy forKey:threadIconSetEllipsisUpMouseDown];
+//	[iconTrayDict setObject:normalEllipsisDownProxy forKey:threadIconSetEllipsisDownProxy];
+//	[iconTrayDict setObject:mouseOverEllipsisDownProxy forKey:threadIconSetEllipsisDownMouseOver];
+//	[iconTrayDict setObject:mouseDownEllipsisDownProxy forKey:threadIconSetEllipsisDownMouseDown];
+//	[iconTrayDict setObject:contentHeaderAqua forKey:threadIconSetTitleRulerBgAquaBlue];
+//	[iconTrayDict setObject:contentHeaderGraphite forKey:threadIconSetTitleRulerBgAquaGraphite];
 }
 @end
 

@@ -1,0 +1,12 @@
+{
+	IconTray = {
+		SuperClass = NSView;
+		Attributes = {
+			title= {};
+			image = {};
+			identifier = {};
+			placeholderImage = {};
+			imagePosition = {};
+		};
+	};
+}

@@ -1,0 +1,21 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = IconTrayInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                fontSizeBotton = NSPopUpButton; 
+                identifierLabel = NSTextField; 
+                imageAlignment = NSMatrix; 
+                imagePosition = NSMatrix; 
+                imageScaling = NSMatrix; 
+                tagLabel = NSTextField; 
+                textAlignment = NSMatrix; 
+                titleLabel = NSTextField; 
+            }; 
+            SUPERCLASS = IBInspector; 
+        }
+    ); 
+    IBVersion = 1; 
+}
