@@ -111,6 +111,16 @@ static NSArray *sThreadIdentifiers;
 	return wrapper;
 }
 
+// For Panther.
+- (BOOL)loadFileWrapperRepresentation:(NSFileWrapper *)fileWrapper ofType:(NSString *)type
+{
+	return [self readFromFileWrapper:fileWrapper ofType:type error:NULL];
+}
+- (NSFileWrapper *)fileWrapperRepresentationOfType:(NSString *)type
+{
+	return [self fileWrapperOfType:type error:NULL];
+}
+
 /*	NSTabViewItem の view は NSTabView がリサイズされると自動リサイズされる。
 	それを避けるため、リサイズする前にダミーの NSView にすり替える。
 	ダミーの NSView には選択される前の NSTabViewItem の View --これは、IBパレットによって作られたデフォルトの View--を使う。
