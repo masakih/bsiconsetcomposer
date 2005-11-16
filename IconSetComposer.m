@@ -132,12 +132,63 @@ static IconSetComposer *_instance = nil;
 	
 	return bsBundle;
 }
+NSString *resolveAlias(NSString *path)
+{
+	NSString *newPath = nil;
+
+	FSRef	ref;
+	char *newPathCString;
+	Boolean isDir,  wasAliased;
+	OSStatus err;
+
+	err = FSPathMakeRef( (UInt8 *)[path fileSystemRepresentation], &ref, NULL );
+	if( err == dirNFErr ) {
+		NSString *lastPath = [path lastPathComponent];
+		NSString *parent = [path stringByDeletingLastPathComponent];
+		NSString *f;
+		
+		if( [@"/" isEqualTo:parent] ) return nil;
+		
+		parent = resolveAlias( parent );
+		if( !parent ) return nil;
+
+		f = [parent stringByAppendingPathComponent:lastPath];
+		
+		err = FSPathMakeRef( (UInt8 *)[f fileSystemRepresentation], &ref, NULL );
+	}
+	if( err != noErr ) {
+		return nil;
+	}
+
+	err = FSResolveAliasFile( &ref, TRUE, &isDir, &wasAliased );
+	if( err != noErr ) {
+		return nil;
+	}
+
+	newPathCString = (char *)malloc( sizeof(unichar) * 1024 );
+	if( !newPathCString ) {
+		return nil;
+	}
+
+	err = FSRefMakePath( &ref, (UInt8 *)newPathCString, sizeof(unichar) * 1024 );
+	if( err != noErr ) {
+		goto final;
+	}
+
+	newPath = [NSString stringWithUTF8String:newPathCString];
+
+final:
+	free( (char *)newPathCString );
+
+	return newPath;
+}
 +(NSString *)bathyScapheSupportFolder
 {
 	static NSString *result = nil;
 	
 	if(  !result ) {
 		NSArray *dirs = NSSearchPathForDirectoriesInDomains( NSLibraryDirectory, NSUserDomainMask, YES );
+		NSString *tmp;
 		
 		if( !dirs || [dirs count] == 0 ) return NSHomeDirectory();
 		
@@ -145,6 +196,8 @@ static IconSetComposer *_instance = nil;
 		result = [result stringByAppendingPathComponent:@"Application Support"];
 		result = [result stringByAppendingPathComponent:@"BathyScaphe"];
 		result = [result stringByAppendingPathComponent:@"Resources"];
+		tmp = resolveAlias( result );
+		if( tmp ) result = tmp;
 		[result retain];
 		
 		if( ![[NSFileManager defaultManager] fileExistsAtPath:result] ) {
