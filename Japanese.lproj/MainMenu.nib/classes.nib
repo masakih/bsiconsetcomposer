@@ -1,7 +1,17 @@
 {
     IBClasses = (
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
-        {CLASS = IconSetComposer; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+        {
+            ACTIONS = {
+                createDocumentFromCurrentSetting = id; 
+                launchBathyScaphe = id; 
+                quitBathyScaphe = id; 
+                restartBathyScaphe = id; 
+            }; 
+            CLASS = IconSetComposer; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
     ); 
     IBVersion = 1; 
 }

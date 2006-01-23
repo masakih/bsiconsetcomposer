@@ -195,6 +195,22 @@ final:
 		result = [dirs objectAtIndex:0];
 		result = [result stringByAppendingPathComponent:@"Application Support"];
 		result = [result stringByAppendingPathComponent:@"BathyScaphe"];
+		tmp = resolveAlias( result );
+		if( tmp ) result = tmp;
+		[result retain];
+	}
+	
+	return result;
+}
+
++(NSString *)bathyScapheResourceFolder
+{
+	static NSString *result = nil;
+	
+	if(  !result ) {
+		NSString *tmp;
+		
+		result = [self bathyScapheSupportFolder];
 		result = [result stringByAppendingPathComponent:@"Resources"];
 		tmp = resolveAlias( result );
 		if( tmp ) result = tmp;
@@ -223,11 +239,11 @@ final:
 
 +(void)deleteImageFilesFromBSAppSptResFolder
 {
-	NSString *bathyScapheSupportFolder = [IconSetComposer bathyScapheSupportFolder];
+	NSString *bathyScapheResourceFolder = [IconSetComposer bathyScapheResourceFolder];
 	NSArray *imageFileType = [NSImage imageFileTypes];
 	
 	NSFileManager *fm = [NSFileManager defaultManager];
-	NSArray *files = [fm directoryContentsAtPath:bathyScapheSupportFolder];
+	NSArray *files = [fm directoryContentsAtPath:bathyScapheResourceFolder];
 	NSEnumerator *filesEnum = [files objectEnumerator];
 	NSString *file;
 	NSString *fullPath;
@@ -238,7 +254,7 @@ final:
 		NSString *filetype;
 		NSString *extention;
 		
-		fullPath = [bathyScapheSupportFolder stringByAppendingPathComponent:file];
+		fullPath = [bathyScapheResourceFolder stringByAppendingPathComponent:file];
 		filetype = NSHFSTypeOfFile( fullPath );
 		extention = [file pathExtension];
 		
@@ -347,6 +363,8 @@ final:
 			   withObject:sender
 			   afterDelay:0.0];
 }
+
+#pragma mark## Actions ##
 -(IBAction)quitBathyScaphe:(id)sender
 {
 	[self quitBS];
@@ -357,7 +375,44 @@ final:
 			   withObject:nil
 			   afterDelay:0.0];
 }
+-(IBAction)createDocumentFromCurrentSetting:(id)sender
+{
+	NSString *bsSupPath = [[self class] bathyScapheSupportFolder];
+	NSBundle *bsSupBundle;
+	NSArray *imageNames = [IconSetDocument managedImageNames];
+	NSEnumerator *imageNamesEnum;
+	NSString *imageName;
+	NSString *imagePath;
+	
+	IconSetDocument *newDocument;
+	
+	bsSupBundle = [NSBundle bundleWithPath:bsSupPath];
+	
+	if(!imageNames || !bsSupBundle) {
+		NSLog(@"HOGE!!");
+		NSBeep();
+		return;
+	}
+	
+	newDocument = [[NSDocumentController sharedDocumentController]
+		openUntitledDocumentOfType:@"IconSetType"
+						   display:NO];
+	if(!newDocument) {
+		NSLog(@"Can not create new document.");
+		NSBeep();
+		return;
+	}
+	
+	imageNamesEnum = [imageNames objectEnumerator];
+	while(imageName = [imageNamesEnum nextObject]) {
+		imagePath = [bsSupBundle pathForImageResource:imageName];
+		[newDocument setPath:imagePath forIdentifier:imageName];
+	}
+	
+	[newDocument showWindows];
+}
 
+#pragma mark## Application Delegate ##
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {	
 	if( ![[self class] bathyScapheBundle] ) {
@@ -375,9 +430,9 @@ final:
 	}
 }
 
-- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
-{
-	return NO;
-}
+//- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
+//{
+//	return NO;
+//}
 
 @end
