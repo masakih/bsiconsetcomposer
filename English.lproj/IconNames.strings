@@ -2,64 +2,42 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AddFavorites</key>
+	<string>AddFavorites</string>
 	<key>Board</key>
 	<string>Board</string>
-	<key>FavoritesItem</key>
-	<string>FavoritesItem</string>
-	<key>Folder</key>
-	<string>Folder</string>
-	<key>boardListSelBgFocused</key>
-	<string>boardListSelBgFocused</string>
-	<key>boardListSelBg</key>
-	<string>boardListSelBg</string>
-	<key>age</key>
-	<string>age</string>
-	<key>sage</key>
-	<string>sage</string>
-	<key>mailAttachment</key>
-	<string>mailAttachment</string>
-	<key>lastUpdatedHeader</key>
-	<string>lastUpdatedHeader</string>
-	<key>EllipsisProxy</key>
-	<string>EllipsisProxy</string>
-	<key>EllipsisMouseOver</key>
-	<string>EllipsisMouseOver</string>
-	<key>EllipsisMouseDown</key>
-	<string>EllipsisMouseDown</string>
-	<key>EllipsisUpProxy</key>
-	<string>EllipsisUpProxy</string>
-	<key>EllipsisUpMouseOver</key>
-	<string>EllipsisUpMouseOver</string>
-	<key>EllipsisUpMouseDown</key>
-	<string>EllipsisUpMouseDown</string>
-	<key>EllipsisDownProxy</key>
-	<string>EllipsisDownProxy</string>
-	<key>EllipsisDownMouseOver</key>
-	<string>EllipsisDownMouseOver</string>
-	<key>EllipsisDownMouseDown</key>
-	<string>EllipsisDownMouseDown</string>
-	<key>titleRulerBgAquaBlue</key>
-	<string>titleRulerBgAquaBlue</string>
-	<key>titleRulerBgAquaGraphite</key>
-	<string>titleRulerBgAquaGraphite</string>
-	<key>Status_logcached</key>
-	<string>Status_logcached</string>
-	<key>Status_updated</key>
-	<string>Status_updated</string>
-	<key>Status_newThread</key>
-	<string>Status_newThread</string>
-	<key>OrderFrontBrowser</key>
-	<string>OrderFrontBrowser</string>
 	<key>BoardList</key>
 	<string>BoardList</string>
 	<key>Delete</key>
 	<string>Delete</string>
+	<key>EllipsisDownMouseDown</key>
+	<string>EllipsisDownMouseDown</string>
+	<key>EllipsisDownMouseOver</key>
+	<string>EllipsisDownMouseOver</string>
+	<key>EllipsisDownProxy</key>
+	<string>EllipsisDownProxy</string>
+	<key>EllipsisMouseDown</key>
+	<string>EllipsisMouseDown</string>
+	<key>EllipsisMouseOver</key>
+	<string>EllipsisMouseOver</string>
+	<key>EllipsisProxy</key>
+	<string>EllipsisProxy</string>
+	<key>EllipsisUpMouseDown</key>
+	<string>EllipsisUpMouseDown</string>
+	<key>EllipsisUpMouseOver</key>
+	<string>EllipsisUpMouseOver</string>
+	<key>EllipsisUpProxy</key>
+	<string>EllipsisUpProxy</string>
+	<key>FavoritesItem</key>
+	<string>FavoritesItem</string>
+	<key>Folder</key>
+	<string>Folder</string>
+	<key>OrderFrontBrowser</key>
+	<string>OrderFrontBrowser</string>
 	<key>ReloadList</key>
 	<string>ReloadList</string>
 	<key>ReloadThread</key>
 	<string>ReloadThread</string>
-	<key>AddFavorites</key>
-	<string>AddFavorites</string>
 	<key>RemoveFavorites</key>
 	<string>RemoveFavorites</string>
 	<key>ResToThread</key>
@@ -68,17 +46,41 @@
 	<string>SaveAsDraft</string>
 	<key>SendMessage</key>
 	<string>SendMessage</string>
+	<key>Status_logcached</key>
+	<string>Status_logcached</string>
+	<key>Status_newThread</key>
+	<string>Status_newThread</string>
+	<key>Status_updated</key>
+	<string>Status_updated</string>
+	<key>age</key>
+	<string>age</string>
 	<key>beDisabled</key>
 	<string>beDisabled</string>
 	<key>beEnabled</key>
 	<string>beEnabled</string>
+	<key>boardListSelBg</key>
+	<string>boardListSelBg</string>
+	<key>boardListSelBgFocused</key>
+	<string>boardListSelBgFocused</string>
 	<key>cmlf_icon</key>
 	<string>cmlf_icon</string>
+	<key>lastUpdatedHeader</key>
+	<string>lastUpdatedHeader</string>
+	<key>mailAttachment</key>
+	<string>mailAttachment</string>
 	<key>offline</key>
 	<string>offline</string>
 	<key>online</key>
 	<string>online</string>
+	<key>sage</key>
+	<string>sage</string>
 	<key>stopSign</key>
 	<string>stopSign</string>
+	<key>titleRulerBgAquaBlue</key>
+	<string>titleRulerBgAquaBlue</string>
+	<key>titleRulerBgAquaGraphite</key>
+	<string>titleRulerBgAquaGraphite</string>
+	<key>titleRulerBgNotActive</key>
+	<string>titleRulerBgNotActive</string>
 </dict>
 </plist>

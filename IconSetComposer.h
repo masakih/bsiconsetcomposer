@@ -15,6 +15,7 @@ enum {
 
 +(NSBundle *)bathyScapheBundle;
 +(NSString *)bathyScapheSupportFolder;
++(NSString *)bathyScapheResourceFolder;
 
 +(NSImage *)defaultImageForIdentifier:(NSString *)identifier;
 +(void)deleteImageFilesFromBSAppSptResFolder;
@@ -25,5 +26,7 @@ enum {
 -(IBAction)quitBathyScaphe:(id)sender;
 -(IBAction)launchBathyScaphe:(id)sender;
 -(IBAction)restartBathyScaphe:(id)sender;
+
+-(IBAction)createDocumentFromCurrentSetting:(id)sender;
 
 @end

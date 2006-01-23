@@ -129,6 +129,12 @@
 			<key>name</key>
 			<string>コンテントヘッダ-グラファイト-</string>
 		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>titleRulerBgNotActive</string>
+			<key>name</key>
+			<string>コンテントヘッダ-インアクティブ-</string>
+		</dict>
 	</array>
 	<key>ThreadList</key>
 	<array>

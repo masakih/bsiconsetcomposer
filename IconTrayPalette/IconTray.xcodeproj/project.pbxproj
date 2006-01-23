@@ -1052,6 +1052,7 @@
 				F46A8D6208F936EA00DC0F4A /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
 		};
 /* End XCConfigurationList section */
 	};

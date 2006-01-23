@@ -382,7 +382,7 @@ static NSArray *sThreadIdentifiers;
 	
 -(void)apply:(id)sender
 {
-	NSString *bathyScapheSupportFolder = [IconSetComposer bathyScapheSupportFolder];
+	NSString *bathyScapheResourceFolder = [IconSetComposer bathyScapheResourceFolder];
 		
 	id dict;
 	NSEnumerator *filesEnum;
@@ -398,7 +398,7 @@ static NSArray *sThreadIdentifiers;
 		if( [file hasSuffix:@"plist"] ) continue;
 		
 		data = [[dict objectForKey:file] regularFileContents];
-		newPath = [bathyScapheSupportFolder stringByAppendingPathComponent:file];
+		newPath = [bathyScapheResourceFolder stringByAppendingPathComponent:file];
 		
 		[data writeToFile:newPath atomically:YES];
 	}

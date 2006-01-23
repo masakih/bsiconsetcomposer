@@ -2,83 +2,85 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AddFavorites</key>
+	<string>お気に入りに追加</string>
 	<key>Board</key>
 	<string>掲示板</string>
-	<key>FavoritesItem</key>
-	<string>お気に入り</string>
-	<key>Folder</key>
-	<string>フォルダ</string>
-	<key>boardListSelBgFocused</key>
-	<string>選択項目 (アクティブ)</string>
-	<key>boardListSelBg</key>
-	<string>選択項目 (ディアクティブ）)</string>
-	<key>age</key>
-	<string>age</string>
-	<key>sage</key>
-	<string>sage</string>
-	<key>mailAttachment</key>
-	<string>メール欄</string>
-	<key>lastUpdatedHeader</key>
-	<string>新着</string>
-	<key>EllipsisProxy</key>
-	<string>省略</string>
-	<key>EllipsisMouseOver</key>
-	<string>省略</string>
-	<key>EllipsisMouseDown</key>
-	<string>省略</string>
-	<key>EllipsisUpProxy</key>
-	<string>省略上矢印</string>
-	<key>EllipsisUpMouseOver</key>
-	<string>省略上矢印</string>
-	<key>EllipsisUpMouseDown</key>
-	<string>省略上矢印</string>
-	<key>EllipsisDownProxy</key>
-	<string>省略下矢印</string>
-	<key>EllipsisDownMouseOver</key>
-	<string>省略下矢印</string>
-	<key>EllipsisDownMouseDown</key>
-	<string>省略下矢印</string>
-	<key>titleRulerBgAquaBlue</key>
-	<string>コンテントヘッダ-アクア-</string>
-	<key>titleRulerBgAquaGraphite</key>
-	<string>コンテントヘッダ-グラファイト-</string>
-	<key>Status_logcached</key>
-	<string>新着なし</string>
-	<key>Status_updated</key>
-	<string>新着あり</string>
-	<key>Status_newThread</key>
-	<string>新スレッド</string>
-	<key>OrderFrontBrowser</key>
-	<string>ブラウザを最前面に</string>
 	<key>BoardList</key>
 	<string>掲示板リスト</string>
 	<key>Delete</key>
 	<string>削除</string>
+	<key>EllipsisDownMouseDown</key>
+	<string>省略下矢印</string>
+	<key>EllipsisDownMouseOver</key>
+	<string>省略下矢印</string>
+	<key>EllipsisDownProxy</key>
+	<string>省略下矢印</string>
+	<key>EllipsisMouseDown</key>
+	<string>省略</string>
+	<key>EllipsisMouseOver</key>
+	<string>省略</string>
+	<key>EllipsisProxy</key>
+	<string>省略</string>
+	<key>EllipsisUpMouseDown</key>
+	<string>省略上矢印</string>
+	<key>EllipsisUpMouseOver</key>
+	<string>省略上矢印</string>
+	<key>EllipsisUpProxy</key>
+	<string>省略上矢印</string>
+	<key>FavoritesItem</key>
+	<string>お気に入り</string>
+	<key>Folder</key>
+	<string>フォルダ</string>
+	<key>OrderFrontBrowser</key>
+	<string>ブラウザを最前面に</string>
 	<key>ReloadList</key>
 	<string>一覧の更新</string>
 	<key>ReloadThread</key>
 	<string>スレッドの更新</string>
-	<key>AddFavorites</key>
-	<string>お気に入りに追加</string>
 	<key>RemoveFavorites</key>
-	<string>お気に入りから削除</string>
+	<string>スレッドの更新</string>
 	<key>ResToThread</key>
 	<string>書き込み</string>
 	<key>SaveAsDraft</key>
 	<string>下書きとして保存</string>
 	<key>SendMessage</key>
 	<string>送信</string>
+	<key>Status_logcached</key>
+	<string>新着なし</string>
+	<key>Status_newThread</key>
+	<string>新スレッド</string>
+	<key>Status_updated</key>
+	<string>新着あり</string>
+	<key>age</key>
+	<string>age</string>
 	<key>beDisabled</key>
 	<string>Be ログアウト中</string>
 	<key>beEnabled</key>
 	<string>Be ログイン中</string>
+	<key>boardListSelBg</key>
+	<string>選択項目 (ディアクティブ)</string>
+	<key>boardListSelBgFocused</key>
+	<string>選択項目 (アクティブ)</string>
 	<key>cmlf_icon</key>
-	<string>CMLogFinder</string>
+	<string>cmlf_icon</string>
+	<key>lastUpdatedHeader</key>
+	<string>新着</string>
+	<key>mailAttachment</key>
+	<string>メール欄</string>
 	<key>offline</key>
 	<string>オフライン</string>
 	<key>online</key>
 	<string>オンライン</string>
+	<key>sage</key>
+	<string>sage</string>
 	<key>stopSign</key>
 	<string>停止</string>
+	<key>titleRulerBgAquaBlue</key>
+	<string>コンテントヘッダ-アクア-</string>
+	<key>titleRulerBgAquaGraphite</key>
+	<string>コンテントヘッダ-グラファイト-</string>
+	<key>titleRulerBgNotActive</key>
+	<string>コンテントヘッダ-インアクティブ-</string>
 </dict>
 </plist>
