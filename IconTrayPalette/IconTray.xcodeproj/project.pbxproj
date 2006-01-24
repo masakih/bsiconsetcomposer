@@ -146,7 +146,7 @@
 		DD92D38A0106425D02CA0E72 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		F41CD7C5091240AF00D66C88 /* IconTray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconTray.m; sourceTree = "<group>"; };
 		F4652E380906B193003BD0AD /* IconTray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconTray.h; sourceTree = "<group>"; };
-		F46A8D5B08F936E800DC0F4A /* TestIconTray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestIconTray.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46A8D5B08F936E800DC0F4A /* TestIconTray.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = TestIconTray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8D5D08F936E900DC0F4A /* TestIconTray-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TestIconTray-Info.plist"; sourceTree = "<group>"; };
 		F46A8D7E08F9389800DC0F4A /* TestIconTray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestIconTray.h; sourceTree = "<group>"; };
 		F46A8D7F08F9389800DC0F4A /* TestIconTray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestIconTray.m; sourceTree = "<group>"; };
@@ -886,18 +886,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Debug;
 		};
 		F46A8CE908F8B7BF00DC0F4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Release;
 		};
 		F46A8CEA08F8B7BF00DC0F4A /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Default;
 		};
