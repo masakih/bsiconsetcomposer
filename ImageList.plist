@@ -156,6 +156,12 @@
 			<key>name</key>
 			<string>新スレッド</string>
 		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>Status_HeadModified</string>
+			<key>name</key>
+			<string>微小変異</string>
+		</dict>
 	</array>
 	<key>Toolbar</key>
 	<array>
