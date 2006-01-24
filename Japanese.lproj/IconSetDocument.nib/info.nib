@@ -25,10 +25,6 @@
 	</array>
 	<key>IBOldestOS</key>
 	<integer>3</integer>
-	<key>IBOpenObjects</key>
-	<array>
-		<integer>1334</integer>
-	</array>
 	<key>IBSystem Version</key>
 	<string>8G32</string>
 	<key>IBUsesTextArchiving</key>
