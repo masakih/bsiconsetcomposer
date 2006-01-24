@@ -46,6 +46,8 @@
 	<string>下書きとして保存</string>
 	<key>SendMessage</key>
 	<string>送信</string>
+	<key>Status_HeadModified</key>
+	<string>微小変異</string>
 	<key>Status_logcached</key>
 	<string>新着なし</string>
 	<key>Status_newThread</key>

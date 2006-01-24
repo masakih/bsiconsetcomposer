@@ -52,6 +52,8 @@
 	<string>Status_newThread</string>
 	<key>Status_updated</key>
 	<string>Status_updated</string>
+	<key>Status_HeadModified</key>
+	<string>Status_HeadModified</string>
 	<key>age</key>
 	<string>age</string>
 	<key>beDisabled</key>
