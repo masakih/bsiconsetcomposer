@@ -4,6 +4,14 @@
 
 static NSString *sBSIdentifer = @"jp.tsawada2.BathyScaphe";
 
+@interface IconSetComposer(AppleEvents)
+typedef enum {
+	kTypeBoardListColor,
+	kTypeThreadsListColor,
+} ColorType;
+-(NSColor *)getBathyScapheColor:(ColorType)colorType;
+@end
+
 static IconSetComposer *_instance = nil;
 
 @implementation IconSetComposer
@@ -76,7 +84,8 @@ static IconSetComposer *_instance = nil;
 	id fm;
 	int status = 0;
 	NSMutableArray *incrementalImages = [NSMutableArray array];
-	NSMutableArray *decrementalImages = [NSMutableArray array];
+	NSMutableArray *decrementalImages = nil;
+	NSMutableArray *containsImages = [NSMutableArray array];
 	
 	bsBundle = [[self class] bathyScapheBundle];
 	if( !bsBundle ) {
@@ -95,22 +104,26 @@ static IconSetComposer *_instance = nil;
 	
 	count = [bsResources count];
 	for( i = 0; i < count; i++ ) {
-		NSString *name = [bsResources objectAtIndex:i];
+		NSString *filename = [bsResources objectAtIndex:i];
 		
-		if( [[self class] isAcceptImageExtension:[name pathExtension]] ) {
-			if( [knownBSSystemImages containsObject:[name stringByDeletingPathExtension]] ) {
+		if( [[self class] isAcceptImageExtension:[filename pathExtension]] ) {
+			NSString *name = [filename stringByDeletingPathExtension];
+			if( [knownBSSystemImages containsObject:name] ) {
 				continue;
 			}
-			if( ![managedImages containsObject:[name stringByDeletingPathExtension]] ) {
+			if( ![managedImages containsObject:name] ) {
 				status |= kBSHaveUnknownImage;
 				[incrementalImages addObject:name];
 				continue;
 			}
 			bsResourceImageNum++;
+			[containsImages addObject:name];
 		}
 	}
 	if( managedImageNum > bsResourceImageNum ) {
 		status |= kIconsHaveIncreased;
+		decrementalImages = [[managedImages mutableCopy] autorelease];
+		[decrementalImages removeObjectsInArray:containsImages];
 	}
 	
 	if( status ) {
@@ -306,7 +319,7 @@ final:
 -(BOOL)launchBS
 {
 	return [[NSWorkspace sharedWorkspace] launchAppWithBundleIdentifier:sBSIdentifer
-																options:NSWorkspaceLaunchAllowingClassicStartup
+																options:NSWorkspaceLaunchWithoutActivation
 										 additionalEventParamDescriptor:nil
 													   launchIdentifier:nil];
 }
@@ -409,7 +422,23 @@ final:
 		[newDocument setPath:imagePath forIdentifier:imageName];
 	}
 	
+	NSColor *blColor = [self getBathyScapheColor:kTypeBoardListColor];
+	NSColor *tlColor = [self getBathyScapheColor:kTypeThreadsListColor];
+	NSNumber *isIncludeColor;
+	id set;
+	
+	if( ![[ColorSet defaultBoardListColor] isEqual:blColor]
+		|| ![[ColorSet defaultThreadListColor] isEqual:tlColor] ) {
+		isIncludeColor = [NSNumber numberWithBool:YES];
+	} else {
+		isIncludeColor = [NSNumber numberWithBool:NO];
+	}
+	
 	[newDocument showWindows];
+	set = [newDocument valueForKey:@"colorSet"];
+	[set setValue:blColor forKey:@"boardListColor"];
+	[set setValue:tlColor forKey:@"threadsListColor"];
+	[set setValue:isIncludeColor forKey:@"isIncludeColors"];
 }
 
 #pragma mark## Application Delegate ##
@@ -435,4 +464,116 @@ final:
 //	return NO;
 //}
 
+@end
+
+@implementation IconSetComposer(AppleEvents)
+
+-(NSColor *)getBathyScapheColor:(ColorType)colorType
+{
+	NSString *bsBundleID;
+	const char *bsBundleIDStr;
+	OSType type;
+	id result = nil;
+	float red, green, blue;
+	OSStatus err;
+	
+	[self launchBS];
+	
+	AppleEvent reply = {0,0};
+	NSAppleEventDescriptor *replyDesc;
+	NSAppleEventDescriptor *colorComponentsDesc;
+	NSAppleEventDescriptor *colorComponentDesc;
+	
+	NSAppleEventDescriptor *ae;
+	
+	NSAppleEventDescriptor *bsDesc;
+	
+	NSAppleEventDescriptor *propDesc;
+	
+	NSAppleEventDescriptor *classDesc;
+	NSAppleEventDescriptor *formDesc;
+	NSAppleEventDescriptor *keyDataDesc;
+	
+	switch(colorType) {
+		case kTypeBoardListColor:
+			type = 'bdCo';
+			break;
+		case kTypeThreadsListColor:
+			type = 'brCo';
+			break;
+		default:
+			return nil;
+	}
+	
+	/* set up BathyScaphe addr */
+	bsBundleID = [[IconSetComposer bathyScapheBundle] bundleIdentifier];
+	bsBundleIDStr = [bsBundleID UTF8String];
+	bsDesc = [NSAppleEventDescriptor descriptorWithDescriptorType:typeApplicationBundleID
+															bytes:bsBundleIDStr
+														   length:strlen(bsBundleIDStr)];
+	
+	
+	/* create typeObjectSpecifier Descriptor */
+	propDesc = [NSAppleEventDescriptor recordDescriptor];
+	
+	classDesc = [NSAppleEventDescriptor descriptorWithTypeCode:cProperty];
+	[propDesc setDescriptor:classDesc forKeyword:keyAEDesiredClass];
+	
+	formDesc = [NSAppleEventDescriptor descriptorWithTypeCode:formPropertyID];
+	[propDesc setDescriptor:formDesc forKeyword:keyAEKeyForm];
+	
+	keyDataDesc = [NSAppleEventDescriptor descriptorWithTypeCode:type];
+	[propDesc setDescriptor:keyDataDesc forKeyword:keyAEKeyData];
+	
+	[propDesc setDescriptor:[NSAppleEventDescriptor nullDescriptor] forKeyword:keyAEContainer];
+	
+	propDesc = [propDesc coerceToDescriptorType:typeObjectSpecifier];
+	
+	/* create AppleEvent */
+	ae = [NSAppleEventDescriptor appleEventWithEventClass:kAECoreSuite
+												  eventID:kAEGetData
+										 targetDescriptor:bsDesc
+												 returnID:kAutoGenerateReturnID
+											transactionID:kAnyTransactionID];
+	
+	[ae setParamDescriptor:propDesc forKeyword:keyDirectObject];
+	
+#ifdef DEBUG
+	{
+		Handle h = NewHandle( sizeof(char*) );
+		err = AEPrintDescToHandle( [ae aeDesc], &h );
+		NSLog(@"Desc -> %s", **(char ***)&h );
+		DisposeHandle( h );
+	}
+#endif
+	
+	err = AESendMessage( [ae aeDesc], &reply, kAECanInteract + kAEWaitReply, kAEDefaultTimeout );
+	
+	if( err != noErr ) {
+		NSLog(@"AESendMessage Error. ErrorID ---> %d", err );
+		return nil;
+	}
+	
+#ifdef DEBUG
+	{
+		Handle h = NewHandle( sizeof(char*) );
+		err = AEPrintDescToHandle( &reply, &h );
+		NSLog(@"Desc -> %s", **(char ***)&h );
+		DisposeHandle( h );
+	}
+#endif
+	
+	replyDesc = [[[NSAppleEventDescriptor alloc] initWithAEDescNoCopy:&reply] autorelease];
+	colorComponentsDesc = [replyDesc paramDescriptorForKeyword:keyDirectObject];
+	colorComponentDesc = [colorComponentsDesc descriptorAtIndex:1];
+	red = [[colorComponentDesc stringValue] floatValue];
+	colorComponentDesc = [colorComponentsDesc descriptorAtIndex:2];
+	green = [[colorComponentDesc stringValue] floatValue];
+	colorComponentDesc = [colorComponentsDesc descriptorAtIndex:3];
+	blue = [[colorComponentDesc stringValue] floatValue];
+	
+	result = [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:1];
+	
+	return result;
+}
 @end

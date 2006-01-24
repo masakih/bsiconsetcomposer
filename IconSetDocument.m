@@ -281,6 +281,17 @@ static NSArray *sThreadIdentifiers;
 	[temp release];
 }
 
+-(id)colorSet
+{
+	return colorSet;
+}
+-(void)setColorSet:(id)set
+{
+	id temp = colorSet;
+	colorSet = [set retain];
+	[temp release];
+}
+
 #pragma mark-
 #pragma mark ## MVC - Controller ##
 
