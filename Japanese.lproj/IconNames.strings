@@ -63,7 +63,7 @@
 	<key>boardListSelBgFocused</key>
 	<string>選択項目 (アクティブ)</string>
 	<key>cmlf_icon</key>
-	<string>cmlf_icon</string>
+	<string>CMLogFinder</string>
 	<key>lastUpdatedHeader</key>
 	<string>新着</string>
 	<key>mailAttachment</key>

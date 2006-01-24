@@ -63,7 +63,7 @@
 	<key>boardListSelBgFocused</key>
 	<string>boardListSelBgFocused</string>
 	<key>cmlf_icon</key>
-	<string>cmlf_icon</string>
+	<string>CMLogFinder</string>
 	<key>lastUpdatedHeader</key>
 	<string>lastUpdatedHeader</string>
 	<key>mailAttachment</key>
