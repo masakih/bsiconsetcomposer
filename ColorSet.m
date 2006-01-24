@@ -19,14 +19,17 @@ static int ThreadsListColorTag = 2;
 
 +(NSColor *)defaultBoardListColor
 {
-	return [NSColor colorWithCalibratedRed:0.898000001907
-									 green:0.929400026798
-									  blue:0.968599975109
+	return [NSColor colorWithCalibratedRed:0.898
+									 green:0.9294
+									  blue:0.9686
 									 alpha:1];
 }
 +(NSColor *)defaultThreadListColor
 {
-	return [NSColor whiteColor];
+	return [NSColor colorWithCalibratedRed:1
+									 green:1
+									  blue:1
+									 alpha:1];
 }
 
 -(void)dealloc
@@ -83,6 +86,8 @@ static int ThreadsListColorTag = 2;
 		color = [[self class] defaultBoardListColor];
 	}
 	[boardListColorWell setColor:color];
+	
+	[delegate setPlist:[self plist] forIdentifier:ColorSetIdentifier];
 }
 -(void)setThreadsListColor:(NSColor *)color
 {
@@ -94,6 +99,8 @@ static int ThreadsListColorTag = 2;
 		color = [[self class] defaultThreadListColor];
 	}
 	[threadsListColorWell setColor:color];
+	
+	[delegate setPlist:[self plist] forIdentifier:ColorSetIdentifier];
 }
 -(void)setIsIncludeColors:(BOOL)flag
 {
@@ -271,7 +278,7 @@ typedef enum {
 		return;
 	}
 	
-	[delegate setPlist:[self plist] forIdentifier:ColorSetIdentifier];
+//	[delegate setPlist:[self plist] forIdentifier:ColorSetIdentifier];
 }
 
 - (IBAction)toggleIncludeColorSet:(id)sender
