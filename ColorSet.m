@@ -2,6 +2,8 @@
 
 #import "IconSetComposer.h"
 
+#import "NSAppleEventDescriptor-Extensions.h"
+
 static NSString *ColorSetIdentifier = @"ColorSet";
 static NSString *BoardListColorKey = @"BoardListColor";
 static NSString *ThreadsListColorKey = @"ThreadsListColor";
@@ -116,7 +118,6 @@ typedef enum {
 -(void)sendingSetColor:(ColorType)colorType
 {
 	NSString *bsBundleID;
-	const char *bsBundleIDStr;
 	OSType type;
 	id targetColor;
 	id tempColor;
@@ -129,8 +130,6 @@ typedef enum {
 	
 	NSAppleEventDescriptor *propDesc;
 	
-	NSAppleEventDescriptor *classDesc;
-	NSAppleEventDescriptor *formDesc;
 	NSAppleEventDescriptor *keyDataDesc;
 	
 	NSAppleEventDescriptor *colorDesc;
@@ -153,25 +152,17 @@ typedef enum {
 	
 	/* set up BathyScaphe addr */
 	bsBundleID = [[IconSetComposer bathyScapheBundle] bundleIdentifier];
-	bsBundleIDStr = [bsBundleID UTF8String];
-	bsDesc = [NSAppleEventDescriptor descriptorWithDescriptorType:typeApplicationBundleID
-															bytes:bsBundleIDStr
-														   length:strlen(bsBundleIDStr)];
+	bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:bsBundleID];
 	
 	/* Setting color */
 	if( targetColor ) {
 		tempColor = [targetColor colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 		[tempColor getRed:&red green:&green blue:&blue alpha:&alpha];
 		
-		redDesc = [NSAppleEventDescriptor descriptorWithDescriptorType:typeShortFloat
-																 bytes:&red
-																length:sizeof(red)];
-		greenDesc = [NSAppleEventDescriptor descriptorWithDescriptorType:typeShortFloat
-																   bytes:&green
-																  length:sizeof(green)];
-		blueDesc = [NSAppleEventDescriptor descriptorWithDescriptorType:typeShortFloat
-																  bytes:&blue
-																 length:sizeof(blue)];
+		redDesc = [NSAppleEventDescriptor descriptorWithFloat:red];
+		greenDesc = [NSAppleEventDescriptor descriptorWithFloat:green];
+		blueDesc = [NSAppleEventDescriptor descriptorWithFloat:blue];
+		
 		colorDesc = [NSAppleEventDescriptor listDescriptor];
 		[colorDesc insertDescriptor:redDesc atIndex:1];
 		[colorDesc insertDescriptor:greenDesc atIndex:2];
@@ -182,20 +173,11 @@ typedef enum {
 	}
 	
 	/* create typeObjectSpecifier Descriptor */
-	propDesc = [NSAppleEventDescriptor recordDescriptor];
-	
-	classDesc = [NSAppleEventDescriptor descriptorWithTypeCode:cProperty];
-	[propDesc setDescriptor:classDesc forKeyword:keyAEDesiredClass];
-	
-	formDesc = [NSAppleEventDescriptor descriptorWithTypeCode:formPropertyID];
-	[propDesc setDescriptor:formDesc forKeyword:keyAEKeyForm];
-	
-	keyDataDesc = [NSAppleEventDescriptor descriptorWithTypeCode:type];
-	[propDesc setDescriptor:keyDataDesc forKeyword:keyAEKeyData];
-	
-	[propDesc setDescriptor:[NSAppleEventDescriptor nullDescriptor] forKeyword:keyAEContainer];
-	
-	propDesc = [propDesc coerceToDescriptorType:typeObjectSpecifier];
+	keyDataDesc = [NSAppleEventDescriptor descriptorWithTypeCode:type];	
+	propDesc = [NSAppleEventDescriptor objectSpecifierWithDesiredClass:cProperty
+															 container:nil
+															   keyForm:formPropertyID
+															   keyData:keyDataDesc];
 	
 	/* create AppleEvent */
 	ae = [NSAppleEventDescriptor appleEventWithEventClass:kAECoreSuite
@@ -208,12 +190,7 @@ typedef enum {
 	[ae setParamDescriptor:propDesc forKeyword:keyDirectObject];
 
 #ifdef DEBUG
-	{
-		Handle h = NewHandle( sizeof(char*) );
-		err = AEPrintDescToHandle( [ae aeDesc], &h );
-		NSLog(@"Desc -> %s", **(char ***)&h );
-		DisposeHandle( h );
-	}
+	NSLog(@"%@", ae);
 #endif
 	
 	err = AESendMessage( [ae aeDesc], NULL, kAECanInteract, kAEDefaultTimeout );

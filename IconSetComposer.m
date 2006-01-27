@@ -2,6 +2,8 @@
 
 #import "IconSetDocument.h"
 
+#import "NSAppleEventDescriptor-Extensions.h"
+
 static NSString *sBSIdentifer = @"jp.tsawada2.BathyScaphe";
 
 @interface IconSetComposer(AppleEvents)
@@ -325,20 +327,12 @@ final:
 }
 -(long)quitBS
 {
-	NSString *bsBundleID;
-	const char *bsBundleIDStr;
 	OSStatus err;
-	
 	NSAppleEventDescriptor *ae;
-	
 	NSAppleEventDescriptor *bsDesc;
 	
 	/* set up BathyScaphe addr */
-	bsBundleID = [[[self class] bathyScapheBundle] bundleIdentifier];
-	bsBundleIDStr = [bsBundleID UTF8String];
-	bsDesc = [NSAppleEventDescriptor descriptorWithDescriptorType:typeApplicationBundleID
-															bytes:bsBundleIDStr
-														   length:strlen(bsBundleIDStr)];
+	bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:sBSIdentifer];
 	
 	ae = [NSAppleEventDescriptor appleEventWithEventClass:kCoreEventClass
 												  eventID:kAEQuitApplication
@@ -346,7 +340,10 @@ final:
 												 returnID:kAutoGenerateReturnID
 											transactionID:kAnyTransactionID];
 	
-	err = AESendMessage( [ae aeDesc], NULL, kAECanInteract, kAEDefaultTimeout );
+//	err = AESendMessage( [ae aeDesc], NULL, kAECanInteract, kAEDefaultTimeout );
+	err = [ae sendAppleEventWithMode:kAECanInteract
+					  timeOutInTicks:kAEDefaultTimeout
+							  replay:NULL];
 	
 	if( err != noErr ) {
 		NSLog(@"AESendMessage Error. ErrorID ---> %d", err );
@@ -459,10 +456,10 @@ final:
 	}
 }
 
-//- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
-//{
-//	return NO;
-//}
+- (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
+{
+	return NO;
+}
 
 @end
 
@@ -470,8 +467,6 @@ final:
 
 -(NSColor *)getBathyScapheColor:(ColorType)colorType
 {
-	NSString *bsBundleID;
-	const char *bsBundleIDStr;
 	OSType type;
 	id result = nil;
 	float red, green, blue;
@@ -479,19 +474,13 @@ final:
 	
 	[self launchBS];
 	
-	AppleEvent reply = {0,0};
 	NSAppleEventDescriptor *replyDesc;
 	NSAppleEventDescriptor *colorComponentsDesc;
 	NSAppleEventDescriptor *colorComponentDesc;
 	
 	NSAppleEventDescriptor *ae;
-	
 	NSAppleEventDescriptor *bsDesc;
-	
 	NSAppleEventDescriptor *propDesc;
-	
-	NSAppleEventDescriptor *classDesc;
-	NSAppleEventDescriptor *formDesc;
 	NSAppleEventDescriptor *keyDataDesc;
 	
 	switch(colorType) {
@@ -506,28 +495,15 @@ final:
 	}
 	
 	/* set up BathyScaphe addr */
-	bsBundleID = [[IconSetComposer bathyScapheBundle] bundleIdentifier];
-	bsBundleIDStr = [bsBundleID UTF8String];
-	bsDesc = [NSAppleEventDescriptor descriptorWithDescriptorType:typeApplicationBundleID
-															bytes:bsBundleIDStr
-														   length:strlen(bsBundleIDStr)];
+	bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:sBSIdentifer];
 	
 	
 	/* create typeObjectSpecifier Descriptor */
-	propDesc = [NSAppleEventDescriptor recordDescriptor];
-	
-	classDesc = [NSAppleEventDescriptor descriptorWithTypeCode:cProperty];
-	[propDesc setDescriptor:classDesc forKeyword:keyAEDesiredClass];
-	
-	formDesc = [NSAppleEventDescriptor descriptorWithTypeCode:formPropertyID];
-	[propDesc setDescriptor:formDesc forKeyword:keyAEKeyForm];
-	
-	keyDataDesc = [NSAppleEventDescriptor descriptorWithTypeCode:type];
-	[propDesc setDescriptor:keyDataDesc forKeyword:keyAEKeyData];
-	
-	[propDesc setDescriptor:[NSAppleEventDescriptor nullDescriptor] forKeyword:keyAEContainer];
-	
-	propDesc = [propDesc coerceToDescriptorType:typeObjectSpecifier];
+	keyDataDesc = [NSAppleEventDescriptor descriptorWithTypeCode:type];	
+	propDesc = [NSAppleEventDescriptor objectSpecifierWithDesiredClass:cProperty
+															 container:nil
+															   keyForm:formPropertyID
+															   keyData:keyDataDesc];
 	
 	/* create AppleEvent */
 	ae = [NSAppleEventDescriptor appleEventWithEventClass:kAECoreSuite
@@ -539,15 +515,13 @@ final:
 	[ae setParamDescriptor:propDesc forKeyword:keyDirectObject];
 	
 #ifdef DEBUG
-	{
-		Handle h = NewHandle( sizeof(char*) );
-		err = AEPrintDescToHandle( [ae aeDesc], &h );
-		NSLog(@"Desc -> %s", **(char ***)&h );
-		DisposeHandle( h );
-	}
+	NSLog(@"%@", ae);
 #endif
 	
-	err = AESendMessage( [ae aeDesc], &reply, kAECanInteract + kAEWaitReply, kAEDefaultTimeout );
+//	err = AESendMessage( [ae aeDesc], &reply, kAECanInteract + kAEWaitReply, kAEDefaultTimeout );
+	err = [ae sendAppleEventWithMode:kAECanInteract + kAEWaitReply
+					  timeOutInTicks:kAEDefaultTimeout
+							  replay:&replyDesc];
 	
 	if( err != noErr ) {
 		NSLog(@"AESendMessage Error. ErrorID ---> %d", err );
@@ -555,15 +529,9 @@ final:
 	}
 	
 #ifdef DEBUG
-	{
-		Handle h = NewHandle( sizeof(char*) );
-		err = AEPrintDescToHandle( &reply, &h );
-		NSLog(@"Desc -> %s", **(char ***)&h );
-		DisposeHandle( h );
-	}
+	NSLog(@"%@", replyDesc);
 #endif
 	
-	replyDesc = [[[NSAppleEventDescriptor alloc] initWithAEDescNoCopy:&reply] autorelease];
 	colorComponentsDesc = [replyDesc paramDescriptorForKeyword:keyDirectObject];
 	colorComponentDesc = [colorComponentsDesc descriptorAtIndex:1];
 	red = [[colorComponentDesc stringValue] floatValue];
