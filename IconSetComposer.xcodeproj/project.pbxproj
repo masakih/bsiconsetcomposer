@@ -11,6 +11,8 @@
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 		F41CD7AE090FDF3C00D66C88 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F4F4B5FC08818D4400E44313 /* Credits.rtf */; };
+		F42C27480987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C27460987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m */; };
+		F42C27670987B9350032C9F9 /* NSWorkspace-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C27650987B9350032C9F9 /* NSWorkspace-Extensions.m */; };
 		F435F24C09238065004965EB /* IconTray-Dragging.m in Sources */ = {isa = PBXBuildFile; fileRef = F435F24B09238065004965EB /* IconTray-Dragging.m */; };
 		F435F27E09238428004965EB /* IconTray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F435F27D09238428004965EB /* IconTray.framework */; };
 		F435F29A09238699004965EB /* IconTray.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F435F27D09238428004965EB /* IconTray.framework */; };
@@ -84,6 +86,11 @@
 		32DBCF750370BD2300C91783 /* IconSetComposer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconSetComposer_Prefix.pch; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* BSIconSetComposer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSIconSetComposer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42C27450987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAppleEventDescriptor-Extensions.h"; sourceTree = "<group>"; };
+		F42C27460987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleEventDescriptor-Extensions.m"; sourceTree = "<group>"; };
+		F42C274F0987B7FB0032C9F9 /* CocoaEextensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaEextensions.h; sourceTree = "<group>"; };
+		F42C27640987B9350032C9F9 /* NSWorkspace-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWorkspace-Extensions.h"; sourceTree = "<group>"; };
+		F42C27650987B9350032C9F9 /* NSWorkspace-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWorkspace-Extensions.m"; sourceTree = "<group>"; };
 		F435F24B09238065004965EB /* IconTray-Dragging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IconTray-Dragging.m"; sourceTree = "<group>"; };
 		F435F27D09238428004965EB /* IconTray.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IconTray.framework; path = IconTrayPalette/build/Release/IconTray.framework; sourceTree = "<group>"; };
 		F442011E08EFDF8A007AFE9F /* BathyScapheSystemImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BathyScapheSystemImages.plist; sourceTree = "<group>"; };
@@ -167,6 +174,7 @@
 		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F42C27420987B7570032C9F9 /* Extensions */,
 				F435F24B09238065004965EB /* IconTray-Dragging.m */,
 				F4E4476E08AFABF200375AF1 /* TemporaryFolder.h */,
 				F4E4476F08AFABF200375AF1 /* TemporaryFolder.m */,
@@ -220,6 +228,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F42C27420987B7570032C9F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F42C274F0987B7FB0032C9F9 /* CocoaEextensions.h */,
+				F42C27640987B9350032C9F9 /* NSWorkspace-Extensions.h */,
+				F42C27650987B9350032C9F9 /* NSWorkspace-Extensions.m */,
+				F42C27450987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.h */,
+				F42C27460987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		F44203E208F04A66007AFE9F /* Localize */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,11 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4F4AE960880C61600E44313 /* Build configuration list for PBXNativeTarget "IconSetComposer" */;
 			buildPhases = (
+				8D15AC300486D014006FF6A4 /* Sources */,
+				8D15AC330486D014006FF6A4 /* Frameworks */,
 				F406E99E08CDC35C007CB106 /* Create sdef */,
 				F442040108F05189007AFE9F /* Make Localized Files */,
 				8D15AC2B0486D014006FF6A4 /* Resources */,
-				8D15AC300486D014006FF6A4 /* Sources */,
-				8D15AC330486D014006FF6A4 /* Frameworks */,
 				F435F29709238674004965EB /* Copy Frameworks */,
 			);
 			buildRules = (
@@ -362,6 +382,8 @@
 				F4E4477008AFABF200375AF1 /* TemporaryFolder.m in Sources */,
 				F4FF6E7908C74AEF00C0214D /* ColorSet.m in Sources */,
 				F435F24C09238065004965EB /* IconTray-Dragging.m in Sources */,
+				F42C27480987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m in Sources */,
+				F42C27670987B9350032C9F9 /* NSWorkspace-Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
