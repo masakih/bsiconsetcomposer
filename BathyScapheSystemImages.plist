@@ -23,5 +23,9 @@
 	<string>movePrev</string>
 	<string>moveTop</string>
 	<string>moveUpdated</string>
+	<string>browserSplitter</string>
+	<string>browserSplitterDimple</string>
+	<string>browserSplitterDimpleVertical</string>
+	<string>browserSplitterVertical</string>
 </array>
 </plist>
