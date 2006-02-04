@@ -19,8 +19,10 @@ all:
 
 tagging:
 	echo "Tagging the 1.1 (x) release of BSIconSetComposer project."
+	export LC_ALL=C;	\
+	REV=`svn info | awk '/Last Changed Rev/ {print $$4}'` ;	\
 	ver=`grep -A1 'CFBundleShortVersionString' Info.plist | tail -1 | tr -d '\t</string>'`;    \
-	svn copy $(HEAD) $(TAGS_DIR)/release-$${ver}
+	svn copy $(HEAD) $(TAGS_DIR)/release-$${ver}.$${REV}
 
 Localizable: IconSetComposer.m
 	genstrings -o English.lproj $<
