@@ -39,7 +39,7 @@
 	<key>ReloadThread</key>
 	<string>スレッドの更新</string>
 	<key>RemoveFavorites</key>
-	<string>スレッドの更新</string>
+	<string>お気に入りを削除</string>
 	<key>ResToThread</key>
 	<string>書き込み</string>
 	<key>SaveAsDraft</key>

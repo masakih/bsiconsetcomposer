@@ -18,8 +18,8 @@ all:
 	@echo use target tagging 
 
 tagging:
-	echo "Tagging the 1.1b (x) release of BSIconSetComposer project."
-	ver=`grep -A1 'CFBundleVersion' Info.plist | tail -1 | tr -d '\t</string>'`;    \
+	echo "Tagging the 1.1 (x) release of BSIconSetComposer project."
+	ver=`grep -A1 'CFBundleShortVersionString' Info.plist | tail -1 | tr -d '\t</string>'`;    \
 	svn copy $(HEAD) $(TAGS_DIR)/release-$${ver}
 
 Localizable: IconSetComposer.m
@@ -35,6 +35,8 @@ checkLocalizable:
 release: updateRevision
 	xcodebuild -configuration $(DEPLOYMENT)
 	$(MAKE) restorInfoPlist
+
+package: release
 	export LC_ALL=C;	\
 	REV=`svn info | awk '/Last Changed Rev/ {print $$4}'`;	\
 	ditto -ck -rsrc --keepParent $(APP) $(APP_NAME)-$(VERSION)-$${REV}.zip
