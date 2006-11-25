@@ -240,9 +240,21 @@ static NSArray *sThreadIdentifiers;
 -(void)setPlist:(id)plist forIdentifier:(NSString *)identifier
 {
 	NSFileWrapper *fw;
+	NSString *path;
+	TemporaryFolder *t = [TemporaryFolder temporaryFolder];
 	
 	if( !plist && ![plist respondsToSelector:@selector(writeToFile:atomically:)] ) {
 		return;
+	}
+	
+	if( plist ) {
+		NSString *fileName = [identifier stringByAppendingPathExtension:@"plist"];
+		NSString *path;
+		
+		path = [[t path] stringByAppendingPathComponent:fileName];
+		if( ![plist writeToFile:path atomically:NO] ) {
+			return;
+		}
 	}
 	
 	if( !wrapper ) {
@@ -250,19 +262,21 @@ static NSArray *sThreadIdentifiers;
 	}
 	
 	if( fw = [self fileWrapperForIdentifier:identifier] ) {
+		// 現在のものと同じかどうか。
+		if(plist && [fw isRegularFile]) {
+			id dat = [fw regularFileContents];
+			id temp = [[t path] stringByAppendingPathComponent:@"t.plist"];
+			[dat writeToFile:temp atomically:NO];
+			
+			id currenPlist = [NSDictionary dictionaryWithContentsOfFile:temp];
+			if([plist isEqual:currenPlist]) {
+				return; // 同じなら終了。
+			}
+		}
 		[wrapper removeFileWrapper:fw];
 	}
 	
 	if( plist ) {
-		NSString *fileName = [identifier stringByAppendingPathExtension:@"plist"];
-		TemporaryFolder *t = [TemporaryFolder temporaryFolder];
-		NSString *path;
-		
-		path = [[t path] stringByAppendingPathComponent:fileName];
-		if( ![plist writeToFile:path atomically:NO] ) {
-			return;
-		}
-		
 		[wrapper addFileWithPath:path];
 		
 		[self updateChangeCount:NSChangeDone];
@@ -440,7 +454,7 @@ static NSArray *sThreadIdentifiers;
 	identifier = [iconTray identifier];
 	filename = [iconTray imageName];
 	
-	if( ![[filename stringByDeletingPathExtension] isEqualTo:identifier] ) {
+	if(filename && ![[filename stringByDeletingPathExtension] isEqualTo:identifier] ) {
 		filename = [identifier stringByAppendingPathExtension:[filename pathExtension]];
 		[iconTray setImageName:filename];
 	}
@@ -453,8 +467,10 @@ static NSArray *sThreadIdentifiers;
 		[wrapper removeFileWrapper:fw];
 	}
 	
-	filename = [wrapper addFileWrapper:[iconTray imageFileWrapper]];
-	NSLog(@"##### filewrapper Key -> %@", filename );
+	if(imageFileWrapper) {
+		filename = [wrapper addFileWrapper:imageFileWrapper];
+		NSLog(@"##### filewrapper Key -> %@", filename );
+	}
 	
 	[self updateChangeCount:NSChangeDone];
 }
