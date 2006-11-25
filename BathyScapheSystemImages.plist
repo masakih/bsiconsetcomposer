@@ -15,12 +15,19 @@
 	<string>Scripts</string>
 	<string>Spacer</string>
 	<string>SplitterHandle</string>
+	<string>FontBigger</string>
+	<string>FontSmaller</string>
+	<string>titleRulerInfoIcon</string>
+	<string>smallSquareMinus</string>
+	<string>smallSquarePlus</string>
 	<string>Status_header</string>
 	<string>bathyicon192</string>
 	<string>insertSage</string>
 	<string>moveEnd</string>
 	<string>moveNext</string>
 	<string>movePrev</string>
+	<string>smallLocked</string>
+	<string>smallUnlocked</string>
 	<string>moveTop</string>
 	<string>moveUpdated</string>
 	<string>browserSplitter</string>
