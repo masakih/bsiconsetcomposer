@@ -6,7 +6,7 @@
 //  Copyright __MyCompanyName__ 2005 . All rights reserved.
 //
 
-#import "IconTray/IconTray.h"
+#import <IconTray/IconTray.h>
 
 #import "TemporaryFolder.h"
 
@@ -50,7 +50,7 @@
 	pb = [sender draggingPasteboard];
 	types = [pb types];
 	
-	if( [types containsObject:NSFilesPromisePboardType] ) {
+	if([types containsObject:NSFilesPromisePboardType]) {
 		TemporaryFolder *tmp = [TemporaryFolder temporaryFolder];
 		paths = [sender namesOfPromisedFilesDroppedAtDestination:[tmp url]];
 		path = [paths objectAtIndex:0];
@@ -60,14 +60,11 @@
 		imageName = [path lastPathComponent];
 	}
 	
-	// image が nil ならべつのタイプを試みる。
-	if( !aImage ) {
-		return [self setImageFromPasteboard:pb];
-	} else {
-		return [self setImage:aImage withName:imageName];
+	if(aImage && [self setImage:aImage withName:imageName]) {
+		return YES;
 	}
-	
-	return NO;
+		
+	return [self setImageFromPasteboard:pb];
 }
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender
 {

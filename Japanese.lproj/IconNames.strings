@@ -1,88 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>AddFavorites</key>
-	<string>お気に入りに追加</string>
-	<key>Board</key>
-	<string>掲示板</string>
-	<key>BoardList</key>
-	<string>掲示板リスト</string>
-	<key>Delete</key>
-	<string>削除</string>
-	<key>EllipsisDownMouseDown</key>
-	<string>省略下矢印</string>
-	<key>EllipsisDownMouseOver</key>
-	<string>省略下矢印</string>
-	<key>EllipsisDownProxy</key>
-	<string>省略下矢印</string>
-	<key>EllipsisMouseDown</key>
-	<string>省略</string>
-	<key>EllipsisMouseOver</key>
-	<string>省略</string>
-	<key>EllipsisProxy</key>
-	<string>省略</string>
-	<key>EllipsisUpMouseDown</key>
-	<string>省略上矢印</string>
-	<key>EllipsisUpMouseOver</key>
-	<string>省略上矢印</string>
-	<key>EllipsisUpProxy</key>
-	<string>省略上矢印</string>
-	<key>FavoritesItem</key>
-	<string>お気に入り</string>
-	<key>Folder</key>
-	<string>フォルダ</string>
-	<key>OrderFrontBrowser</key>
-	<string>ブラウザを最前面に</string>
-	<key>ReloadList</key>
-	<string>一覧の更新</string>
-	<key>ReloadThread</key>
-	<string>スレッドの更新</string>
-	<key>RemoveFavorites</key>
-	<string>お気に入りを削除</string>
-	<key>ResToThread</key>
-	<string>書き込み</string>
-	<key>SaveAsDraft</key>
-	<string>下書きとして保存</string>
-	<key>SendMessage</key>
-	<string>送信</string>
-	<key>Status_HeadModified</key>
-	<string>微小変異</string>
-	<key>Status_logcached</key>
-	<string>新着なし</string>
-	<key>Status_newThread</key>
-	<string>新スレッド</string>
-	<key>Status_updated</key>
-	<string>新着あり</string>
-	<key>age</key>
-	<string>age</string>
-	<key>beDisabled</key>
-	<string>Be ログアウト中</string>
-	<key>beEnabled</key>
-	<string>Be ログイン中</string>
-	<key>boardListSelBg</key>
-	<string>選択項目 (ディアクティブ)</string>
-	<key>boardListSelBgFocused</key>
-	<string>選択項目 (アクティブ)</string>
-	<key>cmlf_icon</key>
-	<string>CMLogFinder</string>
-	<key>lastUpdatedHeader</key>
-	<string>新着</string>
-	<key>mailAttachment</key>
-	<string>メール欄</string>
-	<key>offline</key>
-	<string>オフライン</string>
-	<key>online</key>
-	<string>オンライン</string>
-	<key>sage</key>
-	<string>sage</string>
-	<key>stopSign</key>
-	<string>停止</string>
-	<key>titleRulerBgAquaBlue</key>
-	<string>コンテントヘッダ-アクア-</string>
-	<key>titleRulerBgAquaGraphite</key>
-	<string>コンテントヘッダ-グラファイト-</string>
-	<key>titleRulerBgNotActive</key>
-	<string>コンテントヘッダ-インアクティブ-</string>
-</dict>
-</plist>
+"EllipsisMouseDown" = "省略";
+"FavoritesItem" = "お気に入り";
+"EllipsisDownMouseOver" = "省略下矢印";
+"OrderFrontBrowser" = "ブラウザを最前面に";
+"EllipsisMouseOver" = "省略";
+"EllipsisDownProxy" = "省略下矢印";
+"Board" = "掲示板";
+"EllipsisUpProxy" = "省略上矢印";
+"Status_HeadModified" = "微小変異";
+"ReloadThread" = "スレッドの更新";
+"age" = "age";
+"Folder" = "フォルダ";
+"Status_updated" = "新着あり";
+"BoardList" = "掲示板リスト";
+"Delete" = "削除";
+"EllipsisDownMouseDown" = "省略下矢印";
+"Status_logcached" = "新着なし";
+"SaveAsDraft" = "下書きとして保存";
+"EllipsisUpMouseDown" = "省略上矢印";
+"beDisabled" = "Be ログアウト中";
+"lastUpdatedHeader" = "新着";
+"ResToThread" = "書き込み";
+"mailAttachment" = "メール欄";
+"ReloadList" = "一覧の更新";
+"Status_newThread" = "新スレッド";
+"RemoveFavorites" = "お気に入りを削除";
+"sage" = "sage";
+"beEnabled" = "Be ログイン中";
+"AddFavorites" = "お気に入りに追加";
+"EllipsisProxy" = "省略";
+"SendMessage" = "送信";
+"online" = "オンライン";
+"offline" = "オフライン";
+"EllipsisUpMouseOver" = "省略上矢印";
+"SmartBoard" = "スマート掲示板";
+"stopSign" = "停止";

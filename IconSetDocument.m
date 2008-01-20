@@ -8,15 +8,39 @@
 
 #import "IconSetDocument.h"
 
-#import <IconTray/IconTray.h>
+//#import <IconTray/IconTray.h>
 #import "IconSetComposer.h"
 #import "TemporaryFolder.h"
+
+#import "BSCSIcons.h"
+
+NSString *const BSCIPlistExtension = @"plist";
+
+NSString *const BSCIImageListPlistName = @"ImageList";
+NSString *const BSCIImageListToolbarKey = @"Toolbar";
+NSString *const BSCIImageListThreadKey = @"Thread";
+NSString *const BSCIImageListBoardListKey = @"BoardList";
+NSString *const BSCIImageListThreadListKey = @"ThreadList";
+NSString *const BSCIImageListImageNameKey = @"imageName";
+
+NSString *const BSCIIdentifierKey = @"identifier";
+NSString *const BSCIImageFileWrapperKey = @"imageFileWrapper";
+
+NSString *const BSCITemporaryPlistFileName = @"temp.plist";
+
+// Tabview Item identifier.
+NSString *const BSCIToolbarTabIdentifier = @"Toolbar";
+NSString *const BSCIBoardListTabIdentifier = @"BoardList";
+NSString *const BSCIThreadListTabIdentifier = @"ThreadList";
+NSString *const BSCIThreadTabIdentifier = @"Thread";
+NSString *const BSCIColorsTabIdentifier = @"Colors";
 
 @interface BSISApplyCommand : NSScriptCommand
 @end
 
 @interface IconSetDocument(Private)
 -(void)setupIconTrays;
+-(void)changeFileOfImage:(NSFileWrapper *)imageFileWrapper forIdentifier:(NSString *)identifier;
 @end
 
 @implementation IconSetDocument
@@ -34,20 +58,20 @@ static NSArray *sThreadIdentifiers;
 	NSDictionary *key;
 	
 	while( key = [keysEnum nextObject] ) {
-		[result addObject:[key objectForKey:@"imageName"]];
+		[result addObject:[key objectForKey:BSCIImageListImageNameKey]];
 	}
 	
 	return result; 
 }
 +(void)initialize
 {
-	NSString *imageListPath = [[NSBundle mainBundle] pathForResource:@"ImageList" ofType:@"plist"];
+	NSString *imageListPath = [[NSBundle mainBundle] pathForResource:BSCIImageListPlistName ofType:BSCIPlistExtension];
 	NSDictionary *imageList = [NSDictionary dictionaryWithContentsOfFile:imageListPath];
 	
-	sToolbarIdentifiers = [[self arrayForImageName:[imageList objectForKey:@"Toolbar"]] retain];
-	sThreadIdentifiers = [[self arrayForImageName:[imageList objectForKey:@"Thread"]] retain];
-	sBoardListIdentifiers = [[self arrayForImageName:[imageList objectForKey:@"BoardList"]] retain];
-	sThreadListIdentifiers = [[self arrayForImageName:[imageList objectForKey:@"ThreadList"]] retain];
+	sToolbarIdentifiers = [[self arrayForImageName:[imageList objectForKey:BSCIImageListToolbarKey]] retain];
+	sThreadIdentifiers = [[self arrayForImageName:[imageList objectForKey:BSCIImageListThreadKey]] retain];
+	sBoardListIdentifiers = [[self arrayForImageName:[imageList objectForKey:BSCIImageListBoardListKey]] retain];
+	sThreadListIdentifiers = [[self arrayForImageName:[imageList objectForKey:BSCIImageListThreadListKey]] retain];
 }
 
 +(NSArray *)managedImageNames
@@ -76,6 +100,14 @@ static NSArray *sThreadIdentifiers;
     return @"IconSetDocument";
 }
 
+- (id)init
+{
+	self = [super init];
+	[self setupIconTrays];
+	
+	return self;
+}
+
 - (void)windowControllerDidLoadNib:(NSWindowController *) aController
 {
     [super windowControllerDidLoadNib:aController];
@@ -87,10 +119,6 @@ static NSArray *sThreadIdentifiers;
 	
 	[tab selectLastTabViewItem:self];
 	[tab selectFirstTabViewItem:self];
-	[self setupIconTrays];
-	[self updateAll];
-	
-//	[self updateChangeCount:NSChangeCleared];
 }
 
 - (BOOL)readFromFileWrapper:(NSFileWrapper *)fileWrapper ofType:(NSString *)typeName error:(NSError **)outError
@@ -100,9 +128,7 @@ static NSArray *sThreadIdentifiers;
 	[temp release];
 	
 	[self updateAll];
-	
-//	[self updateChangeCount:NSChangeCleared];
-	
+		
 	return YES;
 }
 
@@ -143,15 +169,15 @@ static NSArray *sThreadIdentifiers;
 	NSSize viewSize;
 	NSRect windowRect;
 	
-	if( [[tabViewItem identifier] isEqualTo:@"Toolbar"] ) {
+	if( [[tabViewItem identifier] isEqualTo:BSCIToolbarTabIdentifier] ) {
 		view = toolbarIconSetView;
-	} else if( [[tabViewItem identifier] isEqualTo:@"BoardList"] ) {
+	} else if( [[tabViewItem identifier] isEqualTo:BSCIBoardListTabIdentifier] ) {
 		view = boardListIconSetView;
-	} else if( [[tabViewItem identifier] isEqualTo:@"ThreadList"] ) {
+	} else if( [[tabViewItem identifier] isEqualTo:BSCIThreadListTabIdentifier] ) {
 		view = threadListIconSetView;
-	} else if( [[tabViewItem identifier] isEqualTo:@"Thread"] ) {
+	} else if( [[tabViewItem identifier] isEqualTo:BSCIThreadTabIdentifier] ) {
 		view = threadIconSetView;
-	} else if( [[tabViewItem identifier] isEqualTo:@"Colors"] ) {
+	} else if( [[tabViewItem identifier] isEqualTo:BSCIColorsTabIdentifier] ) {
 		view = [colorSet view];
 	}
 	
@@ -192,7 +218,7 @@ static NSArray *sThreadIdentifiers;
 	dict = [wrapper fileWrappers];
 	
 	array = [IconSetComposer acceptImageExtensions];
-	array = [array arrayByAddingObject:@"plist"];
+	array = [array arrayByAddingObject:BSCIPlistExtension];
 	extEnum = [array objectEnumerator];
 	while( ext = [extEnum nextObject] ) {
 		fileName = [identifier stringByAppendingPathExtension:ext];
@@ -237,19 +263,22 @@ static NSArray *sThreadIdentifiers;
 	[self updateChangeCount:NSChangeDone];
 }
 
--(void)setPlist:(id)plist forIdentifier:(NSString *)identifier
+-(void)didChangeColorSet:(ColorSet *)set
 {
+	NSString *identifier;
+	NSDictionary *plist;
 	NSFileWrapper *fw;
 	NSString *path;
 	TemporaryFolder *t = [TemporaryFolder temporaryFolder];
 	
+	identifier = [set identifier];
+	plist = [set plist];
 	if( !plist && ![plist respondsToSelector:@selector(writeToFile:atomically:)] ) {
 		return;
 	}
 	
 	if( plist ) {
-		NSString *fileName = [identifier stringByAppendingPathExtension:@"plist"];
-		NSString *path;
+		NSString *fileName = [identifier stringByAppendingPathExtension:BSCIPlistExtension];
 		
 		path = [[t path] stringByAppendingPathComponent:fileName];
 		if( ![plist writeToFile:path atomically:NO] ) {
@@ -265,7 +294,7 @@ static NSArray *sThreadIdentifiers;
 		// 現在のものと同じかどうか。
 		if(plist && [fw isRegularFile]) {
 			id dat = [fw regularFileContents];
-			id temp = [[t path] stringByAppendingPathComponent:@"t.plist"];
+			id temp = [[t path] stringByAppendingPathComponent:BSCITemporaryPlistFileName];
 			[dat writeToFile:temp atomically:NO];
 			
 			id currenPlist = [NSDictionary dictionaryWithContentsOfFile:temp];
@@ -319,49 +348,47 @@ static NSArray *sThreadIdentifiers;
 	
 	enums = [[[self class] managedImageNames] objectEnumerator];
 	while( object = [enums nextObject] ) {
-		id dict;
+		id icons;
 		
-		dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-			NSLocalizedStringFromTable( object,  @"IconNames", @"Icon Title" ), @"title",
-			[IconSetComposer defaultImageForIdentifier:object], @"defaultImage",
-			[NSNull null], @"image",
-			[NSNull null], @"imgaeFileWrapper",
-			nil];
-		[newIconTrays setObject:dict forKey:object];
-/*		
-		[dict addObserver:self
-			   forKeyPath:@"image"
-				  options:NSKeyValueObservingOptionNew
-				  context:nil];
-		[self addObserver:dict
-			   forKeyPath:@"image"
-				  options:NSKeyValueObservingOptionNew
-				  context:nil];
-*/
+		icons = [[BSCSIcons alloc] init];
+		[icons setTitle:NSLocalizedStringFromTable( object,  @"IconNames", @"Icon Title" )];
+		[icons setPlaceholder:[IconSetComposer defaultImageForIdentifier:object]];
+		[icons setIdentifier:object];
+		[newIconTrays setObject:icons forKey:object];
+		[icons addObserver:self
+				forKeyPath:BSCIImageFileWrapperKey
+				   options:NSKeyValueObservingOptionNew //| NSKeyValueObservingOptionOld
+				   context:NULL];
 	}
 	
 	[self setIconTrays:newIconTrays];
 }
-/*
-+ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-	NSLog(@"Automatic observe --- key -> %@", key );
+	if(![keyPath isEqual:BSCIImageFileWrapperKey]) return;
 	
-	return [super automaticallyNotifiesObserversForKey:key];
+	NSFileWrapper *imageFileWrapper = [object valueForKey:keyPath];
+	NSString *identifier = [object valueForKey:BSCIIdentifierKey];
+	
+	[self changeFileOfImage:imageFileWrapper forIdentifier:identifier];
 }
-- (void)observeValueForKeyPath:(NSString *)keyPath
-					  ofObject:(id)object
-						change:(NSDictionary *)change
-					   context:(void *)context
+
+- (id)valueForUndefinedKey:(NSString *)key
 {
-	NSLog(@"Chnage!! key -> %@", keyPath);
+	id result;
 	
-	[super observeValueForKeyPath:keyPath
-						 ofObject:object
-						   change:change
-						  context:context];
+	result = [[self iconTrays] valueForKey:key];
+	if(result) {
+		return result;
+	}
+	
+	return [super valueForUndefinedKey:key];
 }
-*/
+
+- (IBAction)debuggingInfo:(id)sender
+{
+	NSLog(@"iconTrays ->\n%@", [[self iconTrays] valueForKey:@"BoardList"]);
+}
 
 -(void)updateAll
 {
@@ -395,13 +422,7 @@ static NSArray *sThreadIdentifiers;
 		NSString *path = [[self fileName] stringByAppendingPathComponent:filename];
 		[colorSet setPlistPath:path];
 	} else {
-		/*
-		id dict = [[self iconTrays] objectForKey:key];
-		if( dict ) {
-			[dict setObject:image forKey:@"image"];
-		}
-		 */
-		[[self iconTrays] setValue:fw forKeyPath:[NSString stringWithFormat:@"%@.%@", key, @"imageFileWrapper"]];
+		[self setValue:fw forKeyPath:[NSString stringWithFormat:@"%@.%@", key, BSCIImageFileWrapperKey]];
 	}
 }
 	
@@ -420,7 +441,7 @@ static NSArray *sThreadIdentifiers;
 	dict = [wrapper fileWrappers];
 	filesEnum = [dict keyEnumerator];
 	while( file = [filesEnum nextObject] ) {
-		if( [file hasSuffix:@"plist"] ) continue;
+		if( [file hasSuffix:BSCIPlistExtension] ) continue;
 		
 		data = [[dict objectForKey:file] regularFileContents];
 		newPath = [bathyScapheResourceFolder stringByAppendingPathComponent:file];
@@ -445,23 +466,21 @@ static NSArray *sThreadIdentifiers;
 	[command executeCommand];
 }
 
--(void)iconTray:(IconTray *)iconTray didChangeFileOfImage:(NSFileWrapper *)imageFileWrapper
+-(void)changeFileOfImage:(NSFileWrapper *)imageFileWrapper forIdentifier:(NSString *)identifier
 {
 	NSFileWrapper *fw;
-	NSString *identifier;
 	NSString *filename;
 	
-	identifier = [iconTray identifier];
-	filename = [iconTray imageName];
+	filename = [imageFileWrapper preferredFilename];
 	
 	if(filename && ![[filename stringByDeletingPathExtension] isEqualTo:identifier] ) {
 		filename = [identifier stringByAppendingPathExtension:[filename pathExtension]];
-		[iconTray setImageName:filename];
+		[imageFileWrapper setPreferredFilename:filename];
 	}
 	
 	fw = [self fileWrapperForIdentifier:identifier];
 	if( fw ) {
-		if( [fw isEqual:[iconTray imageFileWrapper]] ) {
+		if( [fw isEqual:imageFileWrapper] ) {
 			return;
 		}
 		[wrapper removeFileWrapper:fw];
@@ -469,14 +488,13 @@ static NSArray *sThreadIdentifiers;
 	
 	if(imageFileWrapper) {
 		filename = [wrapper addFileWrapper:imageFileWrapper];
-		NSLog(@"##### filewrapper Key -> %@", filename );
+//		NSLog(@"##### filewrapper Key -> %@", filename );
 	}
 	
 	[self updateChangeCount:NSChangeDone];
 }
 
 @end
-
 
 #pragma mark ## Scripting Support ##
 

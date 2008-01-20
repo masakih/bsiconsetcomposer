@@ -25,7 +25,7 @@
 	
 	IBOutlet NSTabView *tab;
 	
-	IBOutlet id arrayController;
+//	IBOutlet id arrayController;
 	
 	NSFileWrapper *wrapper;
 	
@@ -34,7 +34,7 @@
 +(NSArray *)managedImageNames;
 
 -(void)setPath:(NSString *)path forIdentifier:(NSString *)identifier;
--(void)setPlist:(id)plist forIdentifier:(NSString *)identifier;
+//-(void)setPlist:(id)plist forIdentifier:(NSString *)identifier;
 
 -(IBAction)apply:(id)sender;
 -(IBAction)applyAndRestartBathyScaphe:(id)sender;

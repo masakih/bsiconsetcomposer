@@ -2,12 +2,15 @@
 
 #import "IconSetComposer.h"
 
+#import "BSCSUserDefaults.h"
 #import "NSAppleEventDescriptor-Extensions.h"
 
 static NSString *ColorSetIdentifier = @"ColorSet";
 static NSString *BoardListColorKey = @"BoardListColor";
 static NSString *ThreadsListColorKey = @"ThreadsListColor";
 static NSString *IncludeColorsKey = @"IncludeColors";
+static NSString *UseStripeKey = @"UseStripe";
+static NSString *ContentHeaderTextColorIsBlackKey = @"ContentHeaderTextColorIsBlackKey";
 
 static int BoardListColorTag = 1;
 static int ThreadsListColorTag = 2;
@@ -26,7 +29,7 @@ static int ThreadsListColorTag = 2;
 									  blue:0.9686
 									 alpha:1];
 }
-+(NSColor *)defaultThreadListColor
++(NSColor *)defaultThreadsListColor
 {
 	return [NSColor colorWithCalibratedRed:1
 									 green:1
@@ -42,25 +45,50 @@ static int ThreadsListColorTag = 2;
 	[super dealloc];
 }
 
+- (void)syncContentHeaderTextColor
+{
+//	NSColor *currentColor = nil;
+//	NSShadow *shadow_;
+//	NSString *te = [contentHeaderSample1 stringValue];
+//	id dict;
+//	
+//	if(isContentHeaderTextColorBlack) {
+//		currentColor = [[NSColor blackColor] retain];
+//	} else {
+//		currentColor = [[NSColor whiteColor] retain];
+//	}
+//	
+//	shadow_ = [[NSShadow alloc] init];
+//	[shadow_ setShadowOffset     : NSMakeSize(1.5, -1.5)];
+//	[shadow_ setShadowBlurRadius : 0.3];
+//	
+//	dict = [NSDictionary dictionaryWithObjectsAndKeys :
+//		[NSFont boldSystemFontOfSize : 12.0], NSFontAttributeName,
+//		currentColor, NSForegroundColorAttributeName,
+//		shadow_, NSShadowAttributeName,
+//		nil];
+//	
+//	id m = [[[NSAttributedString alloc] initWithString:te
+//											attributes:dict] autorelease];
+//	
+//	[contentHeaderSample1 setAttributedStringValue:m];
+//	[contentHeaderSample2 setAttributedStringValue:m];
+//	[contentHeaderSample3 setAttributedStringValue:m];
+}
+
 -(void)updateUI
 {
-	BOOL useColor = ([includeSetCheck state] == NSOnState);
 	NSColor *textColor;
 	
-	[applyButton setEnabled:useColor];
-    [revertBoardListButton setEnabled:useColor];
-    [revertThreadsListButton setEnabled:useColor];
-	
-	[boardListColorWell setEnabled:useColor];
-    [threadsListColorWell setEnabled:useColor];
-	
-	if( useColor ) {
+	if( isIncludeColors ) {
 		textColor = [NSColor controlTextColor];
 	} else {
 		textColor = [NSColor disabledControlTextColor];
 	}
 	[boardListColorText setTextColor:textColor];
 	[threadListColorText setTextColor:textColor];
+	
+	[self syncContentHeaderTextColor];
 }
 
 -(id)plist
@@ -74,10 +102,20 @@ static int ThreadsListColorTag = 2;
 		[dict setObject:[threadsListColor plist] forKey:ThreadsListColorKey];
 	}
 	[dict setObject:[NSNumber numberWithBool:isIncludeColors] forKey:IncludeColorsKey];
+	[dict setObject:[NSNumber numberWithBool:isUseStripe] forKey:UseStripeKey];
+	
+	if(isContentHeaderTextColorBlack) {
+		[dict setObject:[NSNumber numberWithBool:isContentHeaderTextColorBlack]
+				 forKey:ContentHeaderTextColorIsBlackKey];
+	}
 	
 	return dict;
 }
 
+- (NSColor *)boardListColor
+{
+	return boardListColor;
+}
 -(void)setBoardListColor:(NSColor *)color
 {
 	id temp = boardListColor;
@@ -88,8 +126,10 @@ static int ThreadsListColorTag = 2;
 		color = [[self class] defaultBoardListColor];
 	}
 	[boardListColorWell setColor:color];
-	
-	[delegate setPlist:[self plist] forIdentifier:ColorSetIdentifier];
+}
+- (NSColor *)threadsListColor
+{
+	return threadsListColor;
 }
 -(void)setThreadsListColor:(NSColor *)color
 {
@@ -98,17 +138,46 @@ static int ThreadsListColorTag = 2;
 	[temp release];
 	
 	if( !color ) {
-		color = [[self class] defaultThreadListColor];
+		color = [[self class] defaultThreadsListColor];
 	}
 	[threadsListColorWell setColor:color];
-	
-	[delegate setPlist:[self plist] forIdentifier:ColorSetIdentifier];
 }
--(void)setIsIncludeColors:(BOOL)flag
+-(void)setIncludeColors:(BOOL)flag
 {
 	isIncludeColors = flag;
 	[includeSetCheck setState: flag ? NSOnState : NSOffState];
 	[self updateUI];
+	
+	[delegate didChangeColorSet:self];
+}
+-(void)setUseStripe:(BOOL)flag
+{
+	isUseStripe = flag;
+	[useStripeCheck setState: flag ? NSOnState : NSOffState];
+	[self updateUI];
+	
+	[delegate didChangeColorSet:self];
+}
+- (void)setContentHeaderTextColorBlack:(BOOL)flag
+{
+	isContentHeaderTextColorBlack = flag;
+	int newSelectedTag = isContentHeaderTextColorBlack ? 1 : 0;
+	[contentHeaderColorButtons selectCellWithTag:newSelectedTag];
+	[self updateUI];
+	
+	[delegate didChangeColorSet:self];
+}
+
+- (BOOL)isBoardListColorDefault
+{
+	if(![self boardListColor]) return YES;
+	
+	return [[self boardListColor] isEqual:[[self class] defaultBoardListColor]];
+}
+- (BOOL)isThreadsListColorDefault
+{
+	if(![self threadsListColor]) return YES;
+	return [[self threadsListColor] isEqual:[[self class] defaultThreadsListColor]];
 }
 
 typedef enum {
@@ -209,10 +278,44 @@ typedef enum {
 
 - (IBAction)applyColors:(id)sender
 {
-	if( isIncludeColors ) {
-		[self sendingSetColor:kTypeBoardListColor];
-		[self sendingSetColor:kTypeThreadsListColor];
+	if(!isIncludeColors) return;
+	
+	id userDefault;
+	id subKey;
+	
+	subKey = [[[BSCSBoolUserDefault alloc] initWithKey:@"ThreadsList Draws Striped"] autorelease];
+	userDefault = [[[BSCSDictUserDefault alloc] initWithKey:@"Preferences - BackgroundColors"
+													 subKey:subKey] autorelease];
+	[userDefault writeWithDomain:[IconSetComposer bathyScapheIdentifier]
+						   value:[NSNumber numberWithBool:isUseStripe]];
+	if([self isThreadsListColorDefault]) {
+		subKey = [[[BSCSBoolUserDefault alloc] initWithKey:@"ThreadsList Draws BackgroundColor"] autorelease];
+		userDefault = [[[BSCSDictUserDefault alloc] initWithKey:@"Preferences - BackgroundColors"
+														 subKey:subKey] autorelease];
+		[userDefault writeWithDomain:[IconSetComposer bathyScapheIdentifier]
+							   value:[NSNumber numberWithBool:NO]];
 	}
+	
+	userDefault = [[[BSCSBoolUserDefault alloc] initWithKey:@"ThreadTitleBarTextUsesBlackColor"] autorelease];
+	[userDefault writeWithDomain:[IconSetComposer bathyScapheIdentifier]
+						   value:[NSNumber numberWithBool:isContentHeaderTextColorBlack]];
+	
+	[self sendingSetColor:kTypeBoardListColor];
+	[self sendingSetColor:kTypeThreadsListColor];
+}
+- (IBAction)applyOnlyColors:(id)sender
+{
+	
+	[self sendingSetColor:kTypeBoardListColor];
+	[self sendingSetColor:kTypeThreadsListColor];
+	
+	[[IconSetComposer sharedInstance] quitBathyScaphe:self];
+	
+	[self applyColors:sender];
+	
+	[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
+	
+	[[IconSetComposer sharedInstance] launchBathyScaphe:self];
 }
 
 - (IBAction)changeColor:(id)sender
@@ -234,7 +337,7 @@ typedef enum {
 		return;
 	}
 	
-	[delegate setPlist:[self plist] forIdentifier:ColorSetIdentifier];
+	[delegate didChangeColorSet:self];
 }
 
 - (IBAction)revertColor:(id)sender
@@ -255,15 +358,27 @@ typedef enum {
 		return;
 	}
 	
-//	[delegate setPlist:[self plist] forIdentifier:ColorSetIdentifier];
+	[delegate didChangeColorSet:self];
 }
 
 - (IBAction)toggleIncludeColorSet:(id)sender
 {
-	isIncludeColors = ([sender state] == NSOnState);
-	[self updateUI];
+	[self setIncludeColors:([sender state] == NSOnState)];
+}
+- (IBAction)toggleUseStripe:(id)sender
+{
+	[self setUseStripe:([sender state] == NSOnState)];
+}
+
+- (IBAction)toggleHeaderColor:(id)sender
+{	
+	if(![sender respondsToSelector:@selector(selectedCell)]) {
+		return;
+	}
 	
-	[delegate setPlist:[self plist] forIdentifier:ColorSetIdentifier];
+	BOOL isBlack = (BOOL)[[sender selectedCell] tag];
+	
+	[self setContentHeaderTextColorBlack:isBlack];
 }
 
 -(BOOL)setPlistPath:(NSString *)path
@@ -282,9 +397,21 @@ typedef enum {
 	color = [NSColor colorWithPlist:[dict objectForKey:ThreadsListColorKey]];
 	[self setThreadsListColor:color];
 	
-	[self setIsIncludeColors:[[dict objectForKey:IncludeColorsKey] boolValue]];
+	[self setIncludeColors:[[dict objectForKey:IncludeColorsKey] boolValue]];
+	[self setUseStripe:[[dict objectForKey:UseStripeKey] boolValue]];
+	
+	if([dict objectForKey:ContentHeaderTextColorIsBlackKey]) {
+		[self setContentHeaderTextColorBlack:[[dict objectForKey:ContentHeaderTextColorIsBlackKey] boolValue]];
+	}
+	
+	[delegate didChangeColorSet:self];
 	
 	return YES;
+}
+
+- (NSString *)identifier
+{
+	return ColorSetIdentifier;
 }
 
 -(NSView *)view

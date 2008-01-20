@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>AddFavorites</key>
@@ -46,26 +46,22 @@
 	<string>SaveAsDraft</string>
 	<key>SendMessage</key>
 	<string>SendMessage</string>
+	<key>SmartBoard</key>
+	<string>SmartBoard</string>
+	<key>Status_HeadModified</key>
+	<string>Status_HeadModified</string>
 	<key>Status_logcached</key>
 	<string>Status_logcached</string>
 	<key>Status_newThread</key>
 	<string>Status_newThread</string>
 	<key>Status_updated</key>
 	<string>Status_updated</string>
-	<key>Status_HeadModified</key>
-	<string>Status_HeadModified</string>
 	<key>age</key>
 	<string>age</string>
 	<key>beDisabled</key>
 	<string>beDisabled</string>
 	<key>beEnabled</key>
 	<string>beEnabled</string>
-	<key>boardListSelBg</key>
-	<string>boardListSelBg</string>
-	<key>boardListSelBgFocused</key>
-	<string>boardListSelBgFocused</string>
-	<key>cmlf_icon</key>
-	<string>CMLogFinder</string>
 	<key>lastUpdatedHeader</key>
 	<string>lastUpdatedHeader</string>
 	<key>mailAttachment</key>
@@ -78,11 +74,5 @@
 	<string>sage</string>
 	<key>stopSign</key>
 	<string>stopSign</string>
-	<key>titleRulerBgAquaBlue</key>
-	<string>titleRulerBgAquaBlue</string>
-	<key>titleRulerBgAquaGraphite</key>
-	<string>titleRulerBgAquaGraphite</string>
-	<key>titleRulerBgNotActive</key>
-	<string>titleRulerBgNotActive</string>
 </dict>
 </plist>

@@ -1,6 +1,6 @@
 
 PRODUCT_NAME=BSIconSetComposer
-VERSION=1.1
+VERSION=1.2
 PRODUCT_EXTENSION=app
 BUILD_PATH=./build
 DEPLOYMENT=Release
@@ -9,7 +9,7 @@ APP=$(BUILD_PATH)/$(DEPLOYMENT)/$(APP_BUNDLE)
 APP_NAME=$(BUILD_PATH)/$(DEPLOYMENT)/$(PRODUCT_NAME)
 INFO_PLIST=Info.plist
 
-URL_BSIconSetComposer = svn+ssh://macosx/usr/local/svnrepos005
+URL_BSIconSetComposer = svn+ssh://macminiwireless/usr/local/svnrepos/BSIconSetComposer
 HEAD = $(URL_BSIconSetComposer)/BSIconSetComposer
 TAGS_DIR = $(URL_BSIconSetComposer)/tags
 
@@ -18,11 +18,11 @@ all:
 	@echo use target tagging 
 
 tagging:
-	echo "Tagging the 1.1 (x) release of BSIconSetComposer project."
+	@echo "Tagging the $(VERSION) (x) release of BSIconSetComposer project."
 	export LC_ALL=C;	\
 	REV=`svn info | awk '/Last Changed Rev/ {print $$4}'` ;	\
 	ver=`grep -A1 'CFBundleShortVersionString' Info.plist | tail -1 | tr -d '\t</string>'`;    \
-	svn copy $(HEAD) $(TAGS_DIR)/release-$${ver}.$${REV}
+	echo svn copy $(HEAD) $(TAGS_DIR)/release-$${ver}.$${REV}
 
 Localizable: IconSetComposer.m
 	genstrings -o English.lproj $<
