@@ -8,8 +8,8 @@
 #import "NSAppleEventDescriptor-Extensions.h"
 
 NSString *HMAEDescriptorSendingNotAppleEventException = @"HMAEDescriptorSendingNotAppleEventException";
-static NSString *HMAEDesNotAEExceptionResonFormat = @"send method shuld be call AppleEventDecripor."
-														  @"but self is %@.";
+static NSString *HMAEDesNotAEExceptionResonFormat = @"Should be call to instance of NSAppleEventDescriptor descriptorType are typeAppleEvent."
+														  @"But self is %@.";
 
 @implementation NSAppleEventDescriptor(HMCocoaExtention)
 
@@ -27,8 +27,8 @@ static NSString *HMAEDesNotAEExceptionResonFormat = @"send method shuld be call 
 	bundleIdentifierStr = [identifier UTF8String];
 	
     return [NSAppleEventDescriptor descriptorWithDescriptorType:typeApplicationBundleID
-                                                                bytes:bundleIdentifierStr
-                                                               length:strlen(bundleIdentifierStr)];
+														  bytes:bundleIdentifierStr
+														 length:strlen(bundleIdentifierStr)];
 }
 + (id)targetDescriptorWithAppName:(NSString *)appName
 {
@@ -74,9 +74,8 @@ static NSString *HMAEDesNotAEExceptionResonFormat = @"send method shuld be call 
 #pragma mark## Instance Method ##
 - (OSStatus)sendAppleEventWithMode:(AESendMode)mode
 					timeOutInTicks:(long)timeOut
-							replay:(NSAppleEventDescriptor **)outReply
+							 reply:(NSAppleEventDescriptor **)outReply
 {
-	BOOL wantReply = NO;
 	AppleEvent reply;
 	OSStatus err;
 	
@@ -85,12 +84,10 @@ static NSString *HMAEDesNotAEExceptionResonFormat = @"send method shuld be call 
 					format:HMAEDesNotAEExceptionResonFormat, self];
 	}
 	
-	if(outReply && ((mode & 0x3) == 0x3)) wantReply = YES;
-	
 	err = AESendMessage([self aeDesc], &reply, mode, timeOut);
 	if(err != noErr) return err;
 	
-	if(wantReply) {
+	if(outReply && ((mode & kAEWaitReply) == kAEWaitReply)) {
 		*outReply = [[[[self class] allocWithZone:[self zone]] initWithAEDescNoCopy:&reply] autorelease];
 	}
 	

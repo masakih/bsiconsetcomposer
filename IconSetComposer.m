@@ -238,6 +238,10 @@ final:
 	
 	return result;
 }
++(NSString *)bathyScapheIdentifier
+{
+	return sBSIdentifer;
+}
 
 +(NSImage *)defaultImageForIdentifier:(NSString *)identifier
 {
@@ -341,9 +345,9 @@ final:
 											transactionID:kAnyTransactionID];
 	
 //	err = AESendMessage( [ae aeDesc], NULL, kAECanInteract, kAEDefaultTimeout );
-	err = [ae sendAppleEventWithMode:kAECanInteract
+	err = [ae sendAppleEventWithMode:kAECanInteract | kAEWaitReply
 					  timeOutInTicks:kAEDefaultTimeout
-							  replay:NULL];
+							   reply:NULL];
 	
 	if( err != noErr ) {
 		NSLog(@"AESendMessage Error. ErrorID ---> %d", err );
@@ -425,7 +429,7 @@ final:
 	id set;
 	
 	if( ![[ColorSet defaultBoardListColor] isEqual:blColor]
-		|| ![[ColorSet defaultThreadListColor] isEqual:tlColor] ) {
+		|| ![[ColorSet defaultThreadsListColor] isEqual:tlColor] ) {
 		isIncludeColor = [NSNumber numberWithBool:YES];
 	} else {
 		isIncludeColor = [NSNumber numberWithBool:NO];
@@ -521,7 +525,7 @@ final:
 //	err = AESendMessage( [ae aeDesc], &reply, kAECanInteract + kAEWaitReply, kAEDefaultTimeout );
 	err = [ae sendAppleEventWithMode:kAECanInteract + kAEWaitReply
 					  timeOutInTicks:kAEDefaultTimeout
-							  replay:&replyDesc];
+							   reply:&replyDesc];
 	
 	if( err != noErr ) {
 		NSLog(@"AESendMessage Error. ErrorID ---> %d", err );

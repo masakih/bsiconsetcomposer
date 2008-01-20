@@ -19,11 +19,11 @@
 							 keyForm:(DescType)keyForm
 							 keyData:(NSAppleEventDescriptor *)keyData;
 
-// throw HMAEDescriptorSendingNotAppleEventException, if reciever is not AppleEventType.
+// throw HMAEDescriptorSendingNotAppleEventException, if reciever descriptorType is not typeAppleEvent.
 // reply can be NULL.
 - (OSStatus)sendAppleEventWithMode:(AESendMode)mode
 					timeOutInTicks:(long)timeOut
-							replay:(NSAppleEventDescriptor **)reply;
+							 reply:(NSAppleEventDescriptor **)reply;
 
 @end
 
