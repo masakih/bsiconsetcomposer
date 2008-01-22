@@ -233,7 +233,6 @@ static NSArray *sThreadIdentifiers;
 -(void)setPath:(NSString *)path forIdentifier:(NSString *)identifier
 {
 	NSData *data;
-	NSString *fileName;
 	NSFileWrapper *fw;
 	
 	if( !wrapper ) {
@@ -255,9 +254,14 @@ static NSArray *sThreadIdentifiers;
 	}
 	
 	if( path ) {
-		id lowerExt = [[path pathExtension] lowercaseString];
-		fileName = [identifier stringByAppendingPathExtension:lowerExt];
-		[wrapper addRegularFileWithContents:data preferredFilename:fileName];
+		NSFileWrapper *newFw;
+		NSString *key;
+		
+		newFw = [[[NSFileWrapper alloc] initWithPath:path] autorelease];
+		key = [wrapper addFileWrapper:newFw];
+		
+		BSCSIcons *icon = [iconTrays valueForKey:identifier];
+		[icon setImageFileWrapper:newFw];
 	}
 	
 	[self updateChangeCount:NSChangeDone];
