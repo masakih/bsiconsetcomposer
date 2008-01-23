@@ -24,21 +24,15 @@
 		</dict>
 		<dict>
 			<key>imageName</key>
-			<string>boardListSelBgFocused</string>
-			<key>name</key>
-			<string>選択項目 (アクティブ)</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>boardListSelBg</string>
-			<key>name</key>
-			<string>選択項目 (ディアクティブ)</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
 			<string>SmartBoard</string>
 			<key>name</key>
 			<string>スマート掲示板</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>HistoryFolder</string>
+			<key>name</key>
+			<string>履歴フォルダ</string>
 		</dict>
 	</array>
 	<key>Reply</key>
@@ -122,24 +116,6 @@
 			<string>EllipsisDownMouseDown</string>
 			<key>name</key>
 			<string>省略下矢印 -マウスダウン-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>titleRulerBgAquaBlue</string>
-			<key>name</key>
-			<string>コンテントヘッダ-アクア-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>titleRulerBgAquaGraphite</string>
-			<key>name</key>
-			<string>コンテントヘッダ-グラファイト-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>titleRulerBgNotActive</string>
-			<key>name</key>
-			<string>コンテントヘッダ-インアクティブ-</string>
 		</dict>
 	</array>
 	<key>ThreadList</key>

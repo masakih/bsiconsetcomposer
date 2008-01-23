@@ -506,9 +506,16 @@ static NSArray *sThreadIdentifiers;
 
 -(id)handleApplyCommand:(NSScriptCommand*)command
 {
-	[[IconSetComposer sharedInstance] quitBathyScaphe:self];
+	[[IconSetComposer sharedInstance] quitBS];
+	while([[IconSetComposer sharedInstance] isRunningBS])
+		[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
+	
 	[self apply:self];
-	[[IconSetComposer sharedInstance] launchBathyScaphe:self];
+	
+	[[IconSetComposer sharedInstance] launchBS];
+	while(![[IconSetComposer sharedInstance] isRunningBS])
+		[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
+	
 	return nil;
 }
 

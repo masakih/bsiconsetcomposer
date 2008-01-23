@@ -1,18 +1,11 @@
 #import "IconSetComposer.h"
 
 #import "IconSetDocument.h"
+#import "ColorSet.h"
 
 #import "NSAppleEventDescriptor-Extensions.h"
 
 static NSString *sBSIdentifer = @"jp.tsawada2.BathyScaphe";
-
-@interface IconSetComposer(AppleEvents)
-typedef enum {
-	kTypeBoardListColor,
-	kTypeThreadsListColor,
-} ColorType;
--(NSColor *)getBathyScapheColor:(ColorType)colorType;
-@end
 
 static IconSetComposer *_instance = nil;
 
@@ -423,23 +416,28 @@ final:
 		[newDocument setPath:imagePath forIdentifier:imageName];
 	}
 	
-	NSColor *blColor = [self getBathyScapheColor:kTypeBoardListColor];
-	NSColor *tlColor = [self getBathyScapheColor:kTypeThreadsListColor];
+	NSColor *blColor = [ColorSet getBathyScapheColor:kTypeBoardListColor];
+	NSColor *bliColor = [ColorSet getBathyScapheColor:kTypeBoardListInactiveColor];
+	NSColor *tlColor = [ColorSet getBathyScapheColor:kTypeThreadsListColor];
 	NSNumber *isIncludeColor;
 	id set;
 	
 	if( ![[ColorSet defaultBoardListColor] isEqual:blColor]
-		|| ![[ColorSet defaultThreadsListColor] isEqual:tlColor] ) {
+		|| ![[ColorSet defaultBoardListInactiveColor] isEqual:bliColor]
+		|| ![[ColorSet defaultThreadsListColor] isEqual:tlColor]) {
 		isIncludeColor = [NSNumber numberWithBool:YES];
 	} else {
 		isIncludeColor = [NSNumber numberWithBool:NO];
 	}
 	
-	[newDocument showWindows];
+	[newDocument windowForSheet];	// load nib.
 	set = [newDocument valueForKey:@"colorSet"];
 	[set setValue:blColor forKey:@"boardListColor"];
+	[set setValue:bliColor forKey:@"boardListInactiveColor"];
 	[set setValue:tlColor forKey:@"threadsListColor"];
 	[set setValue:isIncludeColor forKey:@"isIncludeColors"];
+	
+	[newDocument showWindows];
 }
 
 #pragma mark## Application Delegate ##
@@ -465,87 +463,4 @@ final:
 	return NO;
 }
 
-@end
-
-@implementation IconSetComposer(AppleEvents)
-
--(NSColor *)getBathyScapheColor:(ColorType)colorType
-{
-	OSType type;
-	id result = nil;
-	float red, green, blue;
-	OSStatus err;
-	
-	[self launchBS];
-	
-	NSAppleEventDescriptor *replyDesc;
-	NSAppleEventDescriptor *colorComponentsDesc;
-	NSAppleEventDescriptor *colorComponentDesc;
-	
-	NSAppleEventDescriptor *ae;
-	NSAppleEventDescriptor *bsDesc;
-	NSAppleEventDescriptor *propDesc;
-	NSAppleEventDescriptor *keyDataDesc;
-	
-	switch(colorType) {
-		case kTypeBoardListColor:
-			type = 'bdCo';
-			break;
-		case kTypeThreadsListColor:
-			type = 'brCo';
-			break;
-		default:
-			return nil;
-	}
-	
-	/* set up BathyScaphe addr */
-	bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:sBSIdentifer];
-	
-	
-	/* create typeObjectSpecifier Descriptor */
-	keyDataDesc = [NSAppleEventDescriptor descriptorWithTypeCode:type];	
-	propDesc = [NSAppleEventDescriptor objectSpecifierWithDesiredClass:cProperty
-															 container:nil
-															   keyForm:formPropertyID
-															   keyData:keyDataDesc];
-	
-	/* create AppleEvent */
-	ae = [NSAppleEventDescriptor appleEventWithEventClass:kAECoreSuite
-												  eventID:kAEGetData
-										 targetDescriptor:bsDesc
-												 returnID:kAutoGenerateReturnID
-											transactionID:kAnyTransactionID];
-	
-	[ae setParamDescriptor:propDesc forKeyword:keyDirectObject];
-	
-#ifdef DEBUG
-	NSLog(@"%@", ae);
-#endif
-	
-//	err = AESendMessage( [ae aeDesc], &reply, kAECanInteract + kAEWaitReply, kAEDefaultTimeout );
-	err = [ae sendAppleEventWithMode:kAECanInteract + kAEWaitReply
-					  timeOutInTicks:kAEDefaultTimeout
-							   reply:&replyDesc];
-	
-	if( err != noErr ) {
-		NSLog(@"AESendMessage Error. ErrorID ---> %d", err );
-		return nil;
-	}
-	
-#ifdef DEBUG
-	NSLog(@"%@", replyDesc);
-#endif
-	
-	colorComponentsDesc = [replyDesc paramDescriptorForKeyword:keyDirectObject];
-	colorComponentDesc = [colorComponentsDesc descriptorAtIndex:1];
-	red = [[colorComponentDesc stringValue] floatValue];
-	colorComponentDesc = [colorComponentsDesc descriptorAtIndex:2];
-	green = [[colorComponentDesc stringValue] floatValue];
-	colorComponentDesc = [colorComponentsDesc descriptorAtIndex:3];
-	blue = [[colorComponentDesc stringValue] floatValue];
-	
-	result = [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:1];
-	
-	return result;
-}
 @end
