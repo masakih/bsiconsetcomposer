@@ -32,6 +32,8 @@
 	<string>FavoritesItem</string>
 	<key>Folder</key>
 	<string>Folder</string>
+	<key>HistoryFolder</key>
+	<string>HistoryFolder</string>
 	<key>OrderFrontBrowser</key>
 	<string>OrderFrontBrowser</string>
 	<key>ReloadList</key>
