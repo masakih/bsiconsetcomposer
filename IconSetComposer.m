@@ -448,6 +448,8 @@ final:
 	[set setValue:tlColor forKey:@"threadsListColor"];
 	[set setValue:isIncludeColor forKey:@"isIncludeColors"];
 	
+	[newDocument updateChangeCount:NSChangeCleared];
+	
 	[newDocument showWindows];
 }
 
