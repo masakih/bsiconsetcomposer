@@ -135,7 +135,7 @@ static IconSetComposer *_instance = nil;
 	NSString *bsPath;
 	NSBundle *bsBundle;
 	
-	bsPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:sBSIdentifer];
+	bsPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:[self bathyScapheIdentifier]];
 	bsBundle = [NSBundle bundleWithPath:bsPath];
 	
 	return bsBundle;
@@ -233,9 +233,20 @@ final:
 }
 +(NSString *)bathyScapheIdentifier
 {
-	return sBSIdentifer;
+	NSString *result = nil;
+	NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+	
+	result = [ud stringForKey:@"TargetIdentifier"];
+	if(!result) {
+		result = sBSIdentifer;
+	}
+	
+	return result;
 }
-
+-(NSString *)bathyScapheIdentifier
+{
+	return [[self class] bathyScapheIdentifier];
+}
 +(NSImage *)defaultImageForIdentifier:(NSString *)identifier
 {
 	NSBundle *bsBundle = [self bathyScapheBundle];
@@ -301,7 +312,7 @@ final:
 	unsigned i, count;
 	NSDictionary *dict;
 	
-	NSString *sbPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:sBSIdentifer];
+	NSString *sbPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:[self bathyScapheIdentifier]];
 	
 	array = [[NSWorkspace sharedWorkspace] launchedApplications];
 	count = [array count];
@@ -317,7 +328,7 @@ final:
 
 -(BOOL)launchBS
 {
-	return [[NSWorkspace sharedWorkspace] launchAppWithBundleIdentifier:sBSIdentifer
+	return [[NSWorkspace sharedWorkspace] launchAppWithBundleIdentifier:[self bathyScapheIdentifier]
 																options:NSWorkspaceLaunchWithoutActivation
 										 additionalEventParamDescriptor:nil
 													   launchIdentifier:nil];
@@ -329,7 +340,7 @@ final:
 	NSAppleEventDescriptor *bsDesc;
 	
 	/* set up BathyScaphe addr */
-	bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:sBSIdentifer];
+	bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:[self bathyScapheIdentifier]];
 	
 	ae = [NSAppleEventDescriptor appleEventWithEventClass:kCoreEventClass
 												  eventID:kAEQuitApplication
