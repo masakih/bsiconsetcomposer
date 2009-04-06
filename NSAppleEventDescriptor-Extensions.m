@@ -15,20 +15,18 @@ static NSString *HMAEDesNotAEExceptionResonFormat = @"Should be call to instance
 
 + (id)descriptorWithFloat:(float)aFloat
 {
-	return [NSAppleEventDescriptor descriptorWithDescriptorType:typeShortFloat
-														  bytes:&aFloat
-														 length:sizeof(aFloat)];
+	return [self descriptorWithDescriptorType:typeShortFloat
+										bytes:&aFloat
+									   length:sizeof(aFloat)];
 }
 
 + (id)targetDescriptorWithApplicationIdentifier:(NSString *)identifier
 {
-	const char *bundleIdentifierStr;
+	const char *bundleIdentifierStr = [identifier UTF8String];
 	
-	bundleIdentifierStr = [identifier UTF8String];
-	
-    return [NSAppleEventDescriptor descriptorWithDescriptorType:typeApplicationBundleID
-														  bytes:bundleIdentifierStr
-														 length:strlen(bundleIdentifierStr)];
+    return [self descriptorWithDescriptorType:typeApplicationBundleID
+										bytes:bundleIdentifierStr
+									   length:strlen(bundleIdentifierStr)];
 }
 + (id)targetDescriptorWithAppName:(NSString *)appName
 {
@@ -54,7 +52,7 @@ static NSString *HMAEDesNotAEExceptionResonFormat = @"Should be call to instance
 	
 	if(!keyData) return nil;
 	if(!container) {
-		container = [NSAppleEventDescriptor nullDescriptor];
+		container = [self nullDescriptor];
 	}
 	
 	
