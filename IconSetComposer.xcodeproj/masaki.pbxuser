@@ -167,6 +167,8 @@
 			F42A86130F8A5D050014157F /* PBXTextBookmark */ = F42A86130F8A5D050014157F /* PBXTextBookmark */;
 			F42A86140F8A5D050014157F /* PBXTextBookmark */ = F42A86140F8A5D050014157F /* PBXTextBookmark */;
 			F42A86150F8A5D050014157F /* PBXTextBookmark */ = F42A86150F8A5D050014157F /* PBXTextBookmark */;
+			F42A86180F8A5D670014157F /* PBXTextBookmark */ = F42A86180F8A5D670014157F /* PBXTextBookmark */;
+			F42A86190F8A5D670014157F /* PBXTextBookmark */ = F42A86190F8A5D670014157F /* PBXTextBookmark */;
 			F466AF4B0D7ECB18008A59FD = F466AF4B0D7ECB18008A59FD /* PBXTextBookmark */;
 			F466AF4D0D7ECB18008A59FD = F466AF4D0D7ECB18008A59FD /* PBXTextBookmark */;
 			F4926A930E4592C700C565FE = F4926A930E4592C700C565FE /* PBXTextBookmark */;
@@ -192,7 +194,7 @@
 			sepNavSelRange = "{231, 40}";
 			sepNavVisRange = "{0, 917}";
 			sepNavVisRect = "{{0, 0}, {633, 681}}";
-			sepNavWindowFrame = "{{61, 31}, {678, 754}}";
+			sepNavWindowFrame = "{{329, 78}, {678, 754}}";
 		};
 	};
 	8D15AC270486D014006FF6A4 /* IconSetComposer */ = {
@@ -333,6 +335,9 @@
 		name = NSDocument.h;
 		path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSDocument.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 62}, {684, 765}}";
+		};
 	};
 	F42A860E0F8A5D050014157F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -349,6 +354,11 @@
 		name = NSDocument.h;
 		path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSDocument.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {5502, 7896}}";
+			sepNavSelRange = "{1292, 15}";
+			sepNavVisRange = "{422, 2445}";
+		};
 	};
 	F42A86100F8A5D050014157F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -398,6 +408,26 @@
 		vrLoc = 412;
 	};
 	F42A86150F8A5D050014157F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F42C57E70BA5961800D2866B /* BSCSUserDefaults.h */;
+		name = "BSCSUserDefaults.h: 17";
+		rLen = 35;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 987;
+		vrLoc = 3;
+	};
+	F42A86180F8A5D670014157F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F4E4476F08AFABF200375AF1 /* TemporaryFolder.m */;
+		name = "TemporaryFolder.m: 63";
+		rLen = 0;
+		rLoc = 1326;
+		rType = 0;
+		vrLen = 1003;
+		vrLoc = 412;
+	};
+	F42A86190F8A5D670014157F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = F42C57E70BA5961800D2866B /* BSCSUserDefaults.h */;
 		name = "BSCSUserDefaults.h: 17";
