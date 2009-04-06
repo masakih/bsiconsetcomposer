@@ -52,9 +52,14 @@
 
 -(void)dealloc
 {
-	NSFileManager *fm = [NSFileManager defaultManager];
+	NSTask *rmTask = [[NSTask alloc] init];
 	
-	[fm  removeFileAtPath:_path handler:nil];
+	[rmTask setLaunchPath:@"/bin/rm"];
+	[rmTask setArguments:[NSArray arrayWithObjects:@"-rf", _path, nil]];
+	[rmTask launch];
+	[rmTask waitUntilExit];
+	[rmTask release];
+	
 	[_path release];
 	
 	[super dealloc];
