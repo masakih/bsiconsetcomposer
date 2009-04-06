@@ -249,131 +249,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>F42A86020F8A5C730014157F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>IconSetComposer.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>F42A86030F8A5C730014157F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>IconSetComposer.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>F42A86090F8A5D050014157F</string>
-						<key>history</key>
-						<array>
-							<string>F42A86080F8A5D050014157F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {678, 681}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>426 110 678 722 0 0 1280 832 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>F42A860A0F8A5D050014157F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>NSDocument.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>F42A860B0F8A5D050014157F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>NSDocument.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>F42A860E0F8A5D050014157F</string>
-						<key>history</key>
-						<array>
-							<string>F42A860C0F8A5D050014157F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {684, 692}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 94 684 733 0 0 1280 832 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>F42A85FF0F8A5C730014157F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>IconSetDocument.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>F42A86000F8A5C730014157F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>IconSetDocument.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>F42A86130F8A5D050014157F</string>
-						<key>history</key>
-						<array>
-							<string>F42A86100F8A5D050014157F</string>
-							<string>F42A86110F8A5D050014157F</string>
-						</array>
-						<key>prevStack</key>
-						<array>
-							<string>F42A86120F8A5D050014157F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {678, 681}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>329 110 678 722 0 0 1280 832 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>F42A85FC0F8A5C730014157F</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>TemporaryFolder.m</string>
@@ -388,7 +263,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>F42A86140F8A5D050014157F</string>
+						<string>F42A86180F8A5D670014157F</string>
 						<key>history</key>
 						<array>
 							<string>F42A85760F8A5AAE0014157F</string>
@@ -428,7 +303,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>F42A86150F8A5D050014157F</string>
+						<string>F42A86190F8A5D670014157F</string>
 						<key>history</key>
 						<array>
 							<string>F42A85570F8A57950014157F</string>
@@ -767,7 +642,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>260726021.61311299</real>
+	<real>260726119.16417801</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>2</integer>
 	<key>ToolbarIsVisible</key>
@@ -787,12 +662,9 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>F42A85600F8A58120014157F</string>
 		<string>F42A85FC0F8A5C730014157F</string>
-		<string>F4362CC30D4618F9001B6887</string>
 		<string>/Volumes/MachintoshHD/Users/masaki/Project/BSIconSetComposer/IconSetComposer.xcodeproj</string>
-		<string>F42A85FF0F8A5C730014157F</string>
-		<string>F42A860A0F8A5D050014157F</string>
-		<string>F42A86020F8A5C730014157F</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>F4362CC30D4618F9001B6887</string>
 	</array>
 	<key>WindowString</key>
 	<string>14 122 696 710 0 0 1280 832 </string>

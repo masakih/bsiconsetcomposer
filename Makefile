@@ -10,7 +10,7 @@ APP=$(BUILD_PATH)/$(DEPLOYMENT)/$(APP_BUNDLE)
 APP_NAME=$(BUILD_PATH)/$(DEPLOYMENT)/$(PRODUCT_NAME)
 INFO_PLIST=Info.plist
 
-URL_BSIconSetComposer = svn+ssh://macminiwireless/usr/local/svnrepos/BSIconSetComposer
+URL_BSIconSetComposer = svn+ssh://macmini/usr/local/svnrepos/BSIconSetComposer
 HEAD = $(URL_BSIconSetComposer)/BSIconSetComposer
 TAGS_DIR = $(URL_BSIconSetComposer)/tags
 
