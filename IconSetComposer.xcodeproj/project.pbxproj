@@ -11,6 +11,7 @@
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 		F41CD7AE090FDF3C00D66C88 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F4F4B5FC08818D4400E44313 /* Credits.rtf */; };
+		F42A855A0F8A580A0014157F /* DeprecatedImageList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F42A85590F8A580A0014157F /* DeprecatedImageList.plist */; };
 		F42C27480987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C27460987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m */; };
 		F42C27670987B9350032C9F9 /* NSWorkspace-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C27650987B9350032C9F9 /* NSWorkspace-Extensions.m */; };
 		F42C52B70BA3AFEB00D2866B /* BSCSIcons.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F42C52B50BA3AFEB00D2866B /* BSCSIcons.h */; };
@@ -66,6 +67,7 @@
 		32DBCF750370BD2300C91783 /* IconSetComposer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconSetComposer_Prefix.pch; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* BSIconSetComposer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSIconSetComposer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42A85590F8A580A0014157F /* DeprecatedImageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeprecatedImageList.plist; sourceTree = "<group>"; };
 		F42C27450987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAppleEventDescriptor-Extensions.h"; sourceTree = "<group>"; };
 		F42C27460987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleEventDescriptor-Extensions.m"; sourceTree = "<group>"; };
 		F42C274F0987B7FB0032C9F9 /* CocoaEextensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaEextensions.h; sourceTree = "<group>"; };
@@ -76,12 +78,12 @@
 		F42C57E70BA5961800D2866B /* BSCSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCSUserDefaults.h; sourceTree = "<group>"; };
 		F42C57E80BA5961800D2866B /* BSCSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCSUserDefaults.m; sourceTree = "<group>"; };
 		F42C580F0BA6C07000D2866B /* UnitTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F42C58100BA6C07000D2866B /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
+		F42C58100BA6C07000D2866B /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
 		F42C58150BA6C11600D2866B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /System/Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
 		F42C582D0BA6C14A00D2866B /* BSCSUserDefaultsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCSUserDefaultsTest.h; sourceTree = "<group>"; };
 		F42C582E0BA6C14A00D2866B /* BSCSUserDefaultsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCSUserDefaultsTest.m; sourceTree = "<group>"; };
 		F435F24B09238065004965EB /* IconTray-Dragging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IconTray-Dragging.m"; sourceTree = "<group>"; };
-		F442011E08EFDF8A007AFE9F /* BathyScapheSystemImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BathyScapheSystemImages.plist; sourceTree = "<group>"; };
+		F442011E08EFDF8A007AFE9F /* BathyScapheSystemImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BathyScapheSystemImages.plist; sourceTree = "<group>"; };
 		F44203E408F04A8A007AFE9F /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Japanese; path = Japanese.lproj/Localizable.strings.sed; sourceTree = "<group>"; };
 		F44203FC08F04DAB007AFE9F /* English */ = {isa = PBXFileReference; lastKnownFileType = text; name = English; path = English.lproj/Localizable.strings.sed; sourceTree = "<group>"; };
 		F45B217F091991230055CBC4 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = English; path = English.lproj/IconNames.strings; sourceTree = "<group>"; };
@@ -99,7 +101,7 @@
 		F4E4476F08AFABF200375AF1 /* TemporaryFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemporaryFolder.m; sourceTree = "<group>"; };
 		F4F4AECD0880D28100E44313 /* IconSetComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconSetComposer.h; sourceTree = "<group>"; };
 		F4F4AECE0880D28100E44313 /* IconSetComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconSetComposer.m; sourceTree = "<group>"; };
-		F4F4B2C508814EFF00E44313 /* ImageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ImageList.plist; sourceTree = "<group>"; };
+		F4F4B2C508814EFF00E44313 /* ImageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ImageList.plist; sourceTree = "<group>"; };
 		F4F4B5FC08818D4400E44313 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		F4FF6E7708C74AEF00C0214D /* ColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSet.h; sourceTree = "<group>"; };
 		F4FF6E7808C74AEF00C0214D /* ColorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSet.m; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */,
 				F4F4B5FC08818D4400E44313 /* Credits.rtf */,
 				F4F4B2C508814EFF00E44313 /* ImageList.plist */,
+				F42A85590F8A580A0014157F /* DeprecatedImageList.plist */,
 				F461E46308ADCDB400384957 /* MainMenu.nib */,
 				F461E46608ADCDCA00384957 /* IconSetDocument.nib */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
@@ -333,6 +336,7 @@
 				F471950108E302AE00710258 /* Localizable.strings in Resources */,
 				F442011F08EFDF8A007AFE9F /* BathyScapheSystemImages.plist in Resources */,
 				F45B21840919919C0055CBC4 /* IconNames.strings in Resources */,
+				F42A855A0F8A580A0014157F /* DeprecatedImageList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
