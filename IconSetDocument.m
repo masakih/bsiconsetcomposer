@@ -85,6 +85,22 @@ static NSArray *sThreadIdentifiers;
 	
 	return result;
 }
++(NSArray *)deprecatedImageNames
+{
+	static NSArray *result = nil;
+	
+	if(!result) {
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"DeprecatedImageList"
+														  ofType:@"plist"];
+		result = [[NSArray alloc] initWithContentsOfFile:path];
+	}
+	
+	return result;
+}
+- (NSArray *)deprecatedImageNames
+{
+	return [[self class] deprecatedImageNames];
+}
 
 -(void)dealloc
 {
@@ -384,6 +400,10 @@ static NSArray *sThreadIdentifiers;
 	result = [[self iconTrays] valueForKey:key];
 	if(result) {
 		return result;
+	}
+	
+	if([[self deprecatedImageNames] containsObject:key]) {
+		return nil;
 	}
 	
 	return [super valueForUndefinedKey:key];
