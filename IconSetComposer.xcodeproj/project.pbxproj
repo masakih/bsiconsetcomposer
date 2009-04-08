@@ -26,9 +26,9 @@
 		F461E46708ADCDCA00384957 /* IconSetDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = F461E46608ADCDCA00384957 /* IconSetDocument.nib */; };
 		F4626F2E08ADD94A00B71ADA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4626F2D08ADD94A00B71ADA /* InfoPlist.strings */; };
 		F464CDA408CD9F25008B434A /* BSIconSetComposer.sdef in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF7408CAC033009741BF /* BSIconSetComposer.sdef */; };
-		F46A37380F8CD8D500462289 /* IconTray.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F498150A0D4247550015B407 /* IconTray.framework */; };
 		F471950108E302AE00710258 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F471950008E302AE00710258 /* Localizable.strings */; };
-		F498150B0D4247550015B407 /* IconTray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F498150A0D4247550015B407 /* IconTray.framework */; };
+		F47A1F050F8D00F6002DE937 /* IconTray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A1F040F8D00F6002DE937 /* IconTray.framework */; };
+		F47A1F130F8D0250002DE937 /* IconTray.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F47A1F040F8D00F6002DE937 /* IconTray.framework */; };
 		F4D3EF7208CABC52009741BF /* BSIconSetComposerSuite.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */; };
 		F4D3EF7308CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */; };
 		F4E4477008AFABF200375AF1 /* TemporaryFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E4476F08AFABF200375AF1 /* TemporaryFolder.m */; };
@@ -38,15 +38,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F435F29709238674004965EB /* Copy Frameworks */ = {
+		F47A1EF50F8CFF02002DE937 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F46A37380F8CD8D500462289 /* IconTray.framework in Copy Frameworks */,
+				F47A1F130F8D0250002DE937 /* IconTray.framework in CopyFiles */,
 			);
-			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -91,7 +90,7 @@
 		F4626F2F08ADD95100B71ADA /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F47194FE08E302A600710258 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F471950208E302BC00710258 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F498150A0D4247550015B407 /* IconTray.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IconTray.framework; path = IconTray3/build/Debug/IconTray.framework; sourceTree = "<group>"; };
+		F47A1F040F8D00F6002DE937 /* IconTray.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IconTray.framework; path = IconTray3/build/Release/IconTray.framework; sourceTree = "<group>"; };
 		F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BSIconSetComposerSuite.scriptSuite; sourceTree = "<group>"; };
 		F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BSIconSetComposerSuite.scriptTerminology; sourceTree = "<group>"; };
 		F4D3EF7408CAC033009741BF /* BSIconSetComposer.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; path = BSIconSetComposer.sdef; sourceTree = "<group>"; };
@@ -111,7 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
-				F498150B0D4247550015B407 /* IconTray.framework in Frameworks */,
+				F47A1F050F8D00F6002DE937 /* IconTray.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +220,7 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F498150A0D4247550015B407 /* IconTray.framework */,
+				F47A1F040F8D00F6002DE937 /* IconTray.framework */,
 				F42C58150BA6C11600D2866B /* SenTestingKit.framework */,
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
@@ -265,12 +264,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4F4AE960880C61600E44313 /* Build configuration list for PBXNativeTarget "IconSetComposer" */;
 			buildPhases = (
+				F47A1EF50F8CFF02002DE937 /* CopyFiles */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
 				F406E99E08CDC35C007CB106 /* Create sdef */,
 				F442040108F05189007AFE9F /* Make Localized Files */,
 				8D15AC2B0486D014006FF6A4 /* Resources */,
-				F435F29709238674004965EB /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -578,11 +577,10 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
+					$HOME/Library/frameworks,
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/IconTrayPalette/build/Release\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/IconTray3/build/Debug\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/IconTray3/build/Release\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -596,11 +594,10 @@
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				PREBINDING = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PREBINDING = YES;
 				PRODUCT_NAME = BSIconSetComposer;
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
@@ -609,11 +606,10 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
+					$HOME/Library/frameworks,
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/IconTrayPalette/build/Release\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/IconTray3/build/Debug\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/IconTray3/build/Release\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -624,11 +620,10 @@
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				PREBINDING = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PREBINDING = YES;
 				PRODUCT_NAME = BSIconSetComposer;
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -636,11 +631,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
+					$HOME/Library/frameworks,
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/IconTrayPalette/build/Release\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/IconTray3/build/Debug\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/IconTray3/build/Release\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = IconSetComposer_Prefix.pch;
@@ -650,7 +644,8 @@
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PREBINDING = YES;
 				PRODUCT_NAME = BSIconSetComposer;
 				WRAPPER_EXTENSION = app;
 			};
