@@ -1,8 +1,7 @@
 // !$*UTF8*$!
 {
 	0259C573FE90428111CA0C5A /* Project object */ = {
-		activeArchitecture = ppc;
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = C096A9340C03CEAB00263BB0 /* Interface Builder */;
 		activeTarget = 53DF6901067E5B8E0090B5B0 /* All */;
 		addToTargets = (
@@ -98,16 +97,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 222457050;
-			PBXWorkspaceStateSaveDate = 222457050;
-		};
-		perUserProjectItems = {
-			F4362AFE0D426E9F001B6887 /* PBXBookmark */ = F4362AFE0D426E9F001B6887 /* PBXBookmark */;
-			F4362B140D426F7D001B6887 /* PBXTextBookmark */ = F4362B140D426F7D001B6887 /* PBXTextBookmark */;
-			F4362BEC0D42FA58001B6887 /* PBXTextBookmark */ = F4362BEC0D42FA58001B6887 /* PBXTextBookmark */;
-			F4362BEE0D42FA58001B6887 /* PBXTextBookmark */ = F4362BEE0D42FA58001B6887 /* PBXTextBookmark */;
-			F4362BF00D42FA58001B6887 /* PBXTextBookmark */ = F4362BF00D42FA58001B6887 /* PBXTextBookmark */;
-			F4FD737D0D423C6600407CBC /* PBXTextBookmark */ = F4FD737D0D423C6600407CBC /* PBXTextBookmark */;
+			PBXPerProjectTemplateStateSaveDate = 260899696;
+			PBXWorkspaceStateSaveDate = 260899696;
 		};
 		sourceControlManager = C096A9320C03CEA700263BB0 /* Source Control */;
 		userBuildSettings = {
@@ -191,6 +182,7 @@
 		fallbackIsa = XCSourceControlManager;
 		isSCMEnabled = 0;
 		scmConfiguration = {
+			repositoryName = XspfQT;
 		};
 	};
 	C096A9330C03CEA700263BB0 /* Code sense */ = {
@@ -290,36 +282,6 @@
 		path = "Applications/Interface Builder.app";
 		sourceTree = SYSTEM_DEVELOPER_DIR;
 	};
-	F4362A630D426DEE001B6887 /* NSCell.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		path = NSCell.h;
-		sourceTree = "<group>";
-	};
-	F4362AFE0D426E9F001B6887 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = F4362A630D426DEE001B6887 /* NSCell.h */;
-	};
-	F4362B140D426F7D001B6887 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F4362B150D426F7D001B6887 /* IconTrayInspector.m */;
-		rLen = 0;
-		rLoc = 2147483647;
-		rType = 0;
-	};
-	F4362B150D426F7D001B6887 /* IconTrayInspector.m */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.objc;
-		name = IconTrayInspector.m;
-		path = /Volumes/MachintoshHD/Users/masaki/Project/BSIconSetComposer/IconTrayPalette/IconTrayInspector.m;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {775, 1582}}";
-			sepNavSelRange = "{1872, 0}";
-			sepNavVisRange = "{422, 1453}";
-			sepNavWindowFrame = "{{354, 60}, {822, 772}}";
-		};
-	};
 	F4362B7C0D427498001B6887 /* -[NSCell setControlSize:] */ = {
 		isa = PBXSymbolicBreakpoint;
 		actions = (
@@ -334,82 +296,5 @@
 		modificationTime = 222460230.905572;
 		state = 2;
 		symbolName = "-[NSCell setControlSize:]";
-	};
-	F4362BEC0D42FA58001B6887 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F4362BED0D42FA58001B6887 /* NSCell.h */;
-		name = "NSCell.h: 254";
-		rLen = 0;
-		rLoc = 7545;
-		rType = 0;
-		vrLen = 2234;
-		vrLoc = 6427;
-	};
-	F4362BED0D42FA58001B6887 /* NSCell.h */ = {
-		isa = PBXFileReference;
-		name = NSCell.h;
-		path = /System/Library/Frameworks/AppKit.framework/Headers/NSCell.h;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1016, 6370}}";
-			sepNavSelRange = "{7545, 0}";
-			sepNavVisRange = "{6427, 2234}";
-			sepNavWindowFrame = "{{15, 55}, {822, 772}}";
-		};
-	};
-	F4362BEE0D42FA58001B6887 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F4362BEF0D42FA58001B6887 /* IconTrayInspector.m */;
-		name = "IconTrayInspector.m: 74";
-		rLen = 0;
-		rLoc = 1872;
-		rType = 0;
-		vrLen = 1453;
-		vrLoc = 422;
-	};
-	F4362BEF0D42FA58001B6887 /* IconTrayInspector.m */ = {
-		isa = PBXFileReference;
-		name = IconTrayInspector.m;
-		path = /Volumes/MachintoshHD/Users/masaki/Project/BSIconSetComposer/IconTrayPalette/IconTrayInspector.m;
-		sourceTree = "<absolute>";
-	};
-	F4362BF00D42FA58001B6887 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F4362BF10D42FA58001B6887 /* InterfaceBuilderKit.h */;
-		name = "InterfaceBuilderKit.h: 8";
-		rLen = 0;
-		rLoc = 154;
-		rType = 0;
-		vrLen = 396;
-		vrLoc = 0;
-	};
-	F4362BF10D42FA58001B6887 /* InterfaceBuilderKit.h */ = {
-		isa = PBXFileReference;
-		name = InterfaceBuilderKit.h;
-		path = /Developer/Library/Frameworks/InterfaceBuilderKit.framework/Versions/A/Headers/InterfaceBuilderKit.h;
-		sourceTree = "<absolute>";
-	};
-	F4FD737D0D423C6600407CBC /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F4FD737E0D423C6600407CBC /* InterfaceBuilderKit.h */;
-		name = "InterfaceBuilderKit.h: 8";
-		rLen = 0;
-		rLoc = 154;
-		rType = 0;
-		vrLen = 396;
-		vrLoc = 0;
-	};
-	F4FD737E0D423C6600407CBC /* InterfaceBuilderKit.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = InterfaceBuilderKit.h;
-		path = /Developer/Library/Frameworks/InterfaceBuilderKit.framework/Versions/A/Headers/InterfaceBuilderKit.h;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {775, 700}}";
-			sepNavSelRange = "{154, 0}";
-			sepNavVisRange = "{0, 396}";
-			sepNavWindowFrame = "{{15, 60}, {822, 772}}";
-		};
 	};
 }
