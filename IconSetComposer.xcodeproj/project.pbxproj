@@ -14,9 +14,7 @@
 		F42A855A0F8A580A0014157F /* DeprecatedImageList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F42A85590F8A580A0014157F /* DeprecatedImageList.plist */; };
 		F42C27480987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C27460987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m */; };
 		F42C27670987B9350032C9F9 /* NSWorkspace-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C27650987B9350032C9F9 /* NSWorkspace-Extensions.m */; };
-		F42C52B70BA3AFEB00D2866B /* BSCSIcons.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F42C52B50BA3AFEB00D2866B /* BSCSIcons.h */; };
 		F42C52B80BA3AFEB00D2866B /* BSCSIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C52B60BA3AFEB00D2866B /* BSCSIcons.m */; };
-		F42C57E90BA5961800D2866B /* BSCSUserDefaults.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F42C57E70BA5961800D2866B /* BSCSUserDefaults.h */; };
 		F42C57EA0BA5961800D2866B /* BSCSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C57E80BA5961800D2866B /* BSCSUserDefaults.m */; };
 		F42C582A0BA6C11600D2866B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42C58150BA6C11600D2866B /* SenTestingKit.framework */; };
 		F42C582F0BA6C14A00D2866B /* BSCSUserDefaultsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C582E0BA6C14A00D2866B /* BSCSUserDefaultsTest.m */; };
@@ -28,6 +26,7 @@
 		F461E46708ADCDCA00384957 /* IconSetDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = F461E46608ADCDCA00384957 /* IconSetDocument.nib */; };
 		F4626F2E08ADD94A00B71ADA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4626F2D08ADD94A00B71ADA /* InfoPlist.strings */; };
 		F464CDA408CD9F25008B434A /* BSIconSetComposer.sdef in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF7408CAC033009741BF /* BSIconSetComposer.sdef */; };
+		F46A37380F8CD8D500462289 /* IconTray.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = F498150A0D4247550015B407 /* IconTray.framework */; };
 		F471950108E302AE00710258 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F471950008E302AE00710258 /* Localizable.strings */; };
 		F498150B0D4247550015B407 /* IconTray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F498150A0D4247550015B407 /* IconTray.framework */; };
 		F4D3EF7208CABC52009741BF /* BSIconSetComposerSuite.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */; };
@@ -45,8 +44,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F42C52B70BA3AFEB00D2866B /* BSCSIcons.h in Copy Frameworks */,
-				F42C57E90BA5961800D2866B /* BSCSUserDefaults.h in Copy Frameworks */,
+				F46A37380F8CD8D500462289 /* IconTray.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
