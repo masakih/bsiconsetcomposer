@@ -195,13 +195,12 @@ final:
 	static NSString *result = nil;
 	
 	if(  !result ) {
-		NSArray *dirs = NSSearchPathForDirectoriesInDomains( NSLibraryDirectory, NSUserDomainMask, YES );
+		NSArray *dirs = NSSearchPathForDirectoriesInDomains( NSApplicationSupportDirectory, NSUserDomainMask, YES );
 		NSString *tmp;
 		
 		if( !dirs || [dirs count] == 0 ) return NSHomeDirectory();
 		
 		result = [dirs objectAtIndex:0];
-		result = [result stringByAppendingPathComponent:@"Application Support"];
 		result = [result stringByAppendingPathComponent:@"BathyScaphe"];
 		tmp = resolveAlias( result );
 		if( tmp ) result = tmp;
