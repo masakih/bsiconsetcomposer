@@ -1,3 +1,4 @@
+# encoding=utf-8
 
 PRODUCT_NAME=BSIconSetComposer
 VERSION=1.3
@@ -18,10 +19,9 @@ all:
 	@echo do  nothig.
 	@echo use target tagging 
 
-tagging:
+tagging: update_svn
 	@echo "Tagging the $(VERSION) (x) release of BSIconSetComposer project."
-	export LC_ALL=C;	\
-	REV=`svn info | awk '/Last Changed Rev/ {print $$4}'` ;	\
+	@REV=`LC_ALL=C svn info | awk '/Last Changed Rev/ {print $$4}'` ;	\
 	REV=`expr $$REV + $(REV_CORRECT)`	;	\
 	ver=`grep -A1 'CFBundleShortVersionString' Info.plist | tail -1 | tr -d '\t</string>'`;    \
 	echo svn copy $(HEAD) $(TAGS_DIR)/release-$${ver}.$${REV}
@@ -41,15 +41,13 @@ release: updateRevision
 	$(MAKE) restorInfoPlist
 
 package: release
-	export LC_ALL=C;	\
-	REV=`svn info | awk '/Last Changed Rev/ {print $$4}'`;	\
+	REV=`LC_ALL=C svn info | awk '/Last Changed Rev/ {print $$4}'`;	\
 	REV=`expr $$REV + $(REV_CORRECT)`	;	\
 	ditto -ck -rsrc --keepParent $(APP) $(APP_NAME)-$(VERSION)-$${REV}.zip
 
 updateRevision: update_svn
 	if [ ! -f $(INFO_PLIST).bak ] ; then cp $(INFO_PLIST) $(INFO_PLIST).bak ; fi ;	\
-	export LC_ALL=C;	\
-	REV=`svn info | awk '/Last Changed Rev/ {print $$4}'` ;	\
+	REV=`LC_ALL=C svn info | awk '/Last Changed Rev/ {print $$4}'` ;	\
 	REV=`expr $$REV + $(REV_CORRECT)`	;	\
 	sed -e "s/%%%%REVISION%%%%/$${REV}/" $(INFO_PLIST) > $(INFO_PLIST).r ;	\
 	mv -f $(INFO_PLIST).r $(INFO_PLIST) ;	\
