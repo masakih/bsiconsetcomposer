@@ -536,7 +536,9 @@ inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 		lowerExtension = [[imageName pathExtension] lowercaseString];
 		if( ![[NSImage imageFileTypes] containsObject:lowerExtension] ) return NO;
 		
-		data = [pathURL resourceDataUsingCache:YES];
+		NSURLRequest *req = [NSURLRequest requestWithURL:pathURL];
+		data = [NSURLConnection sendSynchronousRequest:req returningResponse:NULL error:NULL];
+//		data = [pathURL resourceDataUsingCache:YES];
 		aImage = [[[NSImage alloc] initWithData:data] autorelease];
 	}
 	
@@ -790,7 +792,7 @@ inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 		NSTIFFPboardType,
 		nil];
 }
--(BOOL)validateMenuItem:(id <NSMenuItem>)menuItem
+-(BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
 	SEL action = [menuItem action];
 	

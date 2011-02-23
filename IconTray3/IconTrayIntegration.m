@@ -98,14 +98,14 @@
 }
 
 /* Returns the baseline count, and provides access to the baselines by index. */
-- (int)ibBaselineCount
+- (NSInteger)ibBaselineCount
 {
 	return 1;
 }
-- (float)ibBaselineAtIndex:(int)index
+- (CGFloat)ibBaselineAtIndex:(NSInteger)index
 {
 	NSRect titleRect;
-	float baseline;
+	CGFloat baseline;
 	
 	if( index != 0 ) return 0;
 	
