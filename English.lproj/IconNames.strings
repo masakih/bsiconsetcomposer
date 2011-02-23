@@ -76,5 +76,7 @@
 	<string>sage</string>
 	<key>stopSign</key>
 	<string>stopSign</string>
+	<key>Emoticon</key>
+	<string>Emoticon</string>
 </dict>
 </plist>

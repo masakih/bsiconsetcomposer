@@ -229,7 +229,7 @@ enum {
 	OSType type;
 	id targetColor;
 	id tempColor;
-	float red, green, blue, alpha;
+	CGFloat red, green, blue, alpha;
 	OSStatus err;
 	
 	NSAppleEventDescriptor *ae;
@@ -593,7 +593,7 @@ static NSString *AlphaKey = @"Alpha";
 {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 	
-	float red, green, blue, alpha;
+	CGFloat red, green, blue, alpha;
 	
 	self = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 	

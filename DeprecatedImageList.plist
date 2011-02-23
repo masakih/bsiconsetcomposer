@@ -3,5 +3,14 @@
 <plist version="1.0">
 <array>
 	<string>cmlf_icon</string>
+	<string>EllipsisProxy</string>
+	<string>EllipsisMouseOver</string>
+	<string>EllipsisMouseDown</string>
+	<string>EllipsisUpProxy</string>
+	<string>EllipsisUpMouseOver</string>
+	<string>EllipsisUpMouseDown</string>
+	<string>EllipsisDownProxy</string>
+	<string>EllipsisDownMouseOver</string>
+	<string>EllipsisDownMouseDown</string>
 </array>
 </plist>

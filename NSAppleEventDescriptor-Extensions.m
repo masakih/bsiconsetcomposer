@@ -15,7 +15,7 @@ static NSString *HMAEDesNotAEExceptionResonFormat = @"Should be call to instance
 
 + (id)descriptorWithFloat:(float)aFloat
 {
-	return [self descriptorWithDescriptorType:typeShortFloat
+	return [self descriptorWithDescriptorType:typeIEEE32BitFloatingPoint
 										bytes:&aFloat
 									   length:sizeof(aFloat)];
 }

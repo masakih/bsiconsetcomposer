@@ -76,5 +76,7 @@
 	<string>sage</string>
 	<key>stopSign</key>
 	<string>停止</string>
+	<key>Emoticon</key>
+	<string>ローカルルール</string>
 </dict>
 </plist>

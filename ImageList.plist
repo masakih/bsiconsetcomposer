@@ -57,60 +57,6 @@
 			<key>name</key>
 			<string>新着</string>
 		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>EllipsisProxy</string>
-			<key>name</key>
-			<string>省略 -通常-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>EllipsisMouseOver</string>
-			<key>name</key>
-			<string>省略 -マウスオーバー-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>EllipsisMouseDown</string>
-			<key>name</key>
-			<string>省略 -マウスダウン-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>EllipsisUpProxy</string>
-			<key>name</key>
-			<string>省略上矢印 -通常-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>EllipsisUpMouseOver</string>
-			<key>name</key>
-			<string>省略上矢印 -マウスオーバー-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>EllipsisUpMouseDown</string>
-			<key>name</key>
-			<string>省略上矢印 -マウスダウン-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>EllipsisDownProxy</string>
-			<key>name</key>
-			<string>省略下矢印 -通常-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>EllipsisDownMouseOver</string>
-			<key>name</key>
-			<string>省略下矢印 -マウスオーバー-</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>EllipsisDownMouseDown</string>
-			<key>name</key>
-			<string>省略下矢印 -マウスダウン-</string>
-		</dict>
 	</array>
 	<key>ThreadList</key>
 	<array>
@@ -141,6 +87,12 @@
 	</array>
 	<key>Toolbar</key>
 	<array>
+		<dict>
+			<key>imageName</key>
+			<string>Emoticon</string>
+			<key>name</key>
+			<string>ローカルルール</string>
+		</dict>
 		<dict>
 			<key>imageName</key>
 			<string>OrderFrontBrowser</string>

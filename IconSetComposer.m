@@ -21,7 +21,7 @@ static IconSetComposer *_instance = nil;
 }
 -(oneway void)release {}
 -(id)retain { return self; }
--(unsigned)retainCount { return UINT_MAX; }
+-(NSUInteger)retainCount { return UINT_MAX; }
 
 -(BOOL)askContinuesWithStatus:(int)status
 			  andIncrementals:(NSArray *)incrementalImages

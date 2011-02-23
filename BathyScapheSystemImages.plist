@@ -2,7 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>Emoticon</string>
 	<string>deleteMail2</string>
 	<string>Keywords</string>
 	<string>Keywords_Pressed</string>
@@ -38,5 +37,17 @@
 	<string>browserSplitterDimple</string>
 	<string>browserSplitterDimpleVertical</string>
 	<string>browserSplitterVertical</string>
+	<string>BrowserHSplitTemplate</string>
+	<string>BrowserNSplitTemplate</string>
+	<string>BrowserVSplitTemplate</string>
+	<string>FilterPreferences</string>
+	<string>FontBiggerTemplate</string>
+	<string>FontSmallerTemplate</string>
+	<string>HistoryFolder</string>
+	<string>LabelIcon0</string>
+	<string>moveEndTemplate</string>
+	<string>moveNextTemplate</string>
+	<string>movePrevTemplate</string>
+	<string>moveTopTemplate</string>
 </array>
 </plist>
