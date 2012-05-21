@@ -88,8 +88,8 @@
 		F461E46508ADCDBD00384957 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		F461E46808ADCDD600384957 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/IconSetDocument.nib; sourceTree = "<group>"; };
 		F4626F2F08ADD95100B71ADA /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F47194FE08E302A600710258 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F471950208E302BC00710258 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F47194FE08E302A600710258 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F471950208E302BC00710258 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F47A1F040F8D00F6002DE937 /* IconTray.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IconTray.framework; path = IconTray3/build/Release/IconTray.framework; sourceTree = "<group>"; };
 		F4D3EF6F08CABC52009741BF /* BSIconSetComposerSuite.scriptSuite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BSIconSetComposerSuite.scriptSuite; sourceTree = "<group>"; };
 		F4D3EF7008CABC52009741BF /* BSIconSetComposerSuite.scriptTerminology */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BSIconSetComposerSuite.scriptTerminology; sourceTree = "<group>"; };
@@ -162,7 +162,6 @@
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
-				F42C58100BA6C07000D2866B /* UnitTest-Info.plist */,
 			);
 			name = IconSetComposer;
 			sourceTree = "<group>";
@@ -251,6 +250,7 @@
 		F4558BE80889438100557B17 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				F42C58100BA6C07000D2866B /* UnitTest-Info.plist */,
 				F42C582D0BA6C14A00D2866B /* BSCSUserDefaultsTest.h */,
 				F42C582E0BA6C14A00D2866B /* BSCSUserDefaultsTest.m */,
 			);
@@ -659,7 +659,7 @@
 		F4F4AE9B0880C61600E44313 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
@@ -668,15 +668,14 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx10.6;
 			};
 			name = Release;
 		};
 		F4F4AE9D0880C61600E44313 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx10.6;
 			};
 			name = Default;
 		};
