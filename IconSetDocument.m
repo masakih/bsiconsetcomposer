@@ -263,7 +263,7 @@ static NSArray *sThreadIdentifiers;
 		}		
 	}
 		
-	if( fw = [self fileWrapperForIdentifier:identifier] ) {
+	if( (fw = [self fileWrapperForIdentifier:identifier]) ) {
 		[wrapper removeFileWrapper:fw];
 	} else if( !path ) { //　元からないものを削除
 		return;
@@ -310,7 +310,7 @@ static NSArray *sThreadIdentifiers;
 		wrapper = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:nil];
 	}
 	
-	if( fw = [self fileWrapperForIdentifier:identifier] ) {
+	if( (fw = [self fileWrapperForIdentifier:identifier]) ) {
 		// 現在のものと同じかどうか。
 		if(plist && [fw isRegularFile]) {
 			id dat = [fw regularFileContents];
