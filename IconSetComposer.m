@@ -223,8 +223,15 @@ final:
 		if( tmp ) result = tmp;
 		[result retain];
 		
+		NSError *error = NULL;
 		if( ![[NSFileManager defaultManager] fileExistsAtPath:result] ) {
-			[[NSFileManager defaultManager] createDirectoryAtPath:result attributes:nil];
+			[[NSFileManager defaultManager] createDirectoryAtPath:result
+									  withIntermediateDirectories:YES
+													   attributes:nil
+															error:&error];
+			if(!error) {
+				NSLog(@"%@", error);
+			}
 		}
 	}
 	
@@ -265,7 +272,7 @@ final:
 	NSArray *imageFileType = [NSImage imageFileTypes];
 	
 	NSFileManager *fm = [NSFileManager defaultManager];
-	NSArray *files = [fm directoryContentsAtPath:bathyScapheResourceFolder];
+	NSArray *files = [fm contentsOfDirectoryAtPath:bathyScapheResourceFolder error:NULL];
 	NSEnumerator *filesEnum = [files objectEnumerator];
 	NSString *file;
 	NSString *fullPath;
@@ -283,7 +290,7 @@ final:
 		if( [managed containsObject:[file stringByDeletingPathExtension]] &&
 			([imageFileType containsObject:filetype]
 			 || [imageFileType containsObject:extention]) ) {
-			[fm removeFileAtPath:fullPath handler:nil];
+			[fm removeItemAtPath:fullPath error:NULL];
 		}
 	}
 }
