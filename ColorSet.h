@@ -55,7 +55,8 @@ typedef enum {
 - (BOOL)isBoardListInactiveColorDefault;
 - (BOOL)isThreadsListColorDefault;
 
--(BOOL)setPlistPath:(NSString *)path;
+- (BOOL)setPlistPath:(NSString *)path DEPRECATED_IN_MAC_OS_X_VERSION_10_4_AND_LATER;
+- (BOOL)setPlistURL:(NSURL *)url;
 - (id)plist;
 - (NSString *)identifier;
 

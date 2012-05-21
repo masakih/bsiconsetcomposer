@@ -542,10 +542,14 @@ enum {
 
 -(BOOL)setPlistPath:(NSString *)path
 {
+	return [self setPlistURL:[NSURL fileURLWithPath:path]];
+}
+- (BOOL)setPlistURL:(NSURL *)url
+{
 	NSDictionary *dict;
 	NSColor *color;
 	
-	dict = [NSDictionary dictionaryWithContentsOfFile:path];
+	dict = [NSDictionary dictionaryWithContentsOfURL:url];
 	if( !dict ) {
 		return NO;
 	}
@@ -570,7 +574,6 @@ enum {
 	
 	return YES;
 }
-
 - (NSString *)identifier
 {
 	return ColorSetIdentifier;
