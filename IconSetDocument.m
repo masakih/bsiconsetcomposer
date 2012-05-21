@@ -442,9 +442,9 @@ static NSArray *sThreadIdentifiers;
 	if( !image ) {
 		filename = [fw filename];
 		if( !filename ) return;
-		
-		NSString *path = [[self fileName] stringByAppendingPathComponent:filename];
-		[colorSet setPlistPath:path];
+		NSURL *bundleURL = [self fileURL];
+		NSURL *colorSetURL = [bundleURL URLByAppendingPathComponent:filename];
+		[colorSet setPlistURL:colorSetURL];
 	} else {
 		[self setValue:fw forKeyPath:[NSString stringWithFormat:@"%@.%@", key, BSCIImageFileWrapperKey]];
 	}
