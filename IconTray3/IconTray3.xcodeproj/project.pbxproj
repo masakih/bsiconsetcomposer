@@ -43,6 +43,8 @@
 		F4A81765156D0C0300FCC771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F8B88A07B434F6008AE28D /* Foundation.framework */; };
 		F4A817EE156D0C0600FCC771 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F8B88807B434F6008AE28D /* AppKit.framework */; };
 		F4A818B4156D0C0C00FCC771 /* IconTray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF68FD067E5B5A0090B5B0 /* IconTray.framework */; };
+		F4A81993156D37A800FCC771 /* IconTray-Dragging.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A81992156D37A800FCC771 /* IconTray-Dragging.m */; };
+		F4A819A4156D387D00FCC771 /* TemporaryFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A819A3156D387D00FCC771 /* TemporaryFolder.m */; };
 		F4F8FD0D0D3FA13200CC4006 /* IconTray.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F4F8FD0C0D3FA13200CC4006 /* IconTray.tiff */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,9 @@
 		F4A81743156D091E00FCC771 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		F4A81746156D095300FCC771 /* UITestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITestAppDelegate.h; sourceTree = "<group>"; };
 		F4A81747156D095300FCC771 /* UITestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITestAppDelegate.m; sourceTree = "<group>"; };
+		F4A81992156D37A800FCC771 /* IconTray-Dragging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "IconTray-Dragging.m"; path = "../IconTray-Dragging.m"; sourceTree = SOURCE_ROOT; };
+		F4A819A2156D387D00FCC771 /* TemporaryFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TemporaryFolder.h; path = ../TemporaryFolder.h; sourceTree = SOURCE_ROOT; };
+		F4A819A3156D387D00FCC771 /* TemporaryFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TemporaryFolder.m; path = ../TemporaryFolder.m; sourceTree = SOURCE_ROOT; };
 		F4F8FD0C0D3FA13200CC4006 /* IconTray.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = IconTray.tiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -283,6 +288,9 @@
 		F4A81738156D085700FCC771 /* UITest */ = {
 			isa = PBXGroup;
 			children = (
+				F4A819A2156D387D00FCC771 /* TemporaryFolder.h */,
+				F4A819A3156D387D00FCC771 /* TemporaryFolder.m */,
+				F4A81992156D37A800FCC771 /* IconTray-Dragging.m */,
 				F4A8172B156D082400FCC771 /* UITest-Info.plist */,
 				F4A8173A156D088100FCC771 /* main.m */,
 				F4A81743156D091E00FCC771 /* MainMenu.xib */,
@@ -443,6 +451,8 @@
 			files = (
 				F4A8173B156D088100FCC771 /* main.m in Sources */,
 				F4A81748156D095300FCC771 /* UITestAppDelegate.m in Sources */,
+				F4A81993156D37A800FCC771 /* IconTray-Dragging.m in Sources */,
+				F4A819A4156D387D00FCC771 /* TemporaryFolder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
