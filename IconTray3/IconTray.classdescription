@@ -8,5 +8,5 @@
 		// myOutlet = NSView;
 	};
     ClassName = IconTray; 
-    SuperClass = NSView; 
+    SuperClass = NSControl; 
 }
