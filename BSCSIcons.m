@@ -12,6 +12,18 @@
 
 @implementation BSCSIcons
 
+- (id)copyWithZone:(NSZone *)zone
+{
+	BSCSIcons *result = [[[self class] allocWithZone:zone] init];
+	result.image = self.image;
+	result.imageFileWrapper = self.imageFileWrapper;
+	result.placeholder = self.placeholder;
+	result.title = self.title;
+	result.identifier = self.identifier;
+	
+	return result;
+}
+
 - (void)setImage:(NSImage *)new
 {
 	if(image == new) return;

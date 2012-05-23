@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface BSCSIcons : NSObject
+@interface BSCSIcons : NSObject <NSCopying>
 {
 	NSImage *image;
 	NSFileWrapper *imageFileWrapper;
