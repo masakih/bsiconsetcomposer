@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 44;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -15,6 +15,7 @@
 			dependencies = (
 				53DF6903067E5B930090B5B0 /* PBXTargetDependency */,
 				53DF6905067E5B930090B5B0 /* PBXTargetDependency */,
+				F4A8195A156D33FA00FCC771 /* PBXTargetDependency */,
 			);
 			name = All;
 			productName = All;
@@ -35,6 +36,13 @@
 		C0A47C500A523B730004BDC3 /* IconTrayIBPluginInspector.nib in Resources */ = {isa = PBXBuildFile; fileRef = C05B20D80A48CB530099B9E5 /* IconTrayIBPluginInspector.nib */; };
 		C0D069560A49DF9100C95564 /* InterfaceBuilderKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D069550A49DF9100C95564 /* InterfaceBuilderKit.framework */; };
 		D1AEDE470A6C289C0010C343 /* IconTrayIBPluginLibrary.nib in Resources */ = {isa = PBXBuildFile; fileRef = D1AEDE460A6C289C0010C343 /* IconTrayIBPluginLibrary.nib */; };
+		F4A8173B156D088100FCC771 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A8173A156D088100FCC771 /* main.m */; };
+		F4A81744156D091E00FCC771 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A81743156D091E00FCC771 /* MainMenu.xib */; };
+		F4A81748156D095300FCC771 /* UITestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A81747156D095300FCC771 /* UITestAppDelegate.m */; };
+		F4A8174F156D0B6300FCC771 /* IconTray.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 53DF68FD067E5B5A0090B5B0 /* IconTray.framework */; };
+		F4A81765156D0C0300FCC771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F8B88A07B434F6008AE28D /* Foundation.framework */; };
+		F4A817EE156D0C0600FCC771 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F8B88807B434F6008AE28D /* AppKit.framework */; };
+		F4A818B4156D0C0C00FCC771 /* IconTray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF68FD067E5B5A0090B5B0 /* IconTray.framework */; };
 		F4F8FD0D0D3FA13200CC4006 /* IconTray.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F4F8FD0C0D3FA13200CC4006 /* IconTray.tiff */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +68,27 @@
 			remoteGlobalIDString = 53DF68FC067E5B5A0090B5B0;
 			remoteInfo = IconTray3Framework;
 		};
+		F4A81959156D33FA00FCC771 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0259C573FE90428111CA0C5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4A81728156D082400FCC771;
+			remoteInfo = UITest;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F4A8175F156D0B9500FCC771 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F4A8174F156D0B6300FCC771 /* IconTray.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0259C576FE90428111CA0C5A /* IconTrayIBPlugin.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = IconTrayIBPlugin.m; sourceTree = "<group>"; };
@@ -84,6 +112,12 @@
 		C0D069550A49DF9100C95564 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = /Developer/Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = "<absolute>"; };
 		D1AEDE460A6C289C0010C343 /* IconTrayIBPluginLibrary.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = IconTrayIBPluginLibrary.nib; path = English.lproj/IconTrayIBPluginLibrary.nib; sourceTree = "<group>"; };
 		DD92D38A0106425D02CA0E72 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		F4A81729156D082400FCC771 /* UITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A8172B156D082400FCC771 /* UITest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UITest-Info.plist"; sourceTree = "<group>"; };
+		F4A8173A156D088100FCC771 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F4A81743156D091E00FCC771 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		F4A81746156D095300FCC771 /* UITestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITestAppDelegate.h; sourceTree = "<group>"; };
+		F4A81747156D095300FCC771 /* UITestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITestAppDelegate.m; sourceTree = "<group>"; };
 		F4F8FD0C0D3FA13200CC4006 /* IconTray.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = IconTray.tiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,12 +140,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4A81727156D082400FCC771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A818B4156D0C0C00FCC771 /* IconTray.framework in Frameworks */,
+				F4A817EE156D0C0600FCC771 /* AppKit.framework in Frameworks */,
+				F4A81765156D0C0300FCC771 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0259C574FE90428111CA0C5A /* IconTray3 */ = {
 			isa = PBXGroup;
 			children = (
+				F4A81738156D085700FCC771 /* UITest */,
 				32DBCF9E0370C38000C91783 /* Plugin */,
 				54D33B2C06778E4400C9C163 /* Framework */,
 				0259C582FE90428111CA0C5A /* Resources */,
@@ -165,6 +210,7 @@
 			children = (
 				8D1AC9740486D14A00FE50C9 /* IconTrayIBPlugin.ibplugin */,
 				53DF68FD067E5B5A0090B5B0 /* IconTray.framework */,
+				F4A81729156D082400FCC771 /* UITest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +280,18 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		F4A81738156D085700FCC771 /* UITest */ = {
+			isa = PBXGroup;
+			children = (
+				F4A8172B156D082400FCC771 /* UITest-Info.plist */,
+				F4A8173A156D088100FCC771 /* main.m */,
+				F4A81743156D091E00FCC771 /* MainMenu.xib */,
+				F4A81746156D095300FCC771 /* UITestAppDelegate.h */,
+				F4A81747156D095300FCC771 /* UITestAppDelegate.m */,
+			);
+			name = UITest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -285,13 +343,31 @@
 			productReference = 8D1AC9740486D14A00FE50C9 /* IconTrayIBPlugin.ibplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
+		F4A81728156D082400FCC771 /* UITest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4A81732156D082600FCC771 /* Build configuration list for PBXNativeTarget "UITest" */;
+			buildPhases = (
+				F4A81725156D082400FCC771 /* Resources */,
+				F4A81726156D082400FCC771 /* Sources */,
+				F4A81727156D082400FCC771 /* Frameworks */,
+				F4A8175F156D0B9500FCC771 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UITest;
+			productName = UITest;
+			productReference = F4A81729156D082400FCC771 /* UITest.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0259C573FE90428111CA0C5A /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = C056398B08A954F8003078D8 /* Build configuration list for PBXProject "IconTray3" */;
-			compatibilityVersion = "Xcode 3.0";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -307,6 +383,7 @@
 				53DF6901067E5B8E0090B5B0 /* All */,
 				8D1AC9600486D14A00FE50C9 /* IconTray */,
 				53DF68FC067E5B5A0090B5B0 /* IconTrayFramework */,
+				F4A81728156D082400FCC771 /* UITest */,
 			);
 		};
 /* End PBXProject section */
@@ -331,6 +408,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4A81725156D082400FCC771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A81744156D091E00FCC771 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -352,6 +437,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4A81726156D082400FCC771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A8173B156D088100FCC771 /* main.m in Sources */,
+				F4A81748156D095300FCC771 /* UITestAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -369,6 +463,11 @@
 			isa = PBXTargetDependency;
 			target = 53DF68FC067E5B5A0090B5B0 /* IconTrayFramework */;
 			targetProxy = 546DEAEF067F62F70098DCC4 /* PBXContainerItemProxy */;
+		};
+		F4A8195A156D33FA00FCC771 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4A81728156D082400FCC771 /* UITest */;
+			targetProxy = F4A81959156D33FA00FCC771 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -445,7 +544,7 @@
 				GCC_PREFIX_HEADER = IconTrayIBPlugin_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = IconTrayIBPlugin;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = ibplugin;
 				ZERO_LINK = NO;
 			};
@@ -472,7 +571,7 @@
 				GCC_PREFIX_HEADER = IconTrayIBPlugin_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = IconTrayIBPlugin;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = ibplugin;
 				ZERO_LINK = NO;
 			};
@@ -513,24 +612,71 @@
 		C056398C08A954F8003078D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
 		C056398D08A954F8003078D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
-				GCC_MODEL_TUNING = "";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		F4A81730156D082500FCC771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "UITest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UITest;
+			};
+			name = Debug;
+		};
+		F4A81731156D082500FCC771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "UITest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UITest;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -569,6 +715,15 @@
 			buildConfigurations = (
 				C056398C08A954F8003078D8 /* Debug */,
 				C056398D08A954F8003078D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4A81732156D082600FCC771 /* Build configuration list for PBXNativeTarget "UITest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A81730156D082500FCC771 /* Debug */,
+				F4A81731156D082500FCC771 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
