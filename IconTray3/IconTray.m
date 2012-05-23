@@ -15,13 +15,9 @@ NSString *IconTrayImageFileDidChangeNotification = @"IconTrayImageFileDidChangeN
 -(void)registDraggedTypes;
 @end
 
-// static NSString *IconTrayImageKey = @"IconTrayImageKey";
 static NSString *IconTrayTitleKey = @"IconTrayTitleKey";
 static NSString *IconTrayIdentifierKey = @"IconTrayIdentifierKey";
 static NSString *IconTrayImagePositionKey =@"IconTrayImagePositionKey";
-
-// static NSString *IconTrayBindKeypaths =@"IconTrayBindKeypaths";
-// static NSString *IconTrayBindControllers =@"IconTrayBindControllers";
 
 @implementation IconTray
 
@@ -49,13 +45,9 @@ static NSString *IconTrayImagePositionKey =@"IconTrayImagePositionKey";
 	self = [super initWithFrame:frameRect];
 	if( self ) {
 		
-//		imageCell = [[NSImageCell alloc] initImageCell:nil];
 		titleCell = [[NSTextFieldCell alloc] initTextCell:@""];
 		identifier = [[NSString stringWithString:@""] retain];
-		
-		bindKeyPathDict = [[NSMutableDictionary dictionaryWithCapacity:6] retain];
-		bindControllerDict = [[NSMutableDictionary dictionaryWithCapacity:6] retain];
-		
+				
 		[self setImageAlignment:NSImageAlignCenter];
 		[[self imageCell] setSelectable:YES];
 		[self setImagePosition:NSImageAbove];
@@ -64,11 +56,6 @@ static NSString *IconTrayImagePositionKey =@"IconTrayImagePositionKey";
 		if( [self respondsToSelector:@selector(registDraggedTypes)] ) {
 			[self registDraggedTypes];
 		}
-		
-		[self bind:@"controlSize"
-		  toObject:[self imageCell]
-	   withKeyPath:@"controlSize"
-		   options:nil];
 	}
 	
 	return self;
@@ -80,13 +67,9 @@ static NSString *IconTrayImagePositionKey =@"IconTrayImagePositionKey";
 	if( [decoder allowsKeyedCoding] ) {
 		NSImage *i;
 		
-//		imageCell = [[decoder decodeObjectForKey:IconTrayImageKey] retain];
 		titleCell = [[decoder decodeObjectForKey:IconTrayTitleKey] retain];
 		identifier = [[decoder decodeObjectForKey:IconTrayIdentifierKey] retain];
-		
-		bindKeyPathDict = [[NSMutableDictionary dictionaryWithCapacity:6] retain];
-		bindControllerDict = [[NSMutableDictionary dictionaryWithCapacity:6] retain];
-		
+				
 		[self setImagePosition:[decoder decodeIntForKey:IconTrayImagePositionKey]];
 		
 		// setting other property of image.
@@ -97,11 +80,6 @@ static NSString *IconTrayImagePositionKey =@"IconTrayImagePositionKey";
 	if( [self respondsToSelector:@selector(registDraggedTypes)] ) {
 		[self registDraggedTypes];
 	}
-	
-	[self bind:@"controlSize"
-	  toObject:[self imageCell]
-   withKeyPath:@"controlSize"
-	   options:nil];
 	
     return self;
 }
@@ -116,14 +94,10 @@ static NSString *IconTrayImagePositionKey =@"IconTrayImagePositionKey";
 		tmp = [[[self imageCell] representedObject] retain];
 		[[self imageCell] setRepresentedObject:nil];
 		
-//		[coder encodeObject:imageCell forKey:IconTrayImageKey];
 		[coder encodeObject:titleCell forKey:IconTrayTitleKey];
 		[coder encodeObject:identifier forKey:IconTrayIdentifierKey];
 		[coder encodeInt:imagePosition forKey:IconTrayImagePositionKey];
-		
-//		[coder encodeObject:bindKeyPathDict forKey:IconTrayBindKeypaths];
-//		[coder encodeObject:bindControllerDict forKey:IconTrayBindControllers];
-		
+				
 		// restore other properties.
 		[[self imageCell] setRepresentedObject:[tmp autorelease]];
 	}
@@ -133,16 +107,11 @@ static NSString *IconTrayImagePositionKey =@"IconTrayImagePositionKey";
 {
 	[self unregisterDraggedTypes];
 	
-//	[imageCell setRepresentedObject:nil];
-//	[imageCell release];
 	[titleCell setRepresentedObject:nil];
 	[titleCell release];
 	[identifier release];
 	[placeholderImage release];
-	
-	[bindKeyPathDict release];
-	[bindControllerDict release];
-	
+		
 	[super dealloc];
 }
 
@@ -231,9 +200,7 @@ const float kSeparateSpace = 4;
 		NSFrameRect( [self visibleRect] );
 	}
 #endif
-	
-//	[super drawRect:rect];
-	
+		
 	cellRect = [self titleRect];
 	[titleCell drawInteriorWithFrame:cellRect inView:self];
 	
@@ -309,21 +276,6 @@ const float kFocusRingOffset = -4;
 	
 	return Nil;
 }
-- (void)bind:(NSString *)binding toObject:(id)observable withKeyPath:(NSString *)keyPath options:(NSDictionary *)options
-{
-	[bindKeyPathDict setObject:keyPath forKey:binding];
-	[bindControllerDict setObject:observable forKey:binding];
-	
-	[super bind:binding toObject:observable withKeyPath:keyPath options:options];
-}		
-- (void)unbind:(NSString *)binding
-{
-	[bindKeyPathDict removeObjectForKey:binding];
-	[bindControllerDict removeObjectForKey:binding];
-	
-	[super unbind:binding];
-}
-
 
 #pragma mark-
 #pragma mark## Accessor ##
@@ -359,8 +311,9 @@ const float kFocusRingOffset = -4;
 	}
 	
 	// binding
-	id bindKeyPath = [bindKeyPathDict objectForKey:@"placeholderImage"];
-	id controller = [bindControllerDict objectForKey:@"placeholderImage"];
+	id bindInfo = [self infoForBinding:@"placeholderImage"];
+	id bindKeyPath = [bindInfo objectForKey:NSObservedKeyPathKey];
+	id controller = [bindInfo objectForKey:NSObservedObjectKey];
 	if(bindKeyPath && controller) {
 		id value = placeholder;
 		NSError *error = nil;
@@ -370,32 +323,32 @@ const float kFocusRingOffset = -4;
 		[controller setValue:value forKeyPath:bindKeyPath];
 	}
 }
--(BOOL)setImageName:(NSString *)newName
+-(void)setImageName:(NSString *)newName
 {
-	if([[[self imageCell] representedObject] preferredFilename] == newName) return YES;
+	if([[[self imageCell] representedObject] preferredFilename] == newName) return;
 	
 	NSFileWrapper *fileWrapper = [[self imageCell] representedObject];
 	
-	if( !fileWrapper ) return NO;
+	if( !fileWrapper ) return;
 	
 	[fileWrapper setPreferredFilename:newName];
 	
-	return YES;
+	return;
 }
 // primitive method.
--(BOOL)setImage:(NSImage *)inImage fileWrapper:(NSFileWrapper *)wrapper
+-(void)setImage:(NSImage *)inImage fileWrapper:(NSFileWrapper *)wrapper
 {
 	if([[self imageCell] representedObject] == wrapper
-		&& [[[self imageCell] image] isEqual:image]) return YES;
+		&& [[[self imageCell] image] isEqual:image]) return;
 	
 	NSImage *aImage = inImage;
 	
-	if( inImage && ![inImage isKindOfClass:[NSImage class]] ) return NO;
+	if( inImage && ![inImage isKindOfClass:[NSImage class]] ) return;
 	
 	if( delegate
 		&& [delegate respondsToSelector:@selector(iconTray:willChangeFileOfImage:)]
 		&& ![delegate iconTray:self willChangeFileOfImage:wrapper] ) {
-		return NO;
+		return;
 	}
 	
 	id temp = image;
@@ -410,8 +363,9 @@ const float kFocusRingOffset = -4;
 	[[self imageCell] setRepresentedObject:wrapper];
 	
 	// binding
-	id bindKeyPath = [bindKeyPathDict objectForKey:@"image"];
-	id controller = [bindControllerDict objectForKey:@"image"];
+	id bindInfo = [self infoForBinding:@"image"];
+	id bindKeyPath = [bindInfo objectForKey:NSObservedKeyPathKey];
+	id controller = [bindInfo objectForKey:NSObservedObjectKey];
 	if(bindKeyPath && controller) {
 		id value = inImage;
 		NSError *error = nil;
@@ -421,8 +375,9 @@ const float kFocusRingOffset = -4;
 		[controller setValue:value forKeyPath:bindKeyPath];
 	}
 	
-	bindKeyPath = [bindKeyPathDict objectForKey:@"imageFileWrapper"];
-	controller = [bindControllerDict objectForKey:@"imageFileWrapper"];
+	bindInfo = [self infoForBinding:@"imageFileWrapper"];
+	bindKeyPath = [bindInfo objectForKey:NSObservedKeyPathKey];
+	controller = [bindInfo objectForKey:NSObservedObjectKey];
 	if(bindKeyPath && controller) {
 		id value = wrapper;
 		NSError *error = nil;
@@ -440,29 +395,27 @@ const float kFocusRingOffset = -4;
 	[self postNotificationWithName:IconTrayImageFileDidChangeNotification];
 	
 	[self updateCell:[self imageCell]];
-	
-	return YES;
 }
--(BOOL)setImageFileWrapper:(NSFileWrapper *)imageFileWrapper
+-(void)setImageFileWrapper:(NSFileWrapper *)imageFileWrapper
 {
 	NSImage *img;
 	
-	if([[self imageCell] representedObject] == imageFileWrapper) return YES;
+	if([[self imageCell] representedObject] == imageFileWrapper) return;
 	
 	img = [[[NSImage alloc] initWithData:[imageFileWrapper regularFileContents]] autorelease];
-	if( !img ) return NO;
+	if( !img ) return;
 	
-	return [self setImage:img fileWrapper:imageFileWrapper];
+	[self setImage:img fileWrapper:imageFileWrapper];
 }
--(BOOL)setImageFilePath:(NSString *)imageFilePath
+-(void)setImageFilePath:(NSString *)imageFilePath
 {
 	NSFileWrapper *fileWrapper;
 	
 	fileWrapper = [[[NSFileWrapper alloc] initWithPath:imageFilePath] autorelease];
 	
-	return [self setImageFileWrapper:fileWrapper];
+	[self setImageFileWrapper:fileWrapper];
 }
-inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFileWrapper **outFileWrapper )
+static BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFileWrapper **outFileWrapper )
 {
 	NSData *imageData;
 	
@@ -486,7 +439,7 @@ inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 	
 	return YES;
 }
--(BOOL)setImage:(NSImage *)inImage withName:(NSString *)imageName
+-(void)setImage:(NSImage *)inImage withName:(NSString *)imageName
 {
 	NSFileWrapper *fileWrapper;
 	
@@ -498,9 +451,9 @@ inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 		fileWrapper = nil;
 	}
 	
-	return [self setImage:inImage fileWrapper:fileWrapper];
+	[self setImage:inImage fileWrapper:fileWrapper];
 }	
--(BOOL)setImageFromPasteboard:(NSPasteboard *)pasteboard
+-(void)setImageFromPasteboard:(NSPasteboard *)pasteboard
 {
 	NSArray *paths = nil;
 	NSString *imagePath;
@@ -527,26 +480,23 @@ inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 		NSData *data;
 		
 		paths = [pasteboard propertyListForType:NSURLPboardType];
-		if( ![paths isKindOfClass:[NSArray class]] ) return NO;
+		if( ![paths isKindOfClass:[NSArray class]] ) return;
 		
 		pathURL = [NSURL URLWithString:[paths objectAtIndex:0]];
-		if( !pathURL ) return NO;
+		if( !pathURL ) return;
 		
 		imageName = [[pathURL path] lastPathComponent];
 		lowerExtension = [[imageName pathExtension] lowercaseString];
-		if( ![[NSImage imageFileTypes] containsObject:lowerExtension] ) return NO;
+		if( ![[NSImage imageFileTypes] containsObject:lowerExtension] ) return;
 		
 		NSURLRequest *req = [NSURLRequest requestWithURL:pathURL];
 		data = [NSURLConnection sendSynchronousRequest:req returningResponse:NULL error:NULL];
-//		data = [pathURL resourceDataUsingCache:YES];
 		aImage = [[[NSImage alloc] initWithData:data] autorelease];
 	}
 	
 	if( aImage ) {
-		return [self setImage:aImage withName:imageName];
+		[self setImage:aImage withName:imageName];
 	}
-	
-	return NO;
 }
 
 -(NSImage *)displayedImage
@@ -571,11 +521,11 @@ inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 {
 	return image;
 }
--(BOOL)setImage:(NSImage *)inImage
+-(void)setImage:(NSImage *)inImage
 {
-	if([[self imageCell] image] == inImage) return YES;
+	if([[self imageCell] image] == inImage) return;
 	
-	return [self setImage:inImage withName:nil];
+	[self setImage:inImage withName:nil];
 }
 
 -(NSString *)title
@@ -592,8 +542,9 @@ inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 	[self updateCell:titleCell];
 	
 	// binding
-	id bindKeyPath = [bindKeyPathDict objectForKey:@"title"];
-	id controller = [bindControllerDict objectForKey:@"title"];
+	id bindInfo = [self infoForBinding:@"title"];
+	id bindKeyPath = [bindInfo objectForKey:NSObservedKeyPathKey];
+	id controller = [bindInfo objectForKey:NSObservedObjectKey];
 	if(bindKeyPath && controller) {
 		[controller setValue:inTitle forKeyPath:bindKeyPath];
 	}
@@ -622,8 +573,9 @@ inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 	[tmp release];
 	
 	// binding
-	id bindKeyPath = [bindKeyPathDict objectForKey:@"identifier"];
-	id controller = [bindControllerDict objectForKey:@"identifier"];
+	id bindInfo = [self infoForBinding:@"identifier"];
+	id bindKeyPath = [bindInfo objectForKey:NSObservedKeyPathKey];
+	id controller = [bindInfo objectForKey:NSObservedObjectKey];
 	if(bindKeyPath && controller) {
 		[controller setValue:inIdentifier forKeyPath:bindKeyPath];
 	}
@@ -700,8 +652,6 @@ inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 	NSFont *newFont = [NSFont controlContentFontOfSize:[NSFont systemFontSizeForControlSize:size]];
 	[titleCell setControlSize:size];
 	[self setFont:newFont];
-	
-//	[self updateCell:titleCell];
 }
 - (NSControlSize)controlSize
 {
@@ -769,9 +719,7 @@ inline BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 
 -(IBAction)paste:(id)sender
 {
-	if( ![self setImageFromPasteboard:[NSPasteboard generalPasteboard]] ) {
-		NSBeep();
-	}
+	[self setImageFromPasteboard:[NSPasteboard generalPasteboard]];
 }
 -(IBAction)delete:(id)sender
 {

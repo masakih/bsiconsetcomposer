@@ -10,7 +10,6 @@
 
 @interface IconTray : NSControl
 {
-//	NSImageCell *imageCell;
 	NSTextFieldCell *titleCell;
 	NSString *identifier;
 	NSImage *image;
@@ -20,10 +19,6 @@
 	
 	NSCellImagePosition imagePosition;
 	int isHighlighted;
-	
-	// binding.
-	id bindKeyPathDict;
-	id bindControllerDict;
 }
 
 -(id)delegate;
@@ -32,12 +27,12 @@
 -(NSImage *)image;
 -(NSString *)imageName;
 -(NSFileWrapper *)imageFileWrapper;
--(BOOL)setImageFileWrapper:(NSFileWrapper *)imageFileWrapper;
--(BOOL)setImageFilePath:(NSString *)imageFilePath;
--(BOOL)setImage:(NSImage *)image;
--(BOOL)setImageName:(NSString *)imageName;
--(BOOL)setImage:(NSImage *)image withName:(NSString *)imageName; // with extension.
--(BOOL)setImageFromPasteboard:(NSPasteboard *)pasteboard;
+-(void)setImageFileWrapper:(NSFileWrapper *)imageFileWrapper;
+-(void)setImageFilePath:(NSString *)imageFilePath;
+-(void)setImage:(NSImage *)image;
+-(void)setImageName:(NSString *)imageName;
+-(void)setImage:(NSImage *)image withName:(NSString *)imageName; // with extension.
+-(void)setImageFromPasteboard:(NSPasteboard *)pasteboard;
 -(NSString *)title;
 -(void)setTitle:(NSString *)title;
 -(NSString *)identifier;
