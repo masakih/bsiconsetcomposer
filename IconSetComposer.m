@@ -30,7 +30,7 @@ static IconSetComposer *_instance = nil;
 	int result;
 	//
 	NSString *title = NSLocalizedString( @"Caution!", @"Caution!" );
-	NSString *message;
+	NSString *message = @"";
 	NSString *defaultCaption = NSLocalizedString( @"Quit", @"Quit" );
 	NSString *alternateCaption = NSLocalizedString( @"Continue", @"Continue" );
 //	NSString *otherCaption;
@@ -72,6 +72,7 @@ static IconSetComposer *_instance = nil;
 	NSString *bsResourcesPath;
 	NSArray *bsResources;
 	NSArray *knownBSSystemImages;
+	NSArray *deprecatedImages;
 	NSArray *managedImages;
 	unsigned managedImageNum;
 	unsigned i, count;
@@ -96,6 +97,8 @@ static IconSetComposer *_instance = nil;
 	
 	knownBSSystemImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BathyScapheSystemImages"
 																						   ofType:@"plist"]];
+	deprecatedImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"DeprecatedImageList"
+																						ofType:@"plist"]];
 	
 	count = [bsResources count];
 	for( i = 0; i < count; i++ ) {
@@ -116,9 +119,12 @@ static IconSetComposer *_instance = nil;
 		}
 	}
 	if( managedImageNum > bsResourceImageNum ) {
-		status |= kIconsHaveIncreased;
 		decrementalImages = [[managedImages mutableCopy] autorelease];
 		[decrementalImages removeObjectsInArray:containsImages];
+		[decrementalImages removeObjectsInArray:deprecatedImages];
+		if([decrementalImages count] > 0) {
+			status |= kIconsHaveIncreased;
+		}
 	}
 	
 	if( status ) {
@@ -306,7 +312,7 @@ final:
 	static NSArray *array = nil;
 	
 	if( !array ) {
-		array = [[NSArray arrayWithObjects:@"png", @"tiff", @"tif", nil] retain];
+		array = [[NSArray arrayWithObjects:@"png", @"tiff", @"tif", @"pdf", nil] retain];
 	}
 	
 	return array;
