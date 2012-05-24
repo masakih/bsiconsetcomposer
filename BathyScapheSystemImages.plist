@@ -49,5 +49,6 @@
 	<string>moveNextTemplate</string>
 	<string>movePrevTemplate</string>
 	<string>moveTopTemplate</string>
+	<string>ReplyPreferences</string>
 </array>
 </plist>
