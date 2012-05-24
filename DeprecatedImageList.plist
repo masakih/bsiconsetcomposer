@@ -12,5 +12,23 @@
 	<string>EllipsisDownProxy</string>
 	<string>EllipsisDownMouseOver</string>
 	<string>EllipsisDownMouseDown</string>
+	<string>Emoticon</string>
+	<string>OrderFrontBrowser</string>
+	<string>BoardList</string>
+	<string>Delete</string>
+	<string>ReloadList</string>
+	<string>ReloadThread</string>
+	<string>AddFavorites</string>
+	<string>RemoveFavorites</string>
+	<string>ResToThread</string>
+	<string>SaveAsDraft</string>
+	<string>SendMessage</string>
+	<string>beDisabled</string>
+	<string>beEnabled</string>
+	<string>offline</string>
+	<string>online</string>
+	<string>Board</string>
+	<string>Folder</string>
+	<string>SmartBoard</string>
 </array>
 </plist>

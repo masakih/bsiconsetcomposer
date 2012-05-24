@@ -15,6 +15,14 @@
 @end
 
 @implementation IconTray(Dragging)
+- (TemporaryFolder *)temporaryFolder
+{
+	static TemporaryFolder *_sTemp = nil;
+	if(_sTemp) return _sTemp;
+	
+	_sTemp = [[TemporaryFolder alloc] init];
+	return _sTemp;
+}
 -(void)registDraggedTypes
 {
 	[self registerForDraggedTypes:[self acceptPasteTypes]];
@@ -41,9 +49,8 @@
 	NSPasteboard *pb;
 	NSArray *paths;
 	NSString *path;
-	NSImage *aImage = nil;
-	NSString *imageName = nil;
 	NSArray *types;
+	id oldImage = [self image];
 	
 	//	NSLog(@"Enter %@.", NSStringFromSelector(_cmd));
 	
@@ -51,20 +58,17 @@
 	types = [pb types];
 	
 	if([types containsObject:NSFilesPromisePboardType]) {
-		TemporaryFolder *tmp = [TemporaryFolder temporaryFolder];
+		TemporaryFolder *tmp = [self temporaryFolder];
 		paths = [sender namesOfPromisedFilesDroppedAtDestination:[tmp url]];
 		path = [paths objectAtIndex:0];
 		
 		path = [[tmp path] stringByAppendingPathComponent:path];
-		aImage = [[[NSImage alloc] initWithContentsOfFile:path] autorelease];
-		imageName = [path lastPathComponent];
+		[self setImageFilePath:path];
+		if([self image] != oldImage) return YES;
 	}
 	
-	if(aImage && [self setImage:aImage withName:imageName]) {
-		return YES;
-	}
-		
-	return [self setImageFromPasteboard:pb];
+	[self setImageFromPasteboard:pb];
+	return [self image] != oldImage;
 }
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender
 {
