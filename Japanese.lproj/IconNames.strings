@@ -2,54 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AddFavorites</key>
-	<string>お気に入りに追加</string>
-	<key>Board</key>
-	<string>掲示板</string>
-	<key>BoardList</key>
-	<string>掲示板リスト</string>
-	<key>Delete</key>
-	<string>削除</string>
-	<key>EllipsisDownMouseDown</key>
-	<string>省略下矢印</string>
-	<key>EllipsisDownMouseOver</key>
-	<string>省略下矢印</string>
-	<key>EllipsisDownProxy</key>
-	<string>省略下矢印</string>
-	<key>EllipsisMouseDown</key>
-	<string>省略</string>
-	<key>EllipsisMouseOver</key>
-	<string>省略</string>
-	<key>EllipsisProxy</key>
-	<string>省略</string>
-	<key>EllipsisUpMouseDown</key>
-	<string>省略上矢印</string>
-	<key>EllipsisUpMouseOver</key>
-	<string>省略上矢印</string>
-	<key>EllipsisUpProxy</key>
-	<string>省略上矢印</string>
 	<key>FavoritesItem</key>
 	<string>お気に入り</string>
-	<key>Folder</key>
-	<string>フォルダ</string>
-	<key>HistoryFolder</key>
-	<string>履歴フォルダ</string>
-	<key>OrderFrontBrowser</key>
-	<string>ブラウザを最前面に</string>
-	<key>ReloadList</key>
-	<string>一覧の更新</string>
-	<key>ReloadThread</key>
-	<string>スレッドの更新</string>
-	<key>RemoveFavorites</key>
-	<string>お気に入りを削除</string>
-	<key>ResToThread</key>
-	<string>書き込み</string>
-	<key>SaveAsDraft</key>
-	<string>下書きとして保存</string>
-	<key>SendMessage</key>
-	<string>送信</string>
-	<key>SmartBoard</key>
-	<string>スマート掲示板</string>
 	<key>Status_HeadModified</key>
 	<string>微小変異</string>
 	<key>Status_logcached</key>
@@ -60,23 +14,93 @@
 	<string>新着あり</string>
 	<key>age</key>
 	<string>age</string>
-	<key>beDisabled</key>
-	<string>Be ログアウト中</string>
-	<key>beEnabled</key>
-	<string>Be ログイン中</string>
 	<key>lastUpdatedHeader</key>
 	<string>新着</string>
 	<key>mailAttachment</key>
 	<string>メール欄</string>
-	<key>offline</key>
-	<string>オフライン</string>
-	<key>online</key>
-	<string>オンライン</string>
 	<key>sage</key>
 	<string>sage</string>
-	<key>stopSign</key>
-	<string>停止</string>
-	<key>Emoticon</key>
+	<key>BoardItem</key>
+	<string>板</string>
+	<key>BoardItemLarge</key>
+	<string>板 大 </string>
+	<key>BoardItemLargeSelected</key>
+	<string>板 大 選択</string>
+	<key>BoardItemMedium</key>
+	<string>板 中 </string>
+	<key>BoardItemMediumSelected</key>
+	<string>板 中 選択</string>
+	<key>BoardItemSelected</key>
+	<string>板 選択</string>
+	<key>CategoryItem</key>
+	<string>カテゴリ</string>
+	<key>CategoryItemLarge</key>
+	<string>カテゴリ 大 </string>
+	<key>CategoryItemLargeSelected</key>
+	<string>カテゴリ 大 選択</string>
+	<key>CategoryItemMedium</key>
+	<string>カテゴリ 中 </string>
+	<key>CategoryItemMediumSelected</key>
+	<string>カテゴリ 中 選択</string>
+	<key>CategoryItemSelected</key>
+	<string>カテゴリ選択</string>
+	<key>FavoritesItemLarge</key>
+	<string>お気に入り 大 </string>
+	<key>FavoritesItemLargeSelected</key>
+	<string>お気に入り 大 選択</string>
+	<key>FavoritesItemMedium</key>
+	<string>お気に入り 中 </string>
+	<key>FavoritesItemMediumSelected</key>
+	<string>お気に入り 中 選択</string>
+	<key>FavoritesItemSelected</key>
+	<string>お気に入り選択</string>
+	<key>SmartBoardItem</key>
+	<string>スマート掲示板</string>
+	<key>SmartBoardItemLarge</key>
+	<string>スマート掲示板 大 </string>
+	<key>SmartBoardItemLargeSelected</key>
+	<string>スマート掲示板 大 選択</string>
+	<key>SmartBoardItemMedium</key>
+	<string>スマート掲示板 中 </string>
+	<key>SmartBoardItemMediumSelected</key>
+	<string>スマート掲示板 中 選択</string>
+	<key>SmartBoardItemSelected</key>
+	<string>スマート掲示板選択</string>
+	<key>AddFavoritesTemplate</key>
+	<string>お気に入りに追加</string>
+	<key>ComposeTemplate</key>
+	<string>書き込み</string>
+	<key>DeleteTemplate</key>
+	<string>削除</string>
+	<key>LiveThreadsModeTemplate</key>
+	<string>スレッド一覧に切り替え</string>
+	<key>LocalRulesTemplate</key>
 	<string>ローカルルール</string>
+	<key>NewThreadTemplate</key>
+	<string>新規スレッド</string>
+	<key>OrderFrontBrowserTemplate</key>
+	<string>ブラウザを最前面に</string>
+	<key>ReloadListTemplate</key>
+	<string>スレッドの更新</string>
+	<key>ReloadThreadTemplate</key>
+	<string>一覧の更新</string>
+	<key>RemoveFavoritesTemplate</key>
+	<string>お気に入りから削除</string>
+	<key>SendMessageTemplate</key>
+	<string>送信</string>
+	<key>StopTemplate</key>
+	<string>停止</string>
+	<key>StoredLogFilesModeTemplate</key>
+	<string>ログモード</string>
+	<key>ThreadTitleSearchTemplate</key>
+	<string>スレッドタイトル検索</string>
+	<key>ThunderTemplate</key>
+	<string>オン／オフライン</string>
+	<key>ToggleBoardsListTemplate</key>
+	<string>掲示板リスト</string>
+	<key>ToggleFontPanelTemplate</key>
+	<string>フォント</string>
+	<key>UseBeTemplate</key>
+	<string>Be有効／無効</string>
 </dict>
 </plist>

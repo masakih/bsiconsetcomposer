@@ -193,6 +193,7 @@ const float kSeparateSpace = 4;
 - (void)drawRect:(NSRect)rect
 {
 	NSRect cellRect;
+	NSColor *textColor = [NSColor blackColor];
 	
 #ifdef DEBUG
 	// draw outline.
@@ -200,22 +201,35 @@ const float kSeparateSpace = 4;
 		NSFrameRect( [self visibleRect] );
 	}
 #endif
-		
-	cellRect = [self titleRect];
-	[titleCell drawInteriorWithFrame:cellRect inView:self];
+	
+	if(drawBackGroud && backgroundColor) {
+		[backgroundColor set];
+		NSRectFill(rect);
+	}
 	
 	cellRect = [self imageRect];
 	if( [[self imageCell] isHighlighted] && [[self window] isKeyWindow] ) {
 		[NSGraphicsContext saveGraphicsState];
-		NSSetFocusRingStyle(NSFocusRingAbove);
-		[[NSColor selectedControlColor] set];
-		
-		[[self imageCell] drawInteriorWithFrame:cellRect inView:self];
+		[[NSColor secondarySelectedControlColor] set];
+		NSBezierPath *bezier = [NSBezierPath bezierPathWithRoundedRect:cellRect
+															   xRadius:5
+															   yRadius:5];
+		[bezier fill];
+		bezier = [NSBezierPath bezierPathWithRoundedRect:[self titleRect]
+												 xRadius:2
+												 yRadius:2];
+		[[NSColor alternateSelectedControlColor] set];
+		[bezier fill];
 		
 		[NSGraphicsContext restoreGraphicsState];
-	} else {
-		[[self imageCell] drawInteriorWithFrame:cellRect inView:self];
+		
+		textColor = [NSColor whiteColor];
 	}
+	
+	[[self imageCell] drawInteriorWithFrame:cellRect inView:self];
+	[titleCell setTextColor:textColor];
+	[titleCell drawInteriorWithFrame:[self titleRect] inView:self];
+	
 	if( [self respondsToSelector:@selector(drawInPalette)] ) {
 		[self performSelector:@selector(drawInPalette)];
 	}
@@ -656,6 +670,26 @@ static BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 - (NSControlSize)controlSize
 {
 	return [titleCell controlSize];
+}
+
+- (void)setBackgroundColor:(NSColor *)color
+{
+	[backgroundColor autorelease];
+	backgroundColor = [color retain];
+	[self setNeedsDisplay];
+}
+- (NSColor *)backgroundColor
+{
+	return backgroundColor;
+}
+- (void)setDrawsBackground:(BOOL)flag
+{
+	drawBackGroud = flag;
+	[self setNeedsDisplay];
+}
+- (BOOL)drawsBackground
+{
+	return drawBackGroud;
 }
 
 #pragma mark-

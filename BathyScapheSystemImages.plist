@@ -50,5 +50,6 @@
 	<string>movePrevTemplate</string>
 	<string>moveTopTemplate</string>
 	<string>ReplyPreferences</string>
+	<string>stopSign</string>
 </array>
 </plist>
