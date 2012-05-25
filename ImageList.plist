@@ -6,33 +6,9 @@
 	<array>
 		<dict>
 			<key>imageName</key>
-			<string>Board</string>
-			<key>name</key>
-			<string>板</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
 			<string>FavoritesItem</string>
 			<key>name</key>
 			<string>お気に入り</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>Folder</string>
-			<key>name</key>
-			<string>フォルダ</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>SmartBoard</string>
-			<key>name</key>
-			<string>スマート掲示板</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>BoardItem</string>
-			<key>name</key>
-			<string>板</string>
 		</dict>
 		<dict>
 			<key>imageName</key>
@@ -45,6 +21,12 @@
 			<string>BoardItemLargeSelected</string>
 			<key>name</key>
 			<string>板（大）選択</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>BoardItem</string>
+			<key>name</key>
+			<string>板</string>
 		</dict>
 		<dict>
 			<key>imageName</key>
@@ -225,102 +207,6 @@
 	</array>
 	<key>Toolbar</key>
 	<array>
-		<dict>
-			<key>imageName</key>
-			<string>Emoticon</string>
-			<key>name</key>
-			<string>ローカルルール</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>OrderFrontBrowser</string>
-			<key>name</key>
-			<string>ブラウザを最前面に</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>BoardList</string>
-			<key>name</key>
-			<string>掲示板リスト</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>Delete</string>
-			<key>name</key>
-			<string>削除</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>ReloadList</string>
-			<key>name</key>
-			<string>スレッドの更新</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>ReloadThread</string>
-			<key>name</key>
-			<string>一覧の更新</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>AddFavorites</string>
-			<key>name</key>
-			<string>お気に入りに追加</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>RemoveFavorites</string>
-			<key>name</key>
-			<string>お気に入りから削除</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>ResToThread</string>
-			<key>name</key>
-			<string>書き込み</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>SaveAsDraft</string>
-			<key>name</key>
-			<string>下書きとして保存</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>SendMessage</string>
-			<key>name</key>
-			<string>送信</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>beDisabled</string>
-			<key>name</key>
-			<string>Be ログアウト中</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>beEnabled</string>
-			<key>name</key>
-			<string>Be ログイン中</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>offline</string>
-			<key>name</key>
-			<string>オフライン</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>online</string>
-			<key>name</key>
-			<string>オンライン</string>
-		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>stopSign</string>
-			<key>name</key>
-			<string>停止</string>
-		</dict>
 		<dict>
 			<key>imageName</key>
 			<string>AddFavoritesTemplate</string>
