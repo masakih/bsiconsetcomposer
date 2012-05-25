@@ -149,7 +149,7 @@
 	<key>StopTemplate</key>
 	<string>停止</string>
 	<key>StoredLogFilesModeTemplate</key>
-	<key>ログモード</string>
+	<string>ログモード</string>
 	<key>ThreadTitleSearchTemplate</key>
 	<string>スレッドタイトル検索</string>
 	<key>ThunderTemplate</key>
