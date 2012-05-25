@@ -19,6 +19,8 @@
 	
 	NSCellImagePosition imagePosition;
 	int isHighlighted;
+	BOOL drawBackGroud;
+	NSColor *backgroundColor;
 }
 
 -(id)delegate;
@@ -60,6 +62,11 @@
 
 - (void)setControlSize:(NSControlSize)size;
 - (NSControlSize)controlSize;
+
+- (void)setBackgroundColor:(NSColor *)color;
+- (NSColor *)backgroundColor;
+- (void)setDrawsBackground:(BOOL)flag;
+- (BOOL)drawsBackground;
 
 @end
 
