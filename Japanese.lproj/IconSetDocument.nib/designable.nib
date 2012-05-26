@@ -164,14 +164,14 @@
         <reference key="NSNextResponder"/>
         <int key="NSvFlags">268</int>
         <array class="NSMutableArray" key="NSSubviews">
-          <object class="IconTray" id="1014077734">
+          <object class="IconTray" id="409419844">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{274, 20}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <string key="NSReuseIdentifierKey">ThreadTitleSearchTemplate</string>
+            <string key="NSReuseIdentifierKey">FontSmallerTemplate</string>
             <bool key="NSEnabled">YES</bool>
-            <object class="NSImageCell" key="NSCell" id="413989723">
+            <object class="NSImageCell" key="NSCell" id="819532750">
               <int key="NSCellFlags">69336577</int>
               <int key="NSCellFlags2">33685504</int>
               <object class="NSFont" key="NSSupport" id="26">
@@ -187,7 +187,7 @@
             <object class="NSTextFieldCell" key="IconTrayTitleKey">
               <int key="NSCellFlags">67239424</int>
               <int key="NSCellFlags2">134348800</int>
-              <string key="NSContents">ThreadTitleSearchTemplate</string>
+              <string key="NSContents">FontSmallerTemplate</string>
               <object class="NSFont" key="NSSupport" id="330404249">
                 <string key="NSName">LucidaGrande</string>
                 <double key="NSSize">11</double>
@@ -212,13 +212,202 @@
                 </object>
               </object>
             </object>
+            <string key="IconTrayIdentifierKey">FontSmallerTemplate</string>
+            <int key="IconTrayImagePositionKey">5</int>
+          </object>
+          <object class="IconTray" id="503471096">
+            <reference key="NSNextResponder" ref="524934670"/>
+            <int key="NSvFlags">268</int>
+            <string key="NSFrame">{{147, 20}, {119, 64}}</string>
+            <reference key="NSSuperview" ref="524934670"/>
+            <string key="NSReuseIdentifierKey">FontBiggerTemplate</string>
+            <bool key="NSEnabled">YES</bool>
+            <object class="NSImageCell" key="NSCell" id="243802338">
+              <int key="NSCellFlags">69336577</int>
+              <int key="NSCellFlags2">33685504</int>
+              <reference key="NSSupport" ref="26"/>
+              <int key="NSAlign">0</int>
+              <int key="NSScale">0</int>
+              <int key="NSStyle">0</int>
+              <bool key="NSAnimates">YES</bool>
+            </object>
+            <object class="NSTextFieldCell" key="IconTrayTitleKey">
+              <int key="NSCellFlags">67239424</int>
+              <int key="NSCellFlags2">134348800</int>
+              <string key="NSContents">FontBiggerTemplate</string>
+              <reference key="NSSupport" ref="330404249"/>
+              <reference key="NSBackgroundColor" ref="517522212"/>
+              <reference key="NSTextColor" ref="431744492"/>
+            </object>
+            <string key="IconTrayIdentifierKey">FontBiggerTemplate</string>
+            <int key="IconTrayImagePositionKey">5</int>
+          </object>
+          <object class="IconTray" id="55341464">
+            <reference key="NSNextResponder" ref="524934670"/>
+            <int key="NSvFlags">268</int>
+            <string key="NSFrame">{{20, 20}, {119, 64}}</string>
+            <reference key="NSSuperview" ref="524934670"/>
+            <string key="NSReuseIdentifierKey">ToggleFontPanelTemplate</string>
+            <bool key="NSEnabled">YES</bool>
+            <object class="NSImageCell" key="NSCell" id="485568138">
+              <int key="NSCellFlags">69336577</int>
+              <int key="NSCellFlags2">33685504</int>
+              <reference key="NSSupport" ref="26"/>
+              <int key="NSAlign">0</int>
+              <int key="NSScale">0</int>
+              <int key="NSStyle">0</int>
+              <bool key="NSAnimates">YES</bool>
+            </object>
+            <object class="NSTextFieldCell" key="IconTrayTitleKey">
+              <int key="NSCellFlags">67239424</int>
+              <int key="NSCellFlags2">134348800</int>
+              <string key="NSContents">ToggleFontPanelTemplate</string>
+              <reference key="NSSupport" ref="330404249"/>
+              <reference key="NSBackgroundColor" ref="517522212"/>
+              <reference key="NSTextColor" ref="431744492"/>
+            </object>
+            <string key="IconTrayIdentifierKey">ToggleFontPanelTemplate</string>
+            <int key="IconTrayImagePositionKey">5</int>
+          </object>
+          <object class="IconTray" id="887361832">
+            <reference key="NSNextResponder" ref="524934670"/>
+            <int key="NSvFlags">268</int>
+            <string key="NSFrame">{{274, 164}, {119, 64}}</string>
+            <reference key="NSSuperview" ref="524934670"/>
+            <string key="NSReuseIdentifierKey">BrowserVSplitTemplate</string>
+            <bool key="NSEnabled">YES</bool>
+            <object class="NSImageCell" key="NSCell" id="720466182">
+              <int key="NSCellFlags">69336577</int>
+              <int key="NSCellFlags2">33685504</int>
+              <reference key="NSSupport" ref="26"/>
+              <int key="NSAlign">0</int>
+              <int key="NSScale">0</int>
+              <int key="NSStyle">0</int>
+              <bool key="NSAnimates">YES</bool>
+            </object>
+            <object class="NSTextFieldCell" key="IconTrayTitleKey">
+              <int key="NSCellFlags">67239424</int>
+              <int key="NSCellFlags2">134348800</int>
+              <string key="NSContents">BrowserVSplitTemplate</string>
+              <reference key="NSSupport" ref="330404249"/>
+              <reference key="NSBackgroundColor" ref="517522212"/>
+              <reference key="NSTextColor" ref="431744492"/>
+            </object>
+            <string key="IconTrayIdentifierKey">BrowserVSplitTemplate</string>
+            <int key="IconTrayImagePositionKey">5</int>
+          </object>
+          <object class="IconTray" id="582138296">
+            <reference key="NSNextResponder" ref="524934670"/>
+            <int key="NSvFlags">268</int>
+            <string key="NSFrame">{{147, 164}, {119, 64}}</string>
+            <reference key="NSSuperview" ref="524934670"/>
+            <string key="NSReuseIdentifierKey">BrowserNSplitTemplate</string>
+            <bool key="NSEnabled">YES</bool>
+            <object class="NSImageCell" key="NSCell" id="328174350">
+              <int key="NSCellFlags">69336577</int>
+              <int key="NSCellFlags2">33685504</int>
+              <reference key="NSSupport" ref="26"/>
+              <int key="NSAlign">0</int>
+              <int key="NSScale">0</int>
+              <int key="NSStyle">0</int>
+              <bool key="NSAnimates">YES</bool>
+            </object>
+            <object class="NSTextFieldCell" key="IconTrayTitleKey">
+              <int key="NSCellFlags">67239424</int>
+              <int key="NSCellFlags2">134348800</int>
+              <string key="NSContents">BrowserNSplitTemplate</string>
+              <reference key="NSSupport" ref="330404249"/>
+              <reference key="NSBackgroundColor" ref="517522212"/>
+              <reference key="NSTextColor" ref="431744492"/>
+            </object>
+            <string key="IconTrayIdentifierKey">BrowserNSplitTemplate</string>
+            <int key="IconTrayImagePositionKey">5</int>
+          </object>
+          <object class="IconTray" id="143912827">
+            <reference key="NSNextResponder" ref="524934670"/>
+            <int key="NSvFlags">268</int>
+            <string key="NSFrame">{{401, 164}, {119, 64}}</string>
+            <reference key="NSSuperview" ref="524934670"/>
+            <string key="NSReuseIdentifierKey">BrowserHSplitTemplate</string>
+            <bool key="NSEnabled">YES</bool>
+            <object class="NSImageCell" key="NSCell" id="483539002">
+              <int key="NSCellFlags">69336577</int>
+              <int key="NSCellFlags2">33685504</int>
+              <reference key="NSSupport" ref="26"/>
+              <int key="NSAlign">0</int>
+              <int key="NSScale">0</int>
+              <int key="NSStyle">0</int>
+              <bool key="NSAnimates">YES</bool>
+            </object>
+            <object class="NSTextFieldCell" key="IconTrayTitleKey">
+              <int key="NSCellFlags">67239424</int>
+              <int key="NSCellFlags2">134348800</int>
+              <string key="NSContents">BrowserHSplitTemplate</string>
+              <reference key="NSSupport" ref="330404249"/>
+              <reference key="NSBackgroundColor" ref="517522212"/>
+              <reference key="NSTextColor" ref="431744492"/>
+            </object>
+            <string key="IconTrayIdentifierKey">BrowserHSplitTemplate</string>
+            <int key="IconTrayImagePositionKey">5</int>
+          </object>
+          <object class="IconTray" id="55462620">
+            <reference key="NSNextResponder" ref="524934670"/>
+            <int key="NSvFlags">268</int>
+            <string key="NSFrame">{{147, 92}, {119, 64}}</string>
+            <reference key="NSSuperview" ref="524934670"/>
+            <string key="NSReuseIdentifierKey">StoredLogFilesModeTemplate</string>
+            <bool key="NSEnabled">YES</bool>
+            <object class="NSImageCell" key="NSCell" id="884799523">
+              <int key="NSCellFlags">69336577</int>
+              <int key="NSCellFlags2">33685504</int>
+              <reference key="NSSupport" ref="26"/>
+              <int key="NSAlign">0</int>
+              <int key="NSScale">0</int>
+              <int key="NSStyle">0</int>
+              <bool key="NSAnimates">YES</bool>
+            </object>
+            <object class="NSTextFieldCell" key="IconTrayTitleKey">
+              <int key="NSCellFlags">67239424</int>
+              <int key="NSCellFlags2">134348800</int>
+              <string key="NSContents">StoredLogFilesModeTemplate</string>
+              <reference key="NSSupport" ref="330404249"/>
+              <reference key="NSBackgroundColor" ref="517522212"/>
+              <reference key="NSTextColor" ref="431744492"/>
+            </object>
+            <string key="IconTrayIdentifierKey">StoredLogFilesModeTemplate</string>
+            <int key="IconTrayImagePositionKey">5</int>
+          </object>
+          <object class="IconTray" id="1014077734">
+            <reference key="NSNextResponder" ref="524934670"/>
+            <int key="NSvFlags">268</int>
+            <string key="NSFrame">{{401, 92}, {119, 64}}</string>
+            <reference key="NSSuperview" ref="524934670"/>
+            <string key="NSReuseIdentifierKey">ThreadTitleSearchTemplate</string>
+            <bool key="NSEnabled">YES</bool>
+            <object class="NSImageCell" key="NSCell" id="413989723">
+              <int key="NSCellFlags">69336577</int>
+              <int key="NSCellFlags2">33685504</int>
+              <reference key="NSSupport" ref="26"/>
+              <int key="NSAlign">0</int>
+              <int key="NSScale">0</int>
+              <int key="NSStyle">0</int>
+              <bool key="NSAnimates">YES</bool>
+            </object>
+            <object class="NSTextFieldCell" key="IconTrayTitleKey">
+              <int key="NSCellFlags">67239424</int>
+              <int key="NSCellFlags2">134348800</int>
+              <string key="NSContents">ThreadTitleSearchTemplate</string>
+              <reference key="NSSupport" ref="330404249"/>
+              <reference key="NSBackgroundColor" ref="517522212"/>
+              <reference key="NSTextColor" ref="431744492"/>
+            </object>
             <string key="IconTrayIdentifierKey">ThreadTitleSearchTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
           </object>
           <object class="IconTray" id="249523328">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{147, 20}, {119, 64}}</string>
+            <string key="NSFrame">{{20, 92}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">LiveThreadsModeTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -245,7 +434,7 @@
           <object class="IconTray" id="984667692">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{20, 20}, {119, 64}}</string>
+            <string key="NSFrame">{{20, 380}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">NewThreadTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -272,7 +461,7 @@
           <object class="IconTray" id="294211984">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{401, 20}, {119, 64}}</string>
+            <string key="NSFrame">{{274, 92}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">LocalRulesTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -299,7 +488,7 @@
           <object class="IconTray" id="233836996">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{20, 236}, {119, 64}}</string>
+            <string key="NSFrame">{{20, 164}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">ToggleBoardsListTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -326,7 +515,7 @@
           <object class="IconTray" id="148883939">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{147, 235}, {119, 64}}</string>
+            <string key="NSFrame">{{401, 308}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">DeleteTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -353,7 +542,7 @@
           <object class="IconTray" id="463948569">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{274, 236}, {119, 64}}</string>
+            <string key="NSFrame">{{147, 380}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">ReloadListTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -380,7 +569,7 @@
           <object class="IconTray" id="316968568">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{401, 236}, {119, 64}}</string>
+            <string key="NSFrame">{{274, 380}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">ReloadThreadTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -407,7 +596,7 @@
           <object class="IconTray" id="183161922">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{20, 164}, {119, 64}}</string>
+            <string key="NSFrame">{{147, 308}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">AddFavoritesTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -434,7 +623,7 @@
           <object class="IconTray" id="664494534">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{147, 164}, {119, 64}}</string>
+            <string key="NSFrame">{{274, 308}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">RemoveFavoritesTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -461,7 +650,7 @@
           <object class="IconTray" id="170830946">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{274, 164}, {119, 64}}</string>
+            <string key="NSFrame">{{401, 380}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">StopTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -488,7 +677,7 @@
           <object class="IconTray" id="248781494">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{274, 92}, {119, 64}}</string>
+            <string key="NSFrame">{{20, 236}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">ComposeTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -515,7 +704,7 @@
           <object class="IconTray" id="162499483">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{401, 92}, {119, 64}}</string>
+            <string key="NSFrame">{{147, 236}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">SendMessageTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -542,7 +731,7 @@
           <object class="IconTray" id="114803880">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{401, 164}, {119, 64}}</string>
+            <string key="NSFrame">{{401, 236}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">OrderFrontBrowserTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -569,7 +758,7 @@
           <object class="IconTray" id="503548783">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{20, 92}, {119, 64}}</string>
+            <string key="NSFrame">{{274, 236}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">UseBeTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -596,7 +785,7 @@
           <object class="IconTray" id="872386448">
             <reference key="NSNextResponder" ref="524934670"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{147, 92}, {119, 64}}</string>
+            <string key="NSFrame">{{20, 308}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
             <string key="NSReuseIdentifierKey">ThunderTemplate</string>
             <bool key="NSEnabled">YES</bool>
@@ -621,7 +810,7 @@
             <int key="IconTrayImagePositionKey">5</int>
           </object>
         </array>
-        <string key="NSFrameSize">{540, 320}</string>
+        <string key="NSFrameSize">{540, 464}</string>
         <reference key="NSSuperview"/>
         <string key="NSClassName">NSView</string>
       </object>
@@ -5569,6 +5758,475 @@
           </object>
           <int key="connectionID">1466</int>
         </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">image: StoredLogFilesModeTemplate.image</string>
+            <reference key="source" ref="55462620"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="6605417">
+              <reference key="NSSource" ref="55462620"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">image: StoredLogFilesModeTemplate.image</string>
+              <string key="NSBinding">image</string>
+              <string key="NSKeyPath">StoredLogFilesModeTemplate.image</string>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1473</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">imageFileWrapper: StoredLogFilesModeTemplate.imageFileWrapper</string>
+            <reference key="source" ref="55462620"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="762461149">
+              <reference key="NSSource" ref="55462620"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">imageFileWrapper: StoredLogFilesModeTemplate.imageFileWrapper</string>
+              <string key="NSBinding">imageFileWrapper</string>
+              <string key="NSKeyPath">StoredLogFilesModeTemplate.imageFileWrapper</string>
+              <reference key="NSPreviousConnector" ref="6605417"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1477</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">placeholderImage: StoredLogFilesModeTemplate.defaultImage</string>
+            <reference key="source" ref="55462620"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="764437695">
+              <reference key="NSSource" ref="55462620"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">placeholderImage: StoredLogFilesModeTemplate.defaultImage</string>
+              <string key="NSBinding">placeholderImage</string>
+              <string key="NSKeyPath">StoredLogFilesModeTemplate.defaultImage</string>
+              <reference key="NSPreviousConnector" ref="762461149"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1480</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">title: StoredLogFilesModeTemplate.title</string>
+            <reference key="source" ref="55462620"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector">
+              <reference key="NSSource" ref="55462620"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">title: StoredLogFilesModeTemplate.title</string>
+              <string key="NSBinding">title</string>
+              <string key="NSKeyPath">StoredLogFilesModeTemplate.title</string>
+              <reference key="NSPreviousConnector" ref="764437695"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1482</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">image: BrowserHSplitTemplate.image</string>
+            <reference key="source" ref="143912827"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="1022259230">
+              <reference key="NSSource" ref="143912827"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">image: BrowserHSplitTemplate.image</string>
+              <string key="NSBinding">image</string>
+              <string key="NSKeyPath">BrowserHSplitTemplate.image</string>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1507</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">imageFileWrapper: BrowserHSplitTemplate.imageFileWrapper</string>
+            <reference key="source" ref="143912827"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="576385581">
+              <reference key="NSSource" ref="143912827"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">imageFileWrapper: BrowserHSplitTemplate.imageFileWrapper</string>
+              <string key="NSBinding">imageFileWrapper</string>
+              <string key="NSKeyPath">BrowserHSplitTemplate.imageFileWrapper</string>
+              <reference key="NSPreviousConnector" ref="1022259230"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1508</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">placeholderImage: BrowserHSplitTemplate.defaultImage</string>
+            <reference key="source" ref="143912827"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="37236988">
+              <reference key="NSSource" ref="143912827"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">placeholderImage: BrowserHSplitTemplate.defaultImage</string>
+              <string key="NSBinding">placeholderImage</string>
+              <string key="NSKeyPath">BrowserHSplitTemplate.defaultImage</string>
+              <reference key="NSPreviousConnector" ref="576385581"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1509</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">title: BrowserHSplitTemplate.title</string>
+            <reference key="source" ref="143912827"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector">
+              <reference key="NSSource" ref="143912827"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">title: BrowserHSplitTemplate.title</string>
+              <string key="NSBinding">title</string>
+              <string key="NSKeyPath">BrowserHSplitTemplate.title</string>
+              <reference key="NSPreviousConnector" ref="37236988"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1510</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">image: BrowserNSplitTemplate.image</string>
+            <reference key="source" ref="582138296"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="359354484">
+              <reference key="NSSource" ref="582138296"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">image: BrowserNSplitTemplate.image</string>
+              <string key="NSBinding">image</string>
+              <string key="NSKeyPath">BrowserNSplitTemplate.image</string>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1517</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">imageFileWrapper: BrowserNSplitTemplate.imageFileWrapper</string>
+            <reference key="source" ref="582138296"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="629166378">
+              <reference key="NSSource" ref="582138296"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">imageFileWrapper: BrowserNSplitTemplate.imageFileWrapper</string>
+              <string key="NSBinding">imageFileWrapper</string>
+              <string key="NSKeyPath">BrowserNSplitTemplate.imageFileWrapper</string>
+              <reference key="NSPreviousConnector" ref="359354484"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1518</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">placeholderImage: BrowserNSplitTemplate.defaultImage</string>
+            <reference key="source" ref="582138296"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="2516370">
+              <reference key="NSSource" ref="582138296"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">placeholderImage: BrowserNSplitTemplate.defaultImage</string>
+              <string key="NSBinding">placeholderImage</string>
+              <string key="NSKeyPath">BrowserNSplitTemplate.defaultImage</string>
+              <reference key="NSPreviousConnector" ref="629166378"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1519</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">title: BrowserNSplitTemplate.title</string>
+            <reference key="source" ref="582138296"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector">
+              <reference key="NSSource" ref="582138296"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">title: BrowserNSplitTemplate.title</string>
+              <string key="NSBinding">title</string>
+              <string key="NSKeyPath">BrowserNSplitTemplate.title</string>
+              <reference key="NSPreviousConnector" ref="2516370"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1520</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">image: BrowserVSplitTemplate.image</string>
+            <reference key="source" ref="887361832"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="56693116">
+              <reference key="NSSource" ref="887361832"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">image: BrowserVSplitTemplate.image</string>
+              <string key="NSBinding">image</string>
+              <string key="NSKeyPath">BrowserVSplitTemplate.image</string>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1527</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">imageFileWrapper: BrowserVSplitTemplate.imageFileWrapper</string>
+            <reference key="source" ref="887361832"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="471569887">
+              <reference key="NSSource" ref="887361832"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">imageFileWrapper: BrowserVSplitTemplate.imageFileWrapper</string>
+              <string key="NSBinding">imageFileWrapper</string>
+              <string key="NSKeyPath">BrowserVSplitTemplate.imageFileWrapper</string>
+              <reference key="NSPreviousConnector" ref="56693116"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1528</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">placeholderImage: BrowserVSplitTemplate.defaultImage</string>
+            <reference key="source" ref="887361832"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="499517355">
+              <reference key="NSSource" ref="887361832"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">placeholderImage: BrowserVSplitTemplate.defaultImage</string>
+              <string key="NSBinding">placeholderImage</string>
+              <string key="NSKeyPath">BrowserVSplitTemplate.defaultImage</string>
+              <reference key="NSPreviousConnector" ref="471569887"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1529</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">title: BrowserVSplitTemplate.title</string>
+            <reference key="source" ref="887361832"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector">
+              <reference key="NSSource" ref="887361832"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">title: BrowserVSplitTemplate.title</string>
+              <string key="NSBinding">title</string>
+              <string key="NSKeyPath">BrowserVSplitTemplate.title</string>
+              <reference key="NSPreviousConnector" ref="499517355"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1530</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">image: ToggleFontPanelTemplate.image</string>
+            <reference key="source" ref="55341464"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="366763656">
+              <reference key="NSSource" ref="55341464"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">image: ToggleFontPanelTemplate.image</string>
+              <string key="NSBinding">image</string>
+              <string key="NSKeyPath">ToggleFontPanelTemplate.image</string>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1555</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">imageFileWrapper: ToggleFontPanelTemplate.imageFileWrapper</string>
+            <reference key="source" ref="55341464"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="509197545">
+              <reference key="NSSource" ref="55341464"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">imageFileWrapper: ToggleFontPanelTemplate.imageFileWrapper</string>
+              <string key="NSBinding">imageFileWrapper</string>
+              <string key="NSKeyPath">ToggleFontPanelTemplate.imageFileWrapper</string>
+              <reference key="NSPreviousConnector" ref="366763656"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1556</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">placeholderImage: ToggleFontPanelTemplate.defaultImage</string>
+            <reference key="source" ref="55341464"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="1036617756">
+              <reference key="NSSource" ref="55341464"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">placeholderImage: ToggleFontPanelTemplate.defaultImage</string>
+              <string key="NSBinding">placeholderImage</string>
+              <string key="NSKeyPath">ToggleFontPanelTemplate.defaultImage</string>
+              <reference key="NSPreviousConnector" ref="509197545"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1557</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">title: ToggleFontPanelTemplate.title</string>
+            <reference key="source" ref="55341464"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector">
+              <reference key="NSSource" ref="55341464"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">title: ToggleFontPanelTemplate.title</string>
+              <string key="NSBinding">title</string>
+              <string key="NSKeyPath">ToggleFontPanelTemplate.title</string>
+              <reference key="NSPreviousConnector" ref="1036617756"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1558</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">image: FontBiggerTemplate.image</string>
+            <reference key="source" ref="503471096"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="952247531">
+              <reference key="NSSource" ref="503471096"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">image: FontBiggerTemplate.image</string>
+              <string key="NSBinding">image</string>
+              <string key="NSKeyPath">FontBiggerTemplate.image</string>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1559</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">imageFileWrapper: FontBiggerTemplate.imageFileWrapper</string>
+            <reference key="source" ref="503471096"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="874033243">
+              <reference key="NSSource" ref="503471096"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">imageFileWrapper: FontBiggerTemplate.imageFileWrapper</string>
+              <string key="NSBinding">imageFileWrapper</string>
+              <string key="NSKeyPath">FontBiggerTemplate.imageFileWrapper</string>
+              <reference key="NSPreviousConnector" ref="952247531"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1563</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">placeholderImage: FontBiggerTemplate.defaultImage</string>
+            <reference key="source" ref="503471096"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="375588303">
+              <reference key="NSSource" ref="503471096"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">placeholderImage: FontBiggerTemplate.defaultImage</string>
+              <string key="NSBinding">placeholderImage</string>
+              <string key="NSKeyPath">FontBiggerTemplate.defaultImage</string>
+              <reference key="NSPreviousConnector" ref="874033243"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1566</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">title: FontBiggerTemplate.title</string>
+            <reference key="source" ref="503471096"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector">
+              <reference key="NSSource" ref="503471096"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">title: FontBiggerTemplate.title</string>
+              <string key="NSBinding">title</string>
+              <string key="NSKeyPath">FontBiggerTemplate.title</string>
+              <reference key="NSPreviousConnector" ref="375588303"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1568</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">image: FontSmallerTemplate.image</string>
+            <reference key="source" ref="409419844"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="95825912">
+              <reference key="NSSource" ref="409419844"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">image: FontSmallerTemplate.image</string>
+              <string key="NSBinding">image</string>
+              <string key="NSKeyPath">FontSmallerTemplate.image</string>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1575</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">imageFileWrapper: FontSmallerTemplate.imageFileWrapper</string>
+            <reference key="source" ref="409419844"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="552266156">
+              <reference key="NSSource" ref="409419844"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">imageFileWrapper: FontSmallerTemplate.imageFileWrapper</string>
+              <string key="NSBinding">imageFileWrapper</string>
+              <string key="NSKeyPath">FontSmallerTemplate.imageFileWrapper</string>
+              <reference key="NSPreviousConnector" ref="95825912"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1576</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">placeholderImage: FontSmallerTemplate.defaultImage</string>
+            <reference key="source" ref="409419844"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector" id="539685531">
+              <reference key="NSSource" ref="409419844"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">placeholderImage: FontSmallerTemplate.defaultImage</string>
+              <string key="NSBinding">placeholderImage</string>
+              <string key="NSKeyPath">FontSmallerTemplate.defaultImage</string>
+              <reference key="NSPreviousConnector" ref="552266156"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1577</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBBindingConnection" key="connection">
+            <string key="label">title: FontSmallerTemplate.title</string>
+            <reference key="source" ref="409419844"/>
+            <reference key="destination" ref="388032869"/>
+            <object class="NSNibBindingConnector" key="connector">
+              <reference key="NSSource" ref="409419844"/>
+              <reference key="NSDestination" ref="388032869"/>
+              <string key="NSLabel">title: FontSmallerTemplate.title</string>
+              <string key="NSBinding">title</string>
+              <string key="NSKeyPath">FontSmallerTemplate.title</string>
+              <reference key="NSPreviousConnector" ref="539685531"/>
+              <int key="NSNibBindingConnectorVersion">2</int>
+            </object>
+          </object>
+          <int key="connectionID">1578</int>
+        </object>
       </array>
       <object class="IBMutableOrderedSet" key="objectRecords">
         <array key="orderedObjects">
@@ -5709,22 +6367,29 @@
             <int key="objectID">20</int>
             <reference key="object" ref="524934670"/>
             <array class="NSMutableArray" key="children">
-              <reference ref="233836996"/>
-              <reference ref="148883939"/>
+              <reference ref="984667692"/>
               <reference ref="463948569"/>
               <reference ref="316968568"/>
-              <reference ref="183161922"/>
-              <reference ref="664494534"/>
               <reference ref="170830946"/>
-              <reference ref="114803880"/>
-              <reference ref="503548783"/>
-              <reference ref="294211984"/>
+              <reference ref="664494534"/>
+              <reference ref="183161922"/>
               <reference ref="872386448"/>
-              <reference ref="248781494"/>
+              <reference ref="148883939"/>
+              <reference ref="503548783"/>
               <reference ref="162499483"/>
-              <reference ref="984667692"/>
+              <reference ref="248781494"/>
+              <reference ref="114803880"/>
+              <reference ref="233836996"/>
+              <reference ref="143912827"/>
+              <reference ref="582138296"/>
+              <reference ref="887361832"/>
+              <reference ref="294211984"/>
               <reference ref="249523328"/>
               <reference ref="1014077734"/>
+              <reference ref="55462620"/>
+              <reference ref="55341464"/>
+              <reference ref="503471096"/>
+              <reference ref="409419844"/>
             </array>
             <reference key="parent" ref="0"/>
             <string key="objectName">Toolbar</string>
@@ -6609,6 +7274,97 @@
             <reference key="object" ref="413989723"/>
             <reference key="parent" ref="1014077734"/>
           </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1467</int>
+            <reference key="object" ref="55462620"/>
+            <array class="NSMutableArray" key="children">
+              <reference ref="884799523"/>
+            </array>
+            <reference key="parent" ref="524934670"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1468</int>
+            <reference key="object" ref="884799523"/>
+            <reference key="parent" ref="55462620"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1483</int>
+            <reference key="object" ref="143912827"/>
+            <array class="NSMutableArray" key="children">
+              <reference ref="483539002"/>
+            </array>
+            <reference key="parent" ref="524934670"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1484</int>
+            <reference key="object" ref="483539002"/>
+            <reference key="parent" ref="143912827"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1489</int>
+            <reference key="object" ref="582138296"/>
+            <array class="NSMutableArray" key="children">
+              <reference ref="328174350"/>
+            </array>
+            <reference key="parent" ref="524934670"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1490</int>
+            <reference key="object" ref="328174350"/>
+            <reference key="parent" ref="582138296"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1495</int>
+            <reference key="object" ref="887361832"/>
+            <array class="NSMutableArray" key="children">
+              <reference ref="720466182"/>
+            </array>
+            <reference key="parent" ref="524934670"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1496</int>
+            <reference key="object" ref="720466182"/>
+            <reference key="parent" ref="887361832"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1531</int>
+            <reference key="object" ref="55341464"/>
+            <array class="NSMutableArray" key="children">
+              <reference ref="485568138"/>
+            </array>
+            <reference key="parent" ref="524934670"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1532</int>
+            <reference key="object" ref="485568138"/>
+            <reference key="parent" ref="55341464"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1537</int>
+            <reference key="object" ref="503471096"/>
+            <array class="NSMutableArray" key="children">
+              <reference ref="243802338"/>
+            </array>
+            <reference key="parent" ref="524934670"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1538</int>
+            <reference key="object" ref="243802338"/>
+            <reference key="parent" ref="503471096"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1543</int>
+            <reference key="object" ref="409419844"/>
+            <array class="NSMutableArray" key="children">
+              <reference ref="819532750"/>
+            </array>
+            <reference key="parent" ref="524934670"/>
+          </object>
+          <object class="IBObjectRecord">
+            <int key="objectID">1544</int>
+            <reference key="object" ref="819532750"/>
+            <reference key="parent" ref="409419844"/>
+          </object>
         </array>
       </object>
       <dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -6642,7 +7398,7 @@
         <boolean value="YES" key="11.ImportedFromIB2"/>
         <string key="111.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="111.IBViewBoundsToFrameTransform">
-          <bytes key="NSTransformStruct">AUGgAABBoAAAA</bytes>
+          <bytes key="NSTransformStruct">AUMTAABDdwAAA</bytes>
         </object>
         <boolean value="YES" key="111.ImportedFromIB2"/>
         <string key="12.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6651,42 +7407,86 @@
         <boolean value="YES" key="13.ImportedFromIB2"/>
         <string key="135.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="135.IBViewBoundsToFrameTransform">
-          <bytes key="NSTransformStruct">AUOJAABBoAAAA</bytes>
+          <bytes key="NSTransformStruct">AUOJAABDdwAAA</bytes>
         </object>
         <boolean value="YES" key="135.ImportedFromIB2"/>
         <string key="14.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="14.ImportedFromIB2"/>
         <string key="1419.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="1419.IBViewBoundsToFrameTransform">
-          <bytes key="NSTransformStruct">AUGgAABBoAAAA</bytes>
+          <bytes key="NSTransformStruct">AUOJAABDLwAAA</bytes>
         </object>
         <boolean value="YES" key="1419.ImportedFromIB2"/>
         <string key="1435.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="1435.IBViewBoundsToFrameTransform">
-          <bytes key="NSTransformStruct">AUGgAABBoAAAA</bytes>
+          <bytes key="NSTransformStruct">AUGgAABDVAAAA</bytes>
         </object>
         <boolean value="YES" key="1435.ImportedFromIB2"/>
         <string key="1451.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="1451.IBViewBoundsToFrameTransform">
-          <bytes key="NSTransformStruct">AUPIgABBoAAAA</bytes>
+          <bytes key="NSTransformStruct">AUPIgABDVAAAA</bytes>
         </object>
         <boolean value="YES" key="1451.ImportedFromIB2"/>
+        <string key="1467.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="1467.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUMTAABDVAAAA</bytes>
+        </object>
+        <boolean value="YES" key="1467.ImportedFromIB2"/>
+        <string key="1483.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="1483.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUPIgABCBAAAA</bytes>
+        </object>
+        <boolean value="YES" key="1483.ImportedFromIB2"/>
+        <string key="1489.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="1489.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUMTAABCBAAAA</bytes>
+        </object>
+        <boolean value="YES" key="1489.ImportedFromIB2"/>
+        <string key="1495.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="1495.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUOJAABCBAAAA</bytes>
+        </object>
+        <boolean value="YES" key="1495.ImportedFromIB2"/>
         <string key="152.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="152.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUPIgABCzgAAA</bytes>
+        </object>
         <boolean value="YES" key="152.ImportedFromIB2"/>
+        <string key="1531.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="1531.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUGgAABDDAAAA</bytes>
+        </object>
+        <boolean value="YES" key="1531.ImportedFromIB2"/>
+        <string key="1537.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="1537.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUMTAABDDAAAA</bytes>
+        </object>
+        <boolean value="YES" key="1537.ImportedFromIB2"/>
+        <string key="1543.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="1543.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUOJAABDDAAAA</bytes>
+        </object>
+        <boolean value="YES" key="1543.ImportedFromIB2"/>
         <string key="167.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="167.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUPIgABDdwAAA</bytes>
+        </object>
         <boolean value="YES" key="167.ImportedFromIB2"/>
         <string key="170.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="170.IBViewBoundsToFrameTransform">
-          <bytes key="NSTransformStruct">AUOJAABCuAAAA</bytes>
+          <bytes key="NSTransformStruct">AUMTAABDdwAAA</bytes>
         </object>
         <boolean value="YES" key="170.ImportedFromIB2"/>
         <boolean value="YES" key="19.ImportedFromIB2"/>
         <string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="2.ImportedFromIB2"/>
-        <string key="20.IBEditorWindowLastContentRect">{{42, 479}, {540, 320}}</string>
+        <string key="20.IBEditorWindowLastContentRect">{{562, 240}, {540, 464}}</string>
         <string key="20.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="20.ImportedFromIB2"/>
         <string key="21.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="21.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUGgAABCBAAAA</bytes>
+        </object>
         <boolean value="YES" key="21.ImportedFromIB2"/>
         <string key="226.IBEditorWindowLastContentRect">{{23, 390}, {500, 406}}</string>
         <string key="226.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6725,6 +7525,9 @@
         <string key="313.IBPluginDependency">com.masakih.IconTray</string>
         <boolean value="YES" key="313.ImportedFromIB2"/>
         <string key="32.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="32.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUOJAABDLwAAA</bytes>
+        </object>
         <boolean value="YES" key="32.ImportedFromIB2"/>
         <string key="4.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="4.ImportedFromIB2"/>
@@ -6734,6 +7537,9 @@
         </object>
         <boolean value="YES" key="454.ImportedFromIB2"/>
         <string key="46.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="46.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUOJAABDw4AAA</bytes>
+        </object>
         <boolean value="YES" key="46.ImportedFromIB2"/>
         <string key="466.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="466.IBViewBoundsToFrameTransform">
@@ -6777,6 +7583,9 @@
         <string key="6.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="6.ImportedFromIB2"/>
         <string key="60.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="60.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUPIgABDw4AAA</bytes>
+        </object>
         <boolean value="YES" key="60.ImportedFromIB2"/>
         <string key="626.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="626.ImportedFromIB2"/>
@@ -6792,10 +7601,13 @@
         <boolean value="YES" key="7.ImportedFromIB2"/>
         <string key="734.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="734.IBViewBoundsToFrameTransform">
-          <bytes key="NSTransformStruct">AUPIgABBoAAAA</bytes>
+          <bytes key="NSTransformStruct">AUOJAABDVAAAA</bytes>
         </object>
         <boolean value="YES" key="734.ImportedFromIB2"/>
         <string key="79.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="79.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUGgAABDn4AAA</bytes>
+        </object>
         <boolean value="YES" key="79.ImportedFromIB2"/>
         <string key="798.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <string key="8.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6818,6 +7630,9 @@
         <string key="9.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="9.ImportedFromIB2"/>
         <string key="91.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="91.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUMTAABDn4AAA</bytes>
+        </object>
         <boolean value="YES" key="91.ImportedFromIB2"/>
         <string key="912.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="912.IBViewBoundsToFrameTransform">
@@ -6870,6 +7685,9 @@
         </object>
         <boolean value="YES" key="976.ImportedFromIB2"/>
         <string key="99.IBPluginDependency">com.masakih.IconTray</string>
+        <object class="NSAffineTransform" key="99.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUOJAABDn4AAA</bytes>
+        </object>
         <boolean value="YES" key="99.ImportedFromIB2"/>
         <string key="992.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="992.IBViewBoundsToFrameTransform">
@@ -6896,7 +7714,7 @@
       <nil key="activeLocalization"/>
       <dictionary class="NSMutableDictionary" key="localizations"/>
       <nil key="sourceID"/>
-      <int key="maxID">1466</int>
+      <int key="maxID">1578</int>
     </object>
     <object class="IBClassDescriber" key="IBDocument.Classes">
       <array class="NSMutableArray" key="referencedPartialClassDescriptions">
