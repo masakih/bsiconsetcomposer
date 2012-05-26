@@ -37,9 +37,6 @@
 	<string>browserSplitterDimple</string>
 	<string>browserSplitterDimpleVertical</string>
 	<string>browserSplitterVertical</string>
-	<string>BrowserHSplitTemplate</string>
-	<string>BrowserNSplitTemplate</string>
-	<string>BrowserVSplitTemplate</string>
 	<string>FilterPreferences</string>
 	<string>FontBiggerTemplate</string>
 	<string>FontSmallerTemplate</string>

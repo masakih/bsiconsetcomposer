@@ -315,6 +315,24 @@
 			<key>name</key>
 			<string>Be有効／無効</string>
 		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>BrowserHSplitTemplate</string>
+		<key>name</key>
+			<string>AAAAA</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>BrowserNSplitTemplate</string>
+		<key>name</key>
+			<string>AAAAA</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>BrowserVSplitTemplate</string>
+		<key>name</key>
+			<string>AAAAA</string>
+		</dict>
 	</array>
 </dict>
 </plist>
