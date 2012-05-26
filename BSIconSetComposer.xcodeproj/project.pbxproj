@@ -83,8 +83,8 @@
 		F442011E08EFDF8A007AFE9F /* BathyScapheSystemImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BathyScapheSystemImages.plist; sourceTree = "<group>"; };
 		F44203E408F04A8A007AFE9F /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Japanese; path = Japanese.lproj/Localizable.strings.sed; sourceTree = "<group>"; };
 		F44203FC08F04DAB007AFE9F /* English */ = {isa = PBXFileReference; lastKnownFileType = text; name = English; path = English.lproj/Localizable.strings.sed; sourceTree = "<group>"; };
-		F45B217F091991230055CBC4 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = English; path = English.lproj/IconNames.strings; sourceTree = "<group>"; };
-		F45B2185091991B30055CBC4 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Japanese; path = Japanese.lproj/IconNames.strings; sourceTree = "<group>"; };
+		F45B217F091991230055CBC4 /* English */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 4; name = English; path = English.lproj/IconNames.strings; sourceTree = "<group>"; };
+		F45B2185091991B30055CBC4 /* Japanese */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/IconNames.strings; sourceTree = "<group>"; };
 		F461E46508ADCDBD00384957 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		F461E46808ADCDD600384957 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/IconSetDocument.nib; sourceTree = "<group>"; };
 		F4626F2F08ADD95100B71ADA /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
