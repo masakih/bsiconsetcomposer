@@ -1,7 +1,7 @@
 # encoding=utf-8
 
 PRODUCT_NAME=BSIconSetComposer
-VERSION=1.3
+VERSION=1.4
 REV_CORRECT=107
 PRODUCT_EXTENSION=app
 BUILD_PATH=./build
