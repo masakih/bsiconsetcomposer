@@ -35,6 +35,7 @@
 		F4F4AECF0880D28100E44313 /* IconSetComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F4AECE0880D28100E44313 /* IconSetComposer.m */; };
 		F4F4B2C608814EFF00E44313 /* ImageList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F4B2C508814EFF00E44313 /* ImageList.plist */; };
 		F4FDBDF81572231100036EBB /* DropToMe.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FDBDF71572231100036EBB /* DropToMe.png */; };
+		F4FDBDFF15722E3500036EBB /* BSCSLastUpdatePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FDBDFE15722E3500036EBB /* BSCSLastUpdatePreview.m */; };
 		F4FF6E7908C74AEF00C0214D /* ColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FF6E7808C74AEF00C0214D /* ColorSet.m */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,8 @@
 		F4F4B2C508814EFF00E44313 /* ImageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ImageList.plist; sourceTree = "<group>"; };
 		F4F4B5FC08818D4400E44313 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		F4FDBDF71572231100036EBB /* DropToMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropToMe.png; sourceTree = "<group>"; };
+		F4FDBDFD15722E3400036EBB /* BSCSLastUpdatePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCSLastUpdatePreview.h; sourceTree = "<group>"; };
+		F4FDBDFE15722E3500036EBB /* BSCSLastUpdatePreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCSLastUpdatePreview.m; sourceTree = "<group>"; };
 		F4FF6E7708C74AEF00C0214D /* ColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSet.h; sourceTree = "<group>"; };
 		F4FF6E7808C74AEF00C0214D /* ColorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +188,8 @@
 				F4FF6E7808C74AEF00C0214D /* ColorSet.m */,
 				F42C57E70BA5961800D2866B /* BSCSUserDefaults.h */,
 				F42C57E80BA5961800D2866B /* BSCSUserDefaults.m */,
+				F4FDBDFD15722E3400036EBB /* BSCSLastUpdatePreview.h */,
+				F4FDBDFE15722E3500036EBB /* BSCSLastUpdatePreview.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				F42C27670987B9350032C9F9 /* NSWorkspace-Extensions.m in Sources */,
 				F42C52B80BA3AFEB00D2866B /* BSCSIcons.m in Sources */,
 				F42C57EA0BA5961800D2866B /* BSCSUserDefaults.m in Sources */,
+				F4FDBDFF15722E3500036EBB /* BSCSLastUpdatePreview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
