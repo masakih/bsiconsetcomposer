@@ -34,6 +34,7 @@
 		F4E4477008AFABF200375AF1 /* TemporaryFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E4476F08AFABF200375AF1 /* TemporaryFolder.m */; };
 		F4F4AECF0880D28100E44313 /* IconSetComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F4AECE0880D28100E44313 /* IconSetComposer.m */; };
 		F4F4B2C608814EFF00E44313 /* ImageList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F4B2C508814EFF00E44313 /* ImageList.plist */; };
+		F4FDBDF81572231100036EBB /* DropToMe.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FDBDF71572231100036EBB /* DropToMe.png */; };
 		F4FF6E7908C74AEF00C0214D /* ColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FF6E7808C74AEF00C0214D /* ColorSet.m */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		F4F4AECE0880D28100E44313 /* IconSetComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconSetComposer.m; sourceTree = "<group>"; };
 		F4F4B2C508814EFF00E44313 /* ImageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ImageList.plist; sourceTree = "<group>"; };
 		F4F4B5FC08818D4400E44313 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		F4FDBDF71572231100036EBB /* DropToMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropToMe.png; sourceTree = "<group>"; };
 		F4FF6E7708C74AEF00C0214D /* ColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSet.h; sourceTree = "<group>"; };
 		F4FF6E7808C74AEF00C0214D /* ColorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +201,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F4FDBDF71572231100036EBB /* DropToMe.png */,
 				F45B21830919919C0055CBC4 /* IconNames.strings */,
 				F442011E08EFDF8A007AFE9F /* BathyScapheSystemImages.plist */,
 				F471950008E302AE00710258 /* Localizable.strings */,
@@ -341,6 +344,7 @@
 				F442011F08EFDF8A007AFE9F /* BathyScapheSystemImages.plist in Resources */,
 				F45B21840919919C0055CBC4 /* IconNames.strings in Resources */,
 				F42A855A0F8A580A0014157F /* DeprecatedImageList.plist in Resources */,
+				F4FDBDF81572231100036EBB /* DropToMe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

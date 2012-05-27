@@ -355,6 +355,12 @@ static NSArray *sThreadIdentifiers;
 	[temp release];
 }
 
+- (NSImage *)dropToMeImage
+{
+	return [[IconSetComposer sharedInstance] dropToMeImage];
+}
+- (void)setDropToMeImage:(NSImage *)h {}
+
 #pragma mark-
 #pragma mark ## MVC - Controller ##
 
