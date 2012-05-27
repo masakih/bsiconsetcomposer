@@ -30,5 +30,37 @@
 	<string>Board</string>
 	<string>Folder</string>
 	<string>SmartBoard</string>
+	<string>deleteMail2</string>
+	<string>Keywords</string>
+	<string>Keywords_Pressed</string>
+	<string>AddBoard</string>
+	<string>AddBoard_Pressed</string>
+	<string>Action</string>
+	<string>Action_Pressed</string>
+	<string>BaScLogo</string>
+	<string>deleteMail</string>
+	<string>Find</string>
+	<string>HistoryBack</string>
+	<string>HistoryForward</string>
+	<string>Spacer</string>
+	<string>SplitterHandle</string>
+	<string>FontBigger</string>
+	<string>FontSmaller</string>
+	<string>titleRulerInfoIcon</string>
+	<string>smallSquareMinus</string>
+	<string>smallSquarePlus</string>
+	<string>bathyicon192</string>
+	<string>moveEnd</string>
+	<string>moveNext</string>
+	<string>movePrev</string>
+	<string>smallLocked</string>
+	<string>smallUnlocked</string>
+	<string>moveTop</string>
+	<string>moveUpdated</string>
+	<string>browserSplitter</string>
+	<string>browserSplitterDimple</string>
+	<string>browserSplitterDimpleVertical</string>
+	<string>browserSplitterVertical</string>
+	<string>HistoryFolder</string>
 </array>
 </plist>
