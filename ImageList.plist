@@ -177,6 +177,24 @@
 			<key>name</key>
 			<string>新着</string>
 		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>lastUpdatedHeaderLeft</string>
+			<key>name</key>
+			<string>新着（左）</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>lastUpdatedHeaderMiddle</string>
+			<key>name</key>
+			<string>新着（中央）</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>lastUpdatedHeaderRight</string>
+			<key>name</key>
+			<string>新着（右）</string>
+		</dict>
 	</array>
 	<key>ThreadList</key>
 	<array>
