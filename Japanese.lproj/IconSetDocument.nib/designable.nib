@@ -1589,18 +1589,53 @@
         <reference key="NSNextResponder"/>
         <int key="NSvFlags">268</int>
         <array class="NSMutableArray" key="NSSubviews">
-          <object class="NSCustomView" id="955726624">
+          <object class="NSBox" id="259363702">
             <reference key="NSNextResponder" ref="583271040"/>
-            <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{20, 38}, {533, 96}}</string>
+            <int key="NSvFlags">36</int>
+            <array class="NSMutableArray" key="NSSubviews">
+              <object class="NSView" id="1047571146">
+                <reference key="NSNextResponder" ref="259363702"/>
+                <int key="NSvFlags">274</int>
+                <array class="NSMutableArray" key="NSSubviews">
+                  <object class="NSCustomView" id="955726624">
+                    <reference key="NSNextResponder" ref="1047571146"/>
+                    <int key="NSvFlags">268</int>
+                    <string key="NSFrame">{{18, 14}, {615, 93}}</string>
+                    <reference key="NSSuperview" ref="1047571146"/>
+                    <string key="NSReuseIdentifierKey">_NS:1109</string>
+                    <string key="NSClassName">BSCSLastUpdatePreview</string>
+                  </object>
+                </array>
+                <string key="NSFrame">{{1, 1}, {651, 117}}</string>
+                <reference key="NSSuperview" ref="259363702"/>
+                <string key="NSReuseIdentifierKey">_NS:21</string>
+              </object>
+            </array>
+            <string key="NSFrame">{{17, 16}, {653, 133}}</string>
             <reference key="NSSuperview" ref="583271040"/>
-            <string key="NSReuseIdentifierKey">_NS:1109</string>
-            <string key="NSClassName">BSCSLastUpdatePreview</string>
+            <string key="NSReuseIdentifierKey">_NS:18</string>
+            <string key="NSOffsets">{0, 0}</string>
+            <object class="NSTextFieldCell" key="NSTitleCell">
+              <int key="NSCellFlags">67239424</int>
+              <int key="NSCellFlags2">0</int>
+              <string key="NSContents">Preview</string>
+              <reference key="NSSupport" ref="26"/>
+              <reference key="NSBackgroundColor" ref="517522212"/>
+              <object class="NSColor" key="NSTextColor">
+                <int key="NSColorSpace">3</int>
+                <bytes key="NSWhite">MCAwLjgwMDAwMDAxMTkAA</bytes>
+              </object>
+            </object>
+            <reference key="NSContentView" ref="1047571146"/>
+            <int key="NSBorderType">1</int>
+            <int key="NSBoxType">0</int>
+            <int key="NSTitlePosition">2</int>
+            <bool key="NSTransparent">NO</bool>
           </object>
           <object class="IconTray" id="390589829">
             <reference key="NSNextResponder" ref="583271040"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{126, 152}, {116, 54}}</string>
+            <string key="NSFrame">{{126, 157}, {116, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
             <string key="NSReuseIdentifierKey">lastUpdatedHeaderMiddle</string>
             <bool key="NSEnabled">YES</bool>
@@ -1627,7 +1662,7 @@
           <object class="IconTray" id="224497135">
             <reference key="NSNextResponder" ref="583271040"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{257, 152}, {87, 54}}</string>
+            <string key="NSFrame">{{257, 157}, {87, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
             <string key="NSReuseIdentifierKey">lastUpdatedHeaderRight</string>
             <bool key="NSEnabled">YES</bool>
@@ -1654,7 +1689,7 @@
           <object class="IconTray" id="20940946">
             <reference key="NSNextResponder" ref="583271040"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{20, 152}, {87, 54}}</string>
+            <string key="NSFrame">{{20, 157}, {87, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
             <string key="NSReuseIdentifierKey">lastUpdatedHeaderLeft</string>
             <bool key="NSEnabled">YES</bool>
@@ -1681,7 +1716,7 @@
           <object class="IconTray" id="659996774">
             <reference key="NSNextResponder" ref="583271040"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{20, 214}, {458, 63}}</string>
+            <string key="NSFrame">{{20, 219}, {458, 63}}</string>
             <reference key="NSSuperview" ref="583271040"/>
             <string key="NSReuseIdentifierKey">lastUpdatedHeader</string>
             <bool key="NSEnabled">YES</bool>
@@ -1708,7 +1743,7 @@
           <object class="IconTray" id="548573702">
             <reference key="NSNextResponder" ref="583271040"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{20, 285}, {147, 54}}</string>
+            <string key="NSFrame">{{20, 290}, {147, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
             <string key="NSReuseIdentifierKey">sage</string>
             <bool key="NSEnabled">YES</bool>
@@ -1735,7 +1770,7 @@
           <object class="IconTray" id="113699550">
             <reference key="NSNextResponder" ref="583271040"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{176, 285}, {147, 54}}</string>
+            <string key="NSFrame">{{176, 290}, {147, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
             <string key="NSReuseIdentifierKey">age</string>
             <bool key="NSEnabled">YES</bool>
@@ -1762,7 +1797,7 @@
           <object class="IconTray" id="839590584">
             <reference key="NSNextResponder" ref="583271040"/>
             <int key="NSvFlags">268</int>
-            <string key="NSFrame">{{331, 285}, {147, 54}}</string>
+            <string key="NSFrame">{{331, 290}, {147, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
             <string key="NSReuseIdentifierKey">mailAttachment</string>
             <bool key="NSEnabled">YES</bool>
@@ -1787,7 +1822,7 @@
             <int key="IconTrayImagePositionKey">5</int>
           </object>
         </array>
-        <string key="NSFrameSize">{586, 359}</string>
+        <string key="NSFrameSize">{723, 364}</string>
         <reference key="NSSuperview"/>
         <string key="NSClassName">NSView</string>
       </object>
@@ -6517,6 +6552,14 @@
           </object>
           <int key="connectionID">1638</int>
         </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">nobinobi</string>
+            <reference key="source" ref="388032869"/>
+            <reference key="destination" ref="955726624"/>
+          </object>
+          <int key="connectionID">1640</int>
+        </object>
       </array>
       <object class="IBMutableOrderedSet" key="objectRecords">
         <array key="orderedObjects">
@@ -6891,7 +6934,7 @@
               <reference ref="20940946"/>
               <reference ref="390589829"/>
               <reference ref="224497135"/>
-              <reference ref="955726624"/>
+              <reference ref="259363702"/>
             </array>
             <reference key="parent" ref="0"/>
             <string key="objectName">Thread</string>
@@ -7699,9 +7742,17 @@
             <reference key="parent" ref="390589829"/>
           </object>
           <object class="IBObjectRecord">
+            <int key="objectID">1641</int>
+            <reference key="object" ref="259363702"/>
+            <array class="NSMutableArray" key="children">
+              <reference ref="955726624"/>
+            </array>
+            <reference key="parent" ref="583271040"/>
+          </object>
+          <object class="IBObjectRecord">
             <int key="objectID">1639</int>
             <reference key="object" ref="955726624"/>
-            <reference key="parent" ref="583271040"/>
+            <reference key="parent" ref="259363702"/>
           </object>
         </array>
       </object>
@@ -7822,7 +7873,10 @@
         <boolean value="YES" key="1601.ImportedFromIB2"/>
         <string key="1639.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <object class="NSAffineTransform" key="1639.IBViewBoundsToFrameTransform">
-          <bytes key="NSTransformStruct">AUHIAABCDAAAA</bytes>
+          <bytes key="NSTransformStruct">AUOEAABBYAAAA</bytes>
+        </object>
+        <object class="NSAffineTransform" key="1641.IBViewBoundsToFrameTransform">
+          <bytes key="NSTransformStruct">AUKWAABAoAAAA</bytes>
         </object>
         <string key="167.IBPluginDependency">com.masakih.IconTray</string>
         <object class="NSAffineTransform" key="167.IBViewBoundsToFrameTransform">
@@ -7866,7 +7920,7 @@
         <string key="275.IBEditorWindowLastContentRect">{{0, 751}, {500, 94}}</string>
         <string key="275.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="275.ImportedFromIB2"/>
-        <string key="276.IBEditorWindowLastContentRect">{{0, 486}, {586, 359}}</string>
+        <string key="276.IBEditorWindowLastContentRect">{{0, 481}, {723, 364}}</string>
         <string key="276.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <object class="NSAffineTransform" key="276.IBViewBoundsToFrameTransform"/>
         <boolean value="YES" key="276.ImportedFromIB2"/>
@@ -8072,7 +8126,7 @@
       <nil key="activeLocalization"/>
       <dictionary class="NSMutableDictionary" key="localizations"/>
       <nil key="sourceID"/>
-      <int key="maxID">1639</int>
+      <int key="maxID">1641</int>
     </object>
     <object class="IBClassDescriber" key="IBDocument.Classes">
       <array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -8263,6 +8317,69 @@
           <object class="IBClassDescriptionSource" key="sourceIdentifier">
             <string key="majorKey">IBUserSource</string>
             <string key="minorKey"/>
+          </object>
+        </object>
+      </array>
+      <array class="NSMutableArray" key="referencedPartialClassDescriptionsV3.1+">
+        <object class="IBPartialClassDescription">
+          <string key="className">IconSetDocument</string>
+          <string key="superclassName">NSDocument</string>
+          <dictionary class="NSMutableDictionary" key="actions">
+            <string key="apply:">id</string>
+            <string key="applyAndRestartBathyScaphe:">id</string>
+          </dictionary>
+          <dictionary class="NSMutableDictionary" key="actionInfosByName">
+            <object class="IBActionInfo" key="apply:">
+              <string key="name">apply:</string>
+              <string key="candidateClassName">id</string>
+            </object>
+            <object class="IBActionInfo" key="applyAndRestartBathyScaphe:">
+              <string key="name">applyAndRestartBathyScaphe:</string>
+              <string key="candidateClassName">id</string>
+            </object>
+          </dictionary>
+          <dictionary class="NSMutableDictionary" key="outlets">
+            <string key="boardListIconSetView">NSView</string>
+            <string key="colorSet">id</string>
+            <string key="nobinobi">BSCSLastUpdatePreview</string>
+            <string key="tab">NSTabView</string>
+            <string key="threadIconSetView">NSView</string>
+            <string key="threadListIconSetView">NSView</string>
+            <string key="toolbarIconSetView">NSView</string>
+          </dictionary>
+          <dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+            <object class="IBToOneOutletInfo" key="boardListIconSetView">
+              <string key="name">boardListIconSetView</string>
+              <string key="candidateClassName">NSView</string>
+            </object>
+            <object class="IBToOneOutletInfo" key="colorSet">
+              <string key="name">colorSet</string>
+              <string key="candidateClassName">id</string>
+            </object>
+            <object class="IBToOneOutletInfo" key="nobinobi">
+              <string key="name">nobinobi</string>
+              <string key="candidateClassName">BSCSLastUpdatePreview</string>
+            </object>
+            <object class="IBToOneOutletInfo" key="tab">
+              <string key="name">tab</string>
+              <string key="candidateClassName">NSTabView</string>
+            </object>
+            <object class="IBToOneOutletInfo" key="threadIconSetView">
+              <string key="name">threadIconSetView</string>
+              <string key="candidateClassName">NSView</string>
+            </object>
+            <object class="IBToOneOutletInfo" key="threadListIconSetView">
+              <string key="name">threadListIconSetView</string>
+              <string key="candidateClassName">NSView</string>
+            </object>
+            <object class="IBToOneOutletInfo" key="toolbarIconSetView">
+              <string key="name">toolbarIconSetView</string>
+              <string key="candidateClassName">NSView</string>
+            </object>
+          </dictionary>
+          <object class="IBClassDescriptionSource" key="sourceIdentifier">
+            <string key="majorKey">IBDocumentRelativeSource</string>
+            <string key="minorKey">../IconSetDocument.h</string>
           </object>
         </object>
       </array>
