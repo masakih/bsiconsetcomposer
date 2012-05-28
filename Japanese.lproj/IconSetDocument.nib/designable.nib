@@ -11,7 +11,7 @@
       <string key="com.masakih.IconTray">3</string>
     </dictionary>
     <array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-      <integer value="1641"/>
+      <integer value="20"/>
     </array>
     <array key="IBDocument.PluginDependencies">
       <string>com.masakih.IconTray</string>
@@ -161,7 +161,7 @@
         <string key="NSClassName">ColorSet</string>
       </object>
       <object class="NSCustomView" id="524934670">
-        <nil key="NSNextResponder"/>
+        <reference key="NSNextResponder"/>
         <int key="NSvFlags">268</int>
         <array class="NSMutableArray" key="NSSubviews">
           <object class="IconTray" id="409419844">
@@ -202,14 +202,9 @@
                   <bytes key="NSWhite">MQA</bytes>
                 </object>
               </object>
-              <object class="NSColor" key="NSTextColor" id="431744492">
-                <int key="NSColorSpace">6</int>
-                <string key="NSCatalogName">System</string>
-                <string key="NSColorName">controlTextColor</string>
-                <object class="NSColor" key="NSColor">
-                  <int key="NSColorSpace">3</int>
-                  <bytes key="NSWhite">MAA</bytes>
-                </object>
+              <object class="NSColor" key="NSTextColor" id="83910406">
+                <int key="NSColorSpace">3</int>
+                <bytes key="NSWhite">MAA</bytes>
               </object>
             </object>
             <string key="IconTrayIdentifierKey">FontSmallerTemplate</string>
@@ -237,7 +232,7 @@
               <string key="NSContents">FontBiggerTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">FontBiggerTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -264,7 +259,7 @@
               <string key="NSContents">ToggleFontPanelTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">ToggleFontPanelTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -291,7 +286,7 @@
               <string key="NSContents">BrowserVSplitTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">BrowserVSplitTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -318,7 +313,7 @@
               <string key="NSContents">BrowserNSplitTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">BrowserNSplitTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -345,7 +340,7 @@
               <string key="NSContents">BrowserHSplitTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">BrowserHSplitTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -372,7 +367,7 @@
               <string key="NSContents">StoredLogFilesModeTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">StoredLogFilesModeTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -399,7 +394,7 @@
               <string key="NSContents">ThreadTitleSearchTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">ThreadTitleSearchTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -426,7 +421,7 @@
               <string key="NSContents">LiveThreadsModeTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">LiveThreadsModeTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -453,7 +448,7 @@
               <string key="NSContents">NewThreadTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">NewThreadTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -480,7 +475,7 @@
               <string key="NSContents">LocalRulesTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">LocalRulesTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -507,7 +502,7 @@
               <string key="NSContents">ToggleBoardsListTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">ToggleBoardsListTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -534,7 +529,7 @@
               <string key="NSContents">DeleteTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">DeleteTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -561,7 +556,7 @@
               <string key="NSContents">ReloadListTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">ReloadListTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -588,7 +583,7 @@
               <string key="NSContents">ReloadThreadTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">ReloadThreadTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -615,7 +610,7 @@
               <string key="NSContents">AddFavoritesTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">AddFavoritesTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -642,7 +637,7 @@
               <string key="NSContents">RemoveFavoritesTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">RemoveFavoritesTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -669,7 +664,7 @@
               <string key="NSContents">StopTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">StopTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -696,7 +691,7 @@
               <string key="NSContents">ComposeTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">ComposeTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -723,7 +718,7 @@
               <string key="NSContents">SendMessageTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">SendMessageTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -750,7 +745,7 @@
               <string key="NSContents">OrderFrontBrowserTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">OrderFrontBrowserTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -777,7 +772,7 @@
               <string key="NSContents">UseBeTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">UseBeTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -804,13 +799,14 @@
               <string key="NSContents">ThunderTemplate</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">ThunderTemplate</string>
             <int key="IconTrayImagePositionKey">5</int>
           </object>
         </array>
         <string key="NSFrameSize">{540, 464}</string>
+        <reference key="NSSuperview"/>
         <string key="NSClassName">NSView</string>
       </object>
       <object class="NSCustomView" id="516540189">
@@ -840,7 +836,7 @@
               <string key="NSContents">FavoritesItemLargeSelected</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">FavoritesItemLargeSelected</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -868,7 +864,7 @@
               <string key="NSContents">CategoryItemLargeSelected</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">CategoryItemLargeSelected</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -896,7 +892,7 @@
               <string key="NSContents">BoardItemLargeSelected</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">BoardItemLargeSelected</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -924,7 +920,7 @@
               <string key="NSContents">SmartBoardItemLargeSelected</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">SmartBoardItemLargeSelected</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -952,7 +948,7 @@
               <string key="NSContents">FavoritesItemLarge</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">FavoritesItemLarge</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -980,7 +976,7 @@
               <string key="NSContents">CategoryItemLarge</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">CategoryItemLarge</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1008,7 +1004,7 @@
               <string key="NSContents">BoardItemLarge</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">BoardItemLarge</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1036,7 +1032,7 @@
               <string key="NSContents">SmartBoardItemLarge</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">SmartBoardItemLarge</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1064,7 +1060,7 @@
               <string key="NSContents">FavoritesItemMediumSelected</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">FavoritesItemMediumSelected</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1092,7 +1088,7 @@
               <string key="NSContents">CategoryItemMediumSelected</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">CategoryItemMediumSelected</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1120,7 +1116,7 @@
               <string key="NSContents">BoardItemMediumSelected</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">BoardItemMediumSelected</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1148,7 +1144,7 @@
               <string key="NSContents">BoardItemSelelcted</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">BoardItemSelelcted</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1176,7 +1172,7 @@
               <string key="NSContents">FavoritesItemSelected</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">FavoritesItemSelected</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1204,7 +1200,7 @@
               <string key="NSContents">CategoryItemSelelcted</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">CategoryItemSelelcted</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1232,7 +1228,7 @@
               <string key="NSContents">SmartBoardItemSelected</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">SmartBoardItemSelected</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1260,7 +1256,7 @@
               <string key="NSContents">SmartBoardItemMediumSelected</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">SmartBoardItemMediumSelected</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1288,7 +1284,7 @@
               <string key="NSContents">FavoritesItemMedium</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">FavoritesItemMedium</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1316,7 +1312,7 @@
               <string key="NSContents">CategoryItemMedium</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">CategoryItemMedium</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1344,7 +1340,7 @@
               <string key="NSContents">SmartBoardItemMedium</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">SmartBoardItemMedium</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1372,7 +1368,7 @@
               <string key="NSContents">BoardItemMedium</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">BoardItemMedium</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1400,7 +1396,7 @@
               <string key="NSContents">BoardItem</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">BoardItem</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1428,7 +1424,7 @@
               <string key="NSContents">FavoritesItem</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">FavoritesItem</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1456,7 +1452,7 @@
               <string key="NSContents">CategoryItem</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">CategoryItem</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1484,7 +1480,7 @@
               <string key="NSContents">SmartBoardItem</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">SmartBoardItem</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1496,7 +1492,7 @@
         <string key="NSClassName">NSView</string>
       </object>
       <object class="NSCustomView" id="426294533">
-        <nil key="NSNextResponder"/>
+        <reference key="NSNextResponder"/>
         <int key="NSvFlags">268</int>
         <array class="NSMutableArray" key="NSSubviews">
           <object class="IconTray" id="336542359">
@@ -1504,6 +1500,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{20, 20}, {109, 54}}</string>
             <reference key="NSSuperview" ref="426294533"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">Status_newThread</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="35399368">
@@ -1521,7 +1518,7 @@
               <string key="NSContents">Status_newThread</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">Status_newThread</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1531,6 +1528,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{137, 20}, {109, 54}}</string>
             <reference key="NSSuperview" ref="426294533"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">Status_updated</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="17166439">
@@ -1548,7 +1546,7 @@
               <string key="NSContents">Status_updated</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">Status_updated</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1558,6 +1556,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{254, 20}, {109, 54}}</string>
             <reference key="NSSuperview" ref="426294533"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">Status_logcached</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="441764561">
@@ -1575,7 +1574,7 @@
               <string key="NSContents">Status_logcached</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">Status_logcached</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1585,6 +1584,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{371, 20}, {109, 54}}</string>
             <reference key="NSSuperview" ref="426294533"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">Status_HeadModified</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="37101878">
@@ -1602,13 +1602,15 @@
               <string key="NSContents">Status_HeadModified</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">Status_HeadModified</string>
             <int key="IconTrayImagePositionKey">5</int>
           </object>
         </array>
         <string key="NSFrameSize">{500, 94}</string>
+        <reference key="NSSuperview"/>
+        <reference key="NSWindow"/>
         <string key="NSClassName">NSView</string>
       </object>
       <object class="NSCustomView" id="583271040">
@@ -1620,6 +1622,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{377, 157}, {142, 28}}</string>
             <reference key="NSSuperview" ref="583271040"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">_NS:4068</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSTextFieldCell" key="NSCell" id="535311076">
@@ -1630,7 +1633,12 @@
               <string key="NSCellIdentifier">_NS:4068</string>
               <reference key="NSControlView" ref="195389699"/>
               <reference key="NSBackgroundColor" ref="478545117"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <object class="NSColor" key="NSTextColor" id="431744492">
+                <int key="NSColorSpace">6</int>
+                <string key="NSCatalogName">System</string>
+                <string key="NSColorName">controlTextColor</string>
+                <reference key="NSColor" ref="83910406"/>
+              </object>
             </object>
           </object>
           <object class="NSTextField" id="633912528">
@@ -1638,6 +1646,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{377, 193}, {125, 14}}</string>
             <reference key="NSSuperview" ref="583271040"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">_NS:4068</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSTextFieldCell" key="NSCell" id="1012311363">
@@ -1664,17 +1673,20 @@
                     <int key="NSvFlags">268</int>
                     <string key="NSFrame">{{18, 0}, {464, 121}}</string>
                     <reference key="NSSuperview" ref="131431093"/>
+                    <reference key="NSWindow"/>
                     <string key="NSReuseIdentifierKey">_NS:1109</string>
                     <string key="NSClassName">BSCSLastUpdatePreview</string>
                   </object>
                 </array>
                 <string key="NSFrame">{{1, 1}, {500, 117}}</string>
                 <reference key="NSSuperview" ref="866848735"/>
+                <reference key="NSWindow"/>
                 <string key="NSReuseIdentifierKey">_NS:21</string>
               </object>
             </array>
             <string key="NSFrame">{{17, 16}, {502, 133}}</string>
             <reference key="NSSuperview" ref="583271040"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">_NS:18</string>
             <string key="NSOffsets">{0, 0}</string>
             <object class="NSTextFieldCell" key="NSTitleCell">
@@ -1699,6 +1711,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{115, 157}, {162, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">lastUpdatedHeaderMiddle</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="193016156">
@@ -1716,7 +1729,7 @@
               <string key="NSContents">Middle</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">lastUpdatedHeaderMiddle</string>
             <int key="IconTrayImagePositionKey">4</int>
@@ -1726,6 +1739,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{285, 157}, {87, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">lastUpdatedHeaderRight</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="903041168">
@@ -1743,7 +1757,7 @@
               <string key="NSContents">Right</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">lastUpdatedHeaderRight</string>
             <int key="IconTrayImagePositionKey">4</int>
@@ -1753,6 +1767,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{20, 157}, {87, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">lastUpdatedHeaderLeft</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="752316686">
@@ -1770,7 +1785,7 @@
               <string key="NSContents">Left</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">lastUpdatedHeaderLeft</string>
             <int key="IconTrayImagePositionKey">4</int>
@@ -1780,6 +1795,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{20, 219}, {496, 63}}</string>
             <reference key="NSSuperview" ref="583271040"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">lastUpdatedHeader</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="516868776">
@@ -1797,7 +1813,7 @@
               <string key="NSContents">lastUpdatedHeader</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">lastUpdatedHeader</string>
             <int key="IconTrayImagePositionKey">4</int>
@@ -1807,6 +1823,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{20, 290}, {147, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">sage</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="266273925">
@@ -1824,7 +1841,7 @@
               <string key="NSContents">sage</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">sage</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1834,6 +1851,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{194, 290}, {147, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">age</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="265696491">
@@ -1851,7 +1869,7 @@
               <string key="NSContents">age</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">age</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1861,6 +1879,7 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{369, 290}, {147, 54}}</string>
             <reference key="NSSuperview" ref="583271040"/>
+            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">mailAttachment</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="693723709">
@@ -1878,7 +1897,7 @@
               <string key="NSContents">mailAttachment</string>
               <reference key="NSSupport" ref="330404249"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
-              <reference key="NSTextColor" ref="431744492"/>
+              <reference key="NSTextColor" ref="83910406"/>
             </object>
             <string key="IconTrayIdentifierKey">mailAttachment</string>
             <int key="IconTrayImagePositionKey">5</int>
@@ -1886,10 +1905,11 @@
         </array>
         <string key="NSFrameSize">{536, 364}</string>
         <reference key="NSSuperview"/>
+        <reference key="NSWindow"/>
         <string key="NSClassName">NSView</string>
       </object>
       <object class="NSCustomView" id="66551106">
-        <reference key="NSNextResponder"/>
+        <nil key="NSNextResponder"/>
         <int key="NSvFlags">268</int>
         <array class="NSMutableArray" key="NSSubviews">
           <object class="NSBox" id="217131305">
@@ -1905,7 +1925,6 @@
                     <int key="NSvFlags">268</int>
                     <string key="NSFrame">{{233, 6}, {105, 32}}</string>
                     <reference key="NSSuperview" ref="48145483"/>
-                    <reference key="NSWindow"/>
                     <bool key="NSEnabled">YES</bool>
                     <object class="NSButtonCell" key="NSCell" id="43103210">
                       <int key="NSCellFlags">67239424</int>
@@ -1927,7 +1946,6 @@
                     <int key="NSvFlags">268</int>
                     <string key="NSFrame">{{68, 17}, {163, 13}}</string>
                     <reference key="NSSuperview" ref="48145483"/>
-                    <reference key="NSWindow"/>
                     <bool key="NSEnabled">YES</bool>
                     <object class="NSTextFieldCell" key="NSCell" id="355553225">
                       <int key="NSCellFlags">67239488</int>
@@ -1965,7 +1983,6 @@
                             <int key="NSvFlags">268</int>
                             <string key="NSFrame">{{198, 10}, {81, 28}}</string>
                             <reference key="NSSuperview" ref="611190156"/>
-                            <reference key="NSWindow"/>
                             <int key="NSTag">2</int>
                             <bool key="NSEnabled">YES</bool>
                             <object class="NSButtonCell" key="NSCell" id="828445618">
@@ -1988,7 +2005,6 @@
                             <int key="NSvFlags">268</int>
                             <string key="NSFrame">{{-10, 17}, {156, 17}}</string>
                             <reference key="NSSuperview" ref="611190156"/>
-                            <reference key="NSWindow"/>
                             <bool key="NSEnabled">YES</bool>
                             <object class="NSTextFieldCell" key="NSCell" id="648892092">
                               <int key="NSCellFlags">67239488</int>
@@ -2006,7 +2022,6 @@
                             <int key="NSvFlags">268</int>
                             <string key="NSFrame">{{16, 43}, {178, 18}}</string>
                             <reference key="NSSuperview" ref="611190156"/>
-                            <reference key="NSWindow"/>
                             <bool key="NSEnabled">YES</bool>
                             <object class="NSButtonCell" key="NSCell" id="18494824">
                               <int key="NSCellFlags">67239424</int>
@@ -2037,7 +2052,6 @@
                             </set>
                             <string key="NSFrame">{{151, 14}, {44, 23}}</string>
                             <reference key="NSSuperview" ref="611190156"/>
-                            <reference key="NSWindow"/>
                             <int key="NSTag">2</int>
                             <bool key="NSEnabled">YES</bool>
                             <bool key="NSIsBordered">YES</bool>
@@ -2046,12 +2060,10 @@
                         </array>
                         <string key="NSFrame">{{1, 1}, {318, 69}}</string>
                         <reference key="NSSuperview" ref="918203240"/>
-                        <reference key="NSWindow"/>
                       </object>
                     </array>
                     <string key="NSFrame">{{15, 50}, {320, 85}}</string>
                     <reference key="NSSuperview" ref="48145483"/>
-                    <reference key="NSWindow"/>
                     <string key="NSOffsets">{0, 0}</string>
                     <object class="NSTextFieldCell" key="NSTitleCell">
                       <int key="NSCellFlags">67239424</int>
@@ -2083,7 +2095,6 @@
                             <int key="NSvFlags">268</int>
                             <string key="NSFrame">{{198, 42}, {81, 28}}</string>
                             <reference key="NSSuperview" ref="689077578"/>
-                            <reference key="NSWindow"/>
                             <int key="NSTag">1</int>
                             <bool key="NSEnabled">YES</bool>
                             <object class="NSButtonCell" key="NSCell" id="939971224">
@@ -2106,7 +2117,6 @@
                             <int key="NSvFlags">268</int>
                             <string key="NSFrame">{{15, 49}, {131, 17}}</string>
                             <reference key="NSSuperview" ref="689077578"/>
-                            <reference key="NSWindow"/>
                             <bool key="NSEnabled">YES</bool>
                             <object class="NSTextFieldCell" key="NSCell" id="121801457">
                               <int key="NSCellFlags">67239488</int>
@@ -2127,7 +2137,6 @@
                             </set>
                             <string key="NSFrame">{{151, 15}, {44, 23}}</string>
                             <reference key="NSSuperview" ref="689077578"/>
-                            <reference key="NSWindow"/>
                             <int key="NSTag">3</int>
                             <bool key="NSEnabled">YES</bool>
                             <bool key="NSIsBordered">YES</bool>
@@ -2141,7 +2150,6 @@
                             <int key="NSvFlags">268</int>
                             <string key="NSFrame">{{15, 18}, {131, 17}}</string>
                             <reference key="NSSuperview" ref="689077578"/>
-                            <reference key="NSWindow"/>
                             <bool key="NSEnabled">YES</bool>
                             <object class="NSTextFieldCell" key="NSCell" id="514330571">
                               <int key="NSCellFlags">67239488</int>
@@ -2159,7 +2167,6 @@
                             <int key="NSvFlags">268</int>
                             <string key="NSFrame">{{198, 11}, {81, 28}}</string>
                             <reference key="NSSuperview" ref="689077578"/>
-                            <reference key="NSWindow"/>
                             <int key="NSTag">3</int>
                             <bool key="NSEnabled">YES</bool>
                             <object class="NSButtonCell" key="NSCell" id="502401467">
@@ -2185,7 +2192,6 @@
                             </set>
                             <string key="NSFrame">{{151, 46}, {44, 23}}</string>
                             <reference key="NSSuperview" ref="689077578"/>
-                            <reference key="NSWindow"/>
                             <int key="NSTag">1</int>
                             <bool key="NSEnabled">YES</bool>
                             <bool key="NSIsBordered">YES</bool>
@@ -2201,12 +2207,10 @@
                         </array>
                         <string key="NSFrame">{{1, 1}, {318, 79}}</string>
                         <reference key="NSSuperview" ref="87424938"/>
-                        <reference key="NSWindow"/>
                       </object>
                     </array>
                     <string key="NSFrame">{{15, 139}, {320, 95}}</string>
                     <reference key="NSSuperview" ref="48145483"/>
-                    <reference key="NSWindow"/>
                     <string key="NSOffsets">{0, 0}</string>
                     <object class="NSTextFieldCell" key="NSTitleCell">
                       <int key="NSCellFlags">67239424</int>
@@ -2228,12 +2232,10 @@
                 </array>
                 <string key="NSFrame">{{1, 1}, {350, 246}}</string>
                 <reference key="NSSuperview" ref="217131305"/>
-                <reference key="NSWindow"/>
               </object>
             </array>
             <string key="NSFrame">{{17, 16}, {352, 248}}</string>
             <reference key="NSSuperview" ref="66551106"/>
-            <reference key="NSWindow"/>
             <string key="NSOffsets">{0, 0}</string>
             <object class="NSTextFieldCell" key="NSTitleCell">
               <int key="NSCellFlags">67239424</int>
@@ -2257,7 +2259,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{18, 268}, {139, 18}}</string>
             <reference key="NSSuperview" ref="66551106"/>
-            <reference key="NSWindow"/>
             <bool key="NSEnabled">YES</bool>
             <object class="NSButtonCell" key="NSCell" id="465965501">
               <int key="NSCellFlags">67239424</int>
@@ -2277,8 +2278,6 @@
           </object>
         </array>
         <string key="NSFrameSize">{386, 304}</string>
-        <reference key="NSSuperview"/>
-        <reference key="NSWindow"/>
         <string key="NSClassName">NSView</string>
       </object>
       <object class="NSObjectController" id="623110666">
@@ -6683,6 +6682,470 @@
           </object>
           <int key="connectionID">1648</int>
         </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="548573702"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1653</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="113699550"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1654</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="839590584"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1655</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="659996774"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1656</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="20940946"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1657</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="390589829"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1658</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="224497135"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1659</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="498810486"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1660</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="941529715"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1661</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="1067255748"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1662</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="375183212"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1663</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="436512542"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1664</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="476702357"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1665</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="601510271"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1666</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="952348899"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1667</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="675548195"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1668</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="489021830"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1669</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="316240714"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1670</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="140149248"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1671</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="191806842"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1672</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="191937507"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1673</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="113628992"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1674</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="760119616"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1675</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="804086189"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1676</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="301165353"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1677</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="714785127"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1678</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="475289683"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1679</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="841819552"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1680</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="373657693"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1681</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="856076291"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1682</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="639144185"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1683</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="336542359"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1684</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="143056877"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1685</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="689179643"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1686</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="881565810"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1687</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="984667692"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1688</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="463948569"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1689</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="316968568"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1690</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="170830946"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1691</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="148883939"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1692</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="664494534"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1693</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="183161922"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1694</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="872386448"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1695</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="248781494"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1696</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="162499483"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1697</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="503548783"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1698</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="114803880"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1699</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="233836996"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1700</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="582138296"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1701</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="887361832"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1702</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="143912827"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1703</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="1014077734"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1704</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="294211984"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1705</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="55462620"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1706</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="249523328"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1707</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="55341464"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1708</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="503471096"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1709</int>
+        </object>
+        <object class="IBConnectionRecord">
+          <object class="IBOutletConnection" key="connection">
+            <string key="label">delegate</string>
+            <reference key="source" ref="409419844"/>
+            <reference key="destination" ref="388032869"/>
+          </object>
+          <int key="connectionID">1710</int>
+        </object>
       </array>
       <object class="IBMutableOrderedSet" key="objectRecords">
         <array key="orderedObjects">
@@ -8052,7 +8515,7 @@
         <boolean value="YES" key="19.ImportedFromIB2"/>
         <string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="2.ImportedFromIB2"/>
-        <string key="20.IBEditorWindowLastContentRect">{{562, 240}, {540, 464}}</string>
+        <string key="20.IBEditorWindowLastContentRect">{{191, 270}, {540, 464}}</string>
         <string key="20.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="20.ImportedFromIB2"/>
         <string key="21.IBPluginDependency">com.masakih.IconTray</string>
@@ -8060,7 +8523,7 @@
           <bytes key="NSTransformStruct">AUGgAABCBAAAA</bytes>
         </object>
         <boolean value="YES" key="21.ImportedFromIB2"/>
-        <string key="226.IBEditorWindowLastContentRect">{{23, 390}, {500, 406}}</string>
+        <string key="226.IBEditorWindowLastContentRect">{{142, 329}, {500, 406}}</string>
         <string key="226.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="226.ImportedFromIB2"/>
         <string key="227.IBPluginDependency">com.masakih.IconTray</string>
@@ -8078,10 +8541,10 @@
           <bytes key="NSTransformStruct">AUO5gABDo4AAA</bytes>
         </object>
         <boolean value="YES" key="263.ImportedFromIB2"/>
-        <string key="275.IBEditorWindowLastContentRect">{{0, 751}, {500, 94}}</string>
+        <string key="275.IBEditorWindowLastContentRect">{{46, 631}, {500, 94}}</string>
         <string key="275.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="275.ImportedFromIB2"/>
-        <string key="276.IBEditorWindowLastContentRect">{{0, 481}, {536, 364}}</string>
+        <string key="276.IBEditorWindowLastContentRect">{{258, 362}, {536, 364}}</string>
         <string key="276.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <object class="NSAffineTransform" key="276.IBViewBoundsToFrameTransform"/>
         <boolean value="YES" key="276.ImportedFromIB2"/>
@@ -8288,7 +8751,7 @@
       <nil key="activeLocalization"/>
       <dictionary class="NSMutableDictionary" key="localizations"/>
       <nil key="sourceID"/>
-      <int key="maxID">1652</int>
+      <int key="maxID">1710</int>
     </object>
     <object class="IBClassDescriber" key="IBDocument.Classes">
       <array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -8543,6 +9006,29 @@
             <string key="majorKey">IBDocumentRelativeSource</string>
             <string key="minorKey">../IconSetDocument.h</string>
           </object>
+        </object>
+        <object class="IBPartialClassDescription">
+          <string key="className">IconTray</string>
+          <string key="superclassName">NSControl</string>
+          <object class="NSMutableDictionary" key="outlets">
+            <string key="NS.key.0">delegate</string>
+            <string key="NS.object.0">id</string>
+          </object>
+          <object class="NSMutableDictionary" key="toOneOutletInfosByName">
+            <string key="NS.key.0">delegate</string>
+            <object class="IBToOneOutletInfo" key="NS.object.0">
+              <string key="name">delegate</string>
+              <string key="candidateClassName">id</string>
+            </object>
+          </object>
+          <object class="IBClassDescriptionSource" key="sourceIdentifier" id="660963474">
+            <string key="majorKey">IBDocumentRelativeSource</string>
+            <string key="minorKey">../IconTray3/IconTray.h</string>
+          </object>
+        </object>
+        <object class="IBPartialClassDescription">
+          <string key="className">NSObject</string>
+          <reference key="sourceIdentifier" ref="660963474"/>
         </object>
       </array>
       <array class="NSMutableArray" key="referencedPartialClassDescriptionsV3.2+">

@@ -8,7 +8,7 @@
 
 #import "IconSetDocument.h"
 
-//#import <IconTray/IconTray.h>
+#import <IconTray/IconTray.h>
 #import "IconSetComposer.h"
 #import "TemporaryFolder.h"
 
@@ -373,6 +373,20 @@ static NSArray *sThreadIdentifiers;
 #pragma mark-
 #pragma mark ## MVC - Controller ##
 
+-(BOOL)iconTray:(IconTray *)iconTray willChangeFileOfImage:(NSFileWrapper *)imageFileWrapper
+{
+	NSFileWrapper *oldWrapper = [iconTray imageFileWrapper];
+	NSUndoManager *um = [self undoManager];
+	
+	if(!oldWrapper) {
+		[[um prepareWithInvocationTarget:iconTray] setImage:nil];
+		return YES;
+	}
+	
+	[[um prepareWithInvocationTarget:iconTray] setImageFileWrapper:oldWrapper];
+	return YES;
+}
+
 -(void)setupIconTrays
 {
 	id newIconTrays;
@@ -529,8 +543,6 @@ static NSArray *sThreadIdentifiers;
 		filename = [wrapper addFileWrapper:imageFileWrapper];
 //		NSLog(@"##### filewrapper Key -> %@", filename );
 	}
-	
-	[self updateChangeCount:NSChangeDone];
 }
 
 @end
