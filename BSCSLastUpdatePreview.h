@@ -10,6 +10,10 @@
 
 @interface BSCSLastUpdatePreview : NSView
 {
+	NSRect _imageRect;
+	NSTimer *_nobinobiTimer;
+	NSInteger _nobinobiStatus;
+	
 	NSImage *_leftImage;
 	NSImage *_middleImage;
 	NSImage *_rightImage;
@@ -17,6 +21,8 @@
 	NSImageCell *imageCell;
 	NSImageCell *defauleImageCell;
 }
+@property NSRect imageRect;
+
 @property (retain, nonatomic) NSImage *defaultImage;
 
 @property (retain, nonatomic) NSImage *singleImage;
