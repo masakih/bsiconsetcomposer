@@ -177,6 +177,24 @@
 			<key>name</key>
 			<string>新着</string>
 		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>lastUpdatedHeaderLeft</string>
+			<key>name</key>
+			<string>新着（左）</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>lastUpdatedHeaderMiddle</string>
+			<key>name</key>
+			<string>新着（中央）</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>lastUpdatedHeaderRight</string>
+			<key>name</key>
+			<string>新着（右）</string>
+		</dict>
 	</array>
 	<key>ThreadList</key>
 	<array>
@@ -314,6 +332,42 @@
 			<string>UseBeTemplate</string>
 			<key>name</key>
 			<string>Be有効／無効</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>BrowserHSplitTemplate</string>
+			<key>name</key>
+			<string>3ペイン(左右に分割)</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>BrowserNSplitTemplate</string>
+			<key>name</key>
+			<string>2ペイン</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>BrowserVSplitTemplate</string>
+			<key>name</key>
+			<string>3ペイン(上下に分割)</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>FontBiggerTemplate</string>
+			<key>name</key>
+			<string>文字を拡大</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>FontSmallerTemplate</string>
+			<key>name</key>
+			<string>文字を縮小</string>
+		</dict>
+		<dict>
+			<key>imageName</key>
+			<string>ToggleFontPanelTemplate</string>
+			<key>name</key>
+			<string>フォント</string>
 		</dict>
 	</array>
 </dict>

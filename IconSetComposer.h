@@ -24,6 +24,8 @@ enum {
 +(BOOL)isAcceptImageExtension:(NSString *)ext;
 +(NSArray *)acceptImageExtensions;
 
+- (NSImage *)dropToMeImage;
+
 -(BOOL)launchBS;
 -(long)quitBS;
 -(BOOL)isRunningBS;

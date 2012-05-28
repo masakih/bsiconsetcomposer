@@ -318,6 +318,12 @@ final:
 	return array;
 }
 
+
+- (NSImage *)dropToMeImage
+{
+	return [NSImage imageNamed:@"DropToMe"];
+}
+
 -(BOOL)isRunningBS
 {
 	NSArray *array;

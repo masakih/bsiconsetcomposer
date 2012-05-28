@@ -9,8 +9,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-// #import "AbstractIconSet.h"
 #import "ColorSet.h"
+
+@class BSCSLastUpdatePreview;
 
 @interface IconSetDocument : NSDocument
 {
@@ -25,22 +26,19 @@
 	
 	IBOutlet NSTabView *tab;
 	
-//	IBOutlet id arrayController;
+	IBOutlet BSCSLastUpdatePreview *nobinobi;
 	
 	NSFileWrapper *wrapper;
-	
 }
 
 +(NSArray *)managedImageNames;
 
 -(void)setPath:(NSString *)path forIdentifier:(NSString *)identifier;
-//-(void)setPlist:(id)plist forIdentifier:(NSString *)identifier;
 
 -(IBAction)apply:(id)sender;
 -(IBAction)applyAndRestartBathyScaphe:(id)sender;
 
 -(void)updateAll;
 -(void)updateForKey:(NSString *)key;
-// -(void)setupDefault;
 
 @end

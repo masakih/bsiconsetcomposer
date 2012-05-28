@@ -15,7 +15,7 @@
 	NSImage *image;
 	NSImage *placeholderImage;
 	
-	id delegate;
+	IBOutlet id delegate;
 	
 	NSCellImagePosition imagePosition;
 	int isHighlighted;

@@ -730,7 +730,7 @@ static BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 
 #pragma mark-
 #pragma mark## Actions ##
--(IBAction)copy:(id)sender
+- (void)storeToPastboard
 {
 	NSPasteboard *pb = [NSPasteboard generalPasteboard];
 	NSMutableArray *types = [NSMutableArray array];
@@ -750,6 +750,10 @@ static BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 		}
 	}
 }
+-(IBAction)copy:(id)sender
+{
+	[self storeToPastboard];
+}
 
 -(IBAction)paste:(id)sender
 {
@@ -761,8 +765,8 @@ static BOOL createImageFileWapper( NSImage *inImage, NSString *inImageName, NSFi
 }
 -(IBAction)cut:(id)sender
 {
-	[self copy:sender];
-	[self delete:sender];
+	[self storeToPastboard];
+	[self setImage:nil];
 }
 
 -(NSArray *)acceptPasteTypes

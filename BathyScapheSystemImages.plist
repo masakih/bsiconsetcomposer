@@ -2,48 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>deleteMail2</string>
-	<string>Keywords</string>
-	<string>Keywords_Pressed</string>
-	<string>AddBoard</string>
-	<string>AddBoard_Pressed</string>
-	<string>Action</string>
-	<string>Action_Pressed</string>
-	<string>BaScLogo</string>
-	<string>deleteMail</string>
 	<string>DraggingBadge</string>
-	<string>Find</string>
-	<string>HistoryBack</string>
-	<string>HistoryForward</string>
 	<string>Scripts</string>
-	<string>Spacer</string>
-	<string>SplitterHandle</string>
-	<string>FontBigger</string>
-	<string>FontSmaller</string>
-	<string>titleRulerInfoIcon</string>
-	<string>smallSquareMinus</string>
-	<string>smallSquarePlus</string>
 	<string>Status_header</string>
-	<string>bathyicon192</string>
 	<string>insertSage</string>
-	<string>moveEnd</string>
-	<string>moveNext</string>
-	<string>movePrev</string>
-	<string>smallLocked</string>
-	<string>smallUnlocked</string>
-	<string>moveTop</string>
-	<string>moveUpdated</string>
-	<string>browserSplitter</string>
-	<string>browserSplitterDimple</string>
-	<string>browserSplitterDimpleVertical</string>
-	<string>browserSplitterVertical</string>
-	<string>BrowserHSplitTemplate</string>
-	<string>BrowserNSplitTemplate</string>
-	<string>BrowserVSplitTemplate</string>
 	<string>FilterPreferences</string>
-	<string>FontBiggerTemplate</string>
-	<string>FontSmallerTemplate</string>
-	<string>HistoryFolder</string>
 	<string>LabelIcon0</string>
 	<string>moveEndTemplate</string>
 	<string>moveNextTemplate</string>

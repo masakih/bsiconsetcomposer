@@ -1,8 +1,6 @@
 # encoding=utf-8
 
 PRODUCT_NAME=BSIconSetComposer
-VERSION=1.3
-REV_CORRECT=107
 PRODUCT_EXTENSION=app
 BUILD_PATH=./build
 DEPLOYMENT=Release
@@ -11,21 +9,15 @@ APP=$(BUILD_PATH)/$(DEPLOYMENT)/$(APP_BUNDLE)
 APP_NAME=$(BUILD_PATH)/$(DEPLOYMENT)/$(PRODUCT_NAME)
 INFO_PLIST=Info.plist
 
+VER_CMD=grep -A1 'CFBundleShortVersionString' $(INFO_PLIST) | tail -1 | tr -d "'\t</string>" 
+VERSION=$(shell $(VER_CMD))
 
-all:
-	@echo do  nothig.
-	@echo use target tagging 
-
-tagging:
-	@echo "Tagging the $(VERSION) (x) release of BSIconSetComposer project."
-	REV=`git show | head -1 | awk '{printf("%.7s\n", $$2)}'`;	\
-	ver=`grep -A1 'CFBundleShortVersionString' Info.plist | tail -1 | tr -d '\t</string>'`;    \
-	echo svn copy $(HEAD) $(TAGS_DIR)/release-$${ver}.$${REV}
+all: package
 
 Localizable: IconSetComposer.m
-	genstrings -o English.lproj $<
+	genstrings -o English.lproj $^
 	(cd English.lproj; ${MAKE} $@;)
-	genstrings -o Japanese.lproj $<
+	genstrings -o Japanese.lproj $^
 	(cd Japanese.lproj; ${MAKE} $@;)
 
 checkLocalizable:
@@ -47,6 +39,6 @@ updateRevision:
 	mv -f $(INFO_PLIST).r $(INFO_PLIST) ;	\
 
 restorInfoPlist:
-	if [ -f $(INFO_PLIST).bak ] ; then cp -f $(INFO_PLIST).bak $(INFO_PLIST) ; fi
+	if [ -f $(INFO_PLIST).bak ] ; then mv -f $(INFO_PLIST).bak $(INFO_PLIST) ; fi
 
 
