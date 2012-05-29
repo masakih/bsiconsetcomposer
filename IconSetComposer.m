@@ -445,15 +445,11 @@ final:
 		[newDocument setPath:imagePath forIdentifier:imageName];
 	}
 	
-	NSColor *blColor = [ColorSet getBathyScapheColor:kTypeBoardListColor];
-	NSColor *bliColor = [ColorSet getBathyScapheColor:kTypeBoardListInactiveColor];
 	NSColor *tlColor = [ColorSet getBathyScapheColor:kTypeThreadsListColor];
 	NSNumber *isIncludeColor;
 	id set;
 	
-	if( ![[ColorSet defaultBoardListColor] isEqual:blColor]
-		|| ![[ColorSet defaultBoardListInactiveColor] isEqual:bliColor]
-		|| ![[ColorSet defaultThreadsListColor] isEqual:tlColor]) {
+	if(![[ColorSet defaultThreadsListColor] isEqual:tlColor]) {
 		isIncludeColor = [NSNumber numberWithBool:YES];
 	} else {
 		isIncludeColor = [NSNumber numberWithBool:NO];
@@ -461,8 +457,6 @@ final:
 	
 	[newDocument windowForSheet];	// load nib.
 	set = [newDocument valueForKey:@"colorSet"];
-	[set setValue:blColor forKey:@"boardListColor"];
-	[set setValue:bliColor forKey:@"boardListInactiveColor"];
 	[set setValue:tlColor forKey:@"threadsListColor"];
 	[set setValue:isIncludeColor forKey:@"isIncludeColors"];
 	
