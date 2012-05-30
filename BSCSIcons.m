@@ -10,6 +10,7 @@
 
 #import "IconSetComposer.h"
 
+
 @implementation BSCSIcons
 @synthesize image, imageFileWrapper, placeholder;
 @synthesize title, identifier;
@@ -26,6 +27,14 @@
 	return result;
 }
 
+- (NSImage *)defaultImage
+{
+	return self.placeholder;
+}
+- (void)setDefaultImage:(NSImage *)anImage
+{
+	self.placeholder = anImage;
+}
 
 //- (BOOL)validateValue:(id *)ioValue forKey:(NSString *)inKey error:(NSError **)outError
 //{
