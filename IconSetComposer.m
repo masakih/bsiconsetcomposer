@@ -72,7 +72,6 @@ static IconSetComposer *_instance = nil;
 	NSString *bsResourcesPath;
 	NSArray *bsResources;
 	NSArray *knownBSSystemImages;
-	NSArray *deprecatedImages;
 	NSArray *managedImages;
 	unsigned managedImageNum;
 	unsigned i, count;
@@ -97,8 +96,6 @@ static IconSetComposer *_instance = nil;
 	
 	knownBSSystemImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BathyScapheSystemImages"
 																						   ofType:@"plist"]];
-	deprecatedImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"DeprecatedImageList"
-																						ofType:@"plist"]];
 	
 	count = [bsResources count];
 	for( i = 0; i < count; i++ ) {
@@ -119,9 +116,15 @@ static IconSetComposer *_instance = nil;
 		}
 	}
 	if( managedImageNum > bsResourceImageNum ) {
+		NSArray *deprecatedImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"DeprecatedImageList"
+																									 ofType:@"plist"]];
+		NSArray *notHaveDefault = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NotHaveDefaultImageList"
+																									 ofType:@"plist"]];
+		
 		decrementalImages = [[managedImages mutableCopy] autorelease];
 		[decrementalImages removeObjectsInArray:containsImages];
 		[decrementalImages removeObjectsInArray:deprecatedImages];
+		[decrementalImages removeObjectsInArray:notHaveDefault];
 		if([decrementalImages count] > 0) {
 			status |= kIconsHaveIncreased;
 		}
