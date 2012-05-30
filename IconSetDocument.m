@@ -57,10 +57,8 @@ static NSArray *sThreadIdentifiers;
 +(NSArray *)arrayForImageName:(NSArray *)plist
 {
 	NSMutableArray *result = [NSMutableArray array];
-	NSEnumerator *keysEnum = [plist objectEnumerator];
-	NSDictionary *key;
 	
-	while( key = [keysEnum nextObject] ) {
+	for(NSDictionary *key in plist) {
 		[result addObject:[key objectForKey:BSCIImageListImageNameKey]];
 	}
 	
@@ -232,26 +230,16 @@ static NSArray *sThreadIdentifiers;
 
 -(NSFileWrapper *)fileWrapperForIdentifier:(NSString *)identifier
 {
-	id	fileName;
-	id dict;
-	
-	NSArray *array;
-	NSEnumerator *extEnum;
-	NSString *ext;
-	
-	NSFileWrapper *fw;
-	
 	if( !wrapper ) {
 		return nil;
 	}
-	dict = [wrapper fileWrappers];
 	
-	array = [IconSetComposer acceptImageExtensions];
+	id dict = [wrapper fileWrappers];
+	NSArray *array = [IconSetComposer acceptImageExtensions];
 	array = [array arrayByAddingObject:BSCIPlistExtension];
-	extEnum = [array objectEnumerator];
-	while( ext = [extEnum nextObject] ) {
-		fileName = [identifier stringByAppendingPathExtension:ext];
-		fw = [dict objectForKey:fileName];
+	for(NSString *ext in array) {
+		id	fileName = [identifier stringByAppendingPathExtension:ext];
+		NSFileWrapper *fw = [dict objectForKey:fileName];
 		if( fw ) return fw;
 	}
 	
@@ -391,14 +379,9 @@ static NSArray *sThreadIdentifiers;
 
 -(void)setupIconTrays
 {
-	id newIconTrays;
-	NSEnumerator *enums;
-	id object;
+	id newIconTrays = [NSMutableDictionary dictionary];
 	
-	newIconTrays = [NSMutableDictionary dictionary];
-	
-	enums = [[[self class] managedImageNames] objectEnumerator];
-	while( object = [enums nextObject] ) {
+	for(id object in [[self class] managedImageNames]) {
 		id icons;
 		
 		icons = [[BSCSIcons alloc] init];
@@ -505,22 +488,14 @@ static NSArray *sThreadIdentifiers;
 -(void)apply:(id)sender
 {
 	NSString *bathyScapheResourceFolder = [IconSetComposer bathyScapheResourceFolder];
-		
-	id dict;
-	NSEnumerator *filesEnum;
-	NSString *file;
-	NSData *data;
-	NSString *newPath;
-	
 	[IconSetComposer deleteImageFilesFromBSAppSptResFolder];
 	
-	dict = [wrapper fileWrappers];
-	filesEnum = [dict keyEnumerator];
-	while( file = [filesEnum nextObject] ) {
+	id dict = [wrapper fileWrappers];
+	for(NSString *file in dict) {
 		if( [file hasSuffix:BSCIPlistExtension] ) continue;
 		
-		data = [[dict objectForKey:file] regularFileContents];
-		newPath = [bathyScapheResourceFolder stringByAppendingPathComponent:file];
+		NSData *data = [[dict objectForKey:file] regularFileContents];
+		NSString *newPath = [bathyScapheResourceFolder stringByAppendingPathComponent:file];
 		
 		[data writeToFile:newPath atomically:YES];
 	}

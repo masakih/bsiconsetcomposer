@@ -74,7 +74,6 @@ static IconSetComposer *_instance = nil;
 	NSArray *knownBSSystemImages;
 	NSArray *managedImages;
 	unsigned managedImageNum;
-	unsigned i, count;
 	unsigned bsResourceImageNum = 0;
 	id fm;
 	int status = 0;
@@ -97,10 +96,7 @@ static IconSetComposer *_instance = nil;
 	knownBSSystemImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BathyScapheSystemImages"
 																						   ofType:@"plist"]];
 	
-	count = [bsResources count];
-	for( i = 0; i < count; i++ ) {
-		NSString *filename = [bsResources objectAtIndex:i];
-		
+	for(NSString *filename in bsResources) {		
 		if( [[self class] isAcceptImageExtension:[filename pathExtension]] ) {
 			NSString *name = [filename stringByDeletingPathExtension];
 			if( [knownBSSystemImages containsObject:name] ) {
@@ -282,13 +278,11 @@ final:
 	
 	NSFileManager *fm = [NSFileManager defaultManager];
 	NSArray *files = [fm contentsOfDirectoryAtPath:bathyScapheResourceFolder error:NULL];
-	NSEnumerator *filesEnum = [files objectEnumerator];
-	NSString *file;
 	NSString *fullPath;
 	
 	NSArray *managed = [IconSetDocument managedImageNames];
 	
-	while( file = [filesEnum nextObject] ) {
+	for(NSString *file in files) {
 		NSString *filetype;
 		NSString *extention;
 		
@@ -329,16 +323,10 @@ final:
 
 -(BOOL)isRunningBS
 {
-	NSArray *array;
-	unsigned i, count;
-	NSDictionary *dict;
-	
 	NSString *sbPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:[self bathyScapheIdentifier]];
 	
-	array = [[NSWorkspace sharedWorkspace] launchedApplications];
-	count = [array count];
-	for( i = 0; i < count; i++ ) {
-		dict = [array objectAtIndex:i];
+	NSArray *array = [[NSWorkspace sharedWorkspace] launchedApplications];
+	for(NSDictionary *dict in array) {
 		if( [[dict objectForKey:@"NSApplicationPath"] isEqualTo:sbPath] ) {
 			return YES;
 		}
@@ -419,8 +407,6 @@ final:
 	NSString *bsSupPath = [[self class] bathyScapheSupportFolder];
 	NSBundle *bsSupBundle;
 	NSArray *imageNames = [IconSetDocument managedImageNames];
-	NSEnumerator *imageNamesEnum;
-	NSString *imageName;
 	NSString *imagePath;
 	
 	IconSetDocument *newDocument;
@@ -442,8 +428,7 @@ final:
 		return;
 	}
 	
-	imageNamesEnum = [imageNames objectEnumerator];
-	while(imageName = [imageNamesEnum nextObject]) {
+	for(NSString *imageName in imageNames) {
 		imagePath = [bsSupBundle pathForImageResource:imageName];
 		[newDocument setPath:imagePath forIdentifier:imageName];
 	}
