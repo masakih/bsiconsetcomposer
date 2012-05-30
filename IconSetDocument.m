@@ -568,6 +568,23 @@ static NSArray *sThreadIdentifiers;
 	}
 }
 
+- (void)window:(NSWindow *)window willEncodeRestorableState:(NSCoder *)state
+{
+	[state encodeRect:[window frame] forKey:@"BSICSWindowFrameState"];
+}
+- (void)window:(NSWindow *)window didDecodeRestorableState:(NSCoder *)state
+{
+	NSRect r = [state decodeRectForKey:@"BSICSWindowFrameState"];
+	if(NSEqualRects(r, NSZeroRect)) {
+		NSPoint tl = [window cascadeTopLeftFromPoint:NSMakePoint(0, 0)];
+		r = [window frame];
+		r.origin = tl;
+		r.origin.y -= r.size.height;
+	}
+	
+	[window setFrame:r display:NO];
+}
+
 @end
 
 #pragma mark ## Scripting Support ##
