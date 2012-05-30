@@ -11,6 +11,8 @@
 #import "IconSetComposer.h"
 
 @implementation BSCSIcons
+@synthesize image, imageFileWrapper, placeholder;
+@synthesize title, identifier;
 
 - (id)copyWithZone:(NSZone *)zone
 {
@@ -24,78 +26,6 @@
 	return result;
 }
 
-- (void)setImage:(NSImage *)new
-{
-	if(image == new) return;
-	
-	id temp = image;
-	image = [new retain];
-	[temp release];
-}
-- (NSImage *)image
-{
-	return image;
-}
-- (void)setImageFileWrapper:(NSFileWrapper *)new
-{
-	if(imageFileWrapper == new) return;
-	
-	id temp = imageFileWrapper;
-	imageFileWrapper = [new retain];
-	[temp release];
-}
-- (NSFileWrapper *)imageFileWrapper
-{
-	return imageFileWrapper;
-}
-- (void)setPlaceholder:(NSImage *)new
-{
-	if(placeholder == new) return;
-	
-	id temp = placeholder;
-	placeholder = [new retain];
-	[temp release];
-}
-- (NSImage *)placeholder
-{
-	return placeholder;
-}
-- (void)setDefaultImage:(NSImage *)new
-{
-	if(placeholder == new) return;
-	
-	id temp = placeholder;
-	placeholder = [new retain];
-	[temp release];
-}
-- (NSImage *)defaultImage
-{
-	return placeholder;
-}
-- (void)setTitle:(NSString *)new
-{
-	if(title == new) return;
-	
-	id temp = title;
-	title = [new copy];
-	[temp release];
-}
-- (NSString *)title
-{
-	return title;
-}
-- (void)setIdentifier:(NSString *)new
-{
-	if(identifier == new) return;
-	
-	id temp = identifier;
-	identifier = [new copy];
-	[temp release];
-}
-- (NSString *)identifier
-{
-	return identifier;
-}
 
 //- (BOOL)validateValue:(id *)ioValue forKey:(NSString *)inKey error:(NSError **)outError
 //{
