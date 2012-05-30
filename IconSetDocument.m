@@ -57,10 +57,8 @@ static NSArray *sThreadIdentifiers;
 +(NSArray *)arrayForImageName:(NSArray *)plist
 {
 	NSMutableArray *result = [NSMutableArray array];
-	NSEnumerator *keysEnum = [plist objectEnumerator];
-	NSDictionary *key;
 	
-	while( key = [keysEnum nextObject] ) {
+	for(NSDictionary *key in plist) {
 		[result addObject:[key objectForKey:BSCIImageListImageNameKey]];
 	}
 	
@@ -137,6 +135,10 @@ static NSArray *sThreadIdentifiers;
 	[nobinobi bind:@"leftImage" toObject:self withKeyPath:@"lastUpdatedHeaderLeft.image" options:nil];
 	[nobinobi bind:@"middleImage" toObject:self withKeyPath:@"lastUpdatedHeaderMiddle.image" options:nil];
 	[nobinobi bind:@"rightImage" toObject:self withKeyPath:@"lastUpdatedHeaderRight.image" options:nil];
+	
+	[colorSet addObserver:self forKeyPath:@"threadsListColor" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:colorSet];
+	[colorSet addObserver:self forKeyPath:@"includeColors" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:colorSet];
+	[colorSet addObserver:self forKeyPath:@"useStripe" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:colorSet];
 	
 	if( !wrapper ) {
 		wrapper = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:nil];
@@ -228,26 +230,16 @@ static NSArray *sThreadIdentifiers;
 
 -(NSFileWrapper *)fileWrapperForIdentifier:(NSString *)identifier
 {
-	id	fileName;
-	id dict;
-	
-	NSArray *array;
-	NSEnumerator *extEnum;
-	NSString *ext;
-	
-	NSFileWrapper *fw;
-	
 	if( !wrapper ) {
 		return nil;
 	}
-	dict = [wrapper fileWrappers];
 	
-	array = [IconSetComposer acceptImageExtensions];
+	id dict = [wrapper fileWrappers];
+	NSArray *array = [IconSetComposer acceptImageExtensions];
 	array = [array arrayByAddingObject:BSCIPlistExtension];
-	extEnum = [array objectEnumerator];
-	while( ext = [extEnum nextObject] ) {
-		fileName = [identifier stringByAppendingPathExtension:ext];
-		fw = [dict objectForKey:fileName];
+	for(NSString *ext in array) {
+		id	fileName = [identifier stringByAppendingPathExtension:ext];
+		NSFileWrapper *fw = [dict objectForKey:fileName];
 		if( fw ) return fw;
 	}
 	
@@ -336,8 +328,6 @@ static NSArray *sThreadIdentifiers;
 	
 	if( plist ) {
 		[wrapper addFileWithPath:path];
-		
-		[self updateChangeCount:NSChangeDone];
 	}
 }
 
@@ -389,14 +379,9 @@ static NSArray *sThreadIdentifiers;
 
 -(void)setupIconTrays
 {
-	id newIconTrays;
-	NSEnumerator *enums;
-	id object;
+	id newIconTrays = [NSMutableDictionary dictionary];
 	
-	newIconTrays = [NSMutableDictionary dictionary];
-	
-	enums = [[[self class] managedImageNames] objectEnumerator];
-	while( object = [enums nextObject] ) {
+	for(id object in [[self class] managedImageNames]) {
 		id icons;
 		
 		icons = [[BSCSIcons alloc] init];
@@ -414,6 +399,27 @@ static NSArray *sThreadIdentifiers;
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+	if(object == colorSet) {
+		NSUndoManager *um = [self undoManager];
+		if([keyPath isEqualToString:@"threadsListColor"]) {
+			id old = [change objectForKey:NSKeyValueChangeOldKey];
+			if([old isEqual:[NSNull null]]) old = nil;
+			[[um prepareWithInvocationTarget:colorSet] setThreadsListColor:old];
+			return;
+		}
+		
+		NSNumber *old = [change objectForKey:NSKeyValueChangeOldKey];
+		NSNumber *new = [change objectForKey:NSKeyValueChangeNewKey];
+		if([old isEqualToNumber:new]) return;
+		
+		if([keyPath isEqualToString:@"includeColors"]) {
+			[[um prepareWithInvocationTarget:colorSet] setIncludeColors:[old boolValue]];
+		} else if([keyPath isEqualToString:@"useStripe"]) {
+			[[um prepareWithInvocationTarget:colorSet] setUseStripe:[old boolValue]];
+		}
+		
+		return;
+	}
 	if(![keyPath isEqual:BSCIImageFileWrapperKey]) return;
 	
 	NSFileWrapper *imageFileWrapper = [object valueForKey:keyPath];
@@ -482,22 +488,14 @@ static NSArray *sThreadIdentifiers;
 -(void)apply:(id)sender
 {
 	NSString *bathyScapheResourceFolder = [IconSetComposer bathyScapheResourceFolder];
-		
-	id dict;
-	NSEnumerator *filesEnum;
-	NSString *file;
-	NSData *data;
-	NSString *newPath;
-	
 	[IconSetComposer deleteImageFilesFromBSAppSptResFolder];
 	
-	dict = [wrapper fileWrappers];
-	filesEnum = [dict keyEnumerator];
-	while( file = [filesEnum nextObject] ) {
+	id dict = [wrapper fileWrappers];
+	for(NSString *file in dict) {
 		if( [file hasSuffix:BSCIPlistExtension] ) continue;
 		
-		data = [[dict objectForKey:file] regularFileContents];
-		newPath = [bathyScapheResourceFolder stringByAppendingPathComponent:file];
+		NSData *data = [[dict objectForKey:file] regularFileContents];
+		NSString *newPath = [bathyScapheResourceFolder stringByAppendingPathComponent:file];
 		
 		[data writeToFile:newPath atomically:YES];
 	}
@@ -543,6 +541,23 @@ static NSArray *sThreadIdentifiers;
 		filename = [wrapper addFileWrapper:imageFileWrapper];
 //		NSLog(@"##### filewrapper Key -> %@", filename );
 	}
+}
+
+- (void)window:(NSWindow *)window willEncodeRestorableState:(NSCoder *)state
+{
+	[state encodeRect:[window frame] forKey:@"BSICSWindowFrameState"];
+}
+- (void)window:(NSWindow *)window didDecodeRestorableState:(NSCoder *)state
+{
+	NSRect r = [state decodeRectForKey:@"BSICSWindowFrameState"];
+	if(NSEqualRects(r, NSZeroRect)) {
+		NSPoint tl = [window cascadeTopLeftFromPoint:NSMakePoint(0, 0)];
+		r = [window frame];
+		r.origin = tl;
+		r.origin.y -= r.size.height;
+	}
+	
+	[window setFrame:r display:NO];
 }
 
 @end

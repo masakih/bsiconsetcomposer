@@ -72,10 +72,8 @@ static IconSetComposer *_instance = nil;
 	NSString *bsResourcesPath;
 	NSArray *bsResources;
 	NSArray *knownBSSystemImages;
-	NSArray *deprecatedImages;
 	NSArray *managedImages;
 	unsigned managedImageNum;
-	unsigned i, count;
 	unsigned bsResourceImageNum = 0;
 	id fm;
 	int status = 0;
@@ -97,13 +95,8 @@ static IconSetComposer *_instance = nil;
 	
 	knownBSSystemImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BathyScapheSystemImages"
 																						   ofType:@"plist"]];
-	deprecatedImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"DeprecatedImageList"
-																						ofType:@"plist"]];
 	
-	count = [bsResources count];
-	for( i = 0; i < count; i++ ) {
-		NSString *filename = [bsResources objectAtIndex:i];
-		
+	for(NSString *filename in bsResources) {		
 		if( [[self class] isAcceptImageExtension:[filename pathExtension]] ) {
 			NSString *name = [filename stringByDeletingPathExtension];
 			if( [knownBSSystemImages containsObject:name] ) {
@@ -119,9 +112,15 @@ static IconSetComposer *_instance = nil;
 		}
 	}
 	if( managedImageNum > bsResourceImageNum ) {
+		NSArray *deprecatedImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"DeprecatedImageList"
+																									 ofType:@"plist"]];
+		NSArray *notHaveDefault = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NotHaveDefaultImageList"
+																									 ofType:@"plist"]];
+		
 		decrementalImages = [[managedImages mutableCopy] autorelease];
 		[decrementalImages removeObjectsInArray:containsImages];
 		[decrementalImages removeObjectsInArray:deprecatedImages];
+		[decrementalImages removeObjectsInArray:notHaveDefault];
 		if([decrementalImages count] > 0) {
 			status |= kIconsHaveIncreased;
 		}
@@ -279,13 +278,11 @@ final:
 	
 	NSFileManager *fm = [NSFileManager defaultManager];
 	NSArray *files = [fm contentsOfDirectoryAtPath:bathyScapheResourceFolder error:NULL];
-	NSEnumerator *filesEnum = [files objectEnumerator];
-	NSString *file;
 	NSString *fullPath;
 	
 	NSArray *managed = [IconSetDocument managedImageNames];
 	
-	while( file = [filesEnum nextObject] ) {
+	for(NSString *file in files) {
 		NSString *filetype;
 		NSString *extention;
 		
@@ -326,16 +323,10 @@ final:
 
 -(BOOL)isRunningBS
 {
-	NSArray *array;
-	unsigned i, count;
-	NSDictionary *dict;
-	
 	NSString *sbPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:[self bathyScapheIdentifier]];
 	
-	array = [[NSWorkspace sharedWorkspace] launchedApplications];
-	count = [array count];
-	for( i = 0; i < count; i++ ) {
-		dict = [array objectAtIndex:i];
+	NSArray *array = [[NSWorkspace sharedWorkspace] launchedApplications];
+	for(NSDictionary *dict in array) {
 		if( [[dict objectForKey:@"NSApplicationPath"] isEqualTo:sbPath] ) {
 			return YES;
 		}
@@ -416,8 +407,6 @@ final:
 	NSString *bsSupPath = [[self class] bathyScapheSupportFolder];
 	NSBundle *bsSupBundle;
 	NSArray *imageNames = [IconSetDocument managedImageNames];
-	NSEnumerator *imageNamesEnum;
-	NSString *imageName;
 	NSString *imagePath;
 	
 	IconSetDocument *newDocument;
@@ -439,21 +428,16 @@ final:
 		return;
 	}
 	
-	imageNamesEnum = [imageNames objectEnumerator];
-	while(imageName = [imageNamesEnum nextObject]) {
+	for(NSString *imageName in imageNames) {
 		imagePath = [bsSupBundle pathForImageResource:imageName];
 		[newDocument setPath:imagePath forIdentifier:imageName];
 	}
 	
-	NSColor *blColor = [ColorSet getBathyScapheColor:kTypeBoardListColor];
-	NSColor *bliColor = [ColorSet getBathyScapheColor:kTypeBoardListInactiveColor];
 	NSColor *tlColor = [ColorSet getBathyScapheColor:kTypeThreadsListColor];
 	NSNumber *isIncludeColor;
 	id set;
 	
-	if( ![[ColorSet defaultBoardListColor] isEqual:blColor]
-		|| ![[ColorSet defaultBoardListInactiveColor] isEqual:bliColor]
-		|| ![[ColorSet defaultThreadsListColor] isEqual:tlColor]) {
+	if(![[ColorSet defaultThreadsListColor] isEqual:tlColor]) {
 		isIncludeColor = [NSNumber numberWithBool:YES];
 	} else {
 		isIncludeColor = [NSNumber numberWithBool:NO];
@@ -461,8 +445,6 @@ final:
 	
 	[newDocument windowForSheet];	// load nib.
 	set = [newDocument valueForKey:@"colorSet"];
-	[set setValue:blColor forKey:@"boardListColor"];
-	[set setValue:bliColor forKey:@"boardListInactiveColor"];
 	[set setValue:tlColor forKey:@"threadsListColor"];
 	[set setValue:isIncludeColor forKey:@"isIncludeColors"];
 	

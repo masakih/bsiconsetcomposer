@@ -17,16 +17,10 @@
 	NSString *title;
 	NSString *identifier;
 }
-
-- (void)setImage:(NSImage *)image;
-- (NSImage *)image;
-- (void)setImageFileWrapper:(NSFileWrapper *)imageFileWrapper;
-- (NSFileWrapper *)imageFileWrapper;
-- (void)setPlaceholder:(NSImage *)placeholder;
-- (NSImage *)placeholder;
-- (void)setTitle:(NSString *)title;
-- (NSString *)title;
-- (void)setIdentifier:(NSString *)identifier;
-- (NSString *)identifier;
+@property (retain, nonatomic) NSImage *image;
+@property (retain, nonatomic) NSFileWrapper *imageFileWrapper;
+@property (retain, nonatomic) NSImage *placeholder;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *identifier;
 
 @end

@@ -6,10 +6,25 @@
 	objectVersion = 44;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		F414890415765FC80041118B /* EnglishUICheck */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F414890815765FC90041118B /* Build configuration list for PBXAggregateTarget "EnglishUICheck" */;
+			buildPhases = (
+			);
+			dependencies = (
+				F414890A15765FD00041118B /* PBXTargetDependency */,
+			);
+			name = EnglishUICheck;
+			productName = EnglishUICheck;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		8D15AC310486D014006FF6A4 /* IconSetDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* IconSetDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		F414890C157666FC0041118B /* NotHaveDefaultImageList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F414890B157666FC0041118B /* NotHaveDefaultImageList.plist */; };
 		F41CD7AE090FDF3C00D66C88 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F4F4B5FC08818D4400E44313 /* Credits.rtf */; };
 		F42A855A0F8A580A0014157F /* DeprecatedImageList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F42A85590F8A580A0014157F /* DeprecatedImageList.plist */; };
 		F42C27480987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C27460987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m */; };
@@ -39,6 +54,16 @@
 		F4FF6E7908C74AEF00C0214D /* ColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FF6E7808C74AEF00C0214D /* ColorSet.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F414890915765FD00041118B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D15AC270486D014006FF6A4;
+			remoteInfo = IconSetComposer;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		F47A1EF50F8CFF02002DE937 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -66,6 +91,7 @@
 		32DBCF750370BD2300C91783 /* IconSetComposer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconSetComposer_Prefix.pch; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* BSIconSetComposer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSIconSetComposer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F414890B157666FC0041118B /* NotHaveDefaultImageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NotHaveDefaultImageList.plist; sourceTree = "<group>"; };
 		F42A85590F8A580A0014157F /* DeprecatedImageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeprecatedImageList.plist; sourceTree = "<group>"; };
 		F42C27450987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAppleEventDescriptor-Extensions.h"; sourceTree = "<group>"; };
 		F42C27460987B78A0032C9F9 /* NSAppleEventDescriptor-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleEventDescriptor-Extensions.m"; sourceTree = "<group>"; };
@@ -216,6 +242,7 @@
 				F4F4B5FC08818D4400E44313 /* Credits.rtf */,
 				F4F4B2C508814EFF00E44313 /* ImageList.plist */,
 				F42A85590F8A580A0014157F /* DeprecatedImageList.plist */,
+				F414890B157666FC0041118B /* NotHaveDefaultImageList.plist */,
 				F461E46308ADCDB400384957 /* MainMenu.nib */,
 				F461E46608ADCDCA00384957 /* IconSetDocument.nib */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
@@ -328,6 +355,7 @@
 			targets = (
 				8D15AC270486D014006FF6A4 /* IconSetComposer */,
 				F42C580E0BA6C07000D2866B /* UnitTest */,
+				F414890415765FC80041118B /* EnglishUICheck */,
 			);
 		};
 /* End PBXProject section */
@@ -350,6 +378,7 @@
 				F45B21840919919C0055CBC4 /* IconNames.strings in Resources */,
 				F42A855A0F8A580A0014157F /* DeprecatedImageList.plist in Resources */,
 				F4FDBDF81572231100036EBB /* DropToMe.png in Resources */,
+				F414890C157666FC0041118B /* NotHaveDefaultImageList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +473,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F414890A15765FD00041118B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D15AC270486D014006FF6A4 /* IconSetComposer */;
+			targetProxy = F414890915765FD00041118B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		F44203E308F04A89007AFE9F /* Localizable.strings.sed */ = {
 			isa = PBXVariantGroup;
@@ -502,6 +539,27 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F414890515765FC90041118B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F414890615765FC90041118B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F414890715765FC90041118B /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Default;
+		};
 		F42C58120BA6C07100D2866B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -692,6 +750,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F414890815765FC90041118B /* Build configuration list for PBXAggregateTarget "EnglishUICheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F414890515765FC90041118B /* Debug */,
+				F414890615765FC90041118B /* Release */,
+				F414890715765FC90041118B /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F42C58110BA6C07100D2866B /* Build configuration list for PBXNativeTarget "UnitTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
