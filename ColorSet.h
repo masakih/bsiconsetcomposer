@@ -22,6 +22,10 @@ typedef enum {
     IBOutlet id view;
 }
 
+@property (retain, nonatomic) NSColor *threadsListColor;
+@property (nonatomic, getter = isIncludeColors) BOOL includeColors;
+@property (nonatomic, getter = isUseStripe) BOOL useStripe;
+
 - (IBAction)applyColors:(id)sender;
 - (IBAction)applyOnlyColors:(id)sender;
 - (IBAction)changeColor:(id)sender;

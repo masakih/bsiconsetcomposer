@@ -21,6 +21,8 @@ enum {
 @end
 
 @implementation ColorSet
+@synthesize useStripe = isUseStripe;
+@synthesize includeColors = isIncludeColors;
 
 + (NSColor *)defaultThreadsListColor
 {
