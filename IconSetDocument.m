@@ -138,6 +138,10 @@ static NSArray *sThreadIdentifiers;
 	[nobinobi bind:@"middleImage" toObject:self withKeyPath:@"lastUpdatedHeaderMiddle.image" options:nil];
 	[nobinobi bind:@"rightImage" toObject:self withKeyPath:@"lastUpdatedHeaderRight.image" options:nil];
 	
+	[colorSet addObserver:self forKeyPath:@"threadsListColor" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:colorSet];
+	[colorSet addObserver:self forKeyPath:@"includeColors" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:colorSet];
+	[colorSet addObserver:self forKeyPath:@"useStripe" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:colorSet];
+	
 	if( !wrapper ) {
 		wrapper = [[NSFileWrapper alloc] initDirectoryWithFileWrappers:nil];
 	}
@@ -336,8 +340,6 @@ static NSArray *sThreadIdentifiers;
 	
 	if( plist ) {
 		[wrapper addFileWithPath:path];
-		
-		[self updateChangeCount:NSChangeDone];
 	}
 }
 
@@ -414,6 +416,27 @@ static NSArray *sThreadIdentifiers;
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+	if(object == colorSet) {
+		NSUndoManager *um = [self undoManager];
+		if([keyPath isEqualToString:@"threadsListColor"]) {
+			id old = [change objectForKey:NSKeyValueChangeOldKey];
+			if([old isEqual:[NSNull null]]) old = nil;
+			[[um prepareWithInvocationTarget:colorSet] setThreadsListColor:old];
+			return;
+		}
+		
+		NSNumber *old = [change objectForKey:NSKeyValueChangeOldKey];
+		NSNumber *new = [change objectForKey:NSKeyValueChangeNewKey];
+		if([old isEqualToNumber:new]) return;
+		
+		if([keyPath isEqualToString:@"includeColors"]) {
+			[[um prepareWithInvocationTarget:colorSet] setIncludeColors:[old boolValue]];
+		} else if([keyPath isEqualToString:@"useStripe"]) {
+			[[um prepareWithInvocationTarget:colorSet] setUseStripe:[old boolValue]];
+		}
+		
+		return;
+	}
 	if(![keyPath isEqual:BSCIImageFileWrapperKey]) return;
 	
 	NSFileWrapper *imageFileWrapper = [object valueForKey:keyPath];
