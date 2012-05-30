@@ -75,6 +75,10 @@ enum {
 }
 - (void)setThreadsListColor:(NSColor *)color
 {
+	if(delegate && [delegate respondsToSelector:@selector(willChangeColorSet:)]) {
+		[delegate willChangeColorSet:self];
+	}
+	
 	id temp = threadsListColor;
 	threadsListColor = [color retain];
 	[temp release];
@@ -83,22 +87,38 @@ enum {
 		color = [[self class] defaultThreadsListColor];
 	}
 	[threadsListColorWell setColor:color];
+	
+	if(delegate && [delegate respondsToSelector:@selector(didChangeColorSet:)]) {
+		[delegate didChangeColorSet:self];
+	}
 }
 - (void)setIncludeColors:(BOOL)flag
 {
+	if(delegate && [delegate respondsToSelector:@selector(willChangeColorSet:)]) {
+		[delegate willChangeColorSet:self];
+	}
+	
 	isIncludeColors = flag;
 	[includeSetCheck setState: flag ? NSOnState : NSOffState];
 	[self updateUI];
 	
-	[delegate didChangeColorSet:self];
+	if(delegate && [delegate respondsToSelector:@selector(didChangeColorSet:)]) {
+		[delegate didChangeColorSet:self];
+	}
 }
 - (void)setUseStripe:(BOOL)flag
 {
+	if(delegate && [delegate respondsToSelector:@selector(willChangeColorSet:)]) {
+		[delegate willChangeColorSet:self];
+	}
+	
 	isUseStripe = flag;
 	[useStripeCheck setState: flag ? NSOnState : NSOffState];
 	[self updateUI];
 	
-	[delegate didChangeColorSet:self];
+	if(delegate && [delegate respondsToSelector:@selector(didChangeColorSet:)]) {
+		[delegate didChangeColorSet:self];
+	}
 }
 
 - (BOOL)isThreadsListColorDefault
@@ -330,8 +350,6 @@ enum {
 		default:
 			return;
 	}
-	
-	[delegate didChangeColorSet:self];
 }
 
 - (IBAction)revertColor:(id)sender
@@ -350,8 +368,6 @@ enum {
 		default:
 			return;
 	}
-	
-	[delegate didChangeColorSet:self];
 }
 
 - (IBAction)toggleIncludeColorSet:(id)sender
@@ -381,8 +397,6 @@ enum {
 	
 	[self setIncludeColors:[[dict objectForKey:IncludeColorsKey] boolValue]];
 	[self setUseStripe:[[dict objectForKey:UseStripeKey] boolValue]];
-	
-	[delegate didChangeColorSet:self];
 	
 	return YES;
 }

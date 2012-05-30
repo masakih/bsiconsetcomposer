@@ -45,6 +45,7 @@ typedef enum {
 
 @interface NSObject (ColorSetDelegate)
 
+- (void)willChangeColorSet:(ColorSet *)set;
 - (void)didChangeColorSet:(ColorSet *)set;
 
 @end
