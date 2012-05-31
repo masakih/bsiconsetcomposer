@@ -363,7 +363,7 @@ final:
 							   reply:NULL];
 	
 	if( err != noErr ) {
-		NSLog(@"AESendMessage Error. ErrorID ---> %ld", err );
+		NSLog(@"AESendMessage Error. ErrorID ---> %ld", (long)err );
 	}
 	
 	return err;

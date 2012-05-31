@@ -205,7 +205,7 @@ enum {
 	err = AESendMessage( [ae aeDesc], NULL, kAECanInteract, kAEDefaultTimeout );
 	
 	if( err != noErr ) {
-		NSLog(@"AESendMessage Error. ErrorID ---> %ld", err );
+		NSLog(@"AESendMessage Error. ErrorID ---> %ld", (long)err );
 	}
 }
 + (NSColor *)getBathyScapheColor:(ColorType)colorType
@@ -266,7 +266,7 @@ enum {
 							   reply:&replyDesc];
 	
 	if( err != noErr ) {
-		NSLog(@"AESendMessage Error. ErrorID ---> %ld", err );
+		NSLog(@"AESendMessage Error. ErrorID ---> %ld", (long)err );
 		return nil;
 	}
 	
