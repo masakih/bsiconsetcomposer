@@ -11,8 +11,7 @@
       <string key="com.masakih.IconTray">3</string>
     </dictionary>
     <array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-      <integer value="504"/>
-      <integer value="20"/>
+      <integer value="277"/>
     </array>
     <array key="IBDocument.PluginDependencies">
       <string>com.masakih.IconTray</string>
@@ -139,7 +138,7 @@
               <object class="NSButtonCell" key="NSCell" id="362483115">
                 <int key="NSCellFlags">67239424</int>
                 <int key="NSCellFlags2">134217728</int>
-                <string key="NSContents">Apply And Restart BathyScaphe</string>
+                <string key="NSContents">適用後BathyScapheを再起動</string>
                 <reference key="NSSupport" ref="77226278"/>
                 <reference key="NSControlView" ref="18966273"/>
                 <int key="NSButtonFlags">-2038284033</int>
@@ -162,7 +161,7 @@
         <string key="NSClassName">ColorSet</string>
       </object>
       <object class="NSCustomView" id="524934670">
-        <reference key="NSNextResponder"/>
+        <nil key="NSNextResponder"/>
         <int key="NSvFlags">268</int>
         <array class="NSMutableArray" key="NSSubviews">
           <object class="IconTray" id="409419844">
@@ -807,7 +806,6 @@
           </object>
         </array>
         <string key="NSFrameSize">{540, 464}</string>
-        <reference key="NSSuperview"/>
         <string key="NSClassName">NSView</string>
       </object>
       <object class="NSCustomView" id="516540189">
@@ -1596,7 +1594,7 @@
             <object class="NSTextFieldCell" key="NSCell" id="535311076">
               <int key="NSCellFlags">67239424</int>
               <int key="NSCellFlags2">4325376</int>
-              <string key="NSContents">Change width on mouseover in preview</string>
+              <string key="NSContents">プレビューをマウスオーバーすると幅が変わります</string>
               <reference key="NSSupport" ref="26"/>
               <string key="NSCellIdentifier">_NS:4068</string>
               <reference key="NSControlView" ref="195389699"/>
@@ -1619,7 +1617,7 @@
             <object class="NSTextFieldCell" key="NSCell" id="1012311363">
               <int key="NSCellFlags">68288064</int>
               <int key="NSCellFlags2">272761856</int>
-              <string key="NSContents">← Use thead image</string>
+              <string key="NSContents">←こちらが使用されます</string>
               <reference key="NSSupport" ref="26"/>
               <string key="NSCellIdentifier">_NS:4068</string>
               <reference key="NSControlView" ref="633912528"/>
@@ -1656,7 +1654,7 @@
             <object class="NSTextFieldCell" key="NSTitleCell">
               <int key="NSCellFlags">67239424</int>
               <int key="NSCellFlags2">0</int>
-              <string key="NSContents">Preview</string>
+              <string key="NSContents">プレビュー</string>
               <reference key="NSSupport" ref="26"/>
               <reference key="NSBackgroundColor" ref="517522212"/>
               <object class="NSColor" key="NSTextColor">
@@ -1878,13 +1876,13 @@
                   <object class="NSButton" id="211718677">
                     <reference key="NSNextResponder" ref="48145483"/>
                     <int key="NSvFlags">268</int>
-                    <string key="NSFrame">{{193, 6}, {145, 32}}</string>
+                    <string key="NSFrame">{{233, 6}, {105, 32}}</string>
                     <reference key="NSSuperview" ref="48145483"/>
                     <bool key="NSEnabled">YES</bool>
                     <object class="NSButtonCell" key="NSCell" id="43103210">
                       <int key="NSCellFlags">67239424</int>
                       <int key="NSCellFlags2">134217728</int>
-                      <string key="NSContents">Apply only Colors</string>
+                      <string key="NSContents">色だけ適用</string>
                       <reference key="NSSupport" ref="77226278"/>
                       <reference key="NSControlView" ref="211718677"/>
                       <int key="NSButtonFlags">-2038284033</int>
@@ -1899,13 +1897,13 @@
                   <object class="NSTextField" id="575828868">
                     <reference key="NSNextResponder" ref="48145483"/>
                     <int key="NSvFlags">268</int>
-                    <string key="NSFrame">{{31, 17}, {163, 13}}</string>
+                    <string key="NSFrame">{{68, 17}, {163, 13}}</string>
                     <reference key="NSSuperview" ref="48145483"/>
                     <bool key="NSEnabled">YES</bool>
                     <object class="NSTextFieldCell" key="NSCell" id="355553225">
                       <int key="NSCellFlags">67239488</int>
                       <int key="NSCellFlags2">272630784</int>
-                      <string key="NSContents">* BathyScaphe is reactivated. </string>
+                      <string key="NSContents">* BathyScapheが再起動されます。</string>
                       <object class="NSFont" key="NSSupport">
                         <string key="NSName">LucidaGrande</string>
                         <double key="NSSize">10</double>
@@ -1943,7 +1941,7 @@
                             <object class="NSButtonCell" key="NSCell" id="828445618">
                               <int key="NSCellFlags">67239424</int>
                               <int key="NSCellFlags2">134348800</int>
-                              <string key="NSContents">Revert</string>
+                              <string key="NSContents">標準に戻す</string>
                               <reference key="NSSupport" ref="26"/>
                               <reference key="NSControlView" ref="974508274"/>
                               <int key="NSButtonFlags">-2038284033</int>
@@ -1964,7 +1962,7 @@
                             <object class="NSTextFieldCell" key="NSCell" id="648892092">
                               <int key="NSCellFlags">67239488</int>
                               <int key="NSCellFlags2">71304192</int>
-                              <string key="NSContents">Background Color:</string>
+                              <string key="NSContents">背景色:</string>
                               <reference key="NSSupport" ref="77226278"/>
                               <string key="NSPlaceholderString"/>
                               <reference key="NSControlView" ref="503067548"/>
@@ -1981,7 +1979,7 @@
                             <object class="NSButtonCell" key="NSCell" id="18494824">
                               <int key="NSCellFlags">67239424</int>
                               <int key="NSCellFlags2">0</int>
-                              <string key="NSContents">striped background</string>
+                              <string key="NSContents">背景を行ごとに塗り分ける</string>
                               <reference key="NSSupport" ref="77226278"/>
                               <reference key="NSControlView" ref="636100853"/>
                               <int key="NSButtonFlags">1211912703</int>
@@ -2023,7 +2021,7 @@
                     <object class="NSTextFieldCell" key="NSTitleCell">
                       <int key="NSCellFlags">67239424</int>
                       <int key="NSCellFlags2">0</int>
-                      <string key="NSContents">ThreadList</string>
+                      <string key="NSContents">スレッド一覧</string>
                       <reference key="NSSupport" ref="26"/>
                       <reference key="NSBackgroundColor" ref="517522212"/>
                       <object class="NSColor" key="NSTextColor">
@@ -2071,7 +2069,7 @@
             <object class="NSButtonCell" key="NSCell" id="465965501">
               <int key="NSCellFlags">67239424</int>
               <int key="NSCellFlags2">0</int>
-              <string key="NSContents">Contain Colors</string>
+              <string key="NSContents">色をセットに含める</string>
               <reference key="NSSupport" ref="77226278"/>
               <reference key="NSControlView" ref="57629619"/>
               <int key="NSButtonFlags">1211912703</int>
@@ -7980,8 +7978,6 @@
         <boolean value="YES" key="-3.ImportedFromIB2"/>
         <string key="1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="1.ImportedFromIB2"/>
-        <string key="1.windowTemplate.maxSize">{1.7976931348623157e+308, 1.7976931348623157e+308}</string>
-        <string key="1.windowTemplate.minSize">{0, 0}</string>
         <string key="10.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
         <boolean value="YES" key="10.ImportedFromIB2"/>
         <string key="1016.IBPluginDependency">com.masakih.IconTray</string>

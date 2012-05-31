@@ -161,7 +161,7 @@
         <string key="NSClassName">ColorSet</string>
       </object>
       <object class="NSCustomView" id="524934670">
-        <reference key="NSNextResponder"/>
+        <nil key="NSNextResponder"/>
         <int key="NSvFlags">268</int>
         <array class="NSMutableArray" key="NSSubviews">
           <object class="IconTray" id="409419844">
@@ -169,7 +169,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{274, 20}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">FontSmallerTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="819532750">
@@ -216,7 +215,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{147, 20}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">FontBiggerTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="243802338">
@@ -244,7 +242,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{20, 20}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">ToggleFontPanelTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="485568138">
@@ -272,7 +269,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{274, 164}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">BrowserVSplitTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="720466182">
@@ -300,7 +296,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{147, 164}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">BrowserNSplitTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="328174350">
@@ -328,7 +323,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{401, 164}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">BrowserHSplitTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="483539002">
@@ -356,7 +350,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{147, 92}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">StoredLogFilesModeTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="884799523">
@@ -384,7 +377,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{401, 92}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">ThreadTitleSearchTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="413989723">
@@ -412,7 +404,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{20, 92}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">LiveThreadsModeTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="878915574">
@@ -440,7 +431,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{20, 380}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">NewThreadTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="651083806">
@@ -468,7 +458,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{274, 92}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">LocalRulesTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="84148829">
@@ -496,7 +485,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{20, 164}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">ToggleBoardsListTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="605789882">
@@ -524,7 +512,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{401, 308}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">DeleteTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="736683423">
@@ -552,7 +539,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{147, 380}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">ReloadListTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="111526606">
@@ -580,7 +566,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{274, 380}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">ReloadThreadTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="546653188">
@@ -608,7 +593,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{147, 308}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">AddFavoritesTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="495838745">
@@ -636,7 +620,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{274, 308}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">RemoveFavoritesTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="636174066">
@@ -664,7 +647,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{401, 380}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">StopTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="1036089196">
@@ -692,7 +674,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{20, 236}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">ComposeTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="511844796">
@@ -720,7 +701,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{147, 236}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">SendMessageTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="208355337">
@@ -748,7 +728,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{401, 236}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">OrderFrontBrowserTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="293699606">
@@ -776,7 +755,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{274, 236}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">UseBeTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="416215023">
@@ -804,7 +782,6 @@
             <int key="NSvFlags">268</int>
             <string key="NSFrame">{{20, 308}, {119, 64}}</string>
             <reference key="NSSuperview" ref="524934670"/>
-            <reference key="NSWindow"/>
             <string key="NSReuseIdentifierKey">ThunderTemplate</string>
             <bool key="NSEnabled">YES</bool>
             <object class="NSImageCell" key="NSCell" id="159095779">
@@ -829,8 +806,6 @@
           </object>
         </array>
         <string key="NSFrameSize">{540, 464}</string>
-        <reference key="NSSuperview"/>
-        <reference key="NSWindow"/>
         <string key="NSClassName">NSView</string>
       </object>
       <object class="NSCustomView" id="516540189">
