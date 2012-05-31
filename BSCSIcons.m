@@ -27,6 +27,16 @@
 	return result;
 }
 
+- (void)dealloc
+{
+	[image release];
+	[imageFileWrapper release];
+	[placeholder release];
+	[title release];
+	[identifier release];
+	
+	[super dealloc];
+}
 - (NSImage *)defaultImage
 {
 	return self.placeholder;
