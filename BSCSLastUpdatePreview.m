@@ -30,6 +30,7 @@
 														 userInfo:nil];
 		
 		[self addTrackingArea:ta];
+		[ta release];
 		[self updateImageRect];
     }
     

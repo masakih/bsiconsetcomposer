@@ -272,10 +272,9 @@ static NSArray *sThreadIdentifiers;
 	
 	if( path ) {
 		NSFileWrapper *newFw;
-		NSString *key;
 		
 		newFw = [[[NSFileWrapper alloc] initWithPath:path] autorelease];
-		key = [wrapper addFileWrapper:newFw];
+		[wrapper addFileWrapper:newFw];
 		
 		BSCSIcons *icon = [iconTrays valueForKey:identifier];
 		[icon setImageFileWrapper:newFw];
@@ -393,6 +392,7 @@ static NSArray *sThreadIdentifiers;
 				forKeyPath:BSCIImageFileWrapperKey
 				   options:NSKeyValueObservingOptionNew //| NSKeyValueObservingOptionOld
 				   context:NULL];
+		[icons release];
 	}
 	
 	[self setIconTrays:newIconTrays];
@@ -538,8 +538,7 @@ static NSArray *sThreadIdentifiers;
 	}
 	
 	if(imageFileWrapper) {
-		filename = [wrapper addFileWrapper:imageFileWrapper];
-//		NSLog(@"##### filewrapper Key -> %@", filename );
+		[wrapper addFileWrapper:imageFileWrapper];
 	}
 }
 

@@ -45,11 +45,7 @@ enum {
 	
 	if( isIncludeColors ) {
 		textColor = [NSColor controlTextColor];
-	} else {
-		textColor = [NSColor disabledControlTextColor];
-	}
-	
-	if( isIncludeColors && !isUseStripe) {
+	} else if( isIncludeColors && !isUseStripe) {
 		textColor = [NSColor controlTextColor];
 	} else {
 		textColor = [NSColor disabledControlTextColor];
