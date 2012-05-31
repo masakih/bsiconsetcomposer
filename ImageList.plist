@@ -363,12 +363,6 @@
 			<key>name</key>
 			<string>文字を縮小</string>
 		</dict>
-		<dict>
-			<key>imageName</key>
-			<string>ToggleFontPanelTemplate</string>
-			<key>name</key>
-			<string>フォント</string>
-		</dict>
 	</array>
 </dict>
 </plist>
