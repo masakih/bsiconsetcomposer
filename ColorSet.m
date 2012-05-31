@@ -127,25 +127,9 @@ enum {
 
 -(void)sendingSetColor:(ColorType)colorType
 {
-	NSString *bsBundleID;
 	OSType type;
 	id targetColor;
-	id tempColor;
-	CGFloat red, green, blue, alpha;
 	OSStatus err;
-	
-	NSAppleEventDescriptor *ae;
-	
-	NSAppleEventDescriptor *bsDesc;
-	
-	NSAppleEventDescriptor *propDesc;
-	
-	NSAppleEventDescriptor *keyDataDesc;
-	
-	NSAppleEventDescriptor *colorDesc;
-	NSAppleEventDescriptor *redDesc;
-	NSAppleEventDescriptor *greenDesc;
-	NSAppleEventDescriptor *blueDesc;
 	
 	switch(colorType) {
 		case kTypeThreadsListColor:
@@ -160,40 +144,39 @@ enum {
 	}
 	
 	/* set up BathyScaphe addr */
-	bsBundleID = [[IconSetComposer bathyScapheBundle] bundleIdentifier];
-	bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:bsBundleID];
+	NSString *bsBundleID = [[IconSetComposer bathyScapheBundle] bundleIdentifier];
+	NSAppleEventDescriptor *bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:bsBundleID];
 	
 	/* Setting color */
+	NSAppleEventDescriptor *colorDesc = [NSAppleEventDescriptor listDescriptor];;
 	if( targetColor ) {
-		tempColor = [targetColor colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
+		CGFloat red, green, blue, alpha;
+		id tempColor = [targetColor colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 		[tempColor getRed:&red green:&green blue:&blue alpha:&alpha];
 		
-		redDesc = [NSAppleEventDescriptor descriptorWithFloat:red];
-		greenDesc = [NSAppleEventDescriptor descriptorWithFloat:green];
-		blueDesc = [NSAppleEventDescriptor descriptorWithFloat:blue];
+		NSAppleEventDescriptor *redDesc = [NSAppleEventDescriptor descriptorWithFloat:red];
+		NSAppleEventDescriptor *greenDesc = [NSAppleEventDescriptor descriptorWithFloat:green];
+		NSAppleEventDescriptor *blueDesc = [NSAppleEventDescriptor descriptorWithFloat:blue];
 		
 		colorDesc = [NSAppleEventDescriptor listDescriptor];
 		[colorDesc insertDescriptor:redDesc atIndex:1];
 		[colorDesc insertDescriptor:greenDesc atIndex:2];
 		[colorDesc insertDescriptor:blueDesc atIndex:3];
-	} else {
-		
-		colorDesc = [NSAppleEventDescriptor listDescriptor];
 	}
 	
 	/* create typeObjectSpecifier Descriptor */
-	keyDataDesc = [NSAppleEventDescriptor descriptorWithTypeCode:type];	
-	propDesc = [NSAppleEventDescriptor objectSpecifierWithDesiredClass:cProperty
-															 container:nil
-															   keyForm:formPropertyID
-															   keyData:keyDataDesc];
+	NSAppleEventDescriptor *keyDataDesc = [NSAppleEventDescriptor descriptorWithTypeCode:type];	
+	NSAppleEventDescriptor *propDesc = [NSAppleEventDescriptor objectSpecifierWithDesiredClass:cProperty
+																					 container:nil
+																					   keyForm:formPropertyID
+																					   keyData:keyDataDesc];
 	
 	/* create AppleEvent */
-	ae = [NSAppleEventDescriptor appleEventWithEventClass:kAECoreSuite
-												  eventID:kAESetData
-										 targetDescriptor:bsDesc
-												 returnID:kAutoGenerateReturnID
-											transactionID:kAnyTransactionID];
+	NSAppleEventDescriptor *ae = [NSAppleEventDescriptor appleEventWithEventClass:kAECoreSuite
+																		  eventID:kAESetData
+																 targetDescriptor:bsDesc
+																		 returnID:kAutoGenerateReturnID
+																	transactionID:kAnyTransactionID];
 	
 	[ae setParamDescriptor:colorDesc forKeyword:keyAEData];
 	[ae setParamDescriptor:propDesc forKeyword:keyDirectObject];
@@ -210,22 +193,11 @@ enum {
 }
 + (NSColor *)getBathyScapheColor:(ColorType)colorType
 {
-	NSString *bsBundleID;
 	OSType type;
 	id result = nil;
-	float red, green, blue;
 	OSStatus err;
 	
 	[[IconSetComposer sharedInstance] launchBS];
-	
-	NSAppleEventDescriptor *replyDesc;
-	NSAppleEventDescriptor *colorComponentsDesc;
-	NSAppleEventDescriptor *colorComponentDesc;
-	
-	NSAppleEventDescriptor *ae;
-	NSAppleEventDescriptor *bsDesc;
-	NSAppleEventDescriptor *propDesc;
-	NSAppleEventDescriptor *keyDataDesc;
 	
 	switch(colorType) {
 		case kTypeThreadsListColor:
@@ -236,23 +208,23 @@ enum {
 	}
 	
 	/* set up BathyScaphe addr */
-	bsBundleID = [[IconSetComposer bathyScapheBundle] bundleIdentifier];
-	bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:bsBundleID];
+	NSString *bsBundleID = [[IconSetComposer bathyScapheBundle] bundleIdentifier];
+	NSAppleEventDescriptor *bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:bsBundleID];
 	
 	
 	/* create typeObjectSpecifier Descriptor */
-	keyDataDesc = [NSAppleEventDescriptor descriptorWithTypeCode:type];	
-	propDesc = [NSAppleEventDescriptor objectSpecifierWithDesiredClass:cProperty
-															 container:nil
-															   keyForm:formPropertyID
-															   keyData:keyDataDesc];
+	NSAppleEventDescriptor *keyDataDesc = [NSAppleEventDescriptor descriptorWithTypeCode:type];	
+	NSAppleEventDescriptor *propDesc = [NSAppleEventDescriptor objectSpecifierWithDesiredClass:cProperty
+																					 container:nil
+																					   keyForm:formPropertyID
+																					   keyData:keyDataDesc];
 	
 	/* create AppleEvent */
-	ae = [NSAppleEventDescriptor appleEventWithEventClass:kAECoreSuite
-												  eventID:kAEGetData
-										 targetDescriptor:bsDesc
-												 returnID:kAutoGenerateReturnID
-											transactionID:kAnyTransactionID];
+	NSAppleEventDescriptor *ae = [NSAppleEventDescriptor appleEventWithEventClass:kAECoreSuite
+																		  eventID:kAEGetData
+																 targetDescriptor:bsDesc
+																		 returnID:kAutoGenerateReturnID
+																	transactionID:kAnyTransactionID];
 	
 	[ae setParamDescriptor:propDesc forKeyword:keyDirectObject];
 	
@@ -260,7 +232,7 @@ enum {
 	NSLog(@"%@", ae);
 #endif
 	
-	
+	NSAppleEventDescriptor *replyDesc;
 	err = [ae sendAppleEventWithMode:kAECanInteract + kAEWaitReply
 					  timeOutInTicks:kAEDefaultTimeout
 							   reply:&replyDesc];
@@ -273,14 +245,14 @@ enum {
 #ifdef DEBUG
 	NSLog(@"%@", replyDesc);
 #endif
-	
-	colorComponentsDesc = [replyDesc paramDescriptorForKeyword:keyDirectObject];
+	NSAppleEventDescriptor *colorComponentDesc;
+	NSAppleEventDescriptor *colorComponentsDesc = [replyDesc paramDescriptorForKeyword:keyDirectObject];
 	colorComponentDesc = [colorComponentsDesc descriptorAtIndex:1];
-	red = [[colorComponentDesc stringValue] floatValue];
+	CGFloat red = [[colorComponentDesc stringValue] floatValue];
 	colorComponentDesc = [colorComponentsDesc descriptorAtIndex:2];
-	green = [[colorComponentDesc stringValue] floatValue];
+	CGFloat green = [[colorComponentDesc stringValue] floatValue];
 	colorComponentDesc = [colorComponentsDesc descriptorAtIndex:3];
-	blue = [[colorComponentDesc stringValue] floatValue];
+	CGFloat blue = [[colorComponentDesc stringValue] floatValue];
 	
 	result = [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:1];
 	
@@ -333,15 +305,12 @@ enum {
 
 - (IBAction)changeColor:(id)sender
 {
-	int tag;
-	
 	if( ![sender respondsToSelector:@selector(tag)]
 		&& ![sender respondsToSelector:@selector(color)] ) {
 		return;
 	}
 	
-	tag = [sender tag];
-	switch(tag) {
+	switch([sender tag]) {
 		case ThreadsListColorTag:
 			[self setThreadsListColor:[sender color]];
 			break;
@@ -352,14 +321,11 @@ enum {
 
 - (IBAction)revertColor:(id)sender
 {
-	int tag;
-	
 	if( ![sender respondsToSelector:@selector(tag)] ) {
 		return;
 	}
 	
-	tag = [sender tag];
-	switch(tag) {
+	switch([sender tag]) {
 		case ThreadsListColorTag:
 			[self setThreadsListColor:nil];
 			break;
@@ -382,15 +348,12 @@ enum {
 }
 - (BOOL)setPlistURL:(NSURL *)url
 {
-	NSDictionary *dict;
-	NSColor *color;
-	
-	dict = [NSDictionary dictionaryWithContentsOfURL:url];
+	NSDictionary *dict = [NSDictionary dictionaryWithContentsOfURL:url];
 	if( !dict ) {
 		return NO;
 	}
 	
-	color = [NSColor colorWithPlist:[dict objectForKey:ThreadsListColorKey]];
+	NSColor *color = [NSColor colorWithPlist:[dict objectForKey:ThreadsListColorKey]];
 	[self setThreadsListColor:color];
 	
 	[self setIncludeColors:[[dict objectForKey:IncludeColorsKey] boolValue]];

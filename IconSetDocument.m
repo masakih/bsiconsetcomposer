@@ -285,14 +285,12 @@ static NSArray *sThreadIdentifiers;
 
 -(void)didChangeColorSet:(ColorSet *)set
 {
-	NSString *identifier;
-	NSDictionary *plist;
 	NSFileWrapper *fw;
 	NSString *path;
 	TemporaryFolder *t = [TemporaryFolder temporaryFolder];
 	
-	identifier = [set identifier];
-	plist = [set plist];
+	NSString *identifier = [set identifier];
+	NSDictionary *plist = [set plist];
 	if( !plist && ![plist respondsToSelector:@selector(writeToFile:atomically:)] ) {
 		return;
 	}
@@ -451,31 +449,23 @@ static NSArray *sThreadIdentifiers;
 
 -(void)updateAll
 {
-	id keys = [[wrapper fileWrappers] keyEnumerator];
-	id identifier;
-	
-	while( identifier = [keys nextObject] ) {
+	for(id identifier in [wrapper fileWrappers]) {
 		identifier = [identifier stringByDeletingPathExtension];
 		[self updateForKey:identifier];
 	}
 }
 -(void)updateForKey:(NSString *)key
 {
-	NSImage *image;
-	NSFileWrapper *fw;
-	NSData *data;
-	NSString *filename;
-	
-	fw = [self fileWrapperForIdentifier:key];
+	NSFileWrapper *fw = [self fileWrapperForIdentifier:key];
 	if( !fw ) {
 //		NSLog(@"can't load image for %@", key);
 		return;
 	}
 	
-	data = [fw regularFileContents];
-	image = [[[NSImage alloc] initWithData:data] autorelease];
+	NSData *data = [fw regularFileContents];
+	NSImage *image = [[[NSImage alloc] initWithData:data] autorelease];
 	if( !image ) {
-		filename = [fw filename];
+		NSString *filename = [fw filename];
 		if( !filename ) return;
 		NSURL *bundleURL = [self fileURL];
 		NSURL *colorSetURL = [bundleURL URLByAppendingPathComponent:filename];
@@ -505,31 +495,23 @@ static NSArray *sThreadIdentifiers;
 
 -(void)applyAndRestartBathyScaphe:(id)sender
 {
-	NSScriptCommandDescription *desc;
-	NSScriptCommand *command;
-	
-	desc = [[NSScriptSuiteRegistry sharedScriptSuiteRegistry] commandDescriptionWithAppleEventClass:'bSiS'
-																				  andAppleEventCode:'bSaP'];
-	command = [desc createCommandInstance];
-	
+	NSScriptCommandDescription *desc = [[NSScriptSuiteRegistry sharedScriptSuiteRegistry] commandDescriptionWithAppleEventClass:'bSiS'
+																											  andAppleEventCode:'bSaP'];
+	NSScriptCommand *command = [desc createCommandInstance];
 	[command setDirectParameter:[self objectSpecifier]];
-	
 	[command executeCommand];
 }
 
 -(void)changeFileOfImage:(NSFileWrapper *)imageFileWrapper forIdentifier:(NSString *)identifier
 {
-	NSFileWrapper *fw;
-	NSString *filename;
-	
-	filename = [imageFileWrapper preferredFilename];
+	NSString *filename = [imageFileWrapper preferredFilename];
 	
 	if(filename && ![[filename stringByDeletingPathExtension] isEqualTo:identifier] ) {
 		filename = [identifier stringByAppendingPathExtension:[filename pathExtension]];
 		[imageFileWrapper setPreferredFilename:filename];
 	}
 	
-	fw = [self fileWrapperForIdentifier:identifier];
+	NSFileWrapper *fw = [self fileWrapperForIdentifier:identifier];
 	if( fw ) {
 		if( [fw isEqual:imageFileWrapper] ) {
 			return;
