@@ -105,6 +105,7 @@ static NSArray *sThreadIdentifiers;
 
 -(void)dealloc
 {
+	[self setIconTrays:nil];
 	[wrapper release];
 	
 	[super dealloc];
@@ -337,6 +338,10 @@ static NSArray *sThreadIdentifiers;
 {
 	id temp = iconTrays;
 	iconTrays = [newIconTrays retain];
+	
+	for(id key in temp) {
+		[[temp objectForKey:key] removeObserver:self forKeyPath:BSCIImageFileWrapperKey];
+	}
 	[temp release];
 }
 
