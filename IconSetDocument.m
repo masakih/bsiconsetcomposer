@@ -131,6 +131,8 @@ static NSArray *sThreadIdentifiers;
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
 	
+	[self updateForKey:@"ColorSet"];
+	
 	nobinobi.defaultImage = [self valueForKeyPath:@"lastUpdatedHeader.defaultImage"];
 	[nobinobi bind:@"singleImage" toObject:self withKeyPath:@"lastUpdatedHeader.image" options:nil];
 	[nobinobi bind:@"leftImage" toObject:self withKeyPath:@"lastUpdatedHeaderLeft.image" options:nil];
