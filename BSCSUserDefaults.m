@@ -50,7 +50,7 @@ NSString *const DefaultsCmd = @"/usr/bin/defaults";
 		domain = [self selfDomain];
 	}
 	
-	NSTask *defaultsTask = [[NSTask alloc] init];
+	NSTask *defaultsTask = [[[NSTask alloc] init] autorelease];
 	[defaultsTask setLaunchPath:DefaultsCmd];
 	
 	arguments = [NSMutableArray arrayWithObjects:@"write", domain, nil];

@@ -36,9 +36,11 @@
 		F42C58300BA6C20100D2866B /* BSCSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C57E80BA5961800D2866B /* BSCSUserDefaults.m */; };
 		F435F24C09238065004965EB /* IconTray-Dragging.m in Sources */ = {isa = PBXBuildFile; fileRef = F435F24B09238065004965EB /* IconTray-Dragging.m */; };
 		F442011F08EFDF8A007AFE9F /* BathyScapheSystemImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = F442011E08EFDF8A007AFE9F /* BathyScapheSystemImages.plist */; };
+		F44292BA157792F200F068C8 /* IconSetDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44292B8157792F200F068C8 /* IconSetDocument.xib */; };
+		F44292BD157792FC00F068C8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44292BB157792FC00F068C8 /* MainMenu.xib */; };
+		F44292BF1577930900F068C8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44292BB157792FC00F068C8 /* MainMenu.xib */; };
+		F44292C11577931500F068C8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44292BB157792FC00F068C8 /* MainMenu.xib */; };
 		F45B21840919919C0055CBC4 /* IconNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45B21830919919C0055CBC4 /* IconNames.strings */; };
-		F461E46408ADCDB400384957 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = F461E46308ADCDB400384957 /* MainMenu.nib */; };
-		F461E46708ADCDCA00384957 /* IconSetDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = F461E46608ADCDCA00384957 /* IconSetDocument.nib */; };
 		F4626F2E08ADD94A00B71ADA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4626F2D08ADD94A00B71ADA /* InfoPlist.strings */; };
 		F464CDA408CD9F25008B434A /* BSIconSetComposer.sdef in Resources */ = {isa = PBXBuildFile; fileRef = F4D3EF7408CAC033009741BF /* BSIconSetComposer.sdef */; };
 		F471950108E302AE00710258 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F471950008E302AE00710258 /* Localizable.strings */; };
@@ -84,8 +86,6 @@
 		2A37F4ACFDCFA73011CA2CEA /* IconSetDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconSetDocument.m; sourceTree = "<group>"; };
 		2A37F4AEFDCFA73011CA2CEA /* IconSetDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconSetDocument.h; sourceTree = "<group>"; };
 		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2A37F4B5FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/IconSetDocument.nib; sourceTree = "<group>"; };
-		2A37F4B7FDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32DBCF750370BD2300C91783 /* IconSetComposer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconSetComposer_Prefix.pch; sourceTree = "<group>"; };
@@ -111,10 +111,12 @@
 		F442011E08EFDF8A007AFE9F /* BathyScapheSystemImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BathyScapheSystemImages.plist; sourceTree = "<group>"; };
 		F44203E408F04A8A007AFE9F /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Japanese; path = Japanese.lproj/Localizable.strings.sed; sourceTree = "<group>"; };
 		F44203FC08F04DAB007AFE9F /* English */ = {isa = PBXFileReference; lastKnownFileType = text; name = English; path = English.lproj/Localizable.strings.sed; sourceTree = "<group>"; };
+		F44292B9157792F200F068C8 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/IconSetDocument.xib; sourceTree = "<group>"; };
+		F44292BC157792FC00F068C8 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F44292BE1577930900F068C8 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/IconSetDocument.xib; sourceTree = "<group>"; };
+		F44292C01577931500F068C8 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		F45B217F091991230055CBC4 /* English */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 10; name = English; path = English.lproj/IconNames.strings; sourceTree = "<group>"; };
 		F45B2185091991B30055CBC4 /* Japanese */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 10; name = Japanese; path = Japanese.lproj/IconNames.strings; sourceTree = "<group>"; };
-		F461E46508ADCDBD00384957 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		F461E46808ADCDD600384957 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/IconSetDocument.nib; sourceTree = "<group>"; };
 		F4626F2F08ADD95100B71ADA /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F47194FE08E302A600710258 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F471950208E302BC00710258 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -232,6 +234,8 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F44292BB157792FC00F068C8 /* MainMenu.xib */,
+				F44292B8157792F200F068C8 /* IconSetDocument.xib */,
 				F4FDBDF71572231100036EBB /* DropToMe.png */,
 				F45B21830919919C0055CBC4 /* IconNames.strings */,
 				F442011E08EFDF8A007AFE9F /* BathyScapheSystemImages.plist */,
@@ -243,8 +247,6 @@
 				F4F4B2C508814EFF00E44313 /* ImageList.plist */,
 				F42A85590F8A580A0014157F /* DeprecatedImageList.plist */,
 				F414890B157666FC0041118B /* NotHaveDefaultImageList.plist */,
-				F461E46308ADCDB400384957 /* MainMenu.nib */,
-				F461E46608ADCDCA00384957 /* IconSetDocument.nib */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
 				F4626F2D08ADD94A00B71ADA /* InfoPlist.strings */,
 			);
@@ -348,6 +350,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* IconSetComposer */;
 			projectDirPath = "";
@@ -365,8 +368,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F461E46408ADCDB400384957 /* MainMenu.nib in Resources */,
-				F461E46708ADCDCA00384957 /* IconSetDocument.nib in Resources */,
 				F4626F2E08ADD94A00B71ADA /* InfoPlist.strings in Resources */,
 				F4F4B2C608814EFF00E44313 /* ImageList.plist in Resources */,
 				F41CD7AE090FDF3C00D66C88 /* Credits.rtf in Resources */,
@@ -379,6 +380,10 @@
 				F42A855A0F8A580A0014157F /* DeprecatedImageList.plist in Resources */,
 				F4FDBDF81572231100036EBB /* DropToMe.png in Resources */,
 				F414890C157666FC0041118B /* NotHaveDefaultImageList.plist in Resources */,
+				F44292BA157792F200F068C8 /* IconSetDocument.xib in Resources */,
+				F44292BD157792FC00F068C8 /* MainMenu.xib in Resources */,
+				F44292BF1577930900F068C8 /* MainMenu.xib in Resources */,
+				F44292C11577931500F068C8 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +496,24 @@
 			name = Localizable.strings.sed;
 			sourceTree = "<group>";
 		};
+		F44292B8157792F200F068C8 /* IconSetDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F44292B9157792F200F068C8 /* Japanese */,
+				F44292BE1577930900F068C8 /* English */,
+			);
+			name = IconSetDocument.xib;
+			sourceTree = "<group>";
+		};
+		F44292BB157792FC00F068C8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F44292BC157792FC00F068C8 /* Japanese */,
+				F44292C01577931500F068C8 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		F45B21830919919C0055CBC4 /* IconNames.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -498,24 +521,6 @@
 				F45B2185091991B30055CBC4 /* Japanese */,
 			);
 			name = IconNames.strings;
-			sourceTree = "<group>";
-		};
-		F461E46308ADCDB400384957 /* MainMenu.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A37F4B7FDCFA73011CA2CEA /* English */,
-				F461E46508ADCDBD00384957 /* Japanese */,
-			);
-			name = MainMenu.nib;
-			sourceTree = "<group>";
-		};
-		F461E46608ADCDCA00384957 /* IconSetDocument.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A37F4B5FDCFA73011CA2CEA /* English */,
-				F461E46808ADCDD600384957 /* Japanese */,
-			);
-			name = IconSetDocument.nib;
 			sourceTree = "<group>";
 		};
 		F4626F2D08ADD94A00B71ADA /* InfoPlist.strings */ = {
@@ -758,6 +763,7 @@
 				F414890715765FC90041118B /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
 		};
 		F42C58110BA6C07100D2866B /* Build configuration list for PBXNativeTarget "UnitTest" */ = {
 			isa = XCConfigurationList;

@@ -28,12 +28,11 @@ static IconSetComposer *_instance = nil;
 			  andDecrementals:(NSArray *)decrementalImages
 {
 	int result;
-	//
+	
 	NSString *title = NSLocalizedString( @"Caution!", @"Caution!" );
 	NSString *message = @"";
 	NSString *defaultCaption = NSLocalizedString( @"Quit", @"Quit" );
 	NSString *alternateCaption = NSLocalizedString( @"Continue", @"Continue" );
-//	NSString *otherCaption;
 	
 	NSString *tmpString;
 	NSString *inc = nil;
@@ -68,33 +67,25 @@ static IconSetComposer *_instance = nil;
 }
 -(BOOL)isSupportedBathyScaphe
 {
-	NSBundle *bsBundle;
-	NSString *bsResourcesPath;
-	NSArray *bsResources;
-	NSArray *knownBSSystemImages;
-	NSArray *managedImages;
-	unsigned managedImageNum;
-	unsigned bsResourceImageNum = 0;
-	id fm;
-	int status = 0;
-	NSMutableArray *incrementalImages = [NSMutableArray array];
-	NSMutableArray *decrementalImages = nil;
-	NSMutableArray *containsImages = [NSMutableArray array];
-	
-	bsBundle = [[self class] bathyScapheBundle];
+	NSBundle *bsBundle = [[self class] bathyScapheBundle];
 	if( !bsBundle ) {
 		return NO;
 	}
 	
-	fm = [NSFileManager defaultManager];
-	bsResourcesPath = [bsBundle resourcePath];
-	bsResources = [fm directoryContentsAtPath:bsResourcesPath];
+	NSUInteger bsResourceImageNum = 0;
+	NSInteger status = 0;
+	NSMutableArray *incrementalImages = [NSMutableArray array];
+	NSMutableArray *decrementalImages = nil;
+	NSMutableArray *containsImages = [NSMutableArray array];
+	id fm = [NSFileManager defaultManager];
+	NSString *bsResourcesPath = [bsBundle resourcePath];
+	NSArray *bsResources = [fm directoryContentsAtPath:bsResourcesPath];
 	
-	managedImages = [IconSetDocument managedImageNames];
-	managedImageNum = [managedImages count];
+	NSArray *managedImages = [IconSetDocument managedImageNames];
+	NSUInteger managedImageNum = [managedImages count];
 	
-	knownBSSystemImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BathyScapheSystemImages"
-																						   ofType:@"plist"]];
+	NSArray *knownBSSystemImages = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BathyScapheSystemImages"
+																									ofType:@"plist"]];
 	
 	for(NSString *filename in bsResources) {		
 		if( [[self class] isAcceptImageExtension:[filename pathExtension]] ) {
@@ -137,11 +128,8 @@ static IconSetComposer *_instance = nil;
 
 +(NSBundle *)bathyScapheBundle
 {
-	NSString *bsPath;
-	NSBundle *bsBundle;
-	
-	bsPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:[self bathyScapheIdentifier]];
-	bsBundle = [NSBundle bundleWithPath:bsPath];
+	NSString *bsPath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:[self bathyScapheIdentifier]];
+	NSBundle *bsBundle = [NSBundle bundleWithPath:bsPath];
 	
 	return bsBundle;
 }
@@ -199,7 +187,7 @@ final:
 {
 	static NSString *result = nil;
 	
-	if(  !result ) {
+	if( !result ) {
 		NSArray *dirs = NSSearchPathForDirectoriesInDomains( NSApplicationSupportDirectory, NSUserDomainMask, YES );
 		NSString *tmp;
 		
@@ -219,7 +207,7 @@ final:
 {
 	static NSString *result = nil;
 	
-	if(  !result ) {
+	if( !result ) {
 		NSString *tmp;
 		
 		result = [self bathyScapheSupportFolder];
@@ -261,12 +249,8 @@ final:
 +(NSImage *)defaultImageForIdentifier:(NSString *)identifier
 {
 	NSBundle *bsBundle = [self bathyScapheBundle];
-	
-	NSString *path;
-	NSImage *image;
-	
-	path = [bsBundle pathForImageResource:identifier];
-	image = [[[NSImage alloc] initWithContentsOfFile:path] autorelease];
+	NSString *path = [bsBundle pathForImageResource:identifier];
+	NSImage *image = [[[NSImage alloc] initWithContentsOfFile:path] autorelease];
 	
 	return image;
 }
@@ -345,25 +329,22 @@ final:
 -(long)quitBS
 {
 	OSStatus err;
-	NSAppleEventDescriptor *ae;
-	NSAppleEventDescriptor *bsDesc;
 	
 	/* set up BathyScaphe addr */
-	bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:[self bathyScapheIdentifier]];
+	NSAppleEventDescriptor *bsDesc = [NSAppleEventDescriptor targetDescriptorWithApplicationIdentifier:[self bathyScapheIdentifier]];
 	
-	ae = [NSAppleEventDescriptor appleEventWithEventClass:kCoreEventClass
-												  eventID:kAEQuitApplication
-										 targetDescriptor:bsDesc
-												 returnID:kAutoGenerateReturnID
-											transactionID:kAnyTransactionID];
+	NSAppleEventDescriptor *ae = [NSAppleEventDescriptor appleEventWithEventClass:kCoreEventClass
+																		  eventID:kAEQuitApplication
+																 targetDescriptor:bsDesc
+																		 returnID:kAutoGenerateReturnID
+																	transactionID:kAnyTransactionID];
 	
-//	err = AESendMessage( [ae aeDesc], NULL, kAECanInteract, kAEDefaultTimeout );
 	err = [ae sendAppleEventWithMode:kAECanInteract | kAEWaitReply
 					  timeOutInTicks:kAEDefaultTimeout
 							   reply:NULL];
 	
 	if( err != noErr ) {
-		NSLog(@"AESendMessage Error. ErrorID ---> %ld", err );
+		NSLog(@"AESendMessage Error. ErrorID ---> %ld", (long)err );
 	}
 	
 	return err;
@@ -404,14 +385,9 @@ final:
 }
 -(IBAction)createDocumentFromCurrentSetting:(id)sender
 {
-	NSString *bsSupPath = [[self class] bathyScapheSupportFolder];
-	NSBundle *bsSupBundle;
 	NSArray *imageNames = [IconSetDocument managedImageNames];
-	NSString *imagePath;
-	
-	IconSetDocument *newDocument;
-	
-	bsSupBundle = [NSBundle bundleWithPath:bsSupPath];
+	NSString *bsSupPath = [[self class] bathyScapheSupportFolder];
+	NSBundle *bsSupBundle = [NSBundle bundleWithPath:bsSupPath];
 	
 	if(!imageNames || !bsSupBundle) {
 		NSLog(@"HOGE!!");
@@ -419,9 +395,8 @@ final:
 		return;
 	}
 	
-	newDocument = [[NSDocumentController sharedDocumentController]
-		openUntitledDocumentOfType:@"IconSetType"
-						   display:NO];
+	IconSetDocument *newDocument = [[NSDocumentController sharedDocumentController] openUntitledDocumentOfType:@"IconSetType"
+																									   display:NO];
 	if(!newDocument) {
 		NSLog(@"Can not create new document.");
 		NSBeep();
@@ -429,7 +404,7 @@ final:
 	}
 	
 	for(NSString *imageName in imageNames) {
-		imagePath = [bsSupBundle pathForImageResource:imageName];
+		NSString *imagePath = [bsSupBundle pathForImageResource:imageName];
 		[newDocument setPath:imagePath forIdentifier:imageName];
 	}
 	

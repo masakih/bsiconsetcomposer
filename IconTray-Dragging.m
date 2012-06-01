@@ -46,21 +46,14 @@
 }
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
-	NSPasteboard *pb;
-	NSArray *paths;
-	NSString *path;
-	NSArray *types;
 	id oldImage = [self image];
-	
-	//	NSLog(@"Enter %@.", NSStringFromSelector(_cmd));
-	
-	pb = [sender draggingPasteboard];
-	types = [pb types];
+	NSPasteboard *pb = [sender draggingPasteboard];
+	NSArray *types = [pb types];
 	
 	if([types containsObject:NSFilesPromisePboardType]) {
 		TemporaryFolder *tmp = [self temporaryFolder];
-		paths = [sender namesOfPromisedFilesDroppedAtDestination:[tmp url]];
-		path = [paths objectAtIndex:0];
+		NSArray *paths = [sender namesOfPromisedFilesDroppedAtDestination:[tmp url]];
+		NSString *path = [paths objectAtIndex:0];
 		
 		path = [[tmp path] stringByAppendingPathComponent:path];
 		[self setImageFilePath:path];

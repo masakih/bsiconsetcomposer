@@ -111,6 +111,7 @@ static NSString *IconTrayImagePositionKey =@"IconTrayImagePositionKey";
 	[titleCell release];
 	[identifier release];
 	[placeholderImage release];
+	[image release];
 		
 	[super dealloc];
 }
