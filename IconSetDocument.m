@@ -533,10 +533,15 @@ static NSArray *sThreadIdentifiers;
 
 - (void)window:(NSWindow *)window willEncodeRestorableState:(NSCoder *)state
 {
+	[state encodeObject:[[tab selectedTabViewItem] identifier] forKey:@"BSICSSelectedItemIdentifier"];
 	[state encodeRect:[window frame] forKey:@"BSICSWindowFrameState"];
 }
 - (void)window:(NSWindow *)window didDecodeRestorableState:(NSCoder *)state
 {
+	NSString *identifier = [state decodeObjectForKey:@"BSICSSelectedItemIdentifier"];
+	if(identifier) {
+		[tab selectTabViewItemWithIdentifier:identifier];
+	}
 	NSRect r = [state decodeRectForKey:@"BSICSWindowFrameState"];
 	if(NSEqualRects(r, NSZeroRect)) {
 		NSPoint tl = [window cascadeTopLeftFromPoint:NSMakePoint(0, 0)];
